@@ -1,0 +1,279 @@
+.about-us-header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.about-us-header h1 {
+	font-size: 4rem;
+	padding-top: 6.2rem;
+	color: white;
+	font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+		"Arial", sans-serif;
+}
+
+.about-us-header p {
+	font-size: 1.2rem;
+	color: white;
+	padding-left: 7rem;
+	padding-right: 7rem;
+}
+
+.dark-background {
+	background: rgb(0, 0, 0);
+	background: rgba(0, 0, 0, 0.5);
+	color: #f1f1f1;
+	height: 100%;
+	width: 100%;
+}
+
+.about-card {
+	//height: 80vh;
+	width: 100%;
+	height: 40rem;
+}
+
+.about-card-center {
+	//height: 80vh;
+	width: 100;
+	//height: auto;
+}
+
+.about-background-img {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 40rem;
+}
+
+.card-content1 {
+	text-align: left;
+	position: absolute;
+	bottom: 3rem;
+	justify-content: center;
+}
+
+.card-content2 {
+	text-align: right;
+	position: absolute;
+	right: 0;
+	bottom: 3rem;
+	justify-content: center;
+}
+
+.about-card h3 {
+	font-size: 2.5vw;
+	/* bottom: 4em;
+	position: absolute; */
+	font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+		"Arial", sans-serif;
+}
+
+.about-card-center h3 {
+	font-size: 2.5vw;
+	text-align: center;
+	padding-top: 4.5rem;
+	font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+		"Arial", sans-serif;
+}
+
+.card-p-left {
+	font-size: 1.5vw;
+	//justify-content: center;
+	//text-align: left;
+	margin-left: 7rem;
+	margin-top: 1rem;
+	//bottom: 3.5rem;
+	//position: absolute;
+	width: 100vh;
+}
+
+.card-p-right {
+	font-size: 1.5vw;
+
+	//text-align: right;
+	//margin-right: 7rem;
+	/* bottom: 3.5rem;
+	right: 7rem;
+	position: absolute; */
+	width: 100vh;
+	margin-right: 7rem;
+	margin-top: 1rem;
+}
+
+/* ---------------Contact Us css------------------- */
+
+/* .card-deck .card-secondary {
+	padding: 1rem;
+	margin: 16px;
+	border-radius: 5px;
+	box-shadow: 5px 5px 45px #1b1c1b, -5px -5px 45px #2d302f;
+	text-align: center;
+	background-color: #cce3de !important;
+	opacity: 0.8;
+}
+.card-deck .card-secondary:hover {
+	transform: scale(1.05);
+	box-shadow: 10px 10px 10px #888888;
+}
+.card-deck .card-secondary:hover .card-title {
+	color: #4e22d0;
+}
+.card-deck .card-secondary .card-body {
+	padding: 0;
+}
+.card-deck .card-secondary .card-img-top {
+	margin-bottom: 24px;
+	border-radius: 0px;
+	height: 17vh;
+	width: 17vh;
+	align-self: center;
+}
+.card-deck .card-secondary .card-title {
+	color: #261c6a;
+	font-size: 20px;
+	line-height: 1.6;
+	font-weight: 700;
+	margin-bottom: 16px;
+}
+.card-deck .card-secondary .card-text {
+	color: #261c6a;
+	font-size: 14px;
+	line-height: 1.71;
+	font-weight: 400;
+	margin-bottom: 16px;
+}
+.card-deck .card-secondary .card-footer {
+	padding: 9px 0 25px;
+	background: transparent;
+	border: 0;
+	text-align: center;
+}
+.card-deck .card-secondary .card-footer .btn {
+	margin-right: auto;
+	margin-left: auto;
+} */
+
+/* ---------------Awards css------------------- */
+.awards-container {
+	background-image: linear-gradient(to bottom, #0c053e 2%, #261c6a);
+	opacity: 0.9 !important;
+	margin: 0 -30px;
+	padding: 30px;
+}
+.awards-container h2 {
+	color: #fff;
+}
+.card-deck > .card-awards {
+	padding: 32px 32px 0;
+	margin: 16px;
+	border-radius: 0;
+	background: transparent;
+}
+.card-deck .card-awards:hover {
+	box-shadow: 0 40px 60px -20px rgba(8, 4, 43, 0.8);
+	background-color: #261c6a;
+}
+.card-deck .card-awards:hover .card-footer .btn {
+	visibility: visible;
+}
+
+.card-deck > .card-awards .card-body {
+	padding: 0;
+}
+.card-deck > .card-awards .card-img-top {
+	margin-bottom: 24px;
+	border-radius: 0px;
+	height: 80px;
+	display: flex;
+	justify-content: center;
+}
+.card-deck .card-awards .card-img-top img {
+	margin: auto;
+}
+.card-deck .card-awards .card-title {
+	color: #fff;
+	font-size: 16px;
+	line-height: 1.5;
+	font-weight: 400;
+	margin-bottom: 3px;
+}
+.card-deck .card-awards .card-footer {
+	padding: 9px 0 13px;
+	border: 0;
+}
+.card-deck .card-awards .card-footer .btn {
+	color: #fff;
+	visibility: hidden;
+}
+
+/* ----------Contact Us------------- */
+.contact-card .card-secondary {
+	padding: 1rem;
+	margin: 16px;
+	border-radius: 5px;
+	box-shadow: 5px 5px 45px #1b1c1b, -5px -5px 45px #2d302f;
+	text-align: center;
+	background-color: #cce3de !important;
+	opacity: 0.8;
+}
+.contact-card .card-secondary:hover {
+	transform: scale(1.05);
+	box-shadow: 10px 10px 10px #888888;
+}
+.contact-card .card-secondary:hover .card-title {
+	color: #4e22d0;
+}
+.contact-card .card-secondary .card-body {
+	padding: 0;
+}
+.contact-card .card-secondary .card-img-top {
+	margin-bottom: 24px;
+	border-radius: 0px;
+	height: 17vh;
+	width: 17vh;
+	align-self: center;
+}
+.contact-card .card-secondary .card-title {
+	color: #261c6a;
+	font-size: 20px;
+	line-height: 1.6;
+	font-weight: 700;
+	margin-bottom: 16px;
+}
+.contact-card .card-secondary .card-text {
+	color: #261c6a;
+	font-size: 16px;
+	line-height: 1.71;
+	font-weight: 400;
+	margin-bottom: 16px;
+	font-weight: 700;
+}
+.contact-card .card-secondary .card-footer {
+	padding: 9px 0 25px;
+	background: transparent;
+	border: 0;
+	text-align: center;
+}
+.contact-card .card-secondary .card-footer .btn {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+/* ---------------IJEES SOCIAL MEDIA------------------- */
+.social-media {
+	background-color: #eaf4f4;
+}
+
+.social-media h4 {
+	font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+		"Arial", sans-serif;
+	color: black;
+}
+
+.social-media img {
+	height: 2rem;
+	width: 2rem;
+}

@@ -1,0 +1,25 @@
+.number {
+    overflow: hidden;
+    text-align: center;
+}
+
+.number:before,
+.number:after {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 70%;
+}
+
+.number:before {
+    right: 0.7em;
+    margin-left: -90%;
+}
+
+.number:after {
+    left: 0.7em;
+    margin-right: -20%;
+}

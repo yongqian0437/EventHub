@@ -1,0 +1,44 @@
+.card-header {
+    background-color: #40916c;
+}
+
+.company_name {
+    color: #edf2f4
+}
+
+.list_class {
+    text-align: center;
+}
+
+.img_class {
+    margin-bottom: 30px; 
+}
+
+.th {
+    vertical-align: top;
+}
+
+.td {
+    text-align: left;
+}
+
+.bottom_buttons {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0px 10px 15px 0px;
+}
+
+.view_doc:hover {
+    background-color: transparent;
+}
+
+.applied_emp, .applied_emp:hover{
+    background-color: #0077b6;
+    color:#FFFFFF;
+}
+
+.apply_reg, .apply_reg:hover, .apply_emp, .apply_emp:hover {
+    background-color: #67b99a;
+    color:#FFFFFF;
+}

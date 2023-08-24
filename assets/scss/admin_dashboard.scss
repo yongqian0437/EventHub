@@ -1,0 +1,40 @@
+#customers {
+	font-family: Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+#customers td,
+#customers th {
+	padding: 8px;
+}
+
+#customers tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+#customers tr:hover {
+	background-color: #ddd;
+}
+
+#customers th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+}
+
+p {
+	color: black;
+}
+
+#pie-chartcanvas-1,
+#pie-chartcanvas-2,
+#pie-chartcanvas-3 {
+	height: 450px;
+	width: 450px;
+	align-self: center;
+}
+
+h6 {
+	color: #6b9080 !important;
+}
