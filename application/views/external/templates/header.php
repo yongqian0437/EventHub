@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="<?= base_url('/assets/img/ijees_icon.png')?>" type="image/png">
+    <link rel="icon" href="<?= base_url('/assets/img/EventHub_icon.png') ?>" type="image/png">
 
-    <title><?=$title?></title>
+    <title><?= $title ?></title>
 
     <!-- Custom fonts for this template-->
     <link href="<?php echo base_url() ?>/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -20,9 +20,9 @@
     <link href="<?php echo base_url() ?>/assets/css/sb-admin-2.min.css" rel="stylesheet">
 
     <?php
-        if (isset($include_css)) {
-            echo '<link href="' . base_url() . 'assets/css/' . $include_css . '.css" rel="stylesheet">';
-        }
+    if (isset($include_css)) {
+        echo '<link href="' . base_url() . 'assets/css/' . $include_css . '.css" rel="stylesheet">';
+    }
     ?>
 
 </head>

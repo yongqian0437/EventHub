@@ -129,7 +129,7 @@
                             <div class="col col-text">
                                 <div class="Aligner-item">
                                     <h1 class="overview">Join Our Team</h1>
-                                    <p class="overview mt-4" style="animation: left_to_right 2s ease; width: 100%;">Passionate about the field of education and interested in being part of iJEES? Hit the registeration button and be part of the team.</p>
+                                    <p class="overview mt-4" style="animation: left_to_right 2s ease; width: 100%;">Passionate about the field of education and interested in being part of EventHub? Hit the registeration button and be part of the team.</p>
                                 </div>
                             </div> -->
                         </div>
@@ -168,7 +168,7 @@
                                                                 </span>
                                                             </a>
 
-                                                            <!-- <a href="https://wa.me/5151629?text=Hello%20I%20am%20[name]%20from%20[country],%20I%20would%20like%20to%20know%20more%20about%20what%20iJEES%20offers.%20" target="_blank" class="btn btn-outline-secondary btn-icon-right">
+                                                            <!-- <a href="https://wa.me/5151629?text=Hello%20I%20am%20[name]%20from%20[country],%20I%20would%20like%20to%20know%20more%20about%20what%20EventHub%20offers.%20" target="_blank" class="btn btn-outline-secondary btn-icon-right">
                                                                 <span style="color:black">INTERNATIONAL
                                                                     <img src="https://static3.avast.com/1/web/i/v2/components/arrow-m-right-orange.png" height="24">
                                                                 </span>
@@ -183,7 +183,7 @@
                                                     <img class="card-img-top" src="<?php echo base_url('assets/img/about_us/chat_icon.jpg') ?>" alt="Card image cap">
                                                     <div class="card-body">
                                                         <div class="card-title">Chat with Counsellor</div>
-                                                        <p class="card-text">Have any inquiries? Chat with any counsellor available in iJEES from around the world here.</p>
+                                                        <p class="card-text">Have any inquiries? Chat with any counsellor available in EventHub from around the world here.</p>
                                                     </div>
                                                     <div class="card-footer">
                                                         <a href="<?= base_url('user/chat/Chat'); ?>" target="_blank" class="btn btn-outline-secondary btn-icon-right" style="background-color:">
@@ -204,7 +204,7 @@
                             <div class="col col-text">
                                 <div class="Aligner-item">
                                     <h1 class="overview">Join Our Team</h1>
-                                    <p class="overview mt-4" style="animation: left_to_right 2s ease; width: 100%;">Passionate about the field of education and interested in being part of iJEES? Hit the registeration button and be part of the team.</p>
+                                    <p class="overview mt-4" style="animation: left_to_right 2s ease; width: 100%;">Passionate about the field of education and interested in being part of EventHub? Hit the registeration button and be part of the team.</p>
                                 </div>
                             </div> -->
                         </div>

@@ -9,7 +9,7 @@
     }
 
     .nav-link:hover {
-        color: rgba(255, 237, 109, 1) !important;
+        color: rgba(120, 193, 243) !important;
     }
 
     .dropdown-item {
@@ -20,7 +20,7 @@
 
     .dropdown-item:hover {
         background: rgba(255, 255, 255, 0.1) !important;
-        color: rgba(255, 237, 109, 1) !important;
+        color: rgba(120, 193, 243) !important;
     }
 
     #register_btn:hover {
@@ -108,7 +108,7 @@
                     <img class="img-profile rounded-circle" src="<?= base_url('assets/img/chat_user/profile_pic.png'); ?>">
                 </a>
                 <!-- Dropdown - User Information -->
-                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" style="background-color: #6B9080;" aria-labelledby="userDropdown">
+                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" style="background-color: #61677A;" aria-labelledby="userDropdown">
                     <a class="dropdown-item" href="<?= base_url('user/profile'); ?>" style="color: white;">
                         <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                         Profile

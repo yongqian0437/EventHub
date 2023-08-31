@@ -50,7 +50,7 @@ class Auth extends CI_Controller
 
         if ($this->form_validation->run() == false) {
             $data['include_css'] = 'forms';
-            $data['title'] = 'iJEES | User Login';
+            $data['title'] = 'EventHub | User Login';
             $this->load->view('external/templates/header', $data);
             $this->load->view('user/login/login_view');
             $this->load->view('external/templates/footer');
@@ -144,7 +144,7 @@ class Auth extends CI_Controller
         $this->form_validation->set_rules('user_password2', 'Password', 'required|trim|matches[user_password]');
 
         if ($this->form_validation->run() == false) {
-            $data['title'] = "iJEES | User Registration";
+            $data['title'] = "EventHub | User Registration";
             $data['include_css'] = 'forms';
             $this->load->view('external/templates/header', $data);
             $this->load->view('user/registration/registration_view');
@@ -250,14 +250,14 @@ class Auth extends CI_Controller
     {
         // $user_id=$this->user_student_model->last_user_id();// get the id from student model
         $user_id = $this->session->userdata('user_id');
-        $data['title'] = "iJEES | Student Registration";
+        $data['title'] = "EventHub | Student Registration";
 
         $this->form_validation->set_rules('student_phonenumber', 'Phone Number', 'required|trim|min_length[5]', [
             'min_length' => 'Phone number too short'
         ]);
 
         if ($this->form_validation->run() == false) {
-            $data['title'] = "iJEES | Student Registration";
+            $data['title'] = "EventHub | Student Registration";
             $data['include_css'] = "forms";
             $this->load->view('external/templates/header', $data);
             $this->load->view('user/registration/student_registration_view');
@@ -289,7 +289,7 @@ class Auth extends CI_Controller
         $this->form_validation->set_rules('uni_name', 'University Name', 'required|trim');
 
         if ($this->form_validation->run() == false) {
-            $data['title'] = "iJEES | University Registration";
+            $data['title'] = "EventHub | University Registration";
             $data['include_css'] = "forms";
             $this->load->view('external/templates/header', $data);
             $this->load->view('user/registration/university_registration_view');
@@ -349,7 +349,7 @@ class Auth extends CI_Controller
         ]);
 
         if ($this->form_validation->run() == false) {
-            $data['title'] = "iJEES | Education Partner Registration";
+            $data['title'] = "EventHub | Education Partner Registration";
             $data['include_css'] = "forms";
             $this->load->view('external/templates/header', $data);
             $this->load->view('user/registration/ep_registration_view');
@@ -390,7 +390,7 @@ class Auth extends CI_Controller
         ]);
 
         if ($this->form_validation->run() == false) {
-            $data['title'] = "iJEES | Education Agent Registration";
+            $data['title'] = "EventHub | Education Agent Registration";
             $data['include_css'] = "forms";
             $this->load->view('external/templates/header', $data);
             $this->load->view('user/registration/ea_registration_view');
@@ -433,7 +433,7 @@ class Auth extends CI_Controller
         ]);
 
         if ($this->form_validation->run() == false) {
-            $data['title'] = "iJEES | Academic Counsellor Registration";
+            $data['title'] = "EventHub | Academic Counsellor Registration";
             $data['title'] = "forms";
             $this->load->view('external/templates/header', $data);
             $this->load->view('user/registration/ac_registration_view', $data); // get data from model
@@ -471,7 +471,7 @@ class Auth extends CI_Controller
         ]);
 
         if ($this->form_validation->run() == false) {
-            $data['title'] = "iJEES | Company Registration";
+            $data['title'] = "EventHub | Company Registration";
             $data['include_css'] = "forms";
             $this->load->view('external/templates/header', $data);
             $this->load->view('user/registration/company_registration_view');
@@ -523,7 +523,7 @@ class Auth extends CI_Controller
         ]);
 
         if ($this->form_validation->run() == false) {
-            $data['title'] = "iJEES | Employer Registration";
+            $data['title'] = "EventHub | Employer Registration";
             $data['include_css'] = "forms";
             $this->load->view('external/templates/header', $data);
             $this->load->view('user/registration/employers_registration_view');
@@ -622,7 +622,7 @@ class Auth extends CI_Controller
     public function reset()
     {
         $data['tokan'] = $this->input->get('tokan');
-        $data['title'] = 'iJEES | Reset Password';
+        $data['title'] = 'EventHub | Reset Password';
         $_SESSION['tokan'] = $data['tokan'];
         $this->load->view('external/templates/header', $data);
         $this->load->view('user/login/reset_password_view');

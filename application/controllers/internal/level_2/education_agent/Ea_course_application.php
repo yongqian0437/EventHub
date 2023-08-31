@@ -52,7 +52,7 @@ class Ea_course_application extends CI_Controller
 
     public function index()
     {
-        $data['title']= 'iJEES | Course Applications';
+        $data['title']= 'EventHub | Course Applications';
         $data['include_js'] ='ea_course_application_list';
         $user_id=$this->session->userdata('user_id');
 
@@ -68,7 +68,7 @@ class Ea_course_application extends CI_Controller
 
     public function add_course_application()
     {
-        $data['title']= 'iJEES | Add Student Applicant';
+        $data['title']= 'EventHub | Add Student Applicant';
         $data['include_js'] ='ea_course_application_add';
         $data['users']=$this->user_model->search_email();
         $data['university_data'] = $this->universities_model->select_all_approved_only(); 
@@ -105,7 +105,7 @@ class Ea_course_application extends CI_Controller
 
     public function submit_added_course_applicant()
     {
-        $data['title']="iJEES | Course Applicant Registration";
+        $data['title']="EventHub | Course Applicant Registration";
         $get_course_id=$this->courses_model->fetch_courses_id($this->input->post('uni_id'));
         $this->form_validation->set_rules('c_applicant_phonenumber','Phone Number', 'required|trim|min_length[5]',[
             'min_length'=> 'Phone number too short'
@@ -113,7 +113,7 @@ class Ea_course_application extends CI_Controller
 
         if($this->form_validation->run()== false)
         {
-            $data['title']="iJEES | Course Applicant Registration";
+            $data['title']="EventHub | Course Applicant Registration";
             $data['include_css']="forms";
             $this->load->view('internal/templates/header',$data);
             $this->load->view('internal/templates/sidenav',$data);
@@ -209,7 +209,7 @@ class Ea_course_application extends CI_Controller
 
    function edit_course_applicant($c_applicant_id)
     {
-        $data['title'] = 'iJEES | Edit Course Applicant';
+        $data['title'] = 'EventHub | Edit Course Applicant';
         $data['include_js'] ='ea_course_application_edit';
         $data['edit_course_applicant']=$this->course_applicants_model->get_cas_with_id($c_applicant_id);
        // $data['edit_course_applicant']=$this->course_applicants_model->get_cas_with_id($data);
@@ -224,7 +224,7 @@ class Ea_course_application extends CI_Controller
 
     function submit_edit_course_applicant($c_applicant_id)
     {
-        $data['title']="iJEES | Course Applicant Registration";
+        $data['title']="EventHub | Course Applicant Registration";
 
         if($_FILES['c_applicant_document']['name'] != "") {
             $original_details = $this->course_applicants_model->ca_details($c_applicant_id);
@@ -353,5 +353,3 @@ class Ea_course_application extends CI_Controller
         echo $output;
     }
 }
-
-?>

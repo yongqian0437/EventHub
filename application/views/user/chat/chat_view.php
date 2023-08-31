@@ -44,7 +44,7 @@
                     </div>
 
                     <p class="mb-4 px-4">
-                        iJEES' Chat Room makes it easy for you to connect with Academic Counsellors and Employers that are registered in iJEES anywhere, anytime. This section is a one-stop service for communication to take place.
+                        EventHub' Chat Room makes it easy for you to connect with Academic Counsellors and Employers that are registered in EventHub anywhere, anytime. This section is a one-stop service for communication to take place.
                         The Academic Counsellors and Employers listed here are always ready to answer your enquiries towards a university, course or employer project (EP) that you may have. <br><br>
 
                         To begin chatting, follow these simple steps:<br><br>
@@ -53,7 +53,7 @@
                         3. You may search for a user according to the University or Company name<br>
                         4. Once you have found who you are looking for, click 'Chat'</p>
 
-                    <p class="mt-4 px-4 font-weight-bold"><i>*As stated in iJEES' Terms and Conditions, communication that takes place here will be monitored, and any exhange of documents are of consent.</i></p>
+                    <p class="mt-4 px-4 font-weight-bold"><i>*As stated in EventHub' Terms and Conditions, communication that takes place here will be monitored, and any exhange of documents are of consent.</i></p>
 
                     <div class="px-4 pb-3">
                         <hr style=" width :100%; height:2px; background-color:#EAF4F4">

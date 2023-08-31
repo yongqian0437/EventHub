@@ -45,7 +45,7 @@
                                 <img class="d-block h-20 w-100" style="margin-left:auto;  margin-right:auto; " src="<?php echo base_url('assets/img/Carousel/grad.png') ?>" alt="Second slide">
                                 <div class="carousel-caption d-none d-md-block" style="left:0%; top:0%; height:100%; width:100%;">
                                     <h1 class="ml-5 mt-5 pt-5" style="font-weight:600; font-size:3.5rem;">Start your journey with us</h1>
-                                    <h1 class="ml-5 mt-5" style="font-weight:400; font-size:1.75rem;"><i>Welcoming opportuniJEES, meet with any of our professionals to help you</i></h1>
+                                    <h1 class="ml-5 mt-5" style="font-weight:400; font-size:1.75rem;"><i>Welcoming opportunEventHub, meet with any of our professionals to help you</i></h1>
                                     <h1 class="ml-5 " style="font-weight:400; font-size:1.75rem;"><i>make the right choice for your future</i></h1>
                                 </div>
                             </div>
@@ -154,7 +154,7 @@
 
                         <!-- Awards -->
                         <div class="awards-container mt-5">
-                            <h2>iJEES with Awards</h2>
+                            <h2>EventHub with Awards</h2>
                             <div class="card-deck">
                                 <div class="card card-awards text-center">
                                     <div class="card-img-top">
@@ -203,8 +203,8 @@
                             </div>
                             <div class="col col-text">
                                 <div class="Aligner-item">
-                                    <h1 class="overview">How iJEES can help you</h1>
-                                    <p class="overview mt-4" style="animation: left_to_right 2s ease; width: 100%;">At iJEES, our academic counsellors connects ambitions with possibilities and expectations with experience.
+                                    <h1 class="overview">How EventHub can help you</h1>
+                                    <p class="overview mt-4" style="animation: left_to_right 2s ease; width: 100%;">At EventHub, our academic counsellors connects ambitions with possibilities and expectations with experience.
                                         We guide and inspire students to choose the best college / university confidently and provide the most professional advice to students.</p>
                                 </div>
                             </div>
@@ -230,7 +230,7 @@
                             <div class="col col-text">
                                 <div class="Aligner-item">
                                     <h1 class="overview">Join Our Team</h1>
-                                    <p class="overview mt-4" style="animation: left_to_right 2s ease; width: 100%;">Passionate about the field of education and interested in being part of iJEES? Hit the registeration button and be part of the team.</p>
+                                    <p class="overview mt-4" style="animation: left_to_right 2s ease; width: 100%;">Passionate about the field of education and interested in being part of EventHub? Hit the registeration button and be part of the team.</p>
                                 </div>
                             </div>
                         </div>

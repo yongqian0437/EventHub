@@ -10,45 +10,40 @@ class Ac_course_applicants extends CI_Controller
         date_default_timezone_set('Asia/Kuala_Lumpur');
 
         // Checks if session is set and if user is signed in as Academic Counsellor (authorised access). If not, deny his/her access.
-        if (!$this->session->userdata('user_id') || !$this->session->userdata('user_role')){  
+        if (!$this->session->userdata('user_id') || !$this->session->userdata('user_role')) {
             redirect('user/login/Auth/login');
         }
 
         // Checks if session is set and if user signed in is not ac. Direct them back to their own dashboard.
-        if ($this->session->has_userdata('has_login') && $this->session->userdata('user_role') != "Academic Counsellor"  ){  
+        if ($this->session->has_userdata('has_login') && $this->session->userdata('user_role') != "Academic Counsellor") {
 
-			$users['user_role'] = $this->session->userdata('user_role');
+            $users['user_role'] = $this->session->userdata('user_role');
 
-			if($users['user_role']=="Admin")
-			{
-				redirect('internal/admin_panel/Admin_dashboard');
-			}
-			// check user role is  EA
-			else if ($users['user_role']=="Education Agent")
-			{
-			   redirect('internal/level_2/education_agent/Ea_dashboard');
-			}
-			// check user role is Student
-			else if ($users['user_role']=="Student")
-			{
-				redirect('external/homepage');
-			}
-			// check user role is E
-			else if ($users['user_role']=="Employer")
-			{
-			   redirect('internal/level_2/employer/Employer_dashboard');
-			}
-			// check user role is  EP
-			else if ($users['user_role']=="Education Partner")
-			{
-			   redirect('internal/level_2/educational_partner/Ep_dashboard');
-			}
-		}
+            if ($users['user_role'] == "Admin") {
+                redirect('internal/admin_panel/Admin_dashboard');
+            }
+            // check user role is  EA
+            else if ($users['user_role'] == "Education Agent") {
+                redirect('internal/level_2/education_agent/Ea_dashboard');
+            }
+            // check user role is Student
+            else if ($users['user_role'] == "Student") {
+                redirect('external/homepage');
+            }
+            // check user role is E
+            else if ($users['user_role'] == "Employer") {
+                redirect('internal/level_2/employer/Employer_dashboard');
+            }
+            // check user role is  EP
+            else if ($users['user_role'] == "Education Partner") {
+                redirect('internal/level_2/educational_partner/Ep_dashboard');
+            }
+        }
     }
 
     public function index()
     {
-        $data['title'] = 'iJEES | Course Applications';
+        $data['title'] = 'EventHub | Course Applications';
         $data['include_js'] = 'ac_course_applicants_list';
 
         $ac_details = $this->user_ac_model->ac_details($this->session->userdata('user_id'));

@@ -15,35 +15,30 @@ class Courses extends CI_Controller
 		$this->load->model('user_student_model');
 
 		// Checks if session is set and if user signed in is an internal user. Direct them back to their own dashboard.
-        if ($this->session->has_userdata('has_login') && $this->session->userdata('user_role') != "Student"  ){  
+		if ($this->session->has_userdata('has_login') && $this->session->userdata('user_role') != "Student") {
 
 			$users['user_role'] = $this->session->userdata('user_role');
 
-			if($users['user_role']=="Admin")
-			{
+			if ($users['user_role'] == "Admin") {
 				redirect('internal/admin_panel/Admin_dashboard');
 			}
 			// check user role is  EA
-			else if ($users['user_role']=="Education Agent")
-			{
-			   redirect('internal/level_2/education_agent/Ea_dashboard');
+			else if ($users['user_role'] == "Education Agent") {
+				redirect('internal/level_2/education_agent/Ea_dashboard');
 			}
 			// check user role is AC
-			else if ($users['user_role']=="Academic Counsellor")
-			{
-			   redirect('internal/level_2/academic_counsellor/Ac_dashboard');
+			else if ($users['user_role'] == "Academic Counsellor") {
+				redirect('internal/level_2/academic_counsellor/Ac_dashboard');
 			}
 			// check user role is E
-			else if ($users['user_role']=="Employer")
-			{
-			   redirect('internal/level_2/employer/Employer_dashboard');
+			else if ($users['user_role'] == "Employer") {
+				redirect('internal/level_2/employer/Employer_dashboard');
 			}
 			// check user role is  EP
-			else if ($users['user_role']=="Education Partner")
-			{
-			   redirect('internal/level_2/educational_partner/Ep_dashboard');
+			else if ($users['user_role'] == "Education Partner") {
+				redirect('internal/level_2/educational_partner/Ep_dashboard');
 			}
-		}	
+		}
 	}
 
 	public function index()
@@ -51,18 +46,18 @@ class Courses extends CI_Controller
 		// Check if session is established. Get User ID from session.
 		$user_id = $this->session->userdata('user_id');
 		$data['user_role'] = $this->session->userdata('user_role');
-		if ($data['user_role'] == 'Student') {	
+		if ($data['user_role'] == 'Student') {
 			// From the User ID, get Student ID  
 			$data['user_email'] = $this->session->userdata('user_email');
 			$student_details = $this->user_student_model->student_details($user_id);
 			$data['student_id'] = $student_details['student_id'];
 		}
-		$data['title'] = 'iJEES | Courses';
+		$data['title'] = 'EventHub | Courses';
 
 		$data['course_data'] = $this->courses_model->select_all_approved();
 		$data['dropdown_area'] = $this->courses_model->filter_dropdown('course_area');
 		$data['dropdown_country'] = $this->courses_model->filter_dropdown('course_country');
-		$data['title'] = 'iJEES | Courses';
+		$data['title'] = 'EventHub | Courses';
 		$this->load->view('external/templates/header', $data);
 		$this->load->view('external/courses_view');  // view num 1 - jordan
 		$this->load->view('external/templates/footer');
@@ -78,10 +73,10 @@ class Courses extends CI_Controller
 			$student_details = $this->user_student_model->student_details($user_id);
 			$data['student_id'] = $student_details['student_id'];
 		}
-		$data['title'] = 'iJEES | Course Details';	
+		$data['title'] = 'EventHub | Course Details';
 		$data['course_data'] = $this->courses_model->select_condition($id, 'courses');
 		$data['uni_data'] = $this->universities_model->get_uni_detail($data['course_data'][0]->uni_id);
-		$data['title'] = 'iJEES | Course Details';
+		$data['title'] = 'EventHub | Course Details';
 
 		$this->load->view('external/templates/header', $data);
 		$this->load->view('external/courses_detail_view'); //view num 2 - jordan
@@ -92,7 +87,7 @@ class Courses extends CI_Controller
 	{
 		$data['dropdown_area'] = $this->courses_model->filter_dropdown('course_area');
 		$data['dropdown_country'] = $this->courses_model->filter_dropdown('course_country');
-		$data['title'] = 'iJEES | Courses';
+		$data['title'] = 'EventHub | Courses';
 		$data['user_role'] = $this->session->userdata('user_role');
 		if ($data['user_role'] == 'Student') {
 			// From the User ID, get Student ID  
@@ -119,7 +114,7 @@ class Courses extends CI_Controller
 			$data['student_data'] = $this->course_applicants_model->find_data_with_id($this->session->userdata('user_id'));
 			$data['course_id'] = $course_id;
 
-			$data['title'] = 'iJEES | Course Applicant';
+			$data['title'] = 'EventHub | Course Applicant';
 			$this->load->view('external/templates/header', $data);
 			$this->load->view('user/registration/courses_applicant_registration_view');
 			$this->load->view('external/templates/footer');

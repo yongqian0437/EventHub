@@ -49,7 +49,7 @@ class Employer_emps extends CI_Controller
 
     public function index()
     {   
-        $data['title'] = 'iJEES | Employer Projects (EPs)';
+        $data['title'] = 'EventHub | Employer Projects (EPs)';
         $data['include_js'] = 'employer_emp_list';
 
         $e_details = $this->user_e_model->e_details($this->session->userdata('user_id'));
@@ -115,7 +115,7 @@ class Employer_emps extends CI_Controller
 
     function add_emp()
     {
-        $data['title'] = 'iJEES | Add Employer Project (EP)';
+        $data['title'] = 'EventHub | Add Employer Project (EP)';
         $e_details = $this->user_e_model->e_details($this->session->userdata('user_id'));
         $data['e_details'] = $e_details;
         $data['company_details'] = $this->company_model->c_details($e_details['c_id']); 
@@ -178,7 +178,7 @@ class Employer_emps extends CI_Controller
     function edit_emp($emp_id)
     {
         
-        $data['title'] = 'iJEES | Edit Employer Project';
+        $data['title'] = 'EventHub | Edit Employer Project';
         $e_details = $this->user_e_model->e_details($this->session->userdata('user_id'));
         $data['e_details'] = $e_details;
         $data['company_details'] = $this->company_model->c_details($e_details['c_id']);
@@ -271,4 +271,3 @@ class Employer_emps extends CI_Controller
     }
 
 }
-?>

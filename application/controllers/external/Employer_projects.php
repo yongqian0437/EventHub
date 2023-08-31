@@ -12,35 +12,30 @@ class Employer_projects extends CI_Controller
         date_default_timezone_set('Asia/Kuala_Lumpur');
 
         // Checks if session is set and if user signed in is an internal user. Direct them back to their own dashboard.
-        if ($this->session->has_userdata('has_login') && $this->session->userdata('user_role') != "Student"  ){  
+        if ($this->session->has_userdata('has_login') && $this->session->userdata('user_role') != "Student") {
 
-			$users['user_role'] = $this->session->userdata('user_role');
+            $users['user_role'] = $this->session->userdata('user_role');
 
-			if($users['user_role']=="Admin")
-			{
-				redirect('internal/admin_panel/Admin_dashboard');
-			}
-			// check user role is  EA
-			else if ($users['user_role']=="Education Agent")
-			{
-			   redirect('internal/level_2/education_agent/Ea_dashboard');
-			}
-			// check user role is AC
-			else if ($users['user_role']=="Academic Counsellor")
-			{
-			   redirect('internal/level_2/academic_counsellor/Ac_dashboard');
-			}
-			// check user role is E
-			else if ($users['user_role']=="Employer")
-			{
-			   redirect('internal/level_2/employer/Employer_dashboard');
-			}
-			// check user role is  EP
-			else if ($users['user_role']=="Education Partner")
-			{
-			   redirect('internal/level_2/educational_partner/Ep_dashboard');
-			}
-		}	
+            if ($users['user_role'] == "Admin") {
+                redirect('internal/admin_panel/Admin_dashboard');
+            }
+            // check user role is  EA
+            else if ($users['user_role'] == "Education Agent") {
+                redirect('internal/level_2/education_agent/Ea_dashboard');
+            }
+            // check user role is AC
+            else if ($users['user_role'] == "Academic Counsellor") {
+                redirect('internal/level_2/academic_counsellor/Ac_dashboard');
+            }
+            // check user role is E
+            else if ($users['user_role'] == "Employer") {
+                redirect('internal/level_2/employer/Employer_dashboard');
+            }
+            // check user role is  EP
+            else if ($users['user_role'] == "Education Partner") {
+                redirect('internal/level_2/educational_partner/Ep_dashboard');
+            }
+        }
     }
 
     public function index()
@@ -57,30 +52,31 @@ class Employer_projects extends CI_Controller
         // $emp_info = $this->employer_projects_model->emp_details(1);
         // var_dump($emp_info[0]->c_name);
         // die;
-        $data['title'] = "iJEES | Employer Projects";
+        $data['title'] = "EventHub | Employer Projects";
 
         // Get EPs that are approved and their details
-        $eps= $this->employer_projects_model->approved_eps();
+        $eps = $this->employer_projects_model->approved_eps();
         $data['eps'] = $eps;
         $data['include_css'] = 'projects';
         $data['include_js'] = 'emp_projects_list';
         $this->load->view('external/templates/header', $data);
-        $this->load->view('external/employer_projects_view', $data); 
+        $this->load->view('external/employer_projects_view', $data);
         $this->load->view('external/templates/footer', $data);
     }
 
-    public function send_emp_application() {
+    public function send_emp_application()
+    {
 
         $user_id = $this->session->userdata('user_id');
         $student_details = $this->user_student_model->student_details($user_id);
         $student_id = $student_details['student_id'];
 
-        $data = 
-        [
-            'emp_id'            => $this->input->post('ep_id'),
-            'student_id'        => $student_id
-        ];
-        
+        $data =
+            [
+                'emp_id'            => $this->input->post('ep_id'),
+                'student_id'        => $student_id
+            ];
+
         $this->emp_applicants_model->insert($data);
     }
 

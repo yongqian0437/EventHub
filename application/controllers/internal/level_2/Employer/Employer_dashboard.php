@@ -48,7 +48,7 @@ class Employer_dashboard extends CI_Controller
 
     public function index()
     {   
-        $data['title'] = 'iJEES | Dashboard';
+        $data['title'] = 'EventHub | Dashboard';
         $data['include_js'] = 'employer_dashboard';
 
         $e_details = $this->user_e_model->e_details($this->session->userdata('user_id'));
@@ -83,5 +83,3 @@ class Employer_dashboard extends CI_Controller
         $this->load->view('internal/templates/footer');
     }
 }
-
-?>

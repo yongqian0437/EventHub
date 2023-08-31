@@ -10,7 +10,7 @@
 </script>
 
 <!-- Top Navigation -->
-<?php $this->load->view('external/templates/topnav');?>
+<?php $this->load->view('external/templates/topnav'); ?>
 
 <body id="page-top" style='background-color:#f9f6f1;'>
 
@@ -35,7 +35,7 @@
 								<div class="card-body" style="background-color:#DAE7E0">
 
 									<div class="pl-3 pr-3 pt-4">
-										<div class="pl-4" style="font-size:16px; font-weight:700; color:black;">Join Interactive Joint Education Employability System (iJEES) in</div>
+										<div class="pl-4" style="font-size:16px; font-weight:700; color:black;">Join Interactive Joint Education Employability System (EventHub) in</div>
 										<div class="pt-2 pl-4 pb-3" style="font-size:38px; color:green; font-weight:900;">3 STEPS</div>
 
 										<div class="pl-4">
@@ -67,25 +67,25 @@
 									<div class="pt-5 px-5" style="font-size:23px; letter-spacing: 8px; color:#787878; font-weight:700;">EDUCATION AGENT REGISTRATION PAGE</div>
 								</center>
 								<!-- Input fields (Form) -->
-                                <form method="post" action="<?= base_url('user/login/Auth/ea_reg');?>" enctype="multipart/form-data">
-								<?= form_open_multipart('') ?>
+								<form method="post" action="<?= base_url('user/login/Auth/ea_reg'); ?>" enctype="multipart/form-data">
+									<?= form_open_multipart('') ?>
 									<div class="form-row pt-4 px-3">
 										<!-- Business email-->
 										<div class="form-group col-md-12 px-2">
-											<input type="email" name="ea_businessemail" class="form-control border-bottom" id="ea_businessemail" style="border: 0;" placeholder="Enter your business email" value="<?=set_value('ep_businessemail') ?>" required>
-                                            <?= form_error('ea_businessemail','<small class="text-danger pl-3">','</small>');?>
+											<input type="email" name="ea_businessemail" class="form-control border-bottom" id="ea_businessemail" style="border: 0;" placeholder="Enter your business email" value="<?= set_value('ep_businessemail') ?>" required>
+											<?= form_error('ea_businessemail', '<small class="text-danger pl-3">', '</small>'); ?>
 										</div>
 									</div>
 									<div class="form-row pt-3 px-3">
 										<!-- Phone number -->
 										<div class="form-group col-md-6 px-2">
-											<input type="number" name="ea_phonenumber" class="form-control border-bottom" id="ea_phonenumber" style="border: 0;" placeholder="Enter your phone number" value="<?=set_value('ea_phonenumber') ?>" required>
-                                            <?= form_error('ea_phonenumber','<small class="text-danger pl-3">','</small>');?>
+											<input type="number" name="ea_phonenumber" class="form-control border-bottom" id="ea_phonenumber" style="border: 0;" placeholder="Enter your phone number" value="<?= set_value('ea_phonenumber') ?>" required>
+											<?= form_error('ea_phonenumber', '<small class="text-danger pl-3">', '</small>'); ?>
 										</div>
 										<!-- Nationality -->
 										<div class="form-group col-md-6 px-2">
 											<select name="ea_nationality" id="ea_nationality" class="form-control form-select" required>
-												<option value="" selected disabled >Please select a country</option>
+												<option value="" selected disabled>Please select a country</option>
 												<option value="Afghanistan">Afghanistan</option>
 												<option value="Åland Islands">Åland Islands</option>
 												<option value="Albania">Albania</option>
@@ -352,20 +352,20 @@
 										</div>
 									</div>
 									<div class="form-row pt-3 px-3">
-                                        <div class="col-md-12 px-2">
-                                            <label>Document</label>
-                                        </div>
-                                        <div class="col-md-12 px-2">
-                                            <p  style="font-size: 14px">You are required to download the following Agency Agreement template and fill in the required information. Once done, proceed to upload it.</p>
-                                            <a href="<?= base_url('/assets/uploads/education_agents/Agency_Agreement_Template_SAMPLE.pdf')?>" download>Agency Agreement Template 2021</a>
-                                        </div>
-                                    </div>
+										<div class="col-md-12 px-2">
+											<label>Document</label>
+										</div>
+										<div class="col-md-12 px-2">
+											<p style="font-size: 14px">You are required to download the following Agency Agreement template and fill in the required information. Once done, proceed to upload it.</p>
+											<a href="<?= base_url('/assets/uploads/education_agents/Agency_Agreement_Template_SAMPLE.pdf') ?>" download>Agency Agreement Template 2021</a>
+										</div>
+									</div>
 									<!-- Upload Document -->
 									<div class="form-row pt-3 px-4">
 										<div class="form-group col-md-12 px-2">
 											<input type="file" accept=".pdf" class="custom-file-input" id="form-group" name="ea_document" required>
 											<label class="custom-file-label" for="customFile">Upload document</label>
-											<div style = "color:red; font-size:0.9em;">*Required document: COMPLETED Agency Agreement in .PDF file format</div>  
+											<div style="color:red; font-size:0.9em;">*Required document: COMPLETED Agency Agreement in .PDF file format</div>
 										</div>
 									</div>
 									<!-- Terms & Condition -->
@@ -397,4 +397,3 @@
 				$(this).siblings(".custom-file-label").addClass("selected").html(fileName);
 			});
 		</script>
-

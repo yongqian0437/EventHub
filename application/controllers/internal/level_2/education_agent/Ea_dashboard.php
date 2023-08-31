@@ -48,7 +48,7 @@ class Ea_dashboard extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'iJEES | Dashboard';
+        $data['title'] = 'EventHub | Dashboard';
         $data['include_js'] ='ea_dashboard';
        
        // $user_details = $this->user_model->get_user_details($this->session->userdata('user_id'));
@@ -75,4 +75,3 @@ class Ea_dashboard extends CI_Controller
 
    
 }
-?>

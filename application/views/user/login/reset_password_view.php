@@ -10,13 +10,14 @@
 </script>
 
 <script>
-//Js to remove alert message after university information is edited
-setTimeout(function() {
-    $('#alert_message').fadeOut();
-}, 5000); // <-- time in milliseconds
+    //Js to remove alert message after university information is edited
+    setTimeout(function() {
+        $('#alert_message').fadeOut();
+    }, 5000); // <-- time in milliseconds
 </script>
 
 <link href="<?php echo base_url() ?>assets/css/forms.css" rel="stylesheet">
+
 <body id="page-top" style='background-color:#f9f6f1;'>
 
     <!-- Page Wrapper -->
@@ -40,7 +41,7 @@ setTimeout(function() {
                                 <div class="card-body" style="background-color:#DAE7E0">
 
                                     <div class="pl-3 pr-3 pt-4">
-                                        <div class="pl-4" style="font-size:16px; font-weight:700; color:black;">Join Interactive Joint Education Employability System (iJEES) in </div>
+                                        <div class="pl-4" style="font-size:16px; font-weight:700; color:black;">Join Interactive Joint Education Employability System (EventHub) in </div>
                                         <div class="pt-2 pl-4 pb-3" style="font-size:38px; color:green; font-weight:900;">3 STEPS</div>
 
                                         <div class="pl-4">
@@ -71,9 +72,9 @@ setTimeout(function() {
                                 <center>
                                     <div class="pt-5 px-5" style="font-size:23px; letter-spacing: 8px; color:#787878; font-weight:700;">RESET YOUR PASSWORD</div>
                                 </center>
-                                <?=$this->session->flashdata('message')?> 
+                                <?= $this->session->flashdata('message') ?>
                                 <!-- Input fields (Form) -->
-                                <form class="user" method="post" action=" <?=base_url('user/login/Auth/updatepassword'); ?>">
+                                <form class="user" method="post" action=" <?= base_url('user/login/Auth/updatepassword'); ?>">
                                     <!-- Password-->
                                     <div class="form-row pt-5 px-3">
                                         <div class="form-group col-md-12 px-2">
@@ -87,15 +88,15 @@ setTimeout(function() {
                                             <input type="password" name="user_password2" class="form-control border-bottom" id="email" style="border: 0;" placeholder="Confirm Password">
                                         </div>
                                     </div>
-                                   
+
                                     <!-- Submit button -->
                                     <div class="pt-1 pr-4">
                                         <button type="submit" class="btn btn-success" style="float:right; width:auto">Reset Password<i class="fas fa-check"></i></button>
                                     </div>
                                 </form>
                                 <!-- End of Input fields (Form) -->
-                                 <!-- End of Input fields (Form) -->
-                                   
+                                <!-- End of Input fields (Form) -->
+
                             </div>
                         </div>
                     </div>

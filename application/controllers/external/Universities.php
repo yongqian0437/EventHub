@@ -11,38 +11,33 @@ class Universities extends CI_Controller
 		$this->load->model('user_model');
 		$this->load->model('universities_model');
 		$this->load->model('courses_model');
-		$this->load->model('course_applicants_model');		
+		$this->load->model('course_applicants_model');
 
 		// Checks if session is set and if user signed in is an internal user. Direct them back to their own dashboard.
-        if ($this->session->has_userdata('has_login') && $this->session->userdata('user_role') != "Student"  ){  
+		if ($this->session->has_userdata('has_login') && $this->session->userdata('user_role') != "Student") {
 
 			$users['user_role'] = $this->session->userdata('user_role');
 
-			if($users['user_role']=="Admin")
-			{
+			if ($users['user_role'] == "Admin") {
 				redirect('internal/admin_panel/Admin_dashboard');
 			}
 			// check user role is  EA
-			else if ($users['user_role']=="Education Agent")
-			{
-			   redirect('internal/level_2/education_agent/Ea_dashboard');
+			else if ($users['user_role'] == "Education Agent") {
+				redirect('internal/level_2/education_agent/Ea_dashboard');
 			}
 			// check user role is AC
-			else if ($users['user_role']=="Academic Counsellor")
-			{
-			   redirect('internal/level_2/academic_counsellor/Ac_dashboard');
+			else if ($users['user_role'] == "Academic Counsellor") {
+				redirect('internal/level_2/academic_counsellor/Ac_dashboard');
 			}
 			// check user role is E
-			else if ($users['user_role']=="Employer")
-			{
-			   redirect('internal/level_2/employer/Employer_dashboard');
+			else if ($users['user_role'] == "Employer") {
+				redirect('internal/level_2/employer/Employer_dashboard');
 			}
 			// check user role is  EP
-			else if ($users['user_role']=="Education Partner")
-			{
-			   redirect('internal/level_2/educational_partner/Ep_dashboard');
+			else if ($users['user_role'] == "Education Partner") {
+				redirect('internal/level_2/educational_partner/Ep_dashboard');
 			}
-		}	
+		}
 	}
 
 	public function index()
@@ -51,7 +46,7 @@ class Universities extends CI_Controller
 		$data['include_js'] = 'universities_list';
 		$data['include_js2'] = '<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.24/datatables.min.css"/>';
 		$data['include_js3'] = '<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.24/datatables.min.js"></script>';
-		$data['title'] = 'iJEES | Universities';
+		$data['title'] = 'EventHub | Universities';
 		$this->load->view('external/templates/header', $data);
 		$this->load->view('external/universities_view', $data);
 		$this->load->view('external/templates/footer');
@@ -110,7 +105,7 @@ class Universities extends CI_Controller
 	public function university_detail($uni_id)
 	{
 
-		$data['title'] = 'iJEES | University';
+		$data['title'] = 'EventHub | University';
 		$data['uni_detail'] = $this->universities_model->get_uni_detail($uni_id);
 		$data['course_field'] = $this->courses_model->course_field_dropdown($uni_id);
 		$data['total_course'] = $this->courses_model->get_totalcourse_for_uni($uni_id);
@@ -118,7 +113,6 @@ class Universities extends CI_Controller
 		$this->load->view('external/templates/header', $data);
 		$this->load->view('external/universitiy_detail_view');
 		$this->load->view('external/templates/footer');
-
 	}
 
 	public function fetch_course_list()
@@ -128,22 +122,20 @@ class Universities extends CI_Controller
 
 		$output = "";
 
-		foreach($course_data as $row)
-		{
-			$apply_link = $base_url."external/Courses/course_applicant/".$row->course_id;
-			if ($this->session->userdata('user_role') == 'Student') { 
+		foreach ($course_data as $row) {
+			$apply_link = $base_url . "external/Courses/course_applicant/" . $row->course_id;
+			if ($this->session->userdata('user_role') == 'Student') {
 
 				$response = $this->course_applicants_model->past_application($row->course_id, $this->session->userdata('user_email'));
 
-				if ($response == true) { 
+				if ($response == true) {
 					$apply_button = '<a type="button" target="_blank" class="btn btn-sm" style = "background-color:#3d3d3d; color:white; font-size:0.9em;" disabled>Applied</a>';
-				} else { 
-					$apply_button = '<a type="button" target="_blank" href = "'.$apply_link.'" class="btn btn-sm" style = "background-color:#A4C3B2; color:white; font-size:0.9em;">Apply</a>';
-				} 
-	   
-		    } else { 
-				$apply_button = '<a type="button" target="_blank" href = "'.$base_url.'user/login/Auth/login" class="btn btn-sm" style = "background-color:#A4C3B2; color:white; font-size:0.9em;">Apply</a>';
-		    }
+				} else {
+					$apply_button = '<a type="button" target="_blank" href = "' . $apply_link . '" class="btn btn-sm" style = "background-color:#A4C3B2; color:white; font-size:0.9em;">Apply</a>';
+				}
+			} else {
+				$apply_button = '<a type="button" target="_blank" href = "' . $base_url . 'user/login/Auth/login" class="btn btn-sm" style = "background-color:#A4C3B2; color:white; font-size:0.9em;">Apply</a>';
+			}
 
 			$course_link = $base_url . "external/Courses/view_course/" . $row->course_id;
 
@@ -173,15 +165,13 @@ class Universities extends CI_Controller
 					</center>
 				</div>
 				<div class="col-md-2 pt-2 pl-5">
-					<a type="button" target="_blank" href = "'.$course_link.'" class="btn btn-sm " style = "background-color:#A4C3B2; color:white; font-size:0.9em;">View</a>
-					'.$apply_button.'
+					<a type="button" target="_blank" href = "' . $course_link . '" class="btn btn-sm " style = "background-color:#A4C3B2; color:white; font-size:0.9em;">View</a>
+					' . $apply_button . '
 				</div>
 			</div>
 			';
 		}
 
 		echo $output;
-
-		
 	}
 }

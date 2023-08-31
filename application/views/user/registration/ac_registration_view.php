@@ -9,7 +9,7 @@
 </script>
 
 <!-- Top Navigation -->
-<?php $this->load->view('external/templates/topnav');?>
+<?php $this->load->view('external/templates/topnav'); ?>
 
 <body id="page-top" style='background-color:#f9f6f1;'>
 
@@ -34,7 +34,7 @@
 								<div class="card-body" style="background-color:#DAE7E0">
 
 									<div class="pl-3 pr-3 pt-4">
-										<div class="pl-4" style="font-size:16px; font-weight:700; color:black;">Join Interactive Joint Education Employability System (iJEES) in</div>
+										<div class="pl-4" style="font-size:16px; font-weight:700; color:black;">Join Interactive Joint Education Employability System (EventHub) in</div>
 										<div class="pt-2 pl-4 pb-3" style="font-size:38px; color:green; font-weight:900;">3 STEPS</div>
 
 										<div class="pl-4">
@@ -66,25 +66,25 @@
 									<div class="pt-5 px-5" style="font-size:23px; letter-spacing: 8px; color:#787878; font-weight:700;">ACADEMIC COUNSELLOR REGISTRATION PAGE</div>
 								</center>
 								<!-- Input fields (Form) -->
-								<form method="post" action="<?= base_url('user/login/Auth/ac_reg');?>" enctype="multipart/form-data">
-								<?= form_open_multipart('') ?>
+								<form method="post" action="<?= base_url('user/login/Auth/ac_reg'); ?>" enctype="multipart/form-data">
+									<?= form_open_multipart('') ?>
 									<!-- Business email-->
 									<div class="form-row pt-4 px-3">
 										<div class="form-group col-md-12 px-2">
-											<input type="email" name="ac_businessemail" class="form-control border-bottom" id="ac_businessemail" style="border: 0;" placeholder="Enter your business email" value="<?=set_value('ac_businessemail') ?>" required>
-											<?= form_error('ac_businessemail','<small class="text-danger pl-3">','</small>');?>
+											<input type="email" name="ac_businessemail" class="form-control border-bottom" id="ac_businessemail" style="border: 0;" placeholder="Enter your business email" value="<?= set_value('ac_businessemail') ?>" required>
+											<?= form_error('ac_businessemail', '<small class="text-danger pl-3">', '</small>'); ?>
 										</div>
 									</div>
 									<div class="form-row pt-3 px-3">
 										<!-- Phone number -->
 										<div class="form-group col-md-6 px-2">
-											<input type="number" name="ac_phonenumber" class="form-control border-bottom" id="ac_phonenumber" style="border: 0;" placeholder="Enter your phone number" value="<?=set_value('ac_phonenumber') ?>" required>
-											<?= form_error('ac_phonenumber','<small class="text-danger pl-3">','</small>');?>
+											<input type="number" name="ac_phonenumber" class="form-control border-bottom" id="ac_phonenumber" style="border: 0;" placeholder="Enter your phone number" value="<?= set_value('ac_phonenumber') ?>" required>
+											<?= form_error('ac_phonenumber', '<small class="text-danger pl-3">', '</small>'); ?>
 										</div>
 										<!-- Nationality -->
 										<div class="form-group col-md-6 px-2">
 											<select name="ac_nationality" id="ac_nationality" class="form-control form-select" required>
-												<option value="" selected disabled >Please select a country</option>
+												<option value="" selected disabled>Please select a country</option>
 												<option value="Afghanistan">Afghanistan</option>
 												<option value="Åland Islands">Åland Islands</option>
 												<option value="Albania">Albania</option>
@@ -351,27 +351,27 @@
 										</div>
 									</div>
 
-									 <!-- UNI INPUT -->
-									 <div class="form-row pt-12 px-3">
-                                            <div class="form-group col-md-12 px-2">
-                                                <label for="university1"></label>
-                                                <select name="ac_university" id="university_1" class="form-control form-select form-select-md">
-                                                    <option value="" selected disabled>Please select a university</option>
-                                                    <?php
-                                                        foreach($university_data as $u) {
-                                                            echo '<option value="'.$u->uni_name.'">'.$u->	uni_name.'</option>';
-                                                        }
-                                                    ?>
-                                                </select>
-                                            </div>  
-                                        </div>
-									
+									<!-- UNI INPUT -->
+									<div class="form-row pt-12 px-3">
+										<div class="form-group col-md-12 px-2">
+											<label for="university1"></label>
+											<select name="ac_university" id="university_1" class="form-control form-select form-select-md">
+												<option value="" selected disabled>Please select a university</option>
+												<?php
+												foreach ($university_data as $u) {
+													echo '<option value="' . $u->uni_name . '">' . $u->uni_name . '</option>';
+												}
+												?>
+											</select>
+										</div>
+									</div>
+
 									<!-- Upload Document -->
 									<div class="form-row pt-3 px-4">
 										<div class="form-group col-md-12 px-2">
 											<input type="file" accept=".pdf" class="custom-file-input" id="form-group" name="ac_document" required>
-											<label class="custom-file-label" for="customFile">Upload document</label>	
-											<div style = "color:red; font-size:0.9em;">*Required document: Employment Verification Letter in .PDF file format</div>
+											<label class="custom-file-label" for="customFile">Upload document</label>
+											<div style="color:red; font-size:0.9em;">*Required document: Employment Verification Letter in .PDF file format</div>
 										</div>
 									</div>
 									<!-- Terms & Condition -->
@@ -386,7 +386,7 @@
 
 								</form>
 								<!-- End of Input fields (Form) -->
-								
+
 							</div>
 						</div>
 					</div>
