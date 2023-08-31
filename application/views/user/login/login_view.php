@@ -79,12 +79,12 @@
         box-sizing: border-box;
     }
 
-    img {
+    /* img {
         width: 35px;
         position: absolute;
         top: 30px;
         left: 30px;
-    }
+    } */
 
     .input-box header {
         font-weight: 700;
@@ -171,7 +171,7 @@
             border-radius: 10px 10px 0 0;
         }
 
-        img {
+        .side-image {
             width: 35px;
             position: absolute;
             top: 20px;
