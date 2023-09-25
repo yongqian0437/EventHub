@@ -85,7 +85,7 @@
                                                 <div class="collapse show" id="collapseCard1">
                                                     <div class="card-body">
                                                         <h6><b>Event Type</b></h6>
-                                                        <?php echo $courses->course_area ?>
+                                                        <?php echo $courses->event_type ?>
                                                         <br>
                                                         <br>
 

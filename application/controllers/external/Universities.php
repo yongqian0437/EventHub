@@ -117,7 +117,7 @@ class Universities extends CI_Controller
 
 	public function fetch_course_list()
 	{
-		$course_data = $this->courses_model->get_course_with_course_area($this->input->post('course_area'), $this->input->post('uni_id'));
+		$course_data = $this->courses_model->get_course_with_event_type($this->input->post('event_type'), $this->input->post('uni_id'));
 		$base_url = base_url();
 
 		$output = "";

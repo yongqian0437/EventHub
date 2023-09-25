@@ -48,9 +48,9 @@ class courses_model extends CI_Model
     function select_all_approved()
     {
         $this->db->select('*')
-                 ->from('courses')
-                 ->join('universities', 'universities.uni_id = courses.uni_id')
-                 ->where('universities.uni_approval', 1);
+            ->from('courses')
+            ->join('universities', 'universities.uni_id = courses.uni_id')
+            ->where('universities.uni_approval', 1);
         return $this->db->get()->result();
     }
 
@@ -115,22 +115,22 @@ class courses_model extends CI_Model
     function course_field_dropdown($uni_id)
     {
         $this->db->where('uni_id', $uni_id);
-        $this->db->order_by('course_area');
-        $this->db->group_by('course_area');
+        $this->db->order_by('event_type');
+        $this->db->group_by('event_type');
         return $this->db->get('courses')->result();
     }
 
-    function get_course_with_course_area($course_area, $uni_id)
+    function get_course_with_event_type($event_type, $uni_id)
     {
-        if ($course_area == 'all') {
+        if ($event_type == 'all') {
             $this->db->where('uni_id', $uni_id);
-            $this->db->order_by('course_area');
+            $this->db->order_by('event_type');
             $this->db->order_by("course_level", "asc");
             return $this->db->get('courses')->result();
         } else {
             $this->db->where('uni_id', $uni_id);
-            $this->db->where('course_area', $course_area);
-            $this->db->order_by('course_area');
+            $this->db->where('event_type', $event_type);
+            $this->db->order_by('event_type');
             $this->db->order_by("course_level", "asc");
             return $this->db->get('courses')->result();
         }
@@ -143,12 +143,12 @@ class courses_model extends CI_Model
         return $this->db->get('courses')->result();
     }
 
-    function filter_course($course_area, $course_level, $course_intake, $course_country, $course_fee)
+    function filter_course($event_type, $course_level, $course_intake, $course_country, $course_fee)
     {
 
 
-        if ($course_area != "") {
-            $this->db->where('course_area', $course_area);
+        if ($event_type != "") {
+            $this->db->where('event_type', $event_type);
         }
         if ($course_level != "") {
             $this->db->where('course_level', $course_level);
@@ -166,12 +166,12 @@ class courses_model extends CI_Model
                 $this->db->order_by('course_fee', 'DESC');
             }
         }
-        
+
         $this->db->select('*')
-                 ->from('courses')
-                 ->join('universities', 'universities.uni_id = courses.uni_id')
-                 ->where('universities.uni_approval', 1);
-        
+            ->from('courses')
+            ->join('universities', 'universities.uni_id = courses.uni_id')
+            ->where('universities.uni_approval', 1);
+
         $query = $this->db->get()->result();
 
         if (count($query) > 0) {
@@ -190,16 +190,16 @@ class courses_model extends CI_Model
 
     public function get_uni_id($course_id)
     {
-       $this->db->where('course_id',$course_id);
-       return $this->db->get('courses')->result();
-    } 
+        $this->db->where('course_id', $course_id);
+        return $this->db->get('courses')->result();
+    }
     function course_join_uni()
     {
         $this->db->select('*');
         $this->db->from('courses');
         $this->db->join('universities', 'universities.uni_id = courses.uni_id');
         $this->db->order_by('courses.uni_id');
-        $this->db->order_by('courses.course_level');                
+        $this->db->order_by('courses.course_level');
         $query = $this->db->get()->result();
         return $query;
     }
@@ -215,15 +215,15 @@ class courses_model extends CI_Model
     }
 
     // Function for bar graph in ep
-    function course_field_bar_chart($uni_id){
-        $this->db->select('count(courses.course_id), courses.course_area')
-                 ->from('courses')
-                 ->join('universities', 'universities.uni_id = courses.uni_id')
-                 ->where('universities.uni_id', $uni_id)
-                 ->group_by('courses.course_area')
-                 ->order_by('count(courses.course_id)', 'desc')
-                 ->order_by('courses.course_area' , 'asc');
+    function course_field_bar_chart($uni_id)
+    {
+        $this->db->select('count(courses.course_id), courses.event_type')
+            ->from('courses')
+            ->join('universities', 'universities.uni_id = courses.uni_id')
+            ->where('universities.uni_id', $uni_id)
+            ->group_by('courses.event_type')
+            ->order_by('count(courses.course_id)', 'desc')
+            ->order_by('courses.event_type', 'asc');
         return $this->db->get()->result_array();
     }
-
 }

@@ -317,7 +317,7 @@
                                                         <option value="all" selected>All</option>
                                                         <?php
                                                         foreach ($course_field as $c) {
-                                                            echo '<option value="' . $c->course_area . '">' . $c->course_area . '</option>';
+                                                            echo '<option value="' . $c->event_type . '">' . $c->event_type . '</option>';
                                                         }
                                                         ?>
                                                     </select>

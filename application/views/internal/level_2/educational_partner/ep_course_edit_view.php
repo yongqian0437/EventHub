@@ -58,9 +58,9 @@
                                                 <input type="text" class="form-control" id="course_name" name="course_name" placeholder="Enter course name" value="<?= $course_data->course_name ?>" required>
                                             </div>
                                             <div class="form-group col-md-6 px-4 pl-5">
-                                                <label for="course_area">Event Type</label>
-                                                <select name="course_area" id="course_area" class="form-control form-select form-select" required>
-                                                    <option value="<?= $course_data->course_area ?>" selected><?= $course_data->course_area ?></option>
+                                                <label for="event_type">Event Type</label>
+                                                <select name="event_type" id="event_type" class="form-control form-select form-select" required>
+                                                    <option value="<?= $course_data->event_type ?>" selected><?= $course_data->event_type ?></option>
                                                     <option value="Accounting &amp; Finance">Workshops and Seminars</option>
                                                     <option value="Actuarial Science">Actuarial Science</option>
                                                     <option value="Agriculture Science">Agriculture Science</option>

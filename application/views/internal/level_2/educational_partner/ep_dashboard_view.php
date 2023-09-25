@@ -173,7 +173,7 @@
                     data: {
                         labels: [<?php $counter = 0;
                                     foreach ($course_field as $row) : ?> "<?php if ($counter < 5) {
-                                                                                echo $row['course_area'];
+                                                                                echo $row['event_type'];
                                                                             }
                                                                             $counter++; ?>", <?php endforeach; ?>],
                         datasets: [{

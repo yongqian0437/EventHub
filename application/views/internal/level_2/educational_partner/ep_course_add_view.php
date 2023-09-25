@@ -58,8 +58,8 @@
                                                 <input type="text" class="form-control" id="course_name" name="course_name" placeholder="Enter course name" required>
                                             </div>
                                             <div class="form-group col-md-6 px-4 pl-5">
-                                                <label for="course_area">Event Type</label>
-                                                <select name="course_area" id="course_area" class="form-control form-select form-select" required>
+                                                <label for="event_type">Event Type</label>
+                                                <select name="event_type" id="event_type" class="form-control form-select form-select" required>
                                                     <option value="Accounting &amp; Finance">Workshops and Seminars</option>
                                                     <option value="Actuarial Science">Actuarial Science</option>
                                                     <option value="Agriculture Science">Agriculture Science</option>
@@ -110,104 +110,89 @@
                                             </div>
                                         </div>
 
-                                        <div class="form-row pt-4">
-                                            <!-- <div class="form-group col-md-6 px-4 pr-5">
-                                                <label for="course_level">Level</label>
-                                                <select name="course_level" id="course_level" class="form-control form-select form-select" required>
-                                                    <option value="" selected disabled>Please select a level</option>
-                                                    <option value="Foundation">Foundation</option>
-                                                    <option value="Certificate">Certificate</option>
-                                                    <option value="Diploma">Diploma</option>
-                                                    <option value="Bachelor Degree">Bachelor Degree</option>
-                                                    <option value="Masters">Masters</option>
-                                                    <option value="Doctorate">Doctorate</option>
-                                                    <option value="Advanced Diploma">Advanced Diploma</option>
-                                                    <option value="Graduate Certificate &Graduate Diploma">Graduate Certificate and Graduate Diploma</option>
-                                                    <option value="Postgraduate Certificate & Postgraduate Diploma">Postgraduate Certificate and Postgraduate Diploma</option>
-                                                </select>
-                                            </div> -->
 
 
-                                            <div class="form-group col-md-6 px-4 pl-5">
-                                                <label for="course_duration">Duration (Hours)</label>
-                                                <div class="input-group-prepend">
-                                                    <input type="number" class="form-control" step="0.01" id="course_duration" name="course_duration" placeholder="Enter duration (eg: 1, 2.5)" required>
-                                                    <span class="input-group-text" id="basic-addon1">hours</span>
-                                                </div>
+
+                                        <div class="form-group col-md-6 px-4 pl-5">
+                                            <label for="course_duration">Duration (Hours)</label>
+                                            <div class="input-group-prepend">
+                                                <input type="number" class="form-control" step="0.01" id="course_duration" name="course_duration" placeholder="Enter duration (eg: 1, 2.5)" required>
+                                                <span class="input-group-text" id="basic-addon1">hours</span>
                                             </div>
                                         </div>
+                                </div>
 
 
-                                        <div class="form-row pt-4">
-                                            <div class="form-group col-md-6 px-4 pr-5">
-                                                <label for="course_intake">Contact Information</label>
-                                                <textarea type="text" class="form-control" rows="3" id="course_intake" name="course_intake" placeholder="Enter contact information (eg: 012-*******)" required></textarea>
-                                                <div style="color:red; font-size:0.9em;">*Can enter more than 1 </div>
-                                            </div>
-                                            <div class="form-group col-md-6 px-4 pl-5">
-                                                <label for="course_careeropportunities">Event Venue</label>
-                                                <textarea type="text" class="form-control" rows="3" id="course_careeropportunities" name="course_careeropportunities" placeholder="Enter Event Venue (eg: Campus Hall 1)" required></textarea>
-                                                <!-- <div style="color:red; font-size:0.9em;">*Example : Campus Hall 1</div> -->
-                                            </div>
+                                <div class="form-row pt-4">
+                                    <div class="form-group col-md-6 px-4 pr-5">
+                                        <label for="course_intake">Contact Information</label>
+                                        <textarea type="text" class="form-control" rows="3" id="course_intake" name="course_intake" placeholder="Enter contact information (eg: 012-*******)" required></textarea>
+                                        <div style="color:red; font-size:0.9em;">*Can enter more than 1 </div>
+                                    </div>
+                                    <div class="form-group col-md-6 px-4 pl-5">
+                                        <label for="course_careeropportunities">Event Venue</label>
+                                        <textarea type="text" class="form-control" rows="3" id="course_careeropportunities" name="course_careeropportunities" placeholder="Enter Event Venue (eg: Campus Hall 1)" required></textarea>
+                                        <!-- <div style="color:red; font-size:0.9em;">*Example : Campus Hall 1</div> -->
+                                    </div>
+                                </div>
+
+                                <div class="form-row pt-4">
+                                    <div class="form-group col-md-6 px-4 pr-5 ">
+                                        <label for="course_fee">Malaysian based Fee (RM)</label>
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1">RM</span>
+                                            <input type="number" class="form-control" id="course_fee" name="course_fee" step="0.01" placeholder="Enter malaysian base fee" required>
                                         </div>
+                                    </div>
 
-                                        <div class="form-row pt-4">
-                                            <div class="form-group col-md-6 px-4 pr-5 ">
-                                                <label for="course_fee">Malaysian based Fee (RM)</label>
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text" id="basic-addon1">RM</span>
-                                                    <input type="number" class="form-control" id="course_fee" name="course_fee" step="0.01" placeholder="Enter malaysian base fee" required>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group col-md-4 px-2 ">
-                                                <label for="course_usd_fee">International Fee (USD)</label>
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text" id="basic-addon2">$</span>
-                                                    <input type="number" class="form-control" id="course_usd_fee" name="course_usd_fee" step="0.01" placeholder="Enter international fee" required>
-                                                </div>
-                                            </div>
-
+                                    <div class="form-group col-md-4 px-2 ">
+                                        <label for="course_usd_fee">International Fee (USD)</label>
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon2">$</span>
+                                            <input type="number" class="form-control" id="course_usd_fee" name="course_usd_fee" step="0.01" placeholder="Enter international fee" required>
                                         </div>
-
-                                        <div class="form-row pt-4">
-                                            <div class="form-group col-md-12 px-4">
-                                                <label for="course_shortprofile">Event Pictures</label>
-                                                <textarea type="text" class="form-control" rows="8" id="course_shortprofile" name="course_shortprofile" placeholder="Insert Picture" required></textarea>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-row pt-4">
-                                            <div class="form-group col-md-12 px-4">
-                                                <label for="course_structure">Description</label>
-                                                <textarea type="text" class="form-control" rows="8" id="course_structure" name="course_structure" placeholder="Description" required></textarea>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-row pt-4">
-                                            <div class="form-group col-md-12 px-4">
-                                                <label for="course_requirements">Requirements</label>
-                                                <textarea type="text" class="form-control" rows="8" id="course_requirements" name="course_requirements" placeholder="Example:&#10;SPM: At least 5 credits&#10;A-Level: " required></textarea>
-                                            </div>
-                                        </div>
-
-                                        <!-- Edit button -->
-                                        <div class="pr-4">
-                                            <button type="submit" class="btn btn-primary " style="float:right;">Submit<i class="fas fa-check pl-2"></i></button>
-                                        </div>
-
-                                    </form>
+                                    </div>
 
                                 </div>
+
+                                <div class="form-row pt-4">
+                                    <div class="form-group col-md-12 px-4">
+                                        <label for="course_shortprofile">Event Pictures</label>
+                                        <textarea type="text" class="form-control" rows="8" id="course_shortprofile" name="course_shortprofile" placeholder="Insert Picture" required></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-row pt-4">
+                                    <div class="form-group col-md-12 px-4">
+                                        <label for="course_structure">Description</label>
+                                        <textarea type="text" class="form-control" rows="8" id="course_structure" name="course_structure" placeholder="Description" required></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-row pt-4">
+                                    <div class="form-group col-md-12 px-4">
+                                        <label for="course_requirements">Requirements</label>
+                                        <textarea type="text" class="form-control" rows="8" id="course_requirements" name="course_requirements" placeholder="Example:&#10;SPM: At least 5 credits&#10;A-Level: " required></textarea>
+                                    </div>
+                                </div>
+
+                                <!-- Edit button -->
+                                <div class="pr-4">
+                                    <button type="submit" class="btn btn-primary " style="float:right;">Submit<i class="fas fa-check pl-2"></i></button>
+                                </div>
+
+                                </form>
+
                             </div>
-                            <!-- /. Card -->
-
                         </div>
-                    </div>
-                    <!-- /. Content Row -->
+                        <!-- /. Card -->
 
+                    </div>
                 </div>
-                <!-- /.container-fluid -->
+                <!-- /. Content Row -->
 
             </div>
-            <!-- End of Main Content -->
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->

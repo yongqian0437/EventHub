@@ -55,7 +55,7 @@ class Courses extends CI_Controller
 		$data['title'] = 'EventHub | Courses';
 
 		$data['course_data'] = $this->courses_model->select_all_approved();
-		$data['dropdown_area'] = $this->courses_model->filter_dropdown('course_area');
+		$data['dropdown_area'] = $this->courses_model->filter_dropdown('event_type');
 		$data['dropdown_country'] = $this->courses_model->filter_dropdown('course_country');
 		$data['title'] = 'EventHub | Courses';
 		$this->load->view('external/templates/header', $data);
@@ -85,7 +85,7 @@ class Courses extends CI_Controller
 
 	public function course_filter()
 	{
-		$data['dropdown_area'] = $this->courses_model->filter_dropdown('course_area');
+		$data['dropdown_area'] = $this->courses_model->filter_dropdown('event_type');
 		$data['dropdown_country'] = $this->courses_model->filter_dropdown('course_country');
 		$data['title'] = 'EventHub | Courses';
 		$data['user_role'] = $this->session->userdata('user_role');
@@ -95,13 +95,13 @@ class Courses extends CI_Controller
 			$student_details = $this->user_student_model->student_details($this->session->userdata('user_id'));
 			$data['student_id'] = $student_details['student_id'];
 		}
-		$course_area = $this->input->post('course_areaid');
+		$event_type = $this->input->post('event_typeid');
 		$course_level = $this->input->post('course_levelid');
 		$course_intake = $this->input->post('course_intakeid');
 		$course_country = $this->input->post('course_countryid');
 		$course_fee = $this->input->post('course_feeid');
 
-		$data['course_data'] = $this->courses_model->filter_course($course_area, $course_level, $course_intake, $course_country, $course_fee);
+		$data['course_data'] = $this->courses_model->filter_course($event_type, $course_level, $course_intake, $course_country, $course_fee);
 		$this->load->view('external/templates/header', $data);
 		$this->load->view('external/courses_view');
 		$this->load->view('external/templates/footer');

@@ -143,9 +143,9 @@ class Compare extends CI_Controller
 			</tr>			
 			<tr>
 				<th scope="row">Area</th>
-				<td>' . $course_data1[0]->course_area . '</td>
-				<td>' . $course_data2[0]->course_area . '</td>
-				<td>' . $course_data3[0]->course_area . '</td>
+				<td>' . $course_data1[0]->event_type . '</td>
+				<td>' . $course_data2[0]->event_type . '</td>
+				<td>' . $course_data3[0]->event_type . '</td>
 			</tr>
 			<tr>
 				<th scope="row">Level</th>
@@ -282,8 +282,8 @@ class Compare extends CI_Controller
 			</tr>			
 			<tr>
 				<th scope="row">Area</th>
-				<td>' . $course_data1[0]->course_area . '</td>
-				<td>' . $course_data2[0]->course_area . '</td>
+				<td>' . $course_data1[0]->event_type . '</td>
+				<td>' . $course_data2[0]->event_type . '</td>
 			</tr>
 			<tr>
 				<th scope="row">Level</th>

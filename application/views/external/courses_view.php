@@ -30,17 +30,17 @@
                         <form method="post" name="filter" action="<?php echo base_url() . 'external/Courses/course_filter' ?>">
                             <div class="row px-3">
                                 <div class="form-group mr-2"><br>
-                                    <label for="course_area">Event Type</label><br>
-                                    <select name="course_areaid" id="filter_1" class="form-control form-select form-select-lg btn-sm">
+                                    <label for="event_type">Event Type</label><br>
+                                    <select name="event_typeid" id="filter_1" class="form-control form-select form-select-lg btn-sm">
                                         <option value="" selected disabled>Filter area</option>
                                         <?php
                                         foreach ($dropdown_area as $dropdown_data) {
-                                            echo '<option value="' . $dropdown_data->course_area . '">' . $dropdown_data->course_area . '</option>';
+                                            echo '<option value="' . $dropdown_data->event_type . '">' . $dropdown_data->event_type . '</option>';
                                         }
                                         ?>
                                     </select>
                                 </div>
-                                <div class="form-group mr-2"><br>
+                                <!-- <div class="form-group mr-2"><br>
                                     <label for="course_level">Event Type</label><br>
                                     <select name="course_levelid" id="filter_2" class="form-control form-select form-select-lg btn-sm">
                                         <option value="" selected disabled>Filter level</option>
@@ -55,7 +55,7 @@
                                         <option value="Postgraduate Certificate and Postgraduate Diploma">Postgraduate Certificate and Postgraduate Diploma</option>
                                         <option value="Others">Others</option>
                                     </select>
-                                </div>
+                                </div> -->
                                 <!-- <div class="form-group mr-2"><br>
                                     <label for="course_intake">Course intake</label><br>
                                     <select name="course_intakeid" id="filter_3" class="form-control form-select form-select-lg btn-sm">
@@ -109,7 +109,7 @@
                                                 <h5 class="font-weight-bold ml-2 pl-1"><?php echo $courses->course_name ?></h5>
                                             </div>
                                             <div>
-                                                <p><i><?php echo $courses->course_area ?></i></p>
+                                                <p><i><?php echo $courses->event_type ?></i></p>
                                                 <p class="courselist-short-desc"><?php echo $courses->course_shortprofile ?></p>
                                             </div>
                                             <div>

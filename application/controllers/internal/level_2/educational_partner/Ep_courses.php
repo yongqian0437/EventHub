@@ -86,7 +86,7 @@ class Ep_courses extends CI_Controller
             $data[] = array(
                 '',
                 $r->course_name,
-                $r->course_area,
+                $r->event_type,
                 $r->course_level,
                 $r->course_duration,
                 "RM " . number_format($r->course_fee),
@@ -123,7 +123,7 @@ class Ep_courses extends CI_Controller
             [
                 'uni_id' => $uni_id,
                 'course_name' => htmlspecialchars($this->input->post('course_name')),
-                'course_area' => htmlspecialchars($this->input->post('course_area')),
+                'event_type' => htmlspecialchars($this->input->post('event_type')),
                 'course_level' => htmlspecialchars($this->input->post('course_level')),
                 'course_duration' => htmlspecialchars($this->input->post('course_duration')),
                 'course_fee' => $this->input->post('course_fee'),
@@ -169,7 +169,7 @@ class Ep_courses extends CI_Controller
             [
                 'uni_id' => $university_data->uni_id,
                 'course_name' => htmlspecialchars($this->input->post('course_name')),
-                'course_area' => htmlspecialchars($this->input->post('course_area')),
+                'event_type' => htmlspecialchars($this->input->post('event_type')),
                 'course_level' => htmlspecialchars($this->input->post('course_level')),
                 'course_duration' => htmlspecialchars($this->input->post('course_duration')),
                 'course_fee' => $this->input->post('course_fee'),
@@ -203,7 +203,7 @@ class Ep_courses extends CI_Controller
                 </tr>
                 <tr>
                     <th scope="row">Course Area</th>
-                    <td>' . $course_detail[0]->course_area . '</td>
+                    <td>' . $course_detail[0]->event_type . '</td>
                 </tr>
                 <tr>
                     <th scope="row">level</th>
