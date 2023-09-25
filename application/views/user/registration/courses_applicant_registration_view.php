@@ -68,7 +68,7 @@
 									<!-- Input fields (Form) -->
 									<!-- <?php // $link="" 
 												?> -->
-									<form method="post" action=" <?= base_url('external/events/submit_events_applicant_form/' . $course_id); ?> " enctype="multipart/form-data">
+									<form method="post" action=" <?= base_url('external/Courses/submit_courses_applicant_form/' . $course_id); ?> " enctype="multipart/form-data">
 										<?= form_open_multipart('') ?>
 										<!-- Application Identification -->
 										<div class="form-row pt-3 px-3">
