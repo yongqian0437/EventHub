@@ -34,7 +34,7 @@
 								<div class="card-body" style="background-color:#DAE7E0">
 
 									<div class="pl-3 pr-3 pt-4">
-										<div class="pl-4" style="font-size:16px; font-weight:700; color:black;">Join Interactive Joint Education Employability System (EventHub) in</div>
+										<div class="pl-4" style="font-size:16px; font-weight:700; color:black;">Join Campus Event Management System (EventHub) in</div>
 										<div class="pt-2 pl-4 pb-3" style="font-size:38px; color:green; font-weight:900;">3 STEPS</div>
 
 										<div class="pl-4">
