@@ -63,11 +63,11 @@
                                                     <option value="<?= $course_data->event_type ?>" selected><?= $course_data->event_type ?></option>
                                                     <option value="Accounting &amp; Finance">Workshops and Seminars</option>
                                                     <option value="Actuarial Science">Actuarial Science</option>
-                                                    <option value="Agriculture Science">Agriculture Science</option>
-                                                    <option value="Architecture &amp; Building">Architecture &amp; Building</option>
-                                                    <option value="Art &amp; Design">Art &amp; Design</option>
-                                                    <option value="Audiology">Audiology</option>
-                                                    <option value="Aviation, Aerospace &amp; Pilot">Aviation, Aerospace &amp; Pilot</option>
+                                                    <option value="Sports Tournaments and Competitions">Sports Tournaments and Competitions</option>
+                                                    <option value="Orientation and Welcome Events">Orientation and Welcome Events</option>
+                                                    <option value="Alumni Events">Alumni Events</option>
+                                                    <option value="Career Fairs and Networking Events">Career Fairs and Networking Events</option>
+                                                    <option value="Community Service and Volunteer Events">Community Service and Volunteer Events</option>
                                                     <option value="Biomedical science">Biomedical science</option>
                                                     <option value="Business">Business</option>
                                                     <option value="Culinary &amp; Patisserie">Culinary &amp; Patisserie</option>

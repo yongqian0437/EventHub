@@ -72,7 +72,7 @@
                                                             <!-- ***If Student is not logged in, 'Apply' button will redirect to Login page -->
                                                         <?php } ?>
                                                         <a type="button" target="_blank" href="<?php echo base_url() . 'external/Universities/university_detail/' . $courses->uni_id ?>" class="btn btn-secondary course-ave-buttons">View Organizer</a>
-                                                        <a type="button" href="<?= base_url('user/chat/Chat'); ?>" class="btn btn-secondary course-ave-buttons">Enquire</a>
+                                                        <!-- <a type="button" href="<?= base_url('user/chat/Chat'); ?>" class="btn btn-secondary course-ave-buttons">Enquire</a> -->
                                                     </div>
                                                 </div>
                                             </div>

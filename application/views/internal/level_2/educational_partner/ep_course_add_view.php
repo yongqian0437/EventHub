@@ -60,52 +60,15 @@
                                             <div class="form-group col-md-6 px-4 pl-5">
                                                 <label for="event_type">Event Type</label>
                                                 <select name="event_type" id="event_type" class="form-control form-select form-select" required>
-                                                    <option value="Accounting &amp; Finance">Workshops and Seminars</option>
-                                                    <option value="Actuarial Science">Actuarial Science</option>
-                                                    <option value="Agriculture Science">Agriculture Science</option>
-                                                    <option value="Architecture &amp; Building">Architecture &amp; Building</option>
-                                                    <option value="Art &amp; Design">Art &amp; Design</option>
-                                                    <option value="Audiology">Audiology</option>
-                                                    <option value="Aviation, Aerospace &amp; Pilot">Aviation, Aerospace &amp; Pilot</option>
-                                                    <option value="Biomedical science">Biomedical science</option>
-                                                    <option value="Business">Business</option>
-                                                    <option value="Culinary &amp; Patisserie">Culinary &amp; Patisserie</option>
-                                                    <option value="Dentistry">Dentistry</option>
-                                                    <option value="Design &amp; Visual Art">Design &amp; Visual Art</option>
-                                                    <option value="Education &amp; Teaching">Education &amp; Teaching</option>
-                                                    <option value="Engineering - Chemical">Engineering - Chemical</option>
-                                                    <option value="Engineering - Civil">Engineering - Civil</option>
-                                                    <option value="Engineering - Electrical">Engineering - Electrical</option>
-                                                    <option value="Engineering - Mechanical">Engineering - Mechanical</option>
-                                                    <option value="Engineering">Engineering</option>
-                                                    <option value="English &amp; Modern Languages">English &amp; Modern Languages</option>
-                                                    <option value="Environmental Science">Environmental Science</option>
-                                                    <option value="Food Science">Food Sciences</option>
-                                                    <option value="Health Sciences">Health Sciences</option>
-                                                    <option value="Health Management">Health Management</option>
-                                                    <option value="Health, Nursing and Midwifery">Health, Nursing and Midwifery</option>
-                                                    <option value="Hospitality">Hospitality</option>
-                                                    <option value="Computer &amp; Information Technology">Computer &amp; Information Technology</option>
-                                                    <option value="Law">Law</option>
-                                                    <option value="Mathematics">Mathematics</option>
-                                                    <option value="Marketing">Marketing</option>
-                                                    <option value="Mass Communication">Mass Communication</option>
-                                                    <option value="Medical Imaging">Medical Imaging</option>
-                                                    <option value="Medicine">Medicine</option>
-                                                    <option value="Music">Music</option>
-                                                    <option value="Nursing">Nursing</option>
-                                                    <option value="Nutrition">Nutrition</option>
-                                                    <option value="Occupational Therapy">Occupational Therapy</option>
-                                                    <option value="Performing Arts">Performing Arts</option>
-                                                    <option value="Pharmacy &amp; Pharmacology">Pharmacy &amp; Pharmacology</option>
-                                                    <option value="Physiotherapy">Physiotherapy</option>
-                                                    <option value="Psychology">Psychology</option>
-                                                    <option value="Quantity &amp; Land Surveying">Quantity &amp; Land Surveying</option>
-                                                    <option value="Science">Science</option>
-                                                    <option value="Sociology &amp; Social Work">Sociology &amp; Social Work</option>
-                                                    <option value="Speech Pathology">Speech Pathology</option>
-                                                    <option value="Sport Science">Sport Science</option>
-                                                    <option value="Veterinary Science">Veterinary Science</option>
+                                                    <option value="Workshops and Seminars">Workshops and Seminars</option>
+                                                    <option value="Social and Cultural Events">Social and Cultural Events</option>
+                                                    <option value="Sports Tournaments and Competitions">Sports Tournaments and Competitions</option>
+                                                    <option value="Orientation and Welcome Events">Orientation and Welcome Events</option>
+                                                    <option value="Alumni Events">Alumni Events</option>
+                                                    <option value="Career Fairs and Networking Events">Career Fairs and Networking Events</option>
+                                                    <option value="Community Service and Volunteer Events">Community Service and Volunteer Events</option>
+
+
                                                 </select>
                                             </div>
                                         </div>
