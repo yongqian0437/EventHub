@@ -30,9 +30,9 @@ class chat_model extends CI_Model
         $this->db->from('chat');
         $this->db->where($condition);
         $query = $this->db->get();
-        if ($query) 
+        if ($query)
             return $query->result_array();
-        else 
+        else
             return false;
     }
 
@@ -48,7 +48,7 @@ class chat_model extends CI_Model
             return false;
     }
 
-    public function clear_chat_by_id ($receiver_id)
+    public function clear_chat_by_id($receiver_id)
     {
         $res = $this->db->delete('chat', ['receiver_id' => $receiver_id]);
         if ($res == 1)
@@ -56,5 +56,4 @@ class chat_model extends CI_Model
         else
             return false;
     }
-
 }

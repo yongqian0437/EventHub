@@ -1,170 +1,403 @@
-// jQuery short-hand for $(document).ready(function() {});
-$(function () {
-
-	// selecting user to chat with from the EP Applicants page 
-	// when user is selected, get user data from localStorage
-	if(localStorage.getItem("user_id")){
-		chat_section(1);
-		var receiver_id = localStorage.getItem("user_id");
-		//alert(receiver_id);
-		$('#receiver_id').val(receiver_id);
-		$('#receiver_name').html(localStorage.getItem("user_fname") + " " + localStorage.getItem("user_lname"));
-		get_chat_history(receiver_id);
-		// after getting the data from the EP Applicants page, localStorage is emptied
-		localStorage.clear();
-	}
-	
-	$('.chat_table').DataTable({
-		"lengthMenu": [3, 5, 10],
-	});
-	  
-	// selecting user to chat with from the datatable in the Chat Room page
-	$('.chat_table tbody').on('click', 'td', function () {
-		chat_section(1);
-		var receiver_id = $(this).attr('id');
-		//alert(receiver_id);
-		$('#receiver_id').val(receiver_id);
-		$('#receiver_name').html($(this).attr('title'));
-		get_chat_history(receiver_id); 
-	});
-
-	// Allows user to send message by tapping the 'Enter' key
-	$('#message').keypress(function (event) {
-		var keycode = (event.keyCode ? event.keyCode : event.which);
-		// keycode '13' refers to the 'Enter' key on the keyboard
-		if (keycode == '13') {
-			send_text($(this).val());
-		}
-	});
-
-	$('.btn_send').click(function () {
-		send_text($('#message').val());
-	});
-
-	$('.upload_attachment').change(function () {
-		display_message('<div class="spiner"><i class="fa fa-circle-o-notch fa-spin"></i></div>');
-		scroll_down();
-
-		var file_data = $('.upload_attachment').prop('files')[0];
-		var receiver_id = $('#receiver_id').val();
-		var form_data = new FormData();
-		form_data.append('attachmentfile', file_data);
-		form_data.append('type', 'Attachment');
-		form_data.append('receiver_id', receiver_id);
-
-		$.ajax({
-			url: 'Chat/send_text_message',
-			dataType: 'json',
-			cache: false,
-			contentType: false,
-			processData: false,
-			data: form_data,
-			type: 'post',
-			success: function (response) {
-				$('.upload_attachment').val('');
-				get_chat_history(receiver_id);
-			},
-			error: function (jqXHR, status, err) {
-				// alert('Local error callback');
-			}
-		});
-	});
-
-	// $('.clear_chat').click(function () { 
-	// 	var receiver_id = $('#receiver_id').val();
-	// 	//alert(receiver_id);
-	// 	$.ajax({
-	// 		//dataType : "json",
-	// 		url: 'Chat/clear_chat?receiver_id=' + receiver_id,
-	// 		success: function (data) {
-	// 			get_chat_history(receiver_id);
-	// 		},
-	// 		error: function (jqXHR, status, err) {
-	// 			// alert('Local error callback');
-	// 		}
-	// 	});
-	// });
-
-});	// end of jquery
-
-
-function chat_section (status) {
-	if (status == 0) {
-		$('#chat_section :input').attr('disabled', true);
+$(document).ready(function () {
+	if (new_chat === "no") {
+		load_history(current_con_id);
+		$("#new_chat_info").hide();
 	} else {
-		$('#chat_section :input').removeAttr('disabled');
+		$("#conversation_list").append(
+			'<div onclick="open_new_chat()" class="card shadow chatbubble mb-5" style=" color: black;">' +
+				'<div class="card-body">' +
+				"+ New chat" +
+				"</div>" +
+				"</div>"
+		);
 	}
-}
+});
 
-chat_section(0);
+function enter_prompt() {
+	var prompt = $("#user_prompt").text();
 
-function scroll_down() {
-	var elmnt = document.getElementById("content");
-	var h = elmnt.scrollHeight;
-	$('#content').animate({ scrollTop: h }, 1500);
-}
-
-window.onload = scroll_down();
-
-function display_message(message) {
-	var sender_name = $('#sender_name').val();
-	var sender_pic = $('#sender_pic').val();
-
-	var str = '<div class="direct-chat-msg right">';
-	str += '<div class="direct-chat-info clearfix">';
-	str += '<span class="direct-chat-name pull-right">' + sender_name;
-	str += '</span><span class="direct-chat-timestamp pull-left"></span>'; //30 Apr 3:00 PM
-	str += '</div><img class="direct-chat-img" src="' + sender_pic + '" alt="">';
-	str += '<div class="direct-chat-text">' + message;
-	str += '</div></div>';
-	$('#dump_content').append(str);
-}
-
-function send_text(message) {
-	//alert(message);
-	var text_message = message.trim();
-	if (text_message != '') {
-		display_message(text_message);
-		var receiver_id = $('#receiver_id').val();
-		$.ajax({
-			dataType: "json",
-			type: 'post',
-			data: { text_message: text_message, receiver_id: receiver_id },
-
-			url: 'Chat/send_text_message',
-
-			success: function (data) {
-				get_chat_history(receiver_id)
+	if (prompt !== "") {
+		//loading
+		Swal.fire({
+			title: "The chatbot is responding...",
+			html: "Please wait...",
+			allowEscapeKey: false,
+			allowOutsideClick: false,
+			didOpen: () => {
+				Swal.showLoading();
 			},
-			error: function (jqXHR, status, err) {
-				//alert('Local error callback');
-			}
 		});
 
-		scroll_down();
-		$('#message').val('');
-		$('#message').focus();
-	} 
-    else {
-		$('#message').focus();
+		$("#new_chat_info").hide();
+
+		//append user prompt text
+		$("#conversation_body").append(
+			'<div class="row py-2 mr-5 my-1 ml-2">' +
+				'    <div class="card chatbubble mr-4" style="background-color: #eaeaea; color: black; ">' +
+				'        <div class="card-body">' +
+				"            " +
+				prompt +
+				"" +
+				"        </div>" +
+				"    </div>" +
+				"</div>"
+		);
+
+		$.ajax({
+			url: base_url + "chatbot/generate_response",
+			type: "POST",
+			data: {
+				prompt: prompt,
+				new_chat: new_chat,
+				con_id: current_con_id,
+			},
+			dataType: "json",
+			success: function (response) {
+				//Close loading pop up
+				swal.close();
+
+				//change global variable so its NOT a new chat
+				var delay = 20; // Delay in milliseconds between each character
+
+				//append gpt response text
+				$("#conversation_body").append(
+					'<div class="row py-2 ml-5 my-1 mr-2 justify-content-end">' +
+						'    <div class="card chatbubble ml-4" style="background-color: #007aff; color: white;">' +
+						'        <div class="card-body response-card"></div>' +
+						"    </div>" +
+						"</div>"
+				);
+
+				// Append text with the writing effect
+				appendTextWithDelay(response, delay);
+			},
+			error: function (xhr, status, error) {
+				Swal.fire({
+					icon: "error",
+					title:
+						"There was an error generating your response, please try again",
+				});
+			},
+		});
+
+		append_new_card();
+
+		new_chat = "no";
 	}
 }
 
-function get_chat_history(receiver_id) {
-	$.ajax({
-		//dataType : "json",
-		url: 'Chat/get_chat_history?receiver_id=' + receiver_id,
-		success: function (data) {
-			$('#dump_content').html(data);
-			scroll_down(); //comment this out if you want the chat to remain on the top and not scroll down.
+function append_new_card() {
+	//Append new card to conversation list if its a new chat
+	if (new_chat === "yes") {
+		//ajax to get latest added conversation history row id
+		$.ajax({
+			url: base_url + "chatbot/get_latest_con_id",
+			method: "GET",
+			dataType: "json",
+			success: function (response) {
+				//set current con_id to newly created con_id
+				current_con_id = response.con_id;
+
+				load_conversation(current_con_id);
+
+				//rewrite the card list
+			},
+			error: function (xhr, status, error) {
+				// Handle errors, if any
+				console.error(error);
+			},
+		});
+	}
+}
+
+function open_new_chat() {
+	new_chat = "yes";
+	current_con_id = 0;
+	$("#conversation_body").empty();
+	$("#conversation_body").append(`
+	<div class="row justify-content-center py-2" id="new_chat_info">
+			<div class="col-xl-7 py-2">
+					<div class="card shadow chatbubble" style="color: black;">
+							<div class="card-body">
+									Ask the chatbot about something
+							</div>
+					</div>
+			</div>
+			<div class="col-xl-7 py-2">
+					<div class="card shadow chatbubble" style="color: black;">
+							<div class="card-body">
+									Do not know where to start? Try asking these questions!
+									<div class="card my-2" style="color: black; background-color: #F2F0F0; border-radius: 40px; width: 50%; padding-top:0px; padding: bottom 0px;">
+											<div class="card-body">
+											What is the difference between Alzheimer’s disease and dementia?
+											</div>
+									</div>
+									<div class="card my-2" style="color: black; background-color: #F2F0F0; border-radius: 40px; width: 50%; padding-top:0px; padding: bottom 0px;">
+											<div class="card-body">
+											What are the early signs of Alzheimer’s disease?
+											</div>
+									</div>
+							</div>
+					</div>
+			</div>
+	</div>
+`);
+}
+
+function appendTextWithDelay(text, delay) {
+	var index = 0;
+	var cardBody = $(".response-card:last");
+
+	var interval = setInterval(function () {
+		cardBody.append(text[index]);
+		index++;
+
+		if (index >= text.length) {
+			clearInterval(interval);
+		}
+	}, delay);
+}
+
+// Dealing with Textarea Height
+function calcHeight(value) {
+	let numberOfLineBreaks = (value.match(/\n/g) || []).length;
+	// min-height + lines x line-height + padding + border
+	let newHeight = 20 + numberOfLineBreaks * 20 + 12 + 2;
+	return newHeight;
+}
+
+let textarea = document.querySelector(".resize-ta");
+textarea.addEventListener("keyup", () => {
+	textarea.style.height = calcHeight(textarea.value) + "px";
+});
+
+function load_history(con_id) {
+	//loading pop up
+	Swal.fire({
+		title: "Loading your conversation...",
+		html: "Please wait...",
+		allowEscapeKey: false,
+		allowOutsideClick: false,
+		didOpen: () => {
+			Swal.showLoading();
 		},
-		error: function (jqXHR, status, err) {
-			//alert('Local error callback');
+	});
+
+	$.ajax({
+		url: base_url + "chatbot/load_conversation_history",
+		type: "POST",
+		data: {
+			con_id: con_id,
+		},
+		dataType: "json",
+		success: function (response) {
+			//set new con_id
+			current_con_id = con_id;
+
+			$("#conversation_body").empty();
+
+			//append chat history
+			$.each(response, function (index, chat) {
+				if (chat.role == 1) {
+					$("#conversation_body").append(
+						'<div class="row py-2 mr-5 my-1 ml-2">' +
+							'    <div class="card chatbubble mr-4" style="background-color: #eaeaea; color: black; ">' +
+							'        <div class="card-body">' +
+							"            " +
+							chat.message +
+							"" +
+							"        </div>" +
+							"    </div>" +
+							"</div>"
+					);
+				} else {
+					$("#conversation_body").append(
+						'<div class="row py-2 ml-5 my-1 mr-2 justify-content-end">' +
+							'    <div class="card chatbubble ml-4" style="background-color: #007aff; color: white;">' +
+							'        <div class="card-body response-card">' +
+							chat.message +
+							"</div>" +
+							"    </div>" +
+							"</div>"
+					);
+				}
+			});
+			//Close loading pop up
+			load_conversation(con_id);
+			swal.close();
+		},
+		error: function (xhr, status, error) {
+			Swal.fire({
+				icon: "error",
+				title: "There was an error loading your history, please try again",
+			});
+		},
+	});
+}
+
+function load_conversation(con_id) {
+	//check if user has conversation
+	$.ajax({
+		url: base_url + "chatbot/check_has_conversation",
+		method: "GET",
+		dataType: "json",
+		success: function (response) {
+			if (response === "yes") {
+				console.log("test");
+				$.ajax({
+					url: base_url + "chatbot/load_convo_card",
+					type: "GET",
+					dataType: "json",
+					success: function (response) {
+						$("#conversation_list").empty();
+						//append new chat button
+						$("#conversation_list").append(
+							'<div onclick="open_new_chat()" class="card shadow chatbubble mb-5" style=" color: black;">' +
+								'<div class="card-body">' +
+								"+ New chat" +
+								"</div>" +
+								"</div>"
+						);
+
+						//append chat history
+						$.each(response, function (index, card) {
+							if (card.con_id == current_con_id) {
+								$("#conversation_list").append(
+									'<div id="con' +
+										card.con_id +
+										'" class="card shadow convoclass chatbubble mt-2" style=" color: black; position: relative;">' +
+										'<div class="card-body convobody">' +
+										'<i class="fas fa-comments pr-2"></i>' +
+										card.con_name +
+										"" +
+										'<div class="buttons_icon" id = "buttonset' +
+										card.con_id +
+										'" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%);">' +
+										'<button class="edit-button text-secondary" onclick ="edit_con_name(' +
+										card.con_id +
+										')" title="Edit" style="background-color: white; border: none;"><i class="fas fa-edit"></i></button>' +
+										'<button class="delete-button text-secondary" onclick ="delete_conversation(' +
+										card.con_id +
+										')" title="Delete" style="background-color: white; border: none;"><i class="fas fa-trash"></i></button>' +
+										"</div>" +
+										"</div>" +
+										"</div>"
+								);
+							} else {
+								$("#conversation_list").append(
+									'<div onclick="load_history(' +
+										card.con_id +
+										')" id="con' +
+										card.con_id +
+										'" class="card shadow convoclass chatbubble mt-2" style=" color: black; position: relative;">' +
+										'<div class="card-body convobody">' +
+										'<i class="fas fa-comments pr-2"></i>' +
+										card.con_name +
+										"" +
+										"</div>" +
+										"</div>"
+								);
+							}
+						});
+
+						//Make active card effect
+						//Unset all card css
+						$(".convoclass").css({
+							color: "black",
+							"font-weight": "normal",
+						});
+						//Set card as active
+						$("#con" + con_id).css({
+							color: "#007aff",
+							"font-weight": "bold",
+						});
+					},
+					error: function (xhr, status, error) {
+						Swal.fire({
+							icon: "error",
+							title:
+								"There was an error loading your converation history, please try again",
+						});
+					},
+				});
+			}
+		},
+		error: function (xhr, status, error) {
+			// Handle errors, if any
+			console.error(error);
+		},
+	});
+}
+
+function edit_con_name(con_id) {
+	Swal.fire({
+		title: "Enter a name",
+		input: "text",
+		inputPlaceholder: "Conversation name",
+		showCancelButton: true,
+		confirmButtonText: "Submit",
+		cancelButtonText: "Cancel",
+		preConfirm: (value) => {
+			if (!value) {
+				return Swal.showValidationMessage("Please enter a name");
+			}
+		},
+	}).then((result) => {
+		if (result.isConfirmed) {
+			$.ajax({
+				url: base_url + "chatbot/edit_conversation_name",
+				type: "POST",
+				data: {
+					con_id: con_id,
+					con_name: result.value,
+				},
+				success: function (response) {
+					Swal.fire({
+						icon: "success",
+						title: "The name has been edited",
+					});
+
+					load_conversation(con_id);
+				},
+				error: function (xhr, status, error) {
+					// Handle errors, if any
+					Swal.fire({
+						icon: "error",
+						title: "There was an error editing your conversation",
+					});
+				},
+			});
 		}
 	});
 }
 
-setInterval(function () {
-	var receiver_id = $('#receiver_id').val();
-	if (receiver_id != '') { get_chat_history(receiver_id); }
-}, 8000);
+function delete_conversation(con_id) {
+	Swal.fire({
+		text: "Are you sure you want to permanently delete this conversation?",
+		icon: "question",
+		showCancelButton: true,
+		confirmButtonColor: "#1cc88a",
+		cancelButtonColor: "#d33",
+		confirmButtonText: "Yes",
+	}).then((result) => {
+		if (result.isConfirmed) {
+			$.ajax({
+				url: base_url + "chatbot/delete_conversation",
+				type: "POST",
+				data: {
+					con_id: con_id,
+				},
+				success: function (response) {
+					window.location.href = base_url + "chatbot";
+				},
+				error: function (xhr, status, error) {
+					// Handle errors, if any
+					Swal.fire({
+						icon: "error",
+						title: "There was an error deleting your conversation",
+					});
+				},
+			});
+		}
+	});
+}
