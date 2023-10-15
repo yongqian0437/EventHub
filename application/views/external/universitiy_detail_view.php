@@ -17,7 +17,7 @@
         background: rgba(0, 0, 0, 0.4);
     }
 
-    .course-cover-img {
+    .event-cover-img {
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -29,7 +29,7 @@
         background-color: #aed9e0;
     }
 
-    #courses_tab {
+    #events_tab {
         background-color: #A9BCD0;
     }
 
@@ -45,7 +45,7 @@
         color: #12294B !important;
     }
 
-    #courses_tab:hover {
+    #events_tab:hover {
         color: #12294B !important;
     }
 
@@ -202,7 +202,7 @@
                     <!-- Banner with logo-->
                     <div class="row pt-1 px-0">
                         <div class="col-md-12">
-                            <div class="course-cover-img" style="background-image: url('<?php echo base_url("assets/img/universities/") . $uni_detail->uni_background; ?>');">
+                            <div class="event-cover-img" style="background-image: url('<?php echo base_url("assets/img/universities/") . $uni_detail->uni_background; ?>');">
                                 <div id="foreground">
                                     <div class="row pt-5">
                                         <div class="col-md-12">
@@ -220,7 +220,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <div class="float-right pr-3" style=" vertical-align:bottom; font-size:1.6em; font-weight:700; color:white;"><?php echo $total_course ?> Events</div>
+                                            <div class="float-right pr-3" style=" vertical-align:bottom; font-size:1.6em; font-weight:700; color:white;"><?php echo $total_event ?> Events</div>
                                         </div>
                                     </div>
                                 </div>
@@ -230,7 +230,7 @@
                     </div>
                     <!-- /.banner with logo-->
 
-                    <!-- Nav for overview, courses and contact-->
+                    <!-- Nav for overview, events and contact-->
                     <div class="row py-5 ">
                         <div class="col-md-12 px-3 pb-5">
                             <!-- Navbar-->
@@ -239,7 +239,7 @@
                                     <a class="nav-link active" id="overview_tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Overview</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="courses_tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Events</a>
+                                    <a class="nav-link" id="events_tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Events</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" id="contact_tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Information</a>
@@ -305,18 +305,18 @@
                                     </div>
                                 </div>
 
-                                <!-- Courses content-->
+                                <!-- Events content-->
                                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                     <div class="card border-left-info shadow h-100 ">
                                         <div class="card-body" style="">
                                             <!-- UNIVERSITIY INPUT -->
                                             <div class="form-row pt-2">
-                                                <label for="course_field" class="col-sm-2 text-right col-form-label" style="color:black;">Course Field: </label>
+                                                <label for="event_field" class="col-sm-2 text-right col-form-label" style="color:black;">event Field: </label>
                                                 <div class="col-sm-3">
-                                                    <select name="course_field" id="course_field" class="form-control form-select form-select-sm">
+                                                    <select name="event_field" id="event_field" class="form-control form-select form-select-sm">
                                                         <option value="all" selected>All</option>
                                                         <?php
-                                                        foreach ($course_field as $c) {
+                                                        foreach ($event_field as $c) {
                                                             echo '<option value="' . $c->event_type . '">' . $c->event_type . '</option>';
                                                         }
                                                         ?>
@@ -325,7 +325,7 @@
                                             </div>
                                             <!--/ UNIVERSITIY INPUT -->
 
-                                            <div class="pt-4 px-5" id="course_list">
+                                            <div class="pt-4 px-5" id="event_list">
 
                                             </div>
 
@@ -419,7 +419,7 @@
                         </div>
                         <!--End col-->
                     </div>
-                    <!--End of Nav for overview, courses and contact-->
+                    <!--End of Nav for overview, events and contact-->
 
 
                 </div>

@@ -8,9 +8,9 @@ $(document).ready(function () {
 	$("#card1").hide();
 	$("#card2").hide();
 
-	$("#course_class_1").hide();
-	$("#course_class_2").hide();
-	$("#course_class_3").hide();
+	$("#event_class_1").hide();
+	$("#event_class_2").hide();
+	$("#event_class_3").hide();
 	$("#third_selection").hide();
 
 	$("#selection1").fadeIn(3000);
@@ -29,17 +29,17 @@ $(document).ready(function () {
 		var level1 = document.getElementById("level_1").value;
 
 		if (uni1 != "" && level1 != "") {
-			$("#course_class_1").fadeIn(1000);
+			$("#event_class_1").fadeIn(1000);
 
 			$.ajax({
 				url: base_url + "external/Compare/fetch_events",
 				method: "POST",
 				data: {
 					uni_id: $("#university_1").val(),
-					course_level: $("#level_1").val(),
+					event_level: $("#level_1").val(),
 				},
 				success: function (data) {
-					$("#course_1").html(data);
+					$("#event_1").html(data);
 				},
 			});
 		}
@@ -51,17 +51,17 @@ $(document).ready(function () {
 		var level2 = document.getElementById("level_2").value;
 
 		if (uni2 != "" && level2 != "") {
-			$("#course_class_2").fadeIn(1000);
+			$("#event_class_2").fadeIn(1000);
 
 			$.ajax({
 				url: base_url + "external/Compare/fetch_events",
 				method: "POST",
 				data: {
 					uni_id: $("#university_2").val(),
-					course_level: $("#level_2").val(),
+					event_level: $("#level_2").val(),
 				},
 				success: function (data) {
-					$("#course_2").html(data);
+					$("#event_2").html(data);
 				},
 			});
 		}
@@ -73,17 +73,17 @@ $(document).ready(function () {
 		var level3 = document.getElementById("level_3").value;
 
 		if (uni3 != "" && level3 != "") {
-			$("#course_class_3").fadeIn(1000);
+			$("#event_class_3").fadeIn(1000);
 
 			$.ajax({
 				url: base_url + "external/Compare/fetch_events",
 				method: "POST",
 				data: {
 					uni_id: $("#university_3").val(),
-					course_level: $("#level_3").val(),
+					event_level: $("#level_3").val(),
 				},
 				success: function (data) {
-					$("#course_3").html(data);
+					$("#event_3").html(data);
 				},
 			});
 		}
@@ -91,12 +91,12 @@ $(document).ready(function () {
 }); // end of ready function
 
 function generateTable() {
-	var course1 = document.getElementById("course_1").value;
-	var course2 = document.getElementById("course_2").value;
-	var course3 = document.getElementById("course_3").value;
+	var event1 = document.getElementById("event_1").value;
+	var event2 = document.getElementById("event_2").value;
+	var event3 = document.getElementById("event_3").value;
 
 	if (add_third_selection == 1) {
-		if (course1 != "" && course2 != "" && course3 != "") {
+		if (event1 != "" && event2 != "" && event3 != "") {
 			$.ajax({
 				url: base_url + "external/Compare/fetch_table",
 				method: "POST",
@@ -104,9 +104,9 @@ function generateTable() {
 					uni_id1: $("#university_1").val(),
 					uni_id2: $("#university_2").val(),
 					uni_id3: $("#university_3").val(),
-					course_id1: $("#course_1").val(),
-					course_id2: $("#course_2").val(),
-					course_id3: $("#course_3").val(),
+					event_id1: $("#event_1").val(),
+					event_id2: $("#event_2").val(),
+					event_id3: $("#event_3").val(),
 				},
 				success: function (data) {
 					$("#table_view").html(data);
@@ -124,15 +124,15 @@ function generateTable() {
 			});
 		}
 	} else {
-		if (course1 != "" && course2 != "") {
+		if (event1 != "" && event2 != "") {
 			$.ajax({
 				url: base_url + "external/Compare/fetch_table_for_2events",
 				method: "POST",
 				data: {
 					uni_id1: $("#university_1").val(),
 					uni_id2: $("#university_2").val(),
-					course_id1: $("#course_1").val(),
-					course_id2: $("#course_2").val(),
+					event_id1: $("#event_1").val(),
+					event_id2: $("#event_2").val(),
 				},
 				success: function (data) {
 					$("#table_view").html(data);

@@ -8,7 +8,7 @@ class Admin_dashboard extends CI_Controller
         parent::__construct();
         $this->load->model([
             'user_student_model', 'user_ep_model', 'user_ac_model', 'user_ea_model', 'user_e_model',
-            'course_applicants_model', 'user_model', 'universities_model', 'employer_projects_model',
+            'event_applicants_model', 'user_model', 'universities_model', 'employer_projects_model',
             'rd_projects_model'
         ]);
 
@@ -18,35 +18,30 @@ class Admin_dashboard extends CI_Controller
         }
 
         // Checks if session is set and if user signed in is not admin. Direct them back to their own dashboard.
-        if ($this->session->has_userdata('has_login') && $this->session->userdata('user_role') != "Admin"  ){  
+        if ($this->session->has_userdata('has_login') && $this->session->userdata('user_role') != "Admin") {
 
-			$users['user_role'] = $this->session->userdata('user_role');
+            $users['user_role'] = $this->session->userdata('user_role');
 
-			if($users['user_role']=="Student")
-			{
-				redirect('external/homepage');
-			}
-			// check user role is  EA
-			else if ($users['user_role']=="Education Agent")
-			{
-			   redirect('internal/level_2/education_agent/Ea_dashboard');
-			}
-			// check user role is AC
-			else if ($users['user_role']=="Academic Counsellor")
-			{
-			   redirect('internal/level_2/academic_counsellor/Ac_dashboard');
-			}
-			// check user role is E
-			else if ($users['user_role']=="Employer")
-			{
-			   redirect('internal/level_2/employer/Employer_dashboard');
-			}
-			// check user role is  EP
-			else if ($users['user_role']=="Education Partner")
-			{
-			   redirect('internal/level_2/educational_partner/Ep_dashboard');
-			}
-		}
+            if ($users['user_role'] == "Student") {
+                redirect('external/homepage');
+            }
+            // check user role is  EA
+            else if ($users['user_role'] == "Education Agent") {
+                redirect('internal/level_2/education_agent/Ea_dashboard');
+            }
+            // check user role is AC
+            else if ($users['user_role'] == "Academic Counsellor") {
+                redirect('internal/level_2/academic_counsellor/Ac_dashboard');
+            }
+            // check user role is E
+            else if ($users['user_role'] == "Employer") {
+                redirect('internal/level_2/employer/Employer_dashboard');
+            }
+            // check user role is  EP
+            else if ($users['user_role'] == "Education Partner") {
+                redirect('internal/level_2/educational_partner/Ep_dashboard');
+            }
+        }
     }
 
     public function index()
@@ -90,11 +85,11 @@ class Admin_dashboard extends CI_Controller
             ];
 
         //applicants by uni
-        $data['total_applicants'] = $this->course_applicants_model->applicants_per_uni();
+        $data['total_applicants'] = $this->event_applicants_model->applicants_per_uni();
 
         //enrollment method
-        $data['total_by_ea'] = count($this->course_applicants_model->enrollment_method('Education Agent'));
-        $data['total_by_student'] = count($this->course_applicants_model->enrollment_method('Student'));
+        $data['total_by_ea'] = count($this->event_applicants_model->enrollment_method('Education Agent'));
+        $data['total_by_student'] = count($this->event_applicants_model->enrollment_method('Student'));
 
         //active & pending uni
         $data['active_uni'] = count($this->universities_model->uni_by_approval(1));

@@ -11,7 +11,7 @@ class Auth extends CI_Controller
         $this->load->helper('form');
         $this->load->model([
             'user_student_model', 'user_ep_model', 'user_ac_model', 'user_ea_model',
-            'user_e_model', 'universities_model', 'company_model', 'courses_model'
+            'user_e_model', 'universities_model', 'company_model', 'events_model'
         ]);
     }
 
@@ -421,7 +421,7 @@ class Auth extends CI_Controller
 
     public function ac_reg()
     {
-        $data['university_data'] = $this->universities_model->select_all_approved_only(); // get from eddie's branch
+        $data['event_data'] = $this->universities_model->select_all_approved_only(); // get from eddie's branch
 
 
         $user_id = $this->session->userdata('user_id');

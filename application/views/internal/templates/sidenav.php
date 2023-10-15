@@ -40,9 +40,9 @@
                         </a>
                     </li>
 
-                    <!-- Nav Item - Course Applicants -->
+                    <!-- Nav Item - event Applicants -->
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('internal/level_2/academic_counsellor/Ac_course_applicants'); ?>">
+                        <a class="nav-link" href="<?= base_url('internal/level_2/academic_counsellor/Ac_event_applicants'); ?>">
                             <i class="fas fa-file-alt"></i>
                             <span>Event Applications</span>
                         </a>
@@ -63,11 +63,11 @@
                     <!-- Divider -->
                     <hr class="sidebar-divider">
 
-                    <!-- Nav Item - New Course Application -->
+                    <!-- Nav Item - New event Application -->
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('internal/level_2/education_agent/ea_course_application'); ?>">
+                        <a class="nav-link" href="<?= base_url('internal/level_2/education_agent/ea_event_application'); ?>">
                             <i class="fas fa-plus-square"></i>
-                            <span>Course Applications</span>
+                            <span>event Applications</span>
                         </a>
                     </li>
 
@@ -94,21 +94,21 @@
                         </a>
                     </li>
 
-                    <!-- Nav Item - Course -->
+                    <!-- Nav Item - event -->
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url('internal/level_2/educational_partner/ep_courses'); ?>">
+                        <a class="nav-link" href="<?php echo base_url('internal/level_2/educational_partner/ep_events'); ?>">
                             <i class="fas fa-book"></i>
                             <span>Events</span>
                         </a>
                     </li>
 
                     <!-- Nav Item - Browse R&DP -->
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="<?= base_url('external/Rd_projects'); ?>">
                             <i class="fas fa-search"></i>
                             <span>Browse Event</span>
                         </a>
-                    </li>
+                    </li> -->
 
                     <!-- Nav Item - My R&DP Application -->
                     <!-- <li class="nav-item">
@@ -216,7 +216,7 @@
                         </a>
                         <div id="applications_collapse" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                             <div class="bg-white py-2 collapse-inner rounded">
-                                <a class="collapse-item" href="<?= base_url('internal/admin_panel/applicants/Admin_course_application'); ?>">Courses</a>
+                                <a class="collapse-item" href="<?= base_url('internal/admin_panel/applicants/Admin_event_application'); ?>">Events</a>
                                 <a class="collapse-item" href="<?= base_url('internal/admin_panel/applicants/Admin_emp_applicants'); ?>">Employer Projects (EPs)</a>
                                 <a class="collapse-item" href="<?= base_url('internal/admin_panel/applicants/Admin_rd_app'); ?>">R&D Projects (R&DPs)</a>
                             </div>
@@ -232,7 +232,7 @@
                         <div id="content_collapse" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                             <div class="bg-white py-2 collapse-inner rounded">
                                 <a class="collapse-item" href="<?= base_url('internal/admin_panel/content/Admin_universities'); ?>">Universities</a>
-                                <a class="collapse-item" href="<?= base_url('internal/admin_panel/content/Admin_courses'); ?>">Courses</a>
+                                <a class="collapse-item" href="<?= base_url('internal/admin_panel/content/Admin_events'); ?>">Events</a>
                                 <a class="collapse-item" href="<?= base_url('internal/admin_panel/content/Admin_emps'); ?>">Employer Projects (EPs)</a>
                                 <a class="collapse-item" href="<?= base_url('internal/admin_panel/content/Admin_rd_project'); ?>">R&D Projects (R&DPs)</a>
                             </div>

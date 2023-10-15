@@ -23,8 +23,8 @@ $(document).ready(function () {
 	});
 
 	//Styling for search bar in datatables
-	$('.dataTables_filter input[type="search"]')
-		.attr("placeholder", "Search Event")
+	$('.dataTables_filter input[type="search Event"]')
+		.attr("placeholder", "Search")
 		.css({
 			width: "350px",
 			height: "40px",

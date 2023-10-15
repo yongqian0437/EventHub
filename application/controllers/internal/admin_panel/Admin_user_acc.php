@@ -9,7 +9,7 @@ class Admin_user_acc extends CI_Controller
         parent::__construct();
         $this->load->model([
             'user_student_model', 'user_ep_model', 'user_ac_model', 'user_ea_model',
-            'user_e_model', 'universities_model', 'company_model', 'courses_model'
+            'user_e_model', 'universities_model', 'company_model', 'events_model'
         ]);
         // date_default_timezone_set('Asia/Kuala_Lumpur');
 

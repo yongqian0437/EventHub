@@ -50,7 +50,7 @@ class Ep_my_rd_project extends CI_Controller
     {
 
         $data['title'] = 'EventHub | My R&D Project';
-        $data['university_data'] = $this->user_ep_model->get_uni_from_ep($this->session->userdata('user_id'));
+        $data['event_data'] = $this->user_ep_model->get_uni_from_ep($this->session->userdata('user_id'));
         // $data['c'] = $this->user_ep_model->get_uni_from_ep($this->session->userdata('user_id')); 
         $data['include_js'] = 'ep_my_rd_list';
 
@@ -69,7 +69,7 @@ class Ep_my_rd_project extends CI_Controller
         $length = intval($this->input->get("length"));
 
         //get uni detail for one ep user with user_id
-        $university_data = $this->user_ep_model->get_uni_from_ep($this->session->userdata('user_id'));
+        $event_data = $this->user_ep_model->get_uni_from_ep($this->session->userdata('user_id'));
         //get ep details with user id
         $ep_data = $this->user_ep_model->get_ep_detail_with_user_id($this->session->userdata('user_id'));
         //get rd project details with ep_id
@@ -118,7 +118,7 @@ class Ep_my_rd_project extends CI_Controller
     function add_rd_project()
     {
         $data['title'] = 'EventHub | Add R&D Project';
-        $data['university_data'] = $this->user_ep_model->get_uni_from_ep($this->session->userdata('user_id'));
+        $data['event_data'] = $this->user_ep_model->get_uni_from_ep($this->session->userdata('user_id'));
 
         $this->load->view('internal/templates/header', $data);
         $this->load->view('internal/templates/sidenav');
@@ -234,7 +234,7 @@ class Ep_my_rd_project extends CI_Controller
     function edit_my_rd_project($rd_id)
     {
         $data['title'] = 'EventHub | Edit My R&D Project';
-        $data['university_data'] = $this->user_ep_model->get_uni_from_ep($this->session->userdata('user_id'));
+        $data['event_data'] = $this->user_ep_model->get_uni_from_ep($this->session->userdata('user_id'));
         $data['rd_detail'] = $this->user_ep_model->get_one_rd_detail($rd_id);
 
         $this->load->view('internal/templates/header', $data);

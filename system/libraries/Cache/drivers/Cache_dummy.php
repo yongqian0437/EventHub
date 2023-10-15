@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CodeIgniter
  *
@@ -35,7 +36,7 @@
  * @since	Version 2.0
  * @filesource
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /**
  * CodeIgniter Dummy Caching Class
@@ -46,7 +47,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @author		EllisLab Dev Team
  * @link
  */
-class CI_Cache_dummy extends CI_Driver {
+class CI_Cache_dummy extends CI_Driver
+{
 
 	/**
 	 * Get
@@ -138,10 +140,10 @@ class CI_Cache_dummy extends CI_Driver {
 	 * @param	string	user/filehits
 	 * @return	bool	FALSE
 	 */
-	 public function cache_info($type = NULL)
-	 {
-		 return FALSE;
-	 }
+	public function cache_info($type = NULL)
+	{
+		return FALSE;
+	}
 
 	// ------------------------------------------------------------------------
 
@@ -160,7 +162,7 @@ class CI_Cache_dummy extends CI_Driver {
 
 	/**
 	 * Is this caching driver supported on the system?
-	 * Of course this one is.
+	 * Of event this one is.
 	 *
 	 * @return	bool	TRUE
 	 */
@@ -168,5 +170,4 @@ class CI_Cache_dummy extends CI_Driver {
 	{
 		return TRUE;
 	}
-
 }

@@ -10,7 +10,7 @@ class Ep_dashboard extends CI_Controller
 		parent::__construct();
 		$this->load->model('user_model');
 		$this->load->model('user_ep_model');
-		$this->load->model('courses_model');
+		$this->load->model('events_model');
 		$this->load->model('universities_model');
 		$this->load->model('rd_projects_model');
 		$this->load->model('rd_applicants_model');
@@ -53,9 +53,9 @@ class Ep_dashboard extends CI_Controller
 		$data['title'] = 'EventHub | Dashboard';
 		$data['include_js'] = 'ep_dashboard';
 
-		//get number of course
-		$university_data = $this->user_ep_model->get_uni_from_ep($this->session->userdata('user_id'));
-		$data['num_courses'] = count($this->user_ep_model->get_course_for_uni($university_data->uni_id));
+		//get number of event
+		$event_data = $this->user_ep_model->get_uni_from_ep($this->session->userdata('user_id'));
+		$data['num_events'] = count($this->user_ep_model->get_event_for_uni($event_data->uni_id));
 
 		//get number of my R&D project
 		$ep_data = $this->user_ep_model->get_ep_detail_with_user_id($this->session->userdata('user_id'));
@@ -70,7 +70,7 @@ class Ep_dashboard extends CI_Controller
 		$data['num_partners'] = count($this->rd_applicants_model->all_project_partners($ep_data->ep_id));
 
 		//data for barchart
-		$data['course_field'] = $this->courses_model->course_field_bar_chart($university_data->uni_id);
+		$data['event_field'] = $this->events_model->event_field_bar_chart($event_data->uni_id);
 
 		$this->load->view('internal/templates/header', $data);
 		$this->load->view('internal/templates/sidenav');

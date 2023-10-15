@@ -29,7 +29,7 @@
 
                         <!-- Earnings (Monthly) Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
-                            <a href="<?php echo base_url('internal/level_2/educational_partner/ep_courses'); ?>" style="text-decoration:none">
+                            <a href="<?php echo base_url('internal/level_2/educational_partner/ep_events'); ?>" style="text-decoration:none">
                                 <div class="card border-left-primary shadow h-100 py-2">
 
                                     <div class="card-body" href="">
@@ -37,7 +37,7 @@
                                             <div class="col mr-2">
                                                 <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                     Events</div>
-                                                <div id="course_counter" class="h5 mb-0 font-weight-bold text-gray-800 counting_number">0</div>
+                                                <div id="event_counter" class="h5 mb-0 font-weight-bold text-gray-800 counting_number">0</div>
                                             </div>
                                             <div class="col-auto">
                                                 <i class="fas fa-book fa-2x text-gray-300"></i>
@@ -143,11 +143,11 @@
                             <!-- Bar Chart -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Courses by Top 5 Fields </h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Events by Top 5 Fields </h6>
                                 </div>
                                 <div class="card-body">
                                     <div class="chart-bar">
-                                        <canvas id="course_field_barChart"></canvas>
+                                        <canvas id="event_field_barChart"></canvas>
                                     </div>
                                 </div>
                             </div>
@@ -161,18 +161,18 @@
             <!-- End of Main Content -->
 
             <script>
-                var counter1 = <?= $num_courses ?>;
+                var counter1 = <?= $num_events ?>;
                 var counter2 = <?= $num_rd_projects ?>;
                 var counter3 = <?= $num_rd_applicants ?>;
                 var counter4 = <?= $num_partners ?>;
 
                 // Bar Chart
-                var ctx = document.getElementById("course_field_barChart");
+                var ctx = document.getElementById("event_field_barChart");
                 var myBarChart = new Chart(ctx, {
                     type: 'bar',
                     data: {
                         labels: [<?php $counter = 0;
-                                    foreach ($course_field as $row) : ?> "<?php if ($counter < 5) {
+                                    foreach ($event_field as $row) : ?> "<?php if ($counter < 5) {
                                                                                 echo $row['event_type'];
                                                                             }
                                                                             $counter++; ?>", <?php endforeach; ?>],
@@ -181,8 +181,8 @@
                             backgroundColor: ["#3bceac", "#ff99c8", "#ca7df9", "#758bfd", "#ffc09f"],
                             borderColor: "#4e73df",
                             data: [<?php $counter = 0;
-                                    foreach ($course_field as $row) : ?> "<?php if ($counter < 5) {
-                                                                                echo $row['count(courses.course_id)'];
+                                    foreach ($event_field as $row) : ?> "<?php if ($counter < 5) {
+                                                                                echo $row['count(events.event_id)'];
                                                                             }
                                                                             $counter++; ?>", <?php endforeach; ?>],
                         }],

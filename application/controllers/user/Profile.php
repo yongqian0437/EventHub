@@ -7,7 +7,7 @@ class Profile extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model(['user_model', 'user_student_model', 'emp_applicants_model', 'user_model', 'user_student_model', 'course_applicants_model']);
+        $this->load->model(['user_model', 'user_student_model', 'emp_applicants_model', 'user_model', 'user_student_model', 'event_applicants_model']);
 
         // Checks if session is set and if user signed in is an internal user. Direct them back to their own dashboard.
         if ($this->session->has_userdata('has_login') && $this->session->userdata('user_role') != "Student") {
@@ -50,8 +50,8 @@ class Profile extends CI_Controller
         $student_emp_data = $this->emp_applicants_model->get_user_emp($user_id, 'user_id');
         $data['student_emp_data'] = $student_emp_data;
 
-        $student_course_data = $this->course_applicants_model->get_student_courses($user_id);
-        $data['student_course_data'] = $student_course_data;
+        $student_event_data = $this->event_applicants_model->get_student_events($user_id);
+        $data['student_event_data'] = $student_event_data;
 
         $this->load->view('external/templates/header', $data);
         $this->load->view('user/profile_view');

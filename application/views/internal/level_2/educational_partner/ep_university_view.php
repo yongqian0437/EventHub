@@ -51,7 +51,7 @@
                             </ol>
                         </div>
                         <div class="col-xl-3">
-                            <?php if ($university_data->uni_approval) { ?>
+                            <?php if ($event_data->uni_approval) { ?>
                                 <div class="d-flex justify-content-end">
                                     <a type="button" href="<?= base_url('internal/level_2/educational_partner/ep_university/edit_university'); ?>" class="btn btn-primary">Edit<i class="fas fa-edit pl-2"></i></a>
                                 </div>
@@ -65,65 +65,65 @@
                             <div class="card ">
                                 <div class="card-body">
                                     <!-- Check for uni approval -->
-                                    <?php if ($university_data->uni_approval) { ?>
+                                    <?php if ($event_data->uni_approval) { ?>
                                         <?= $this->session->flashdata('edit_message') ?>
                                         <form action="">
                                             <div class="form-row">
                                                 <div class="form-group col-md-6 px-4 pr-5">
                                                     <label for="uni_name">Organizer Name</label>
-                                                    <input type="text" class="form-control" id="uni_name" name="uni_name" placeholder="Enter university name" value="<?= $university_data->uni_name ?>" readonly>
+                                                    <input type="text" class="form-control" id="uni_name" name="uni_name" placeholder="Enter university name" value="<?= $event_data->uni_name ?>" readonly>
                                                 </div>
                                                 <div class="form-group col-md-6 px-4 pl-5">
                                                     <label for="uni_country">Organizer Country</label>
-                                                    <input type="text" class="form-control" id="uni_country" name="uni_country" placeholder="Enter country" value="<?= $university_data->uni_country ?>" readonly>
+                                                    <input type="text" class="form-control" id="uni_country" name="uni_country" placeholder="Enter country" value="<?= $event_data->uni_country ?>" readonly>
                                                 </div>
                                             </div>
 
                                             <div class="form-row">
                                                 <div class="form-group col-md-12 px-4 pt-4">
                                                     <label for="uni_shortprofile">Organizer Shortprofile</label>
-                                                    <textarea type="text" class="form-control" rows="10" id="uni_shortprofile" name="uni_shortprofile" placeholder="Enter shortprofile" readonly><?= $university_data->uni_shortprofile ?></textarea>
+                                                    <textarea type="text" class="form-control" rows="10" id="uni_shortprofile" name="uni_shortprofile" placeholder="Enter shortprofile" readonly><?= $event_data->uni_shortprofile ?></textarea>
                                                 </div>
                                             </div>
 
                                             <div class="form-row">
                                                 <div class="form-group col-md-12 px-4 pt-4">
                                                     <label for="uni_fun_fact">Organizer Fun Fact</label>
-                                                    <textarea type="text" class="form-control" rows="5" id="uni_fun_fact" name="uni_fun_fact" placeholder="Enter fun fact" readonly><?= $university_data->uni_fun_fact ?></textarea>
+                                                    <textarea type="text" class="form-control" rows="5" id="uni_fun_fact" name="uni_fun_fact" placeholder="Enter fun fact" readonly><?= $event_data->uni_fun_fact ?></textarea>
                                                 </div>
                                             </div>
 
                                             <div class="form-row pt-4">
                                                 <div class="form-group col-md-6 px-4 pr-5">
                                                     <label for="uni_hotline">Organizer Hotline</label>
-                                                    <input type="text" class="form-control" id="uni_hotline" name="uni_hotline" placeholder="Enter hotline" value="<?= $university_data->uni_hotline ?>" readonly>
+                                                    <input type="text" class="form-control" id="uni_hotline" name="uni_hotline" placeholder="Enter hotline" value="<?= $event_data->uni_hotline ?>" readonly>
                                                 </div>
                                                 <div class="form-group col-md-6 px-4 pl-5">
                                                     <label for="uni_email">Organizer Email</label>
-                                                    <input type="email" class="form-control" id="uni_email" name="uni_email" placeholder="Enter email" value="<?= $university_data->uni_email ?>" readonly>
+                                                    <input type="email" class="form-control" id="uni_email" name="uni_email" placeholder="Enter email" value="<?= $event_data->uni_email ?>" readonly>
                                                 </div>
                                             </div>
 
                                             <div class="form-row pt-4">
                                                 <div class="form-group col-md-6 px-4 pr-5">
                                                     <label for="uni_address">Organizer Address</label>
-                                                    <input type="text" class="form-control" id="uni_address" name="uni_address" placeholder="Enter address" value="<?= $university_data->uni_address ?>" readonly>
+                                                    <input type="text" class="form-control" id="uni_address" name="uni_address" placeholder="Enter address" value="<?= $event_data->uni_address ?>" readonly>
                                                 </div>
                                                 <div class="form-group col-md-6 px-4 pl-5">
                                                     <label for="uni_website">Organizer Website</label>
-                                                    <input type="text" class="form-control" id="uni_website" name="uni_website" placeholder="Enter website" value="<?= $university_data->uni_website ?>" readonly>
+                                                    <input type="text" class="form-control" id="uni_website" name="uni_website" placeholder="Enter website" value="<?= $event_data->uni_website ?>" readonly>
                                                 </div>
                                             </div>
 
                                             <div class="form-row pt-5">
                                                 <div class="form-group col-md-4 px-4 pr-5">
                                                     <label for="uni_qsrank">Organizer Campus Rank</label>
-                                                    <input type="number" class="form-control" id="uni_qsrank" name="uni_qsrank" placeholder="Enter QS ranking" value="<?= $university_data->uni_qsrank ?>" readonly>
+                                                    <input type="number" class="form-control" id="uni_qsrank" name="uni_qsrank" placeholder="Enter QS ranking" value="<?= $event_data->uni_qsrank ?>" readonly>
                                                 </div>
 
                                                 <div class="form-group col-md-4 px-4 ">
                                                     <label for="uni_totalstudents">Organizer Total Employee</label>
-                                                    <input type="number" class="form-control" id="uni_totalstudents" name="uni_totalstudents" placeholder="Enter total student" value="<?= $university_data->uni_totalstudents ?>" readonly>
+                                                    <input type="number" class="form-control" id="uni_totalstudents" name="uni_totalstudents" placeholder="Enter total student" value="<?= $event_data->uni_totalstudents ?>" readonly>
                                                 </div>
                                             </div>
 
@@ -135,11 +135,11 @@
 
                                                 <div class="col-xl-6 pl-5">
                                                     <div class="pb-3" style="color:black;">Current Organizer Logo</div>
-                                                    <img style=" height:200px; width: 300px; object-fit: contain;" src="<?= base_url("assets/img/universities/") . $university_data->uni_logo ?>" alt="logo">
+                                                    <img style=" height:200px; width: 300px; object-fit: contain;" src="<?= base_url("assets/img/universities/") . $event_data->uni_logo ?>" alt="logo">
                                                 </div>
                                                 <div class="col-xl-6">
                                                     <div class="pb-3" style="color:black;">Current Organizer Background</div>
-                                                    <img style=" height:200px; width: 300px; object-fit: contain;" src="<?= base_url("assets/img/universities/") . $university_data->uni_background ?>" alt="background">
+                                                    <img style=" height:200px; width: 300px; object-fit: contain;" src="<?= base_url("assets/img/universities/") . $event_data->uni_background ?>" alt="background">
                                                 </div>
 
                                             </div>

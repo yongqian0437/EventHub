@@ -79,7 +79,7 @@
                             </div> -->
                         </div>
 
-                        <div class="grid-flex">
+                        <!-- <div class="grid-flex">
                             <div class="col px-0 about-card-center" data-aos="zoom-out-up" data-aos-duration="3000">
                                 <div class="about-background-img img-fluid" style="background-image:url('<?php echo base_url('assets/img/about_us/awards_background.jpeg'); ?>');">
                                     <div class="dark-background ">
@@ -122,8 +122,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- <div class="col col-image" style="background-image: url('');">
+                            </div> -->
+                        <!-- <div class="col col-image" style="background-image: url('');">
                                 &nbsp;
                             </div>
                             <div class="col col-text">
@@ -132,7 +132,7 @@
                                     <p class="overview mt-4" style="animation: left_to_right 2s ease; width: 100%;">Passionate about the field of education and interested in being part of EventHub? Hit the registeration button and be part of the team.</p>
                                 </div>
                             </div> -->
-                        </div>
+                        <!-- </div> -->
 
                         <div class="grid-flex">
                             <div class="col px-0 about-card-center" data-aos="zoom-in" data-aos-duration="3000">
@@ -182,8 +182,8 @@
                                                 <div class="card card-secondary h-100" style="cursor:pointer; transition:all .5s ease-in-out; width:20rem;">
                                                     <img class="card-img-top" src="<?php echo base_url('assets/img/about_us/chat_icon.jpg') ?>" alt="Card image cap">
                                                     <div class="card-body">
-                                                        <div class="card-title">Chat with Counsellor</div>
-                                                        <p class="card-text">Have any inquiries? Chat with any counsellor available in EventHub from around the world here.</p>
+                                                        <div class="card-title">Chat with Bot</div>
+                                                        <p class="card-text">Have any inquiries? Chat with our ChatBot to know more information here.</p>
                                                     </div>
                                                     <div class="card-footer">
                                                         <a href="<?= base_url('user/chat/Chat'); ?>" target="_blank" class="btn btn-outline-secondary btn-icon-right" style="background-color:">
@@ -236,7 +236,7 @@
                             
                         </section> -->
 
-            <div class="social-media pt-5">
+            <!-- <div class="social-media pt-5">
                 <div class="row mx-2">
                     <h4 class="mx-2">Follow Us On:</h4>
                     <img class="mx-2 pb-1" src="<?php echo base_url('assets/img/about_us/facebook-logo.png') ?>" alt="Facebook" href="#" target="_blank">
@@ -245,7 +245,7 @@
                         <img class="mx-2 pb-1" src="<?php echo base_url('assets/img/about_us/inti_logo.png') ?>" alt="Inti">
                     </a>
                 </div>
-            </div>
+            </div> -->
 
 
             <script src="https://unpkg.com/aos@next/dist/aos.js"></script>

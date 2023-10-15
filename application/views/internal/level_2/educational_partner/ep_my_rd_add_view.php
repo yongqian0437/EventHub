@@ -55,7 +55,7 @@
 
                                         <div class="form-row pt-4">
                                             <div class="form-group col-md-6 px-4 pr-5">
-                                                <label for="course_name">R&D Project Title</label>
+                                                <label for="event_name">R&D Project Title</label>
                                                 <textarea type="text" rows="2" class="form-control" id="rd_title" name="rd_title" placeholder="Enter title" required></textarea>
                                             </div>
                                             <div class="form-group col-md-6 px-4 pl-5">

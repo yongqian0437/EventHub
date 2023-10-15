@@ -10,7 +10,7 @@ class Ep_university extends CI_Controller
 		parent::__construct();
 		$this->load->model('user_model');
 		$this->load->model('user_ep_model');
-		$this->load->model('courses_model');
+		$this->load->model('events_model');
 		$this->load->model('universities_model');
 
 		// Checks if session is set and if user signed in has a role. If not, deny his/her access.
@@ -49,7 +49,7 @@ class Ep_university extends CI_Controller
 	{
 
 		$data['title'] = 'EventHub | University';
-		$data['university_data'] = $this->user_ep_model->get_uni_from_ep($this->session->userdata('user_id'));
+		$data['event_data'] = $this->user_ep_model->get_uni_from_ep($this->session->userdata('user_id'));
 
 		$this->load->view('internal/templates/header', $data);
 		$this->load->view('internal/templates/sidenav');
@@ -61,7 +61,7 @@ class Ep_university extends CI_Controller
 	public function edit_university()
 	{
 		$data['title'] = 'EventHub | University';
-		$data['university_data'] = $this->user_ep_model->get_uni_from_ep($this->session->userdata('user_id'));
+		$data['event_data'] = $this->user_ep_model->get_uni_from_ep($this->session->userdata('user_id'));
 
 
 		$this->load->view('internal/templates/header', $data);
@@ -73,11 +73,11 @@ class Ep_university extends CI_Controller
 
 	public function after_edit_university($uni_id)
 	{
-		$university_data = $this->universities_model->get_uni_with_id($uni_id);
+		$event_data = $this->universities_model->get_uni_with_id($uni_id);
 
 		if ($_FILES['uni_background']['name'] != "") {
 
-			unlink($university_data[0]->uni_background);
+			unlink($event_data[0]->uni_background);
 
 			$uni_background = $this->upload_img('./assets/img/universities', 'uni_background');
 			$data = [
@@ -88,7 +88,7 @@ class Ep_university extends CI_Controller
 
 		if ($_FILES['uni_logo']['name'] != "") {
 
-			unlink($university_data[0]->uni_logo);
+			unlink($event_data[0]->uni_logo);
 
 			$uni_logo = $this->upload_img('./assets/img/universities', 'uni_logo');
 			$data = [

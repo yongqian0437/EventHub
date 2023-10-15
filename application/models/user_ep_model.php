@@ -89,25 +89,25 @@ class user_ep_model extends CI_Model
     public function full_ep_details()
     {
         $this->db->select('')
-        ->from('user_ep') // ep table
-        ->join('users', 'users.user_id = user_ep.user_id');// users table
+            ->from('user_ep') // ep table
+            ->join('users', 'users.user_id = user_ep.user_id'); // users table
         return $this->db->get();
     }
 
     public function get_full_ep_detail()
     {
-       $this->db->select('')
-       ->from('users') // users table
-       ->join('user_ep', 'user_ep.user_id = users.user_id') // ep table
-       ->join('universities', 'universities.uni_id = user_ep.uni_id'); // uni table
-       return $this->db->get()->row();// return object array
-    }  
+        $this->db->select('')
+            ->from('users') // users table
+            ->join('user_ep', 'user_ep.user_id = users.user_id') // ep table
+            ->join('universities', 'universities.uni_id = user_ep.uni_id'); // uni table
+        return $this->db->get()->row(); // return object array
+    }
 
     public function get_ep_detail($user_id)
     {
-        $this->db->where('user_id',$user_id);
+        $this->db->where('user_id', $user_id);
         return $this->db->get('user_ep')->row();
-    } 
+    }
     public function get_uni_from_ep($user_id)
     {
         $this->db->where('user_id', $user_id);
@@ -117,18 +117,18 @@ class user_ep_model extends CI_Model
         return $this->db->get('universities')->row();
     }
 
-    public function get_course_for_uni($uni_id)
+    public function get_event_for_uni($uni_id)
     {
         $this->db->where('uni_id', $uni_id);
-        return $this->db->get('courses')->result();
+        return $this->db->get('events')->result();
     }
 
-    public function get_course_detail($course_id)
+    public function get_event_detail($event_id)
     {
-        $this->db->where('course_id', $course_id);
-        return $this->db->get('courses')->row();
+        $this->db->where('event_id', $event_id);
+        return $this->db->get('events')->row();
     }
-    
+
     public function get_rd_for_ep($ep_id)
     {
         $this->db->where('ep_id', $ep_id);
@@ -145,6 +145,5 @@ class user_ep_model extends CI_Model
     {
         $this->db->where('rd_id', $rd_id);
         return $this->db->get('rd_projects')->row();
-
     }
 }

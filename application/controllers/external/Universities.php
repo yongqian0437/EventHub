@@ -10,8 +10,8 @@ class Universities extends CI_Controller
 		parent::__construct();
 		$this->load->model('user_model');
 		$this->load->model('universities_model');
-		$this->load->model('courses_model');
-		$this->load->model('course_applicants_model');
+		$this->load->model('events_model');
+		$this->load->model('event_applicants_model');
 
 		// Checks if session is set and if user signed in is an internal user. Direct them back to their own dashboard.
 		if ($this->session->has_userdata('has_login') && $this->session->userdata('user_role') != "Student") {
@@ -42,7 +42,7 @@ class Universities extends CI_Controller
 
 	public function index()
 	{
-		$data['university_data'] = $this->universities_model->select_all_approved_only();
+		$data['event_data'] = $this->universities_model->select_all_approved_only();
 		$data['include_js'] = 'universities_list';
 		$data['include_js2'] = '<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.24/datatables.min.css"/>';
 		$data['include_js3'] = '<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.24/datatables.min.js"></script>';
@@ -68,7 +68,7 @@ class Universities extends CI_Controller
 		foreach ($universities as $r) {
 
 			$logo = base_url('assets/img/universities/') . $r->uni_logo;
-			$total_course = $this->courses_model->get_totalcourse_for_uni($r->uni_id);
+			$total_event = $this->events_model->get_totalevent_for_uni($r->uni_id);
 
 			$image = '<img style=" height:85px; width: 250px; object-fit: contain;" src="' . $logo . '" alt="logo"><br><br>';
 
@@ -85,7 +85,7 @@ class Universities extends CI_Controller
 				$image,
 				$r->uni_name,
 				$r->uni_country,
-				$total_course,
+				$total_event,
 				$r->uni_qsrank,
 				$action,
 			);
@@ -107,26 +107,26 @@ class Universities extends CI_Controller
 
 		$data['title'] = 'EventHub | University';
 		$data['uni_detail'] = $this->universities_model->get_uni_detail($uni_id);
-		$data['course_field'] = $this->courses_model->course_field_dropdown($uni_id);
-		$data['total_course'] = $this->courses_model->get_totalcourse_for_uni($uni_id);
+		$data['event_field'] = $this->events_model->event_field_dropdown($uni_id);
+		$data['total_event'] = $this->events_model->get_totalevent_for_uni($uni_id);
 		$data['include_js'] = 'university_detail';
 		$this->load->view('external/templates/header', $data);
 		$this->load->view('external/universitiy_detail_view');
 		$this->load->view('external/templates/footer');
 	}
 
-	public function fetch_course_list()
+	public function fetch_event_list()
 	{
-		$course_data = $this->courses_model->get_course_with_event_type($this->input->post('event_type'), $this->input->post('uni_id'));
+		$event_data = $this->events_model->get_event_with_event_type($this->input->post('event_type'), $this->input->post('uni_id'));
 		$base_url = base_url();
 
 		$output = "";
 
-		foreach ($course_data as $row) {
-			$apply_link = $base_url . "external/Courses/course_applicant/" . $row->course_id;
+		foreach ($event_data as $row) {
+			$apply_link = $base_url . "external/Events/event_applicant/" . $row->event_id;
 			if ($this->session->userdata('user_role') == 'Student') {
 
-				$response = $this->course_applicants_model->past_application($row->course_id, $this->session->userdata('user_email'));
+				$response = $this->event_applicants_model->past_application($row->event_id, $this->session->userdata('user_email'));
 
 				if ($response == true) {
 					$apply_button = '<a type="button" target="_blank" class="btn btn-sm" style = "background-color:#3d3d3d; color:white; font-size:0.9em;" disabled>Applied</a>';
@@ -137,35 +137,35 @@ class Universities extends CI_Controller
 				$apply_button = '<a type="button" target="_blank" href = "' . $base_url . 'user/login/Auth/login" class="btn btn-sm" style = "background-color:#A4C3B2; color:white; font-size:0.9em;">Apply</a>';
 			}
 
-			$course_link = $base_url . "external/Courses/view_course/" . $row->course_id;
+			$event_link = $base_url . "external/Events/view_event/" . $row->event_id;
 
 			$output .=
 				'
 			<div class = "row pt-2  pb-2" style = "border-top:1px solid rgba(169, 169, 169, .5);">
 				<div class="col-md-7 pt-2 pl-2" >
-					<div style = "font-size:1.0em; color:black; font-weight:700;">' . $row->course_name . '</div>
-					<div style = "font-size:0.8em; color:grey;">' . $row->course_level . '</div>
+					<div style = "font-size:1.0em; color:black; font-weight:700;">' . $row->event_name . '</div>
+					<div style = "font-size:0.8em; color:grey;">' . $row->event_level . '</div>
 				</div>
 				<div class="col-md-1 pt-2" >
 					<center>
-						<div style = "font-size:1.0em; color:black; font-weight:600;">' . $row->course_duration . '</div>
-						<div style = "font-size:0.8em; color:grey;">years</div>
+						<div style = "font-size:1.0em; color:black; font-weight:600;">' . $row->event_duration . '</div>
+						<div style = "font-size:0.8em; color:grey;">hour(s)</div>
 					</center>
 				</div>
 				<div class="col-md-1 pt-2" >
 					<center>
-						<div style = "font-size:1.0em; color:black; font-weight:600;">MYR RM' . number_format($row->course_fee) . '</div>
+						<div style = "font-size:1.0em; color:black; font-weight:600;">MYR RM' . number_format($row->event_fee) . '</div>
 						<div style = "font-size:0.8em; color:grey;">in total</div>
 					</center>
 				</div>
 				<div class="col-md-1 pt-2" >
 					<center>
-						<div style = "font-size:1.0em; color:black; font-weight:600;">USD $' . number_format($row->course_usd_fee) . '</div>
+						<div style = "font-size:1.0em; color:black; font-weight:600;">USD $' . number_format($row->event_usd_fee) . '</div>
 						<div style = "font-size:0.8em; color:grey;">in total</div>
 					</center>
 				</div>
 				<div class="col-md-2 pt-2 pl-5">
-					<a type="button" target="_blank" href = "' . $course_link . '" class="btn btn-sm " style = "background-color:#A4C3B2; color:white; font-size:0.9em;">View</a>
+					<a type="button" target="_blank" href = "' . $event_link . '" class="btn btn-sm " style = "background-color:#A4C3B2; color:white; font-size:0.9em;">View</a>
 					' . $apply_button . '
 				</div>
 			</div>

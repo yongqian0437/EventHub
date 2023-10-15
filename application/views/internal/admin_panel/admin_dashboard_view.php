@@ -64,12 +64,12 @@
                                             <th class="text-center">Events</th>
                                         </tr>
                                         <?php foreach ($latest_uni as $uni) {
-                                            $total_course = $this->courses_model->get_totalcourse_for_uni($uni['uni_id']);
+                                            $total_event = $this->events_model->get_totalevent_for_uni($uni['uni_id']);
                                         ?>
                                             <tr>
                                                 <td><?= $uni['uni_name'] ?></td>
                                                 <td class="text-center">
-                                                    <?= $total_course ?>
+                                                    <?= $total_event ?>
                                                 </td>
                                             </tr>
                                         <?php } ?>
@@ -190,12 +190,12 @@
                                                                                 }
                                                                                 $counter++; ?>", <?php endforeach; ?>],
                         datasets: [{
-                            label: "Total Course Applicants",
+                            label: "Total event Applicants",
                             backgroundColor: ["#3bceac", "#ff99c8", "#ca7df9", "#758bfd", "#ffc09f"],
                             borderColor: "#4e73df",
                             data: [<?php $counter = 0;
                                     foreach ($total_applicants as $row) : ?> "<?php if ($counter < 4) {
-                                                                                    echo $row['count(course_applicants.c_applicant_id)'];
+                                                                                    echo $row['count(event_applicants.e_applicant_id)'];
                                                                                 }
                                                                                 $counter++; ?>", <?php endforeach; ?>],
                         }],

@@ -1,12 +1,12 @@
 <style>
     #overview_tab,
-    #courses_tab,
+    #events_tab,
     #contact_tab {
         color: lightgray;
     }
 
     #overview_tab:hover,
-    #courses_tab:hover,
+    #events_tab:hover,
     #contact_tab:hover {
         color: black !important;
     }
@@ -16,7 +16,7 @@
     }
 
     #overview_tab:focus,
-    #courses_tab:focus,
+    #events_tab:focus,
     #contact_tab:focus {
         color: black !important;
     }
@@ -81,7 +81,7 @@
                                         <a class="nav-link  mb-1 ml-5" id="overview_tab" onclick="overview_tab()" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Profile</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link mb-1 ml-5" id="courses_tab" onclick="courses_tab()" data-toggle="tab" href="#courses" role="tab" aria-controls="courses" aria-selected="false">My Events</a>
+                                        <a class="nav-link mb-1 ml-5" id="events_tab" onclick="events_tab()" data-toggle="tab" href="#events" role="tab" aria-controls="events" aria-selected="false">My Events</a>
                                     </li>
                                     <!-- <li class="nav-item">
                                         <a class="nav-link mb-1 ml-5" id="contact_tab" onclick="contact_tab()" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">My Employer Projects</a>
@@ -142,8 +142,8 @@
                                         </div>
                                     </div>
 
-                                    <!-- Courses content-->
-                                    <div class="tab-pane fade" id="courses">
+                                    <!-- Events content-->
+                                    <div class="tab-pane fade" id="events">
                                         <div class="card border-left-info shadow h-100 ">
                                             <div class="card-body shadow">
                                                 <div class="row pl-3 pt-4" style="vertical-align:middle;">
@@ -151,7 +151,7 @@
                                                         <h6><b>University</b></h6>
                                                     </div>
                                                     <div class="col-8 col-md-4 col-lg-4 mb-4">
-                                                        <h6><b>Course Name</b></h6>
+                                                        <h6><b>event Name</b></h6>
                                                     </div>
                                                     <div class="col-8 col-md-3 col-lg-3 mb-4">
                                                         <h6><b>Applied Date</b></h6>
@@ -159,23 +159,23 @@
                                                     <div class="col-8 col-md-1 col-lg-1 mb-4">
                                                     </div>
 
-                                                    <?php if (!empty($student_course_data)) {           /* Display employer projects that the user applied for  */
-                                                        foreach ($student_course_data as $course_data) { ?>
+                                                    <?php if (!empty($student_event_data)) {           /* Display employer projects that the user applied for  */
+                                                        foreach ($student_event_data as $event_data) { ?>
                                                             <div class="col-8 col-md-4 col-lg-4 mb-2">
                                                                 <hr>
-                                                                <img class="img-fluid img_class" style="height: 9vh; object-fit: contain;" src="<?= base_url("assets/img/universities/") . $course_data['uni_logo'];  ?>" width="200" ; />
+                                                                <img class="img-fluid img_class" style="height: 9vh; object-fit: contain;" src="<?= base_url("assets/img/universities/") . $event_data['uni_logo'];  ?>" width="200" ; />
                                                             </div>
                                                             <div class="col-8 col-md-4 col-lg-4 mb-2">
                                                                 <hr>
-                                                                <label><?= $course_data['course_name'] ?></label>
+                                                                <label><?= $event_data['event_name'] ?></label>
                                                             </div>
                                                             <div class="col-8 col-md-3 col-lg-3 mb-2">
                                                                 <hr>
-                                                                <label><?= $course_data['c_app_submitdate'] ?></label>
+                                                                <label><?= $event_data['c_app_submitdate'] ?></label>
                                                             </div>
                                                             <div class="col-8 col-md-1 col-lg-1 mb-2">
                                                                 <hr>
-                                                                <a style="border-radius:10px; background-color:#6B9080; color:white; height:auto; width:auto%;" href="<?php echo base_url() . 'external/Courses/view_course/' . $course_data['course_id'] ?>" target="_blank" class="btn">
+                                                                <a style="border-radius:10px; background-color:#6B9080; color:white; height:auto; width:auto%;" href="<?php echo base_url() . 'external/Events/view_event/' . $event_data['event_id'] ?>" target="_blank" class="btn">
                                                                     <span class="icon text-white-600">
                                                                         <i style="font-size:20px;" class="fas fa-info-circle"></i>
                                                                     </span>
@@ -545,20 +545,20 @@
                 $(document).ready(function() {
                     document.getElementById("overview_tab").style.color = "black";
                 }); // end of ready function
-                function courses_tab() {
+                function events_tab() {
                     document.getElementById("overview_tab").style.color = "lightgray";
 
                     $('#home').hide();
                     $('#contact').hide();
                     $('#edit').hide();
-                    $('#courses').show();
+                    $('#events').show();
                 }
 
                 function contact_tab() {
                     document.getElementById("overview_tab").style.color = "lightgray";
 
                     $('#home').hide();
-                    $('#courses').hide();
+                    $('#events').hide();
                     $('#edit').hide();
                     $('#contact').show();
                 }
@@ -567,13 +567,13 @@
                     document.getElementById("overview_tab").style.color = "lightgray";
 
                     $('#home').hide();
-                    $('#courses').hide();
+                    $('#events').hide();
                     $('#contact').hide();
                     $('#edit').show();
                 }
 
                 function overview_tab() {
-                    $('#courses').hide();
+                    $('#events').hide();
                     $('#contact').hide();
                     $('#edit').hide();
                     $('#home').show();

@@ -1,12 +1,12 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Ac_course_applicants extends CI_Controller
+class Ac_event_applicants extends CI_Controller
 {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model(['user_ac_model', 'course_applicants_model', 'universities_model']);
+        $this->load->model(['user_ac_model', 'event_applicants_model', 'universities_model']);
         date_default_timezone_set('Asia/Kuala_Lumpur');
 
         // Checks if session is set and if user is signed in as Academic Counsellor (authorised access). If not, deny his/her access.
@@ -43,23 +43,23 @@ class Ac_course_applicants extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'EventHub | Course Applications';
-        $data['include_js'] = 'ac_course_applicants_list';
+        $data['title'] = 'EventHub | event Applications';
+        $data['include_js'] = 'ac_event_applicants_list';
 
         $ac_details = $this->user_ac_model->ac_details($this->session->userdata('user_id'));
-        $data['university_data'] = $this->universities_model->uni_details($ac_details['uni_id']);
+        $data['event_data'] = $this->universities_model->uni_details($ac_details['uni_id']);
 
         // $ac_details = $this->user_ac_model->ac_details($this->session->userdata('user_id'));
-        // $course_applicants = $this->course_applicants_model->get_applicants_from_course($ac_details['ac_id'], $ac_details['uni_id']);
-        // var_dump($course_applicants); die;
+        // $event_applicants = $this->event_applicants_model->get_applicants_from_event($ac_details['ac_id'], $ac_details['uni_id']);
+        // var_dump($event_applicants); die;
         $this->load->view('internal/templates/header', $data);
         $this->load->view('internal/templates/sidenav');
         $this->load->view('internal/templates/topbar');
-        $this->load->view('internal/level_2/academic_counsellor/ac_course_app_list_view');
+        $this->load->view('internal/level_2/academic_counsellor/ac_event_app_list_view');
         $this->load->view('internal/templates/footer');
     }
 
-    function course_applicants_list()
+    function event_applicants_list()
     {
         // Datatables Variables
         $draw = intval($this->input->get("draw"));
@@ -67,17 +67,17 @@ class Ac_course_applicants extends CI_Controller
         $length = intval($this->input->get("length"));
 
         $ac_details = $this->user_ac_model->ac_details($this->session->userdata('user_id'));
-        $course_applicants = $this->course_applicants_model->get_applicants_from_course($ac_details['uni_id']);
+        $event_applicants = $this->event_applicants_model->get_applicants_from_event($ac_details['uni_id']);
 
         $data = array();
         $base_url = base_url();
 
-        foreach ($course_applicants as $course_app) {
+        foreach ($event_applicants as $event_app) {
 
-            $view = '<span><button type="button" onclick="view_course_applicant(' . $course_app['c_applicant_id'] . ')" class="btn icon-btn btn-xs btn-info waves-effect waves-light" data-toggle="modal" data-target="#view_course_applicant"><span class="fas fa-eye"></span></button></span>';
+            $view = '<span><button type="button" onclick="view_event_applicant(' . $event_app['e_applicant_id'] . ')" class="btn icon-btn btn-xs btn-info waves-effect waves-light" data-toggle="modal" data-target="#view_event_applicant"><span class="fas fa-eye"></span></button></span>';
 
-            if ($course_app['user_role'] == 'Student') {
-                $chat = '<span class = "px-1 "><a type="button" onclick="chat_with_course_applicant(\'' . str_replace("'", "\\'", $course_app['user_id']) . '\', \'' . str_replace("'", "\\'", $course_app['user_fname']) . '\', \'' . str_replace("'", "\\'", $course_app['user_lname']) . '\');")" id="' . $course_app['user_id'] . '" title="' . $course_app['user_fname'] . ' ' . $course_app['user_lname'] . '" class="btn icon-btn btn-xs btn-success waves-effect waves-light"><span class="fas fa-comment"></span></a></span>';
+            if ($event_app['user_role'] == 'Student') {
+                $chat = '<span class = "px-1 "><a type="button" onclick="chat_with_event_applicant(\'' . str_replace("'", "\\'", $event_app['user_id']) . '\', \'' . str_replace("'", "\\'", $event_app['user_fname']) . '\', \'' . str_replace("'", "\\'", $event_app['user_lname']) . '\');")" id="' . $event_app['user_id'] . '" title="' . $event_app['user_fname'] . ' ' . $event_app['user_lname'] . '" class="btn icon-btn btn-xs btn-success waves-effect waves-light"><span class="fas fa-comment"></span></a></span>';
                 $function = $view . $chat;
             } else {
                 $function = $view;
@@ -85,19 +85,19 @@ class Ac_course_applicants extends CI_Controller
 
             $data[] = [
                 '',
-                $course_app['c_applicant_fname'] . ' ' . $course_app['c_applicant_lname'], // from course_applicants table
-                $course_app['c_applicant_nationality'], // from course_applicants table
-                $course_app['course_name'], // from courses table
-                $course_app['user_role'], // from user table
-                $course_app['c_app_submitdate'], // from course_applicants table
+                $event_app['e_applicant_fname'] . ' ' . $event_app['e_applicant_lname'], // from event_applicants table
+                $event_app['e_applicant_nationality'], // from event_applicants table
+                $event_app['event_name'], // from events table
+                $event_app['user_role'], // from user table
+                $event_app['c_app_submitdate'], // from event_applicants table
                 $function,
             ];
         }
 
         $output = array(
             "draw" => $draw,
-            "recordsTotal" => count($course_applicants),
-            "recordsFiltered" => count($course_applicants),
+            "recordsTotal" => count($event_applicants),
+            "recordsFiltered" => count($event_applicants),
             "data" => $data
         );
 
@@ -105,60 +105,60 @@ class Ac_course_applicants extends CI_Controller
         exit();
     }
 
-    function view_course_applicant()
+    function view_event_applicant()
     {
-        $course_applicant_details = $this->course_applicants_model->course_applicant_details($this->input->post('c_applicant_id'));
+        $event_applicant_details = $this->event_applicants_model->event_applicant_details($this->input->post('e_applicant_id'));
 
         $output = '
         <table class="table table-striped" style = "border:0;">
             <tbody>
                 <tr>
                 <th scope="row">Date Applied</th>
-                    <td>' . $course_applicant_details['c_app_submitdate'] . '</td>
+                    <td>' . $event_applicant_details['c_app_submitdate'] . '</td>
                 </tr>
                 <tr>
-                    <th scope="row">Course Name</th>
-                    <td>' . $course_applicant_details['course_name'] . '</td>
+                    <th scope="row">event Name</th>
+                    <td>' . $event_applicant_details['event_name'] . '</td>
                 </tr>
                 <tr>
                     <th scope="row">Full Name</th>
-                    <td>' . $course_applicant_details['c_applicant_fname'] . ' ' . $course_applicant_details['c_applicant_lname'] . '</td>
+                    <td>' . $event_applicant_details['e_applicant_fname'] . ' ' . $event_applicant_details['e_applicant_lname'] . '</td>
                 </tr>
                 <tr>
                     <th scope="row">Phone Number</th>
-                    <td>' . $course_applicant_details['c_applicant_phonenumber'] . '</td>
+                    <td>' . $event_applicant_details['e_applicant_phonenumber'] . '</td>
                 </tr>
                 <tr>
                     <th scope="row">Email</th>
-                    <td>' . $course_applicant_details['c_applicant_email'] . '</td>
+                    <td>' . $event_applicant_details['e_applicant_email'] . '</td>
                 </tr>
                 <tr>
                     <th scope="row">Nationality</th>
-                    <td>' . $course_applicant_details['c_applicant_nationality'] . '</td>
+                    <td>' . $event_applicant_details['e_applicant_nationality'] . '</td>
                 </tr>
                 <tr>
                     <th scope="row">Identification</th>
-                    <td>' . $course_applicant_details['c_applicant_identification'] . '</td>
+                    <td>' . $event_applicant_details['e_applicant_identification'] . '</td>
                 </tr>
                 <tr>
                     <th scope="row">Address</th>
-                    <td>' . $course_applicant_details['c_applicant_address'] . '</td>
+                    <td>' . $event_applicant_details['e_applicant_address'] . '</td>
                 </tr>
                 <tr>
                     <th scope="row">Gender</th>
-                    <td>' . $course_applicant_details['c_applicant_gender'] . '</td>
+                    <td>' . $event_applicant_details['e_applicant_gender'] . '</td>
                 </tr>
                 <tr>
                     <th scope="row">Date of Birth</th>
-                    <td>' . $course_applicant_details['c_applicant_dob'] . '</td>
+                    <td>' . $event_applicant_details['e_applicant_dob'] . '</td>
                 </tr>
                 <tr>
                     <th scope="row">Current Level</th>
-                    <td>' . $course_applicant_details['c_applicant_currentlevel'] . '</td>
+                    <td>' . $event_applicant_details['e_applicant_currentlevel'] . '</td>
                 </tr>            
                 <tr>
                     <th scope="row">Document</th>
-                    <td><a href="' . base_url("assets/uploads/course_applicants/") . $course_applicant_details['c_applicant_document'] . '" target="_blank">' . $course_applicant_details['c_applicant_document'] . '</a></td>
+                    <td><a href="' . base_url("assets/uploads/event_applicants/") . $event_applicant_details['e_applicant_document'] . '" target="_blank">' . $event_applicant_details['e_applicant_document'] . '</a></td>
                 </tr>
             </tbody>
         </table>

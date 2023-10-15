@@ -67,7 +67,7 @@
                                 <img class="card-img-top" src="https://static3.avast.com/10001215/web/i/index2/for-home.jpg" alt="Card image cap">
                                 <div class="card-body">
                                     <div class="badge badge-primary badge-sm">FOR STUDENTS</div>
-                                    <div class="card-title">Personal online consultants everywhere you go</div>
+                                    <div class="card-title">Online consultants everywhere you go</div>
                                     <p class="card-text">We provide one-to-one consulting and give you the best advice before you enter college / university</p>
                                 </div>
                             </div>
@@ -75,24 +75,24 @@
                             <div class="card card-primary text-center" style="cursor:pointer; transition:all .5s ease-in-out;">
                                 <img class="card-img-top" src="<?php echo base_url('assets/img/Card-primary/partner.png') ?>" alt="Card image cap">
                                 <div class="card-body">
-                                    <div class="badge badge-primary badge-sm">FOR EDUCATION PARTNERS</div>
+                                    <div class="badge badge-primary badge-sm">FOR ORGANIZERS</div>
                                     <div class="card-title">Provide partner cooperation opportunities</div>
-                                    <p class="card-text">We partner with the world's leading colleges and universities that offer the best courses for a reasonable price</p>
+                                    <p class="card-text">We partner with the world's leading colleges and universities that offer the best events for a reasonable price</p>
                                 </div>
                             </div>
 
                             <div class="card card-primary text-center" style="cursor:pointer; transition:all .5s ease-in-out;">
                                 <img class="card-img-top" src="https://static3.avast.com/10001215/web/i/index2/for-partners.jpg" alt="Card image cap">
                                 <div class="card-body">
-                                    <div class="badge badge-primary badge-sm">FOR EMPLOYER PARTNERS</div>
-                                    <div class="card-title">Expand employability across the world</div>
-                                    <p class="card-text pb-3">We build close ties with our collaborative industry partners to develop Employer Projects that would maximise our students' employability</p>
+                                    <div class="badge badge-primary badge-sm">FOR CAMPUS</div>
+                                    <div class="card-title">Expand across the world</div>
+                                    <p class="card-text pb-3">Example</p>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Details and Article -->
-                        <h2 class="mt-5 pt-5" style="font-weight:800; color:black;">More details and articles</h2>
+                        <!-- <h2 class="mt-5 pt-5" style="font-weight:800; color:black;">More details and articles</h2>
                         <div class="card-deck">
                             <div class="card card-secondary" style="cursor:pointer; transition:all .5s ease-in-out;">
                                 <img class="card-img-top" src="<?php echo base_url('assets/img/Card-secondary/details1.jpg') ?>" alt="Card image cap">
@@ -150,10 +150,10 @@
                                     </a>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                         <!-- Awards -->
-                        <div class="awards-container mt-5">
+                        <!-- <div class="awards-container mt-5">
                             <h2>EventHub with Awards</h2>
                             <div class="card-deck">
                                 <div class="card card-awards text-center">
@@ -189,7 +189,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
 
                     </main>

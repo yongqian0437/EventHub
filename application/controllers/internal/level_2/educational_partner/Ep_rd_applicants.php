@@ -54,7 +54,7 @@ class Ep_rd_applicants extends CI_Controller
     {
 
         $data['title'] = 'EventHub | My R&D Applications';
-        $data['university_data'] = $this->user_ep_model->get_uni_from_ep($this->session->userdata('user_id'));
+        $data['event_data'] = $this->user_ep_model->get_uni_from_ep($this->session->userdata('user_id'));
         $data['include_js'] = 'ep_my_app_list_view';
 
         $this->load->view('internal/templates/header', $data);
@@ -179,7 +179,7 @@ class Ep_rd_applicants extends CI_Controller
     function project_partners_page()
     {
         $data['title'] = 'EventHub | Project Partners';
-        $data['university_data'] = $this->user_ep_model->get_uni_from_ep($this->session->userdata('user_id'));
+        $data['event_data'] = $this->user_ep_model->get_uni_from_ep($this->session->userdata('user_id'));
         $data['include_js'] = 'ep_project_partners';
 
         $this->load->view('internal/templates/header', $data);
