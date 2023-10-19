@@ -69,7 +69,7 @@ class Ep_events extends CI_Controller
 
         $event_data = $this->user_ep_model->get_uni_from_ep($this->session->userdata('user_id'));
 
-        $events = $this->user_ep_model->get_event_for_uni($event_data->uni_id);
+        $events = $this->user_ep_model->get_event_for_uni($event_data->organizer_id);
 
         $data = array();
         $base_url = base_url();
@@ -117,11 +117,11 @@ class Ep_events extends CI_Controller
         $this->load->view('internal/templates/footer');
     }
 
-    function submit_added_event($uni_id)
+    function submit_added_event($organizer_id)
     {
         $data =
             [
-                'uni_id' => $uni_id,
+                'organizer_id' => $organizer_id,
                 'event_name' => htmlspecialchars($this->input->post('event_name')),
                 'event_type' => htmlspecialchars($this->input->post('event_type')),
                 'event_level' => htmlspecialchars($this->input->post('event_level')),
@@ -166,7 +166,7 @@ class Ep_events extends CI_Controller
         $event_data = $this->user_ep_model->get_uni_from_ep($this->session->userdata('user_id'));
         $data =
             [
-                'uni_id' => $event_data->uni_id,
+                'organizer_id' => $event_data->organizer_id,
                 'event_name' => htmlspecialchars($this->input->post('event_name')),
                 'event_type' => htmlspecialchars($this->input->post('event_type')),
                 'event_level' => htmlspecialchars($this->input->post('event_level')),

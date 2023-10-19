@@ -68,7 +68,7 @@ class event_applicants_model extends CI_Model
             ->from('users')
             ->join('event_applicants', 'event_applicants.e_applicant_method = users.user_id')
             ->join('events', 'events.event_id = event_applicants.event_id')
-            ->join('universities', 'universities.uni_id = events.uni_id')
+            ->join('universities', 'universities.organizer_id = events.organizer_id')
             ->where('users.user_id', $user_id);
         return $this->db->get()->result_array();
     }
@@ -95,7 +95,7 @@ class event_applicants_model extends CI_Model
         $this->db->select('*')
             ->from('event_applicants')
             ->join('events', 'events.event_id = event_applicants.event_id')
-            ->join('universities', 'universities.uni_id = events.uni_id')
+            ->join('universities', 'universities.organizer_id = events.organizer_id')
             ->where('event_applicants.e_applicant_id', $e_applicant_id);
         return $this->db->get()->row_array();
     }
@@ -111,7 +111,7 @@ class event_applicants_model extends CI_Model
             ->from('event_applicants') // event applicants table
             ->join('events', 'events.event_id = event_applicants.event_id') // events table
             ->join('users', 'users.user_id = event_applicants.e_applicant_method') // users table
-            ->join('universities', 'universities.uni_id = events.uni_id'); // uni table
+            ->join('universities', 'universities.organizer_id = events.organizer_id'); // uni table
         return $this->db->get()->result(); // return array of object format 
     }
 
@@ -133,22 +133,22 @@ class event_applicants_model extends CI_Model
         return $this->db->get()->result_array();
     }
 
-    function get_uni_name()
+    function get_organizer_name()
     {
         $this->db->select('')
             ->from('event_applicants') // event applicants table
             ->join('events', 'events.event_id = event_applicants.event_id') // events table
-            ->join('universities', 'universities.uni_id = events.event_id'); // users table
+            ->join('universities', 'universities.organizer_id = events.event_id'); // users table
         return $this->db->get()->result(); // return array of array format
     }
 
     public function applicants_per_uni()
     {
-        $this->db->select('count(event_applicants.e_applicant_id), universities.uni_name')
+        $this->db->select('count(event_applicants.e_applicant_id), universities.organizer_name')
             ->from('event_applicants')
             ->join('events', 'events.event_id = event_applicants.event_id')
-            ->join('universities', 'universities.uni_id = events.uni_id')
-            ->group_by('universities.uni_id')
+            ->join('universities', 'universities.organizer_id = events.organizer_id')
+            ->group_by('universities.organizer_id')
             ->order_by('count(event_applicants.e_applicant_id)', 'DESC');
         return $this->db->get()->result_array();
     }
@@ -177,14 +177,14 @@ class event_applicants_model extends CI_Model
     }
 
     // Get students who applied for the event(s)
-    function get_applicants_from_event($ac_uni_id)
+    function get_applicants_from_event($ac_organizer_id)
     {
         $this->db->select('')
             ->from('event_applicants')
             ->join('events', 'events.event_id = event_applicants.event_id')
             ->join('users', 'users.user_id = event_applicants.e_applicant_method') //change to user id
-            ->join('universities', 'universities.uni_id = events.uni_id')
-            ->where('universities.uni_id', $ac_uni_id);
+            ->join('universities', 'universities.organizer_id = events.organizer_id')
+            ->where('universities.organizer_id', $ac_organizer_id);
 
         return $this->db->get()->result_array();
     }
@@ -199,28 +199,28 @@ class event_applicants_model extends CI_Model
         return $this->db->get()->row_array();
     }
 
-    function get_applicants_from_method($ac_uni_id, $method)
+    function get_applicants_from_method($ac_organizer_id, $method)
     {
         $this->db->select('')
             ->from('event_applicants')
             ->join('events', 'events.event_id = event_applicants.event_id')
             ->join('users', 'users.user_id = event_applicants.e_applicant_method') //change to user id
-            ->join('universities', 'universities.uni_id = events.uni_id')
-            ->where('universities.uni_id', $ac_uni_id)
+            ->join('universities', 'universities.organizer_id = events.organizer_id')
+            ->where('universities.organizer_id', $ac_organizer_id)
             ->where('users.user_role', $method);
 
         return $this->db->get()->result_array();
     }
 
     // Function for bar graph 
-    function event_applicants_per_nationality($uni_id)
+    function event_applicants_per_nationality($organizer_id)
     {
         $this->db->select('count(event_applicants.e_applicant_id), event_applicants.e_applicant_nationality')
             ->from('event_applicants')
             //  ->join('users', 'users.user_id = event_applicants.e_applicant_method')
             ->join('events', 'events.event_id = event_applicants.event_id')
-            ->join('universities', 'universities.uni_id = events.uni_id')
-            ->where('universities.uni_id', $uni_id)
+            ->join('universities', 'universities.organizer_id = events.organizer_id')
+            ->where('universities.organizer_id', $organizer_id)
             ->group_by('event_applicants.e_applicant_nationality')
             ->order_by('count(event_applicants.e_applicant_id)', 'desc')
             ->order_by('event_applicants.e_applicant_nationality', 'asc');

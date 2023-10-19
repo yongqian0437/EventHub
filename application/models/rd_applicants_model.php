@@ -52,7 +52,7 @@ class rd_applicants_model extends CI_Model
     }
 
     //Check if there is existing ep_collab_id and emp_id in the same row (existing record of student R&DP application)
-    function past_application($user_id , $rd_id)
+    function past_application($user_id, $rd_id)
     {
         $this->db->where('user_id ', $user_id);
         $ep_data = $this->db->get('user_ep')->row();
@@ -78,7 +78,6 @@ class rd_applicants_model extends CI_Model
     {
         $this->db->where('rd_id ', $rd_id);
         return $this->db->get('rd_projects')->row();
-
     }
 
     function all_project_partners($ep_id)
@@ -92,7 +91,7 @@ class rd_applicants_model extends CI_Model
         $this->db->select('*');
         $this->db->from('user_ep');
         $this->db->where('ep_id ', $ep_id);
-        $this->db->join('universities', 'universities.uni_id = user_ep.uni_id');
+        $this->db->join('universities', 'universities.organizer_id = user_ep.organizer_id');
         $this->db->join('users', 'users.user_id = user_ep.user_id');
         $query = $this->db->get()->row();
         return $query;
@@ -109,8 +108,9 @@ class rd_applicants_model extends CI_Model
         $this->db->order_by('rd_app_submitdate', 'DESC');
         return $this->db->get('rd_applicants')->result();
     }
-    
-    function delete_rd_applicant_with_rd_id($rd_id){
+
+    function delete_rd_applicant_with_rd_id($rd_id)
+    {
         $this->db->where('rd_id', $rd_id);
         $this->db->delete('rd_applicants');
         if ($this->db->affected_rows() > 0) {

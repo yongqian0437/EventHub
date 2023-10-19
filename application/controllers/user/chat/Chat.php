@@ -73,8 +73,8 @@ class Chat extends CI_Controller
                         'user_fname' => $user['user_fname'],
                         'user_lname' => $user['user_lname'],
                         'ac_university' => $user['ac_university'],
-                        'uni_logo'   => $user['uni_logo'],
-                        'uni_country' => $user['uni_country'],
+                        'organizer_logo'   => $user['organizer_logo'],
+                        'organizer_country' => $user['organizer_country'],
                     ];
             }
 

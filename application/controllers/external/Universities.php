@@ -67,12 +67,12 @@ class Universities extends CI_Controller
 
 		foreach ($universities as $r) {
 
-			$logo = base_url('assets/img/universities/') . $r->uni_logo;
-			$total_event = $this->events_model->get_totalevent_for_uni($r->uni_id);
+			$logo = base_url('assets/img/universities/') . $r->organizer_logo;
+			$total_event = $this->events_model->get_totalevent_for_uni($r->organizer_id);
 
 			$image = '<img style=" height:85px; width: 250px; object-fit: contain;" src="' . $logo . '" alt="logo"><br><br>';
 
-			$uni_link = $base_url . "external/Universities/university_detail/" . $r->uni_id;
+			$uni_link = $base_url . "external/Universities/university_detail/" . $r->organizer_id;
 
 			$action = '<a style = "border-radius:10px; background-color:#6B9080; color:white; height:auto; width:auto%;" href="' . $uni_link . '" class = "btn btn-icon-split">
 							<span class = "icon text-white-600">
@@ -83,8 +83,8 @@ class Universities extends CI_Controller
 
 			$data[] = array(
 				$image,
-				$r->uni_name,
-				$r->uni_country,
+				$r->organizer_name,
+				$r->organizer_country,
 				$total_event,
 				$r->uni_qsrank,
 				$action,
@@ -102,13 +102,13 @@ class Universities extends CI_Controller
 		exit();
 	}
 
-	public function university_detail($uni_id)
+	public function university_detail($organizer_id)
 	{
 
 		$data['title'] = 'EventHub | University';
-		$data['uni_detail'] = $this->universities_model->get_uni_detail($uni_id);
-		$data['event_field'] = $this->events_model->event_field_dropdown($uni_id);
-		$data['total_event'] = $this->events_model->get_totalevent_for_uni($uni_id);
+		$data['uni_detail'] = $this->universities_model->get_uni_detail($organizer_id);
+		$data['event_field'] = $this->events_model->event_field_dropdown($organizer_id);
+		$data['total_event'] = $this->events_model->get_totalevent_for_uni($organizer_id);
 		$data['include_js'] = 'university_detail';
 		$this->load->view('external/templates/header', $data);
 		$this->load->view('external/universitiy_detail_view');
@@ -117,7 +117,7 @@ class Universities extends CI_Controller
 
 	public function fetch_event_list()
 	{
-		$event_data = $this->events_model->get_event_with_event_type($this->input->post('event_type'), $this->input->post('uni_id'));
+		$event_data = $this->events_model->get_event_with_event_type($this->input->post('event_type'), $this->input->post('organizer_id'));
 		$base_url = base_url();
 
 		$output = "";

@@ -55,7 +55,7 @@ class Ep_dashboard extends CI_Controller
 
 		//get number of event
 		$event_data = $this->user_ep_model->get_uni_from_ep($this->session->userdata('user_id'));
-		$data['num_events'] = count($this->user_ep_model->get_event_for_uni($event_data->uni_id));
+		$data['num_events'] = count($this->user_ep_model->get_event_for_uni($event_data->organizer_id));
 
 		//get number of my R&D project
 		$ep_data = $this->user_ep_model->get_ep_detail_with_user_id($this->session->userdata('user_id'));
@@ -70,7 +70,7 @@ class Ep_dashboard extends CI_Controller
 		$data['num_partners'] = count($this->rd_applicants_model->all_project_partners($ep_data->ep_id));
 
 		//data for barchart
-		$data['event_field'] = $this->events_model->event_field_bar_chart($event_data->uni_id);
+		$data['event_field'] = $this->events_model->event_field_bar_chart($event_data->organizer_id);
 
 		$this->load->view('internal/templates/header', $data);
 		$this->load->view('internal/templates/sidenav');

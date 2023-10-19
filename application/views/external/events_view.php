@@ -75,7 +75,7 @@
                                     </select>
                                 </div> -->
                                 <!-- <div class="form-group mr-2"><br>
-                                    <label for="uni_country">Event venue</label><br>
+                                    <label for="organizer_country">Event venue</label><br>
                                     <select name="event_countryid" id="filter_4" class="form-control form-select form-select-lg btn-sm">
                                         <option value="" selected disabled>Filter location</option>
                                         <?php

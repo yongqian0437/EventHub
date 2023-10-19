@@ -50,7 +50,7 @@
                             <!-- Card-->
                             <div class="card ">
                                 <div class="card-body">
-                                    <form method="post" action=" <?= base_url('internal/level_2/educational_partner/ep_events/submit_added_event/' . $event_data->uni_id); ?>">
+                                    <form method="post" action=" <?= base_url('internal/level_2/educational_partner/ep_events/submit_added_event/' . $event_data->organizer_id); ?>">
 
                                         <div class="form-row pt-4">
                                             <div class="form-group col-md-6 px-4 pr-5">

@@ -6,7 +6,7 @@
 <!-- Set base url to javascript variable-->
 <script type="text/javascript">
     var base_url = "<?php echo base_url(); ?>";
-    var ep_collab_id = "<?php echo $ep_id; ?>";   
+    var ep_collab_id = "<?php echo $ep_id; ?>";
 </script>
 
 <script type="text/javascript">
@@ -38,34 +38,34 @@
                 <div class="container-fluid">
 
                     <?php if ($user_role == 'Education Partner') { ?>
-                    <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4 px-4">
+                        <!-- Page Heading -->
+                        <div class="d-sm-flex align-items-center justify-content-between mb-4 px-4">
                             <h1 class="h3 mb-0 text-gray-800">Research & Development Projects</h1>
-                    </div>
-
-                    <!-- Breadcrumb -->
-                    <div class="row" >
-                        <div class="breadcrumb-wrapper col-xl-9">
-                            <ol class="breadcrumb" style = "background-color:rgba(0, 0, 0, 0);">
-                                <li class="breadcrumb-item">
-                                    <a href="<?=base_url('internal/level_2/educational_partner/ep_dashboard');?>"><i class="fas fa-tachometer-alt"></i> Home</a>
-                                </li>
-                                <li class="breadcrumb-item active">Research & Development Projects</li>
-                            </ol>
                         </div>
-                    </div>
+
+                        <!-- Breadcrumb -->
+                        <div class="row">
+                            <div class="breadcrumb-wrapper col-xl-9">
+                                <ol class="breadcrumb" style="background-color:rgba(0, 0, 0, 0);">
+                                    <li class="breadcrumb-item">
+                                        <a href="<?= base_url('internal/level_2/educational_partner/ep_dashboard'); ?>"><i class="fas fa-tachometer-alt"></i> Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item active">Research & Development Projects</li>
+                                </ol>
+                            </div>
+                        </div>
                     <?php } ?>
 
                     <?php if ($user_role != 'Education Partner') { ?>
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-1 text-gray-800 pt-4 px-4 pb-2 font-weight-bold">Research & Development Projects</h1>
+                        <!-- Page Heading -->
+                        <h1 class="h3 mb-1 text-gray-800 pt-4 px-4 pb-2 font-weight-bold">Research & Development Projects</h1>
                     <?php } ?>
 
                     <p class="mb-4 px-4" style="text-align: justify;">Research and development (R&D) includes activities that companies undertake to innovate and introduce new products and services.
                         It is often the first stage in the development process. The goal is typically to take new products and services to market and add to the company's bottom line.
                         R&D represents the activities companies undertake to innovate and introduce new products and services or to improve their existing offerings,
                         allows an organisation to stay ahead of its competition. This allows education partners or educational institutions to collaborate with one another
-                        in there common aim. The term R&D is widely linked to innovation both in the corporate and government world or the public and private sectors. 
+                        in there common aim. The term R&D is widely linked to innovation both in the corporate and government world or the public and private sectors.
                         Through R&D Project collaboration, institutions may now join forces in discovering a solution to a unified problem.</p> <!-- R&D Description -->
 
                     <div class="px-4 pb-4">
@@ -88,7 +88,7 @@
                                     <div class="card-body">
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item list_class">
-                                                <img class="img-fluid img_class" style="height: 17vh; object-fit: contain;" src="<?= base_url("assets/img/universities/{$rd['uni_logo']}");?>" width="300" ; />
+                                                <img class="img-fluid img_class" style="height: 17vh; object-fit: contain;" src="<?= base_url("assets/img/universities/{$rd['organizer_logo']}"); ?>" width="300" ; />
                                                 <h6><b>Project Title: <?= $rd['rd_title'] ?></b></h6>
                                             </li>
                                             <li class="list-group-item">
@@ -113,31 +113,31 @@
                                         </ul>
                                         <br>
                                         <div class="mt-3">
-                                        <!-- 2 Bottom Buttons -->
-                                        <div class="bottom_buttons">
-                                            <button type="button" onclick="view_rd(<?php echo $rd['rd_id']; ?>)" class="btn icon-btn btn-xs btn-info waves-effect waves-light" data-toggle="modal" data-target="#view_rd"><span class="fas fa-eye"></span></button>
-                                            <!-- *Check if session is established and if the role is a EP. If yes, show the 'View' and 'Apply Now' button -->
-                                            <?php if ($user_role == 'Education Partner') { ?>
-                                                <!-- 'View' button becomes visible once EP is logged in -->
-                                                <a class="btn view_doc" href="<?= base_url('assets/uploads/rd_projects/' . $rd['rd_document']) ?>" role="button" target="_blank" style="background-color: #8993a3; color:#FFFFFF">View</a>
-                                                <?php if ($rd['ep_id'] != $ep_id) { ?>
-                                                    <!-- **Check if EP has already applied to this specific R&DP. If yes, disable the apply button -->
-                                                    <?php $response = $this->rd_applicants_model->past_application($this->session->userdata('user_id'), $rd['rd_id']);
-                                                    if ($response == true) { ?>
-                                                        <button type="button" class="btn applied_rd" style="background-color: #0077B6; color:white;" disabled>Applied</button>
-                                                    <?php } else { ?>
-                                                        <button type="button" class="btn btn-success apply_rd" data-id="[<?= $rd['ep_id'] ?>, <?= $rd['rd_id'] ?> ]">Apply Now</button>
+                                            <!-- 2 Bottom Buttons -->
+                                            <div class="bottom_buttons">
+                                                <button type="button" onclick="view_rd(<?php echo $rd['rd_id']; ?>)" class="btn icon-btn btn-xs btn-info waves-effect waves-light" data-toggle="modal" data-target="#view_rd"><span class="fas fa-eye"></span></button>
+                                                <!-- *Check if session is established and if the role is a EP. If yes, show the 'View' and 'Apply Now' button -->
+                                                <?php if ($user_role == 'Education Partner') { ?>
+                                                    <!-- 'View' button becomes visible once EP is logged in -->
+                                                    <a class="btn view_doc" href="<?= base_url('assets/uploads/rd_projects/' . $rd['rd_document']) ?>" role="button" target="_blank" style="background-color: #8993a3; color:#FFFFFF">View</a>
+                                                    <?php if ($rd['ep_id'] != $ep_id) { ?>
+                                                        <!-- **Check if EP has already applied to this specific R&DP. If yes, disable the apply button -->
+                                                        <?php $response = $this->rd_applicants_model->past_application($this->session->userdata('user_id'), $rd['rd_id']);
+                                                        if ($response == true) { ?>
+                                                            <button type="button" class="btn applied_rd" style="background-color: #0077B6; color:white;" disabled>Applied</button>
+                                                        <?php } else { ?>
+                                                            <button type="button" class="btn btn-success apply_rd" data-id="[<?= $rd['ep_id'] ?>, <?= $rd['rd_id'] ?> ]">Apply Now</button>
+                                                        <?php } ?>
+                                                    <?php } ?>
+                                                <?php } else { ?>
+                                                    <?php if ($rd['ep_id'] != $ep_id) { ?>
+                                                        <!-- ***If EP is not logged in, 'Apply Now' button will redirect to Login page -->
+                                                        <?php if ($user_role != 'Student') { ?>
+                                                            <a class="btn apply_reg" href="<?= base_url('user/login/Auth/login'); ?>">Apply Now</a>
+                                                        <?php } ?>
                                                     <?php } ?>
                                                 <?php } ?>
-                                            <?php } else { ?>
-                                                <?php if ($rd['ep_id'] != $ep_id) { ?>
-                                                <!-- ***If EP is not logged in, 'Apply Now' button will redirect to Login page -->
-                                                <?php if ($user_role != 'Student') { ?>
-                                                <a class="btn apply_reg" href="<?= base_url('user/login/Auth/login'); ?>">Apply Now</a>
-                                                <?php } ?>
-                                                <?php } ?>
-                                            <?php } ?>
-                                        </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

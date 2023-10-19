@@ -219,7 +219,7 @@ class Ep_rd_applicants extends CI_Controller
             $data[] = array(
                 '',
                 $ep_partner->user_fname . ' ' . $ep_partner->user_lname,
-                $ep_partner->uni_name,
+                $ep_partner->organizer_name,
                 $rd_owner_data->rd_title,
                 $rd_owner_data->rd_pic,
                 $r->rd_app_submitdate,
@@ -253,7 +253,7 @@ class Ep_rd_applicants extends CI_Controller
                     <th colspan="2" style = "background-color: #CCE3DE; font-weight:900; font-size:1.1em;" scope="row"><center>PARTNER DETAILS</center></th>
                 </tr>
                 <tr style="text-align: center">
-                    <td colspan="2"><img src="' . base_url("assets/img/universities/") . $ep_partner->uni_logo . '" style="width: 250px; height: 100px; object-fit:contain;"></td>
+                    <td colspan="2"><img src="' . base_url("assets/img/universities/") . $ep_partner->organizer_logo . '" style="width: 250px; height: 100px; object-fit:contain;"></td>
                 </tr> 
                 <tr>
                     <th scope="row">Partner Name</th>
@@ -269,11 +269,11 @@ class Ep_rd_applicants extends CI_Controller
                 </tr>
                 <tr>
                     <th scope="row">University</th>
-                    <td>' . $ep_partner->uni_name . '</td>
+                    <td>' . $ep_partner->organizer_name . '</td>
                 </tr>
                 <tr>
                     <th scope="row">University Country</th>
-                    <td>' . $ep_partner->uni_country . '</td>
+                    <td>' . $ep_partner->organizer_country . '</td>
                 </tr>
                 <tr>
                     <th olspan="2" style = "background-color: white;" scope="row"></th>        

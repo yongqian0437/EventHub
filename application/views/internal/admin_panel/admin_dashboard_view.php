@@ -64,10 +64,10 @@
                                             <th class="text-center">Events</th>
                                         </tr>
                                         <?php foreach ($latest_uni as $uni) {
-                                            $total_event = $this->events_model->get_totalevent_for_uni($uni['uni_id']);
+                                            $total_event = $this->events_model->get_totalevent_for_uni($uni['organizer_id']);
                                         ?>
                                             <tr>
-                                                <td><?= $uni['uni_name'] ?></td>
+                                                <td><?= $uni['organizer_name'] ?></td>
                                                 <td class="text-center">
                                                     <?= $total_event ?>
                                                 </td>
@@ -186,7 +186,7 @@
                     data: {
                         labels: [<?php $counter = 0;
                                     foreach ($total_applicants as $row) : ?> "<?php if ($counter < 4) {
-                                                                                    echo $row['uni_name'];
+                                                                                    echo $row['organizer_name'];
                                                                                 }
                                                                                 $counter++; ?>", <?php endforeach; ?>],
                         datasets: [{

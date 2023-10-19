@@ -413,10 +413,10 @@
                                                 <div class="form-group col-md-12 px-2">
                                                     <label for="university1"></label>
                                                     <select name="university1_id" id="university_1" class="form-control form-select form-select-md">
-                                                        <option value="<?= $edit_event_applicant['uni_id'] ?>" selected><?= $edit_event_applicant['uni_name'] ?></option>
+                                                        <option value="<?= $edit_event_applicant['organizer_id'] ?>" selected><?= $edit_event_applicant['organizer_name'] ?></option>
                                                         <?php
                                                         foreach ($event_data as $u) {
-                                                            echo '<option value="' . $u->uni_id . '">' . $u->uni_name . '</option>';
+                                                            echo '<option value="' . $u->organizer_id . '">' . $u->organizer_name . '</option>';
                                                         }
                                                         ?>
                                                     </select>

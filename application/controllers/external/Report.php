@@ -54,7 +54,7 @@ class Report extends CI_Controller
 
 	function fetch_events()
 	{
-		echo $this->events_model->fetch_events($this->input->post('uni_id'), $this->input->post('event_level'));
+		echo $this->events_model->fetch_events($this->input->post('organizer_id'), $this->input->post('event_level'));
 	}
 
 	function fetch_table()
@@ -62,22 +62,22 @@ class Report extends CI_Controller
 		$event_data1 = $this->events_model->get_event_with_id($this->input->post('event_id1'));
 		$event_data2 = $this->events_model->get_event_with_id($this->input->post('event_id2'));
 		$event_data3 = $this->events_model->get_event_with_id($this->input->post('event_id3'));
-		$uni_data1 = $this->universities_model->get_uni_with_id($this->input->post('uni_id1'));
-		$uni_data2 = $this->universities_model->get_uni_with_id($this->input->post('uni_id2'));
-		$uni_data3 = $this->universities_model->get_uni_with_id($this->input->post('uni_id3'));
+		$uni_data1 = $this->universities_model->get_uni_with_id($this->input->post('organizer_id1'));
+		$uni_data2 = $this->universities_model->get_uni_with_id($this->input->post('organizer_id2'));
+		$uni_data3 = $this->universities_model->get_uni_with_id($this->input->post('organizer_id3'));
 
 		$base_url = base_url();
-		$logo1 = $base_url . "assets/img/universities/" . $uni_data1[0]->uni_logo;
-		$logo2 = $base_url . "assets/img/universities/" . $uni_data2[0]->uni_logo;
-		$logo3 = $base_url . "assets/img/universities/" . $uni_data3[0]->uni_logo;
+		$logo1 = $base_url . "assets/img/universities/" . $uni_data1[0]->organizer_logo;
+		$logo2 = $base_url . "assets/img/universities/" . $uni_data2[0]->organizer_logo;
+		$logo3 = $base_url . "assets/img/universities/" . $uni_data3[0]->organizer_logo;
 
 		$event_link1 = $base_url . "external/Events/view_event/" . $event_data1[0]->event_id;
 		$event_link2 = $base_url . "external/Events/view_event/" . $event_data2[0]->event_id;
 		$event_link3 = $base_url . "external/Events/view_event/" . $event_data3[0]->event_id;
 
-		$uni_link1 = $base_url . "external/Universities/university_detail/" . $uni_data1[0]->uni_id;
-		$uni_link2 = $base_url . "external/Universities/university_detail/" . $uni_data2[0]->uni_id;
-		$uni_link3 = $base_url . "external/Universities/university_detail/" . $uni_data3[0]->uni_id;
+		$uni_link1 = $base_url . "external/Universities/university_detail/" . $uni_data1[0]->organizer_id;
+		$uni_link2 = $base_url . "external/Universities/university_detail/" . $uni_data2[0]->organizer_id;
+		$uni_link3 = $base_url . "external/Universities/university_detail/" . $uni_data3[0]->organizer_id;
 
 		$output =
 			'<tbody>
@@ -132,9 +132,9 @@ class Report extends CI_Controller
 			
 			<tr>
 				<th scope="row">Country</th>
-				<td>' . $uni_data1[0]->uni_country . '</td>
-				<td>' . $uni_data2[0]->uni_country . '</td>
-				<td>' . $uni_data3[0]->uni_country . '</td>
+				<td>' . $uni_data1[0]->organizer_country . '</td>
+				<td>' . $uni_data2[0]->organizer_country . '</td>
+				<td>' . $uni_data3[0]->organizer_country . '</td>
 			</tr>			
 			<tr>
 				<th scope="row">Area</th>
@@ -215,18 +215,18 @@ class Report extends CI_Controller
 	{
 		$event_data1 = $this->events_model->get_event_with_id($this->input->post('event_id1'));
 		$event_data2 = $this->events_model->get_event_with_id($this->input->post('event_id2'));
-		$uni_data1 = $this->universities_model->get_uni_with_id($this->input->post('uni_id1'));
-		$uni_data2 = $this->universities_model->get_uni_with_id($this->input->post('uni_id2'));
+		$uni_data1 = $this->universities_model->get_uni_with_id($this->input->post('organizer_id1'));
+		$uni_data2 = $this->universities_model->get_uni_with_id($this->input->post('organizer_id2'));
 
 		$base_url = base_url();
-		$logo1 = $base_url . "assets/img/universities/" . $uni_data1[0]->uni_logo;
-		$logo2 = $base_url . "assets/img/universities/" . $uni_data2[0]->uni_logo;
+		$logo1 = $base_url . "assets/img/universities/" . $uni_data1[0]->organizer_logo;
+		$logo2 = $base_url . "assets/img/universities/" . $uni_data2[0]->organizer_logo;
 
 		$event_link1 = $base_url . "external/Events/view_event/" . $event_data1[0]->event_id;
 		$event_link2 = $base_url . "external/Events/view_event/" . $event_data2[0]->event_id;
 
-		$uni_link1 = $base_url . "external/Universities/university_detail/" . $uni_data1[0]->uni_id;
-		$uni_link2 = $base_url . "external/Universities/university_detail/" . $uni_data2[0]->uni_id;
+		$uni_link1 = $base_url . "external/Universities/university_detail/" . $uni_data1[0]->organizer_id;
+		$uni_link2 = $base_url . "external/Universities/university_detail/" . $uni_data2[0]->organizer_id;
 
 		$output =
 			'<tbody>
@@ -268,8 +268,8 @@ class Report extends CI_Controller
 			
 			<tr>
 				<th scope="row">Country</th>
-				<td>' . $uni_data1[0]->uni_country . '</td>
-				<td>' . $uni_data2[0]->uni_country . '</td>
+				<td>' . $uni_data1[0]->organizer_country . '</td>
+				<td>' . $uni_data2[0]->organizer_country . '</td>
 			</tr>			
 			<tr>
 				<th scope="row">Area</th>

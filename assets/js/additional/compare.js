@@ -35,7 +35,7 @@ $(document).ready(function () {
 				url: base_url + "external/Compare/fetch_events",
 				method: "POST",
 				data: {
-					uni_id: $("#university_1").val(),
+					organizer_id: $("#university_1").val(),
 					event_level: $("#level_1").val(),
 				},
 				success: function (data) {
@@ -57,7 +57,7 @@ $(document).ready(function () {
 				url: base_url + "external/Compare/fetch_events",
 				method: "POST",
 				data: {
-					uni_id: $("#university_2").val(),
+					organizer_id: $("#university_2").val(),
 					event_level: $("#level_2").val(),
 				},
 				success: function (data) {
@@ -79,7 +79,7 @@ $(document).ready(function () {
 				url: base_url + "external/Compare/fetch_events",
 				method: "POST",
 				data: {
-					uni_id: $("#university_3").val(),
+					organizer_id: $("#university_3").val(),
 					event_level: $("#level_3").val(),
 				},
 				success: function (data) {
@@ -101,9 +101,9 @@ function generateTable() {
 				url: base_url + "external/Compare/fetch_table",
 				method: "POST",
 				data: {
-					uni_id1: $("#university_1").val(),
-					uni_id2: $("#university_2").val(),
-					uni_id3: $("#university_3").val(),
+					organizer_id1: $("#university_1").val(),
+					organizer_id2: $("#university_2").val(),
+					organizer_id3: $("#university_3").val(),
 					event_id1: $("#event_1").val(),
 					event_id2: $("#event_2").val(),
 					event_id3: $("#event_3").val(),
@@ -129,8 +129,8 @@ function generateTable() {
 				url: base_url + "external/Compare/fetch_table_for_2events",
 				method: "POST",
 				data: {
-					uni_id1: $("#university_1").val(),
-					uni_id2: $("#university_2").val(),
+					organizer_id1: $("#university_1").val(),
+					organizer_id2: $("#university_2").val(),
 					event_id1: $("#event_1").val(),
 					event_id2: $("#event_2").val(),
 				},

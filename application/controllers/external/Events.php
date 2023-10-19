@@ -75,7 +75,7 @@ class Events extends CI_Controller
 		}
 		$data['title'] = 'EventHub | Event Details';
 		$data['event_data'] = $this->events_model->select_condition($id, 'events');
-		$data['uni_data'] = $this->universities_model->get_uni_detail($data['event_data'][0]->uni_id);
+		$data['uni_data'] = $this->universities_model->get_uni_detail($data['event_data'][0]->organizer_id);
 		$data['title'] = 'EventHub | Event Details';
 
 		$this->load->view('external/templates/header', $data);

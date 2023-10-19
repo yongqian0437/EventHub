@@ -73,25 +73,26 @@ class user_ac_model extends CI_Model
     public function full_ac_details()
     {
         $this->db->select('')
-        ->from('user_ac') // ac table
-        ->join('users', 'users.user_id = user_ac.user_id');// users table
+            ->from('user_ac') // ac table
+            ->join('users', 'users.user_id = user_ac.user_id'); // users table
         return $this->db->get();
     }
 
     public function get_ac_detail($user_id)
     {
-       $this->db->where('user_id',$user_id);
-       return $this->db->get('user_ac')->row();
+        $this->db->where('user_id', $user_id);
+        return $this->db->get('user_ac')->row();
     }
-      
-    function ac_university_country($university_name) {
-        $this->db->select('uni_country')
-                 ->from('universities')
-                 ->join('user_ac', 'user_ac.ac_university = universities.uni_name')
-                 ->where('user_ac.ac_university', $university_name)
-                 ->limit(1);
+
+    function ac_university_country($university_name)
+    {
+        $this->db->select('organizer_country')
+            ->from('universities')
+            ->join('user_ac', 'user_ac.ac_university = universities.organizer_name')
+            ->where('user_ac.ac_university', $university_name)
+            ->limit(1);
         $query = $this->db->get();
         $res = $query->row_array();
-        return $res['uni_country'];
+        return $res['organizer_country'];
     }
 }

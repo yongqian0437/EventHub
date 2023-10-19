@@ -286,7 +286,7 @@ class Auth extends CI_Controller
 
     public function university()
     {
-        $this->form_validation->set_rules('uni_name', 'University Name', 'required|trim');
+        $this->form_validation->set_rules('organizer_name', 'University Name', 'required|trim');
 
         if ($this->form_validation->run() == false) {
             $data['title'] = "EventHub | University Registration";
@@ -295,37 +295,37 @@ class Auth extends CI_Controller
             $this->load->view('user/registration/university_registration_view');
             $this->load->view('external/templates/footer');
         } else {
-            $uni_background = $this->upload_img('./assets/img/universities', 'uni_background');
-            $uni_logo = $this->upload_img('./assets/img/universities', 'uni_logo');
+            $organizer_background = $this->upload_img('./assets/img/universities', 'organizer_background');
+            $organizer_logo = $this->upload_img('./assets/img/universities', 'organizer_logo');
 
             $data =
                 [
-                    'uni_logo' => $uni_logo['file_name'],
-                    'uni_background' => $uni_background['file_name'],
-                    'uni_name' => htmlspecialchars($this->input->post('uni_name', true)),
-                    'uni_shortprofile' => htmlspecialchars($this->input->post('uni_shortprofile', true)),
-                    'uni_fun_fact' => htmlspecialchars($this->input->post('uni_fun_fact', true)),
-                    'uni_country' => htmlspecialchars($this->input->post('uni_country', true)),
-                    'uni_hotline' => htmlspecialchars($this->input->post('uni_hotline', true)),
-                    'uni_email' => htmlspecialchars($this->input->post('uni_email', true)),
-                    'uni_address' => htmlspecialchars($this->input->post('uni_address', true)),
-                    'uni_website' => htmlspecialchars($this->input->post('uni_website', true)),
+                    'organizer_logo' => $organizer_logo['file_name'],
+                    'organizer_background' => $organizer_background['file_name'],
+                    'organizer_name' => htmlspecialchars($this->input->post('organizer_name', true)),
+                    'organizer_shortprofile' => htmlspecialchars($this->input->post('organizer_shortprofile', true)),
+                    'organizer_fun_fact' => htmlspecialchars($this->input->post('organizer_fun_fact', true)),
+                    'organizer_country' => htmlspecialchars($this->input->post('organizer_country', true)),
+                    'organizer_hotline' => htmlspecialchars($this->input->post('organizer_hotline', true)),
+                    'organizer_email' => htmlspecialchars($this->input->post('organizer_email', true)),
+                    'organizer_address' => htmlspecialchars($this->input->post('organizer_address', true)),
+                    'organizer_website' => htmlspecialchars($this->input->post('organizer_website', true)),
                     'uni_qsrank' => htmlspecialchars($this->input->post('uni_qsrank', true)),
                     'uni_employabilityrank' => htmlspecialchars($this->input->post('uni_employabilityrank', true)),
                     'uni_totalstudents' => htmlspecialchars($this->input->post('uni_totalstudents', true)),
-                    'uni_approval' => 0,
+                    'organizer_approval' => 0,
                 ];
 
             // insert data into database
             $this->universities_model->insert($data);
 
-            $uni_email = $this->input->post('uni_email');
-            $uni = $this->universities_model->valid_email($uni_email);
+            $organizer_email = $this->input->post('organizer_email');
+            $uni = $this->universities_model->valid_email($organizer_email);
             $university =
                 [
-                    'uni_id' => $uni['uni_id'],
-                    'uni_name' => $uni['uni_name'],
-                    'uni_email' => $uni['uni_email'],
+                    'organizer_id' => $uni['organizer_id'],
+                    'organizer_name' => $uni['organizer_name'],
+                    'organizer_email' => $uni['organizer_email'],
                 ];
 
             $this->session->set_userdata($university);
@@ -340,7 +340,7 @@ class Auth extends CI_Controller
     {
 
         $user_id = $this->session->userdata('user_id');
-        $uni_id = $this->session->userdata('uni_id');
+        $organizer_id = $this->session->userdata('organizer_id');
         $this->form_validation->set_rules('ep_phonenumber', 'Phone Number', 'required|trim|min_length[5]', [
             'min_length' => 'Phone number too short'
         ]);
@@ -367,7 +367,7 @@ class Auth extends CI_Controller
                     'ep_dob' => htmlspecialchars($this->input->post('ep_dob', true)),
                     'ep_document' => $ep_document['file_name'],
                     'ep_jobtitle' => htmlspecialchars($this->input->post('ep_jobtitle', true)),
-                    'uni_id' => $uni_id,
+                    'organizer_id' => $organizer_id,
                 ];
 
             // insert data into database
@@ -440,14 +440,14 @@ class Auth extends CI_Controller
             $this->load->view('external/templates/footer');
         } else {
             $ac_document = $this->upload_doc('./assets/uploads/academic_counsellor', 'ac_document');
-            $uni_id = $this->universities_model->fetch_uni_id($this->input->post('ac_university'));
+            $organizer_id = $this->universities_model->fetch_organizer_id($this->input->post('ac_university'));
 
             $data =
                 [
                     'user_id' => $user_id,
                     'ac_phonenumber' => htmlspecialchars($this->input->post('ac_phonenumber', true)),
                     'ac_businessemail' => htmlspecialchars($this->input->post('ac_businessemail', true)),
-                    'uni_id' => $uni_id,
+                    'organizer_id' => $organizer_id,
                     'ac_university' => htmlspecialchars($this->input->post('ac_university', true)),
                     'ac_nationality' => htmlspecialchars($this->input->post('ac_nationality', true)),
                     'ac_gender' => htmlspecialchars($this->input->post('ac_gender', true)),

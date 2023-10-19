@@ -72,7 +72,7 @@ class user_ep_model extends CI_Model
         $this->db->select('*')
             ->from('user_ep')
             ->join('users', 'users.user_id = user_ep.user_id')
-            ->join('universities', 'universities.uni_id = user_ep.uni_id')
+            ->join('universities', 'universities.organizer_id = user_ep.organizer_id')
             ->where('user_ep.user_id', $id);
         return $this->db->get()->row_array();
     }
@@ -99,7 +99,7 @@ class user_ep_model extends CI_Model
         $this->db->select('')
             ->from('users') // users table
             ->join('user_ep', 'user_ep.user_id = users.user_id') // ep table
-            ->join('universities', 'universities.uni_id = user_ep.uni_id'); // uni table
+            ->join('universities', 'universities.organizer_id = user_ep.organizer_id'); // uni table
         return $this->db->get()->row(); // return object array
     }
 
@@ -113,13 +113,13 @@ class user_ep_model extends CI_Model
         $this->db->where('user_id', $user_id);
         $ep_query = $this->db->get('user_ep')->row();
 
-        $this->db->where('uni_id', $ep_query->uni_id);
+        $this->db->where('organizer_id', $ep_query->organizer_id);
         return $this->db->get('universities')->row();
     }
 
-    public function get_event_for_uni($uni_id)
+    public function get_event_for_uni($organizer_id)
     {
-        $this->db->where('uni_id', $uni_id);
+        $this->db->where('organizer_id', $organizer_id);
         return $this->db->get('events')->result();
     }
 

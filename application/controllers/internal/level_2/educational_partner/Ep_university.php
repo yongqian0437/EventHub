@@ -71,46 +71,46 @@ class Ep_university extends CI_Controller
 		$this->load->view('internal/templates/footer');
 	}
 
-	public function after_edit_university($uni_id)
+	public function after_edit_university($organizer_id)
 	{
-		$event_data = $this->universities_model->get_uni_with_id($uni_id);
+		$event_data = $this->universities_model->get_uni_with_id($organizer_id);
 
-		if ($_FILES['uni_background']['name'] != "") {
+		if ($_FILES['organizer_background']['name'] != "") {
 
-			unlink($event_data[0]->uni_background);
+			unlink($event_data[0]->organizer_background);
 
-			$uni_background = $this->upload_img('./assets/img/universities', 'uni_background');
+			$organizer_background = $this->upload_img('./assets/img/universities', 'organizer_background');
 			$data = [
-				'uni_background' => $uni_background['file_name'],
+				'organizer_background' => $organizer_background['file_name'],
 			];
-			$this->universities_model->update($data, $uni_id);
+			$this->universities_model->update($data, $organizer_id);
 		}
 
-		if ($_FILES['uni_logo']['name'] != "") {
+		if ($_FILES['organizer_logo']['name'] != "") {
 
-			unlink($event_data[0]->uni_logo);
+			unlink($event_data[0]->organizer_logo);
 
-			$uni_logo = $this->upload_img('./assets/img/universities', 'uni_logo');
+			$organizer_logo = $this->upload_img('./assets/img/universities', 'organizer_logo');
 			$data = [
-				'uni_logo' => $uni_logo['file_name'],
+				'organizer_logo' => $organizer_logo['file_name'],
 			];
-			$this->universities_model->update($data, $uni_id);
+			$this->universities_model->update($data, $organizer_id);
 		}
 
 		$data =
 			[
-				'uni_name' => htmlspecialchars($this->input->post('uni_name')),
-				'uni_shortprofile' => htmlspecialchars($this->input->post('uni_shortprofile')),
-				'uni_country' => htmlspecialchars($this->input->post('uni_country')),
-				'uni_hotline' => htmlspecialchars($this->input->post('uni_hotline')),
-				'uni_email' => htmlspecialchars($this->input->post('uni_email')),
-				'uni_website' => htmlspecialchars($this->input->post('uni_website')),
-				'uni_address' => htmlspecialchars($this->input->post('uni_address')),
+				'organizer_name' => htmlspecialchars($this->input->post('organizer_name')),
+				'organizer_shortprofile' => htmlspecialchars($this->input->post('organizer_shortprofile')),
+				'organizer_country' => htmlspecialchars($this->input->post('organizer_country')),
+				'organizer_hotline' => htmlspecialchars($this->input->post('organizer_hotline')),
+				'organizer_email' => htmlspecialchars($this->input->post('organizer_email')),
+				'organizer_website' => htmlspecialchars($this->input->post('organizer_website')),
+				'organizer_address' => htmlspecialchars($this->input->post('organizer_address')),
 				'uni_qsrank' => htmlspecialchars($this->input->post('uni_qsrank')),
 				'uni_employabilityrank' => htmlspecialchars($this->input->post('uni_employabilityrank')),
 				'uni_totalstudents' => htmlspecialchars($this->input->post('uni_totalstudents')),
 			];
-		$this->universities_model->update($data, $uni_id);
+		$this->universities_model->update($data, $organizer_id);
 
 		$this->session->set_flashdata('edit_message', '<div id = "alert_message" class="alert alert-success px-4	" role="alert">
 		University Information has been edited</div>');

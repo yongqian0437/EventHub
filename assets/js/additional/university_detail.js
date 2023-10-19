@@ -3,7 +3,7 @@ $(document).ready(function () {
 	$.ajax({
 		url: base_url + "external/Universities/fetch_event_list",
 		method: "POST",
-		data: { event_type: $("#event_field").val(), uni_id: uni_id },
+		data: { event_type: $("#event_field").val(), organizer_id: organizer_id },
 		success: function (data) {
 			$("#event_list").html(data);
 		},
@@ -15,7 +15,7 @@ $(document).ready(function () {
 		$.ajax({
 			url: base_url + "external/Universities/fetch_event_list",
 			method: "POST",
-			data: { event_type: $("#event_field").val(), uni_id: uni_id },
+			data: { event_type: $("#event_field").val(), organizer_id: organizer_id },
 			success: function (data) {
 				$("#event_list").html(data);
 			},

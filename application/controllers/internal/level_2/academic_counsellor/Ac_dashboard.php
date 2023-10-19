@@ -48,17 +48,17 @@ class Ac_dashboard extends CI_Controller
         $data['include_js'] = 'ac_dashboard';
 
         $ac_details = $this->user_ac_model->ac_details($this->session->userdata('user_id'));
-        $data['total_event_applicants'] = count($this->event_applicants_model->get_applicants_from_event($ac_details['uni_id']));
-        $data['total_by_students'] = count($this->event_applicants_model->get_applicants_from_method($ac_details['uni_id'], 'Student'));
-        $data['total_by_ea'] = count($this->event_applicants_model->get_applicants_from_method($ac_details['uni_id'], 'Education Agent'));
+        $data['total_event_applicants'] = count($this->event_applicants_model->get_applicants_from_event($ac_details['organizer_id']));
+        $data['total_by_students'] = count($this->event_applicants_model->get_applicants_from_method($ac_details['organizer_id'], 'Student'));
+        $data['total_by_ea'] = count($this->event_applicants_model->get_applicants_from_method($ac_details['organizer_id'], 'Education Agent'));
 
 
         // $ac_details = $this->user_ac_model->ac_details($this->session->userdata('user_id'));
-        // $event_applicants = $this->event_applicants_model->get_applicants_from_event($ac_details['ac_id'], $ac_details['uni_id']);
+        // $event_applicants = $this->event_applicants_model->get_applicants_from_event($ac_details['ac_id'], $ac_details['organizer_id']);
         // var_dump($event_applicants); die;
 
         // For Bar Graph: Total event Applicants by Nationality
-        $data['total_event_app'] = $this->event_applicants_model->event_applicants_per_nationality($ac_details['uni_id']);
+        $data['total_event_app'] = $this->event_applicants_model->event_applicants_per_nationality($ac_details['organizer_id']);
         $this->load->view('internal/templates/header', $data);
         $this->load->view('internal/templates/sidenav');
         $this->load->view('internal/templates/topbar');

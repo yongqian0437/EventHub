@@ -94,7 +94,7 @@
                                                             <label>
                                                                 <?php
                                                                 if ($user_role == 'Education Partner') {
-                                                                    echo $ep_data['uni_name'];
+                                                                    echo $ep_data['organizer_name'];
                                                                 } else if ($user_role == 'Academic Counsellor') {
                                                                     echo $ac_data['ac_university'];
                                                                 }
@@ -266,7 +266,7 @@
                                                     </div>
                                                     <button type="submit" class="btn btn-primary">Save</button>
                                                     <a href="<?= base_url('internal/level_2/level_2_profile'); ?>" class="btn btn-danger">Cancel</a>
-                                                    
+
                                                 </form>
                                             </div>
                                         </div>
@@ -283,13 +283,13 @@
             <!-- End of Main Content -->
 
             <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-              <!-- Pop up after user edit profile information-->
-              <?php if ($this->session->flashdata('edit_message')) { ?>
+            <!-- Pop up after user edit profile information-->
+            <?php if ($this->session->flashdata('edit_message')) { ?>
                 <script>
                     swal({
-                            title: 'Profile successfully edited!',
-                            icon:  'success',
-                            button: "OK",
-                        });
+                        title: 'Profile successfully edited!',
+                        icon: 'success',
+                        button: "OK",
+                    });
                 </script>
             <?php } ?>

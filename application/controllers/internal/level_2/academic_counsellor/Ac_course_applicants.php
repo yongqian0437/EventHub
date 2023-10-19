@@ -47,10 +47,10 @@ class Ac_event_applicants extends CI_Controller
         $data['include_js'] = 'ac_event_applicants_list';
 
         $ac_details = $this->user_ac_model->ac_details($this->session->userdata('user_id'));
-        $data['event_data'] = $this->universities_model->uni_details($ac_details['uni_id']);
+        $data['event_data'] = $this->universities_model->uni_details($ac_details['organizer_id']);
 
         // $ac_details = $this->user_ac_model->ac_details($this->session->userdata('user_id'));
-        // $event_applicants = $this->event_applicants_model->get_applicants_from_event($ac_details['ac_id'], $ac_details['uni_id']);
+        // $event_applicants = $this->event_applicants_model->get_applicants_from_event($ac_details['ac_id'], $ac_details['organizer_id']);
         // var_dump($event_applicants); die;
         $this->load->view('internal/templates/header', $data);
         $this->load->view('internal/templates/sidenav');
@@ -67,7 +67,7 @@ class Ac_event_applicants extends CI_Controller
         $length = intval($this->input->get("length"));
 
         $ac_details = $this->user_ac_model->ac_details($this->session->userdata('user_id'));
-        $event_applicants = $this->event_applicants_model->get_applicants_from_event($ac_details['uni_id']);
+        $event_applicants = $this->event_applicants_model->get_applicants_from_event($ac_details['organizer_id']);
 
         $data = array();
         $base_url = base_url();

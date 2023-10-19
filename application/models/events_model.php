@@ -49,8 +49,8 @@ class events_model extends CI_Model
     {
         $this->db->select('*')
             ->from('events')
-            ->join('universities', 'universities.uni_id = events.uni_id')
-            ->where('universities.uni_approval', 1);
+            ->join('universities', 'universities.organizer_id = events.organizer_id')
+            ->where('universities.organizer_approval', 1);
         return $this->db->get()->result();
     }
 
@@ -76,9 +76,9 @@ class events_model extends CI_Model
         return $this->db->get('events')->result();
     }
 
-    function fetch_events($uni_id, $event_level)  //new function
+    function fetch_events($organizer_id, $event_level)  //new function
     {
-        $this->db->where('uni_id', $uni_id);
+        $this->db->where('organizer_id', $organizer_id);
         $this->db->where('event_level', $event_level);
         $this->db->order_by('event_name', 'ASC');
         $query = $this->db->get('events');
@@ -95,9 +95,9 @@ class events_model extends CI_Model
         return $output;
     }
 
-    function fetch_events_id($uni_id)  //new function
+    function fetch_events_id($organizer_id)  //new function
     {
-        $this->db->where('uni_id', $uni_id);
+        $this->db->where('organizer_id', $organizer_id);
         $query = $this->db->get('events');
 
         if ($query->num_rows() > 0) {
@@ -112,23 +112,23 @@ class events_model extends CI_Model
         return $output;
     }
 
-    function event_field_dropdown($uni_id)
+    function event_field_dropdown($organizer_id)
     {
-        $this->db->where('uni_id', $uni_id);
+        $this->db->where('organizer_id', $organizer_id);
         $this->db->order_by('event_type');
         $this->db->group_by('event_type');
         return $this->db->get('events')->result();
     }
 
-    function get_event_with_event_type($event_type, $uni_id)
+    function get_event_with_event_type($event_type, $organizer_id)
     {
         if ($event_type == 'all') {
-            $this->db->where('uni_id', $uni_id);
+            $this->db->where('organizer_id', $organizer_id);
             $this->db->order_by('event_type');
             $this->db->order_by("event_level", "asc");
             return $this->db->get('events')->result();
         } else {
-            $this->db->where('uni_id', $uni_id);
+            $this->db->where('organizer_id', $organizer_id);
             $this->db->where('event_type', $event_type);
             $this->db->order_by('event_type');
             $this->db->order_by("event_level", "asc");
@@ -169,8 +169,8 @@ class events_model extends CI_Model
 
         $this->db->select('*')
             ->from('events')
-            ->join('universities', 'universities.uni_id = events.uni_id')
-            ->where('universities.uni_approval', 1);
+            ->join('universities', 'universities.organizer_id = events.organizer_id')
+            ->where('universities.organizer_approval', 1);
 
         $query = $this->db->get()->result();
 
@@ -181,14 +181,14 @@ class events_model extends CI_Model
         }
     }
 
-    function get_totalevent_for_uni($uni_id)
+    function get_totalevent_for_uni($organizer_id)
     {
-        $this->db->where('uni_id', $uni_id);
+        $this->db->where('organizer_id', $organizer_id);
         $query = $this->db->get('events')->result();
         return count($query);
     }
 
-    public function get_uni_id($event_id)
+    public function get_organizer_id($event_id)
     {
         $this->db->where('event_id', $event_id);
         return $this->db->get('events')->result();
@@ -197,8 +197,8 @@ class events_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('events');
-        $this->db->join('universities', 'universities.uni_id = events.uni_id');
-        $this->db->order_by('events.uni_id');
+        $this->db->join('universities', 'universities.organizer_id = events.organizer_id');
+        $this->db->order_by('events.organizer_id');
         $this->db->order_by('events.event_level');
         $query = $this->db->get()->result();
         return $query;
@@ -209,18 +209,18 @@ class events_model extends CI_Model
         $this->db->select('*');
         $this->db->from('events');
         $this->db->where('event_id', $event_id);
-        $this->db->join('universities', 'universities.uni_id = events.uni_id');
+        $this->db->join('universities', 'universities.organizer_id = events.organizer_id');
         $query = $this->db->get()->row();
         return $query;
     }
 
     // Function for bar graph in ep
-    function event_field_bar_chart($uni_id)
+    function event_field_bar_chart($organizer_id)
     {
         $this->db->select('count(events.event_id), events.event_type')
             ->from('events')
-            ->join('universities', 'universities.uni_id = events.uni_id')
-            ->where('universities.uni_id', $uni_id)
+            ->join('universities', 'universities.organizer_id = events.organizer_id')
+            ->where('universities.organizer_id', $organizer_id)
             ->group_by('events.event_type')
             ->order_by('count(events.event_id)', 'desc')
             ->order_by('events.event_type', 'asc');

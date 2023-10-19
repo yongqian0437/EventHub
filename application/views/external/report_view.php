@@ -157,7 +157,7 @@
                                                 <option value="" selected disabled>Please select a university</option>
                                                 <?php
                                                 foreach ($event_data as $u) {
-                                                    echo '<option value="' . $u->uni_id . '">' . $u->uni_name . '</option>';
+                                                    echo '<option value="' . $u->organizer_id . '">' . $u->organizer_name . '</option>';
                                                 }
                                                 ?>
                                             </select>
@@ -202,7 +202,7 @@
                                                 <option value="" selected disabled>Please select a university</option>
                                                 <?php
                                                 foreach ($event_data as $u) {
-                                                    echo '<option value="' . $u->uni_id . '">' . $u->uni_name . '</option>';
+                                                    echo '<option value="' . $u->organizer_id . '">' . $u->organizer_name . '</option>';
                                                 }
                                                 ?>
                                             </select>
@@ -247,7 +247,7 @@
                                                 <option value="" selected disabled>Please select a university</option>
                                                 <?php
                                                 foreach ($event_data as $u) {
-                                                    echo '<option value="' . $u->uni_id . '">' . $u->uni_name . '</option>';
+                                                    echo '<option value="' . $u->organizer_id . '">' . $u->organizer_name . '</option>';
                                                 }
                                                 ?>
                                             </select>

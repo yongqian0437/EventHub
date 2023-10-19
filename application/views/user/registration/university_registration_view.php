@@ -77,36 +77,36 @@
                                         <div class="form-row pt-4 px-3">
                                             <!-- University Name-->
                                             <div class="form-group col-md-12 px-2">
-                                                <input type="text" class="form-control border-bottom" style="border: 0;" name="uni_name" placeholder="Organizer Name" value="<?= set_value('uni_name') ?>" required>
-                                                <?= form_error('uni_name', '<small class="text-danger pl-3">', '</small>'); ?>
+                                                <input type="text" class="form-control border-bottom" style="border: 0;" name="organizer_name" placeholder="Organizer Name" value="<?= set_value('organizer_name') ?>" required>
+                                                <?= form_error('organizer_name', '<small class="text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
                                         <div class="form-row pt-3 px-3">
                                             <!-- University Short Profile -->
                                             <div class="form-group col-md-12 px-2">
-                                                <textarea class="form-control border-bottom" style="border: 0;" rows="6" name="uni_shortprofile" placeholder="Short Profile" required></textarea>
+                                                <textarea class="form-control border-bottom" style="border: 0;" rows="6" name="organizer_shortprofile" placeholder="Short Profile" required></textarea>
                                             </div>
                                         </div>
                                         <div class="form-row pt-3 px-3">
                                             <!-- University Fun Fact -->
                                             <div class="form-group col-md-12 px-2">
-                                                <textarea class="form-control border-bottom" style="border: 0;" rows="4" name="uni_fun_fact" placeholder="Fun Fact of the Organizer" required></textarea>
+                                                <textarea class="form-control border-bottom" style="border: 0;" rows="4" name="organizer_fun_fact" placeholder="Fun Fact of the Organizer" required></textarea>
                                                 <div style="color:red; font-size:0.9em;">*This refers to a unique piece of information that is specific to the organizer. Its aim is to attract users by reading what makes this organizer stand out. (e.g: past achievements, state-of-the-art facilities, etc.) </div>
                                             </div>
                                         </div>
                                         <div class="form-row pt-3 px-4">
                                             <!--Logo-->
                                             <div class="form-group col-md-12 px-2">
-                                                <input type="file" accept="image/*" class="custom-file-input " id="form-group" name="uni_logo" value="<?= set_value('uni_logo') ?>">
+                                                <input type="file" accept="image/*" class="custom-file-input " id="form-group" name="organizer_logo" value="<?= set_value('organizer_logo') ?>">
                                                 <label class="custom-file-label border-bottom" style="border: 0;" for="customFile">Upload Organizer Logo</label>
                                                 <div style="color:red; font-size:0.9em;">*Accepted file formats are only in .JPG, .JPEG and .PNG</div>
-                                                <?= form_error('uni_logo', '<small class="text-danger pl-3">', '</small>'); ?>
+                                                <?= form_error('organizer_logo', '<small class="text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
                                         <div class="form-row px-4">
                                             <!--Background-->
                                             <div class="form-group col-md-12 px-2">
-                                                <input type="file" accept="image/*" class="custom-file-input " id="form-group" name="uni_background" required>
+                                                <input type="file" accept="image/*" class="custom-file-input " id="form-group" name="organizer_background" required>
                                                 <label class="custom-file-label border-bottom" style="border: 0;" for="customFile">Upload a picture of the Organizer background</label>
                                                 <div style="color:red; font-size:0.9em;">*Accepted file formats are only in .JPG, .JPEG and .PNG</div>
                                             </div>
@@ -114,8 +114,8 @@
                                         <div class="form-row px-3 pt-4">
                                             <!-- Country -->
                                             <div class="form-group col-md-12 px-3">
-                                                <label for="uni_country">Country of Organizer</label>
-                                                <select name="uni_country" id="uni_country" class="form-control form-select" required>
+                                                <label for="organizer_country">Country of Organizer</label>
+                                                <select name="organizer_country" id="organizer_country" class="form-control form-select" required>
                                                     <option value="" selected disabled>Please select a country</option>
                                                     <option value="Afghanistan">Afghanistan</option>
                                                     <option value="Åland Islands">Åland Islands</option>
@@ -367,25 +367,25 @@
                                         <div class="form-row pt-3 px-3">
                                             <!-- Address -->
                                             <div class="form-group col-md-12 px-2">
-                                                <textarea class="form-control border-bottom" style="border: 0;" rows="3" name="uni_address" placeholder="Organizer Address" required></textarea>
+                                                <textarea class="form-control border-bottom" style="border: 0;" rows="3" name="organizer_address" placeholder="Organizer Address" required></textarea>
                                             </div>
                                         </div>
                                         <div class="form-row pt-3 px-3">
                                             <!-- Hotline-->
                                             <div class="form-group col-md-12 px-2">
-                                                <input type="number" class="form-control border-bottom" style="border: 0;" name="uni_hotline" placeholder="Organizer Hotline" required>
+                                                <input type="number" class="form-control border-bottom" style="border: 0;" name="organizer_hotline" placeholder="Organizer Hotline" required>
                                             </div>
                                         </div>
                                         <div class="form-row pt-3 px-3">
                                             <!--  Email -->
                                             <div class="form-group col-md-12 px-2">
-                                                <input type="email" class="form-control border-bottom" style="border: 0;" name="uni_email" placeholder="Organizer Email" required>
+                                                <input type="email" class="form-control border-bottom" style="border: 0;" name="organizer_email" placeholder="Organizer Email" required>
                                             </div>
                                         </div>
                                         <div class="form-row pt-3 px-3">
                                             <!--  Website -->
                                             <div class="form-group col-md-12 px-2">
-                                                <input type="text" class="form-control border-bottom" style="border: 0;" name="uni_website" placeholder="Organizer Website" required>
+                                                <input type="text" class="form-control border-bottom" style="border: 0;" name="organizer_website" placeholder="Organizer Website" required>
                                             </div>
                                         </div>
                                         <div class="form-row pt-3 px-3">

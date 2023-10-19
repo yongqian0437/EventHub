@@ -73,7 +73,7 @@ class Admin_events extends CI_Controller
 
             $data[] = array(
                 '',
-                $r->uni_name,
+                $r->organizer_name,
                 $r->event_name,
                 $r->event_type,
                 $r->event_level,
@@ -96,7 +96,7 @@ class Admin_events extends CI_Controller
     {
 
         $event = $this->events_model->one_event_join_uni($this->input->post('event_id'));
-        $total_event = $this->events_model->get_totalevent_for_uni($event->uni_id);
+        $total_event = $this->events_model->get_totalevent_for_uni($event->organizer_id);
 
         $output = '
         <table class="table table-striped" style = "border:0;">
@@ -152,27 +152,27 @@ class Admin_events extends CI_Controller
                     <th colspan="2" style = "background-color: #CCE3DE; font-weight:900; font-size:1.1em;" scope="row"><center>UNIVERSITY DETAILS</center></th>
                 </tr>
                 <tr style="text-align: center">
-                    <td colspan="2"><img src="' . base_url("assets/img/universities/") . $event->uni_logo . '" style="width: 250px; height: 100px; object-fit:contain;"></td>
+                    <td colspan="2"><img src="' . base_url("assets/img/universities/") . $event->organizer_logo . '" style="width: 250px; height: 100px; object-fit:contain;"></td>
                 </tr> 
                 <tr>
                     <th scope="row">University Name</th>
-                    <td>' . $event->uni_name . '</td>
+                    <td>' . $event->organizer_name . '</td>
                 </tr>
                 <tr>
                 <th scope="row">Country</th>
-                    <td>' . $event->uni_country . '</td>
+                    <td>' . $event->organizer_country . '</td>
                 </tr>
                 <tr>
                     <th scope="row">Hotline</th>
-                    <td>' . $event->uni_hotline . '</td>
+                    <td>' . $event->organizer_hotline . '</td>
                 </tr>
                 <tr>
                     <th scope="row">Email</th>
-                    <td>' . $event->uni_email . '</td>
+                    <td>' . $event->organizer_email . '</td>
                 </tr>
                 <tr>
                 <th scope="row">Address</th>
-                    <td>' . $event->uni_address . '</td>
+                    <td>' . $event->organizer_address . '</td>
                 </tr>
                 <tr>
                     <th scope="row">QS Ranking</th>
@@ -192,7 +192,7 @@ class Admin_events extends CI_Controller
                 </tr>
                 <tr>
                     <th scope="row">Official Website</th>
-                    <td><a href="' . $event->uni_website . '" target="_blank">' . $event->uni_website . '</a></td>
+                    <td><a href="' . $event->organizer_website . '" target="_blank">' . $event->organizer_website . '</a></td>
                 </tr>
             </tbody>
         </table>

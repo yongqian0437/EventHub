@@ -11,7 +11,7 @@ $(document).ready(function () {
 					base_url +
 					"internal/level_2/education_agent/ea_event_application/fetch_events",
 				method: "POST",
-				data: { uni_id: $("#university_1").val() },
+				data: { organizer_id: $("#university_1").val() },
 				success: function (data) {
 					$("#event_1").html(data);
 				},

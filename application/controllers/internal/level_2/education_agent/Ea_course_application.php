@@ -76,7 +76,7 @@ class Ea_event_application extends CI_Controller
 
     function fetch_events()
     {
-        echo $this->events_model->fetch_events_id($this->input->post('uni_id'));
+        echo $this->events_model->fetch_events_id($this->input->post('organizer_id'));
     }
 
     public function upload_doc($path, $file_input_name)
@@ -99,7 +99,7 @@ class Ea_event_application extends CI_Controller
     public function submit_added_event_applicant()
     {
         $data['title'] = "EventHub | event Applicant Registration";
-        $get_event_id = $this->events_model->fetch_events_id($this->input->post('uni_id'));
+        $get_event_id = $this->events_model->fetch_events_id($this->input->post('organizer_id'));
         $this->form_validation->set_rules('e_applicant_phonenumber', 'Phone Number', 'required|trim|min_length[5]', [
             'min_length' => 'Phone number too short'
         ]);
@@ -157,10 +157,10 @@ class Ea_event_application extends CI_Controller
         $base_url = base_url();
 
         foreach ($event_applicants as $ca) {
-            $get_uni_id = $this->events_model->get_uni_id($ca->event_id); // get event id to get the uni id
+            $get_organizer_id = $this->events_model->get_organizer_id($ca->event_id); // get event id to get the uni id
 
-            foreach ($get_uni_id as $details) {
-                $get_uni_name = $this->universities_model->get_uni_detail($details->uni_id); // get uni id to get the uni name
+            foreach ($get_organizer_id as $details) {
+                $get_organizer_name = $this->universities_model->get_uni_detail($details->organizer_id); // get uni id to get the uni name
             }
 
             $edit_link = $base_url . "internal/level_2/education_agent/ea_event_application/edit_event_applicant/" . $ca->e_applicant_id;
@@ -177,7 +177,7 @@ class Ea_event_application extends CI_Controller
                 $ca->e_applicant_nationality,
                 $ca->e_applicant_currentlevel,
                 //    $ca->event_id,
-                $get_uni_name->uni_name,
+                $get_organizer_name->organizer_name,
                 $ca->c_app_submitdate,
                 $function,
             );
@@ -267,10 +267,10 @@ class Ea_event_application extends CI_Controller
         $ca_detail = $this->event_applicants_model->get_cas_id($this->input->post('e_applicant_id'));
         //$event_applicants=$this->event_applicants_model->get_user_id($this->session->userdata('user_id'));
 
-        $get_uni_id = $this->events_model->get_uni_id($ca_detail->event_id); // get event id to get the uni id
+        $get_organizer_id = $this->events_model->get_organizer_id($ca_detail->event_id); // get event id to get the uni id
 
-        foreach ($get_uni_id as $details) {
-            $uni_details = $this->universities_model->get_uni_detail($details->uni_id); // get uni id to get the uni name
+        foreach ($get_organizer_id as $details) {
+            $uni_details = $this->universities_model->get_uni_detail($details->organizer_id); // get uni id to get the uni name
         }
 
         $output = '
@@ -281,12 +281,12 @@ class Ea_event_application extends CI_Controller
                     <td>' . $ca_detail->c_app_submitdate . '</td>
                 </tr>
                 <tr style="text-align: center;">
-                    <td colspan="2"><img src="' . base_url("assets/img/universities/") . $uni_details->uni_logo . '" style="width: 250px; height: 100px; object-fit:contain;">
+                    <td colspan="2"><img src="' . base_url("assets/img/universities/") . $uni_details->organizer_logo . '" style="width: 250px; height: 100px; object-fit:contain;">
                     </td>  
                 </tr>
                 <tr>
                     <th scope="row">University</th>
-                    <td>' . $uni_details->uni_name . '</td>
+                    <td>' . $uni_details->organizer_name . '</td>
                 </tr>
                 <tr>
                     <th scope="row">event</th>
