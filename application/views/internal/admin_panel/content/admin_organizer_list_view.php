@@ -144,13 +144,13 @@
                         <div class="modal-dialog modal-lg" role="document">
                             <div class="modal-content">
                                 <div class="modal-header" style="background-color:#6B9080;">
-                                    <h5 class="modal-title" id="view_admin_uniLabel" style="color:white;">University Information</h5>
+                                    <h5 class="modal-title" id="view_admin_uniLabel" style="color:white;">organizers Information</h5>
                                     <button style="color:white;" type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <div id="admin_university_information">
+                                    <div id="admin_organizers_information">
 
                                     </div>
                                 </div>

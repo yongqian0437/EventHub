@@ -148,7 +148,7 @@
                                             <div class="card-body shadow">
                                                 <div class="row pl-3 pt-4" style="vertical-align:middle;">
                                                     <div class="col-8 col-md-4 col-lg-4 mb-4">
-                                                        <h6><b>University</b></h6>
+                                                        <h6><b>organizers</b></h6>
                                                     </div>
                                                     <div class="col-8 col-md-4 col-lg-4 mb-4">
                                                         <h6><b>event Name</b></h6>
@@ -163,7 +163,7 @@
                                                         foreach ($student_event_data as $event_data) { ?>
                                                             <div class="col-8 col-md-4 col-lg-4 mb-2">
                                                                 <hr>
-                                                                <img class="img-fluid img_class" style="height: 9vh; object-fit: contain;" src="<?= base_url("assets/img/universities/") . $event_data['organizer_logo'];  ?>" width="200" ; />
+                                                                <img class="img-fluid img_class" style="height: 9vh; object-fit: contain;" src="<?= base_url("assets/img/organizer/") . $event_data['organizer_logo'];  ?>" width="200" ; />
                                                             </div>
                                                             <div class="col-8 col-md-4 col-lg-4 mb-2">
                                                                 <hr>

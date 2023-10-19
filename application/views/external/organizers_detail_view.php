@@ -202,14 +202,14 @@
                     <!-- Banner with logo-->
                     <div class="row pt-1 px-0">
                         <div class="col-md-12">
-                            <div class="event-cover-img" style="background-image: url('<?php echo base_url("assets/img/universities/") . $uni_detail->organizer_background; ?>');">
+                            <div class="event-cover-img" style="background-image: url('<?php echo base_url("assets/img/organizer/") . $uni_detail->organizer_background; ?>');">
                                 <div id="foreground">
                                     <div class="row pt-5">
                                         <div class="col-md-12">
                                             <center>
                                                 <div style="width:200px; height:200px; border-radius:100%; background-color:white;">
                                                     <div class="pt-2">
-                                                        <img src="<?php echo base_url("assets/img/universities/") . $uni_detail->organizer_logo; ?>" alt="organizer_logo" id="logo" class="pt-5">
+                                                        <img src="<?php echo base_url("assets/img/organizer/") . $uni_detail->organizer_logo; ?>" alt="organizer_logo" id="logo" class="pt-5">
                                                     </div>
                                                 </div>
                                             </center>

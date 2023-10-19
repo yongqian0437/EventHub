@@ -2,7 +2,7 @@
 <script src="<?php echo base_url() ?>/assets/vendor/jquery/jquery.min.js"></script>
 
 <script>
-    //Js to remove alert message after university information is edited
+    //Js to remove alert message after organizers information is edited
     setTimeout(function() {
         $('#alert_message').fadeOut();
     }, 5000); // <-- time in milliseconds
@@ -398,9 +398,9 @@
                                             <!-- UNI INPUT -->
                                             <div class="form-row pt-12 px-3">
                                                 <div class="form-group col-md-12 px-2">
-                                                    <label for="university1"></label>
-                                                    <select name="university1_id" id="university_1" class="form-control form-select form-select-md">
-                                                        <option value="" selected disabled>Please Select Student University</option>
+                                                    <label for="organizers1"></label>
+                                                    <select name="organizers1_id" id="organizers_1" class="form-control form-select form-select-md">
+                                                        <option value="" selected disabled>Please Select Student organizers</option>
                                                         <?php
                                                         foreach ($event_data as $u) {
                                                             echo '<option value="' . $u->organizer_id . '">' . $u->organizer_name . '</option>';

@@ -9,7 +9,7 @@
 </script>
 
 <script>
-    //Js to remove alert message after university information is edited
+    //Js to remove alert message after organizers information is edited
     setTimeout(function() {
         $('#alert_message').fadeOut();
     }, 5000); // <-- time in milliseconds
@@ -72,23 +72,23 @@
                                     </center>
                                     <?= $this->session->flashdata('message') ?>
                                     <!-- Form -->
-                                    <form method="post" action="<?= base_url('user/login/Auth/university'); ?>" enctype="multipart/form-data">
+                                    <form method="post" action="<?= base_url('user/login/Auth/organizers'); ?>" enctype="multipart/form-data">
                                         <?= form_open_multipart('') ?>
                                         <div class="form-row pt-4 px-3">
-                                            <!-- University Name-->
+                                            <!-- organizers Name-->
                                             <div class="form-group col-md-12 px-2">
                                                 <input type="text" class="form-control border-bottom" style="border: 0;" name="organizer_name" placeholder="Organizer Name" value="<?= set_value('organizer_name') ?>" required>
                                                 <?= form_error('organizer_name', '<small class="text-danger pl-3">', '</small>'); ?>
                                             </div>
                                         </div>
                                         <div class="form-row pt-3 px-3">
-                                            <!-- University Short Profile -->
+                                            <!-- organizers Short Profile -->
                                             <div class="form-group col-md-12 px-2">
                                                 <textarea class="form-control border-bottom" style="border: 0;" rows="6" name="organizer_shortprofile" placeholder="Short Profile" required></textarea>
                                             </div>
                                         </div>
                                         <div class="form-row pt-3 px-3">
-                                            <!-- University Fun Fact -->
+                                            <!-- organizers Fun Fact -->
                                             <div class="form-group col-md-12 px-2">
                                                 <textarea class="form-control border-bottom" style="border: 0;" rows="4" name="organizer_fun_fact" placeholder="Fun Fact of the Organizer" required></textarea>
                                                 <div style="color:red; font-size:0.9em;">*This refers to a unique piece of information that is specific to the organizer. Its aim is to attract users by reading what makes this organizer stand out. (e.g: past achievements, state-of-the-art facilities, etc.) </div>

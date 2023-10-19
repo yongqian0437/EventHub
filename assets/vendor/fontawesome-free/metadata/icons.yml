@@ -19936,14 +19936,14 @@ universal-access:
     - solid
   unicode: f29a
   voted: false
-university:
+organizers:
   changes:
     - "4.1"
     - 5.0.0
     - 5.0.3
     - 5.11.0
     - 5.11.1
-  label: University
+  label: organizers
   search:
     terms:
       - bank

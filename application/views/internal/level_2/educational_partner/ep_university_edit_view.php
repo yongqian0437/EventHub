@@ -71,14 +71,14 @@
                                     <a href="<?php echo base_url('internal/level_2/educational_partner/ep_dashboard'); ?>"><i class="fas fa-tachometer-alt"></i> Home</a>
                                 </li>
                                 <li class="breadcrumb-item">
-                                    <a href="<?php echo base_url('internal/level_2/educational_partner/ep_university'); ?>"> Organizer</a>
+                                    <a href="<?php echo base_url('internal/level_2/educational_partner/ep_organizers'); ?>"> Organizer</a>
                                 </li>
                                 <li class="breadcrumb-item active">Edit Organizer</li>
                             </ol>
                         </div>
                         <div class="col-xl-3">
                             <div class="d-flex justify-content-end">
-                                <a type="button" href="<?= base_url('internal/level_2/educational_partner/ep_university'); ?>" class="btn btn-primary">Back<i class="fas fa-undo pl-1"></i></a>
+                                <a type="button" href="<?= base_url('internal/level_2/educational_partner/ep_organizers'); ?>" class="btn btn-primary">Back<i class="fas fa-undo pl-1"></i></a>
                             </div>
                         </div>
                     </div>
@@ -88,17 +88,17 @@
                             <!-- Card-->
                             <div class="card ">
                                 <div class="card-body">
-                                    <form method="post" action=" <?= base_url('internal/level_2/educational_partner/ep_university/after_edit_university/' . $event_data->organizer_id); ?>" enctype="multipart/form-data">
+                                    <form method="post" action=" <?= base_url('internal/level_2/educational_partner/ep_organizers/after_edit_organizers/' . $event_data->organizer_id); ?>" enctype="multipart/form-data">
                                         <?= form_open_multipart('') ?>
                                         <div class="form-row">
                                             <div class="form-group col-md-6 px-4 pr-5">
                                                 <label for="organizer_name">Organizer Name</label>
-                                                <input type="text" class="form-control" id="organizer_name" name="organizer_name" placeholder="Enter university name" value="<?= $event_data->organizer_name ?>" required>
+                                                <input type="text" class="form-control" id="organizer_name" name="organizer_name" placeholder="Enter organizers name" value="<?= $event_data->organizer_name ?>" required>
                                             </div>
                                             <div class="form-group col-md-6 px-4 pl-5">
                                                 <label for="organizer_country"> Country</label>
                                                 <select name="organizer_country" id="organizer_country" class="form-control form-select" required>
-                                                    <option value="<?= $university_data->organizer_country ?>" selected><?= $university_data->organizer_country ?></option>
+                                                    <option value="<?= $organizers_data->organizer_country ?>" selected><?= $organizers_data->organizer_country ?></option>
                                                     <option value="Afghanistan">Afghanistan</option>
                                                     <option value="Åland Islands">Åland Islands</option>
                                                     <option value="Albania">Albania</option>
@@ -389,7 +389,7 @@
                                                 <input type="number" class="form-control" id="uni_qsrank" name="uni_qsrank" placeholder="Enter QS ranking" value="<?= $event_data->uni_qsrank ?>" required>
                                             </div>
                                             <!-- <div class="form-group col-md-4 px-4 pr-5">
-                                                <label for="uni_employabilityrank">University Employability Rank</label>
+                                                <label for="uni_employabilityrank">organizers Employability Rank</label>
                                                 <input type="number" class="form-control" id="uni_employabilityrank" name="uni_employabilityrank" placeholder="Enter employability rank" value="<?= $event_data->uni_employabilityrank ?>" required>
                                             </div> -->
                                             <div class="form-group col-md-4 px-4 ">
@@ -406,7 +406,7 @@
 
                                             <div class="col-xl-6 pl-5">
                                                 <div class="pb-3" style="color:black;">Current Organizer Logo</div>
-                                                <img style=" height:200px; width: 300px; object-fit: contain;" src="<?= base_url("assets/img/universities/") . $event_data->organizer_logo ?>" alt="logo">
+                                                <img style=" height:200px; width: 300px; object-fit: contain;" src="<?= base_url("assets/img/organizer/") . $event_data->organizer_logo ?>" alt="logo">
                                             </div>
                                             <div class="col-xl-6">
                                                 <div class="pb-3" style="color:black;">New Organizer Logo</div>
@@ -457,7 +457,7 @@
 
                                             <div class="col-xl-6 pl-5">
                                                 <div class="pb-3" style="color:black;">Current Organizer Background</div>
-                                                <img style=" height:200px; width: 300px; object-fit: contain;" src="<?= base_url("assets/img/universities/{$event_data->organizer_background}"); ?>" alt="background">
+                                                <img style=" height:200px; width: 300px; object-fit: contain;" src="<?= base_url("assets/img/organizer/{$event_data->organizer_background}"); ?>" alt="background">
                                             </div>
                                             <div class="col-xl-6">
                                                 <div class="pb-3" style="color:black;">New Organizer Background</div>

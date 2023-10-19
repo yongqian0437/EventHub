@@ -6,7 +6,7 @@ class Ac_dashboard extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model(['user_ac_model', 'event_applicants_model', 'universities_model', 'user_student_model', 'user_ea_model']);
+        $this->load->model(['user_ac_model', 'event_applicants_model', 'organizer_model', 'user_student_model', 'user_ea_model']);
         date_default_timezone_set('Asia/Kuala_Lumpur');
 
         // Checks if session is set and if user is signed in as Academic Counsellor (authorised access). If not, deny his/her access.

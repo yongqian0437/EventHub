@@ -213,7 +213,7 @@
                         scales: {
                             xAxes: [{
                                 time: {
-                                    unit: 'University'
+                                    unit: 'organizers'
                                 },
                                 gridLines: {
                                     display: false,
@@ -278,7 +278,7 @@
                     var data1 = {
                         labels: ["Active", "Pending"],
                         datasets: [{
-                            label: "Universities",
+                            label: "Organizer",
                             data: [active_uni, pending_uni],
                             backgroundColor: [
                                 "#613dc1",

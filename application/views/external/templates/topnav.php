@@ -59,7 +59,7 @@
     <ul class="navbar-nav ml-auto">
 
         <li class="nav-item px-2">
-            <a class="nav-link " href="<?php echo base_url('external/universities'); ?>">Organizer</a>
+            <a class="nav-link " href="<?php echo base_url('external/organizer'); ?>">Organizer</a>
         </li>
 
         <li class="nav-item px-2">

@@ -9,7 +9,7 @@ class Admin_rd_project extends CI_Controller
     {
         parent::__construct();
         $this->load->model('user_model');
-        $this->load->model('universities_model');
+        $this->load->model('organizer_model');
         $this->load->model('rd_projects_model');
 
         // Checks if session is set and if user signed in has a role. If not, deny his/her access.
@@ -209,14 +209,14 @@ class Admin_rd_project extends CI_Controller
                     <th colspan="2" style = "background-color: #CCE3DE; font-weight:900; font-size:1.1em;" scope="row"><center>EDUCATION PARTNER DETAILS</center></th>
                 </tr>
                 <tr style="text-align: center">
-                    <td colspan="2"><img src="' . base_url("assets/img/universities/") . $rd_detail->organizer_logo . '" style="width: 250px; height: 100px; object-fit:contain;"></td>
+                    <td colspan="2"><img src="' . base_url("assets/img/organizer/") . $rd_detail->organizer_logo . '" style="width: 250px; height: 100px; object-fit:contain;"></td>
                 </tr> 
                 <tr>
-                    <th scope="row">University Name</th>
+                    <th scope="row">organizers Name</th>
                     <td>' . $rd_detail->organizer_name . '</td>
                 </tr>
                 <tr>
-                    <th scope="row">University Country</th>
+                    <th scope="row">organizers Country</th>
                     <td>' . $rd_detail->organizer_country . '</td>
                 </tr>
                 <tr>

@@ -79,7 +79,7 @@
                         <h1 class="h3 mb-0 text-gray-800 pt-4 font-weight-bold">Report</h1>
                     </div>
 
-                    <div class="py-2 px-4" style="text-align: justify; font-weight:500;">Finding the right college and programme is a complicated process, but EventHub is here to help! A great way to research what's best for you and start to build your list is to compare your options side-by-side. Find the college that's the best fit for you by using our comparison tool. Students can quickly compare several programmes and universities they’re interested in – and then click through to a university profile page for more details. Application submission may also be done right after.
+                    <div class="py-2 px-4" style="text-align: justify; font-weight:500;">Finding the right college and programme is a complicated process, but EventHub is here to help! A great way to research what's best for you and start to build your list is to compare your options side-by-side. Find the college that's the best fit for you by using our comparison tool. Students can quickly compare several programmes and organizer they’re interested in – and then click through to a organizers profile page for more details. Application submission may also be done right after.
                     </div>
 
                     <div class="px-4 pb-4">
@@ -152,9 +152,9 @@
                                     <div class="card-body">
                                         <!-- UNIVERSITIY INPUT -->
                                         <div class="form-group"><br>
-                                            <label for="university1">UNIVERSITY</label><br>
-                                            <select name="university1_id" id="university_1" class="form-control form-select form-select-md">
-                                                <option value="" selected disabled>Please select a university</option>
+                                            <label for="organizers1">organizers</label><br>
+                                            <select name="organizers1_id" id="organizers_1" class="form-control form-select form-select-md">
+                                                <option value="" selected disabled>Please select a organizers</option>
                                                 <?php
                                                 foreach ($event_data as $u) {
                                                     echo '<option value="' . $u->organizer_id . '">' . $u->organizer_name . '</option>';
@@ -197,9 +197,9 @@
                                     <div class="card-body">
                                         <!-- UNIVERSITIY INPUT -->
                                         <div class="form-group"><br>
-                                            <label for="university2">UNIVERSITY</label><br>
-                                            <select name="university2_id" id="university_2" class="form-control form-select form-select-md">
-                                                <option value="" selected disabled>Please select a university</option>
+                                            <label for="organizers2">organizers</label><br>
+                                            <select name="organizers2_id" id="organizers_2" class="form-control form-select form-select-md">
+                                                <option value="" selected disabled>Please select a organizers</option>
                                                 <?php
                                                 foreach ($event_data as $u) {
                                                     echo '<option value="' . $u->organizer_id . '">' . $u->organizer_name . '</option>';
@@ -242,9 +242,9 @@
                                     <div class="card-body">
                                         <!-- UNIVERSITIY INPUT -->
                                         <div class="form-group"><br>
-                                            <label for="university3">UNIVERSITY</label><br>
-                                            <select name="university3_id" id="university_3" class="form-control form-select form-select-md">
-                                                <option value="" selected disabled>Please select a university</option>
+                                            <label for="organizers3">organizers</label><br>
+                                            <select name="organizers3_id" id="organizers_3" class="form-control form-select form-select-md">
+                                                <option value="" selected disabled>Please select a organizers</option>
                                                 <?php
                                                 foreach ($event_data as $u) {
                                                     echo '<option value="' . $u->organizer_id . '">' . $u->organizer_name . '</option>';

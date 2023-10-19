@@ -11,7 +11,7 @@ class Ep_dashboard extends CI_Controller
 		$this->load->model('user_model');
 		$this->load->model('user_ep_model');
 		$this->load->model('events_model');
-		$this->load->model('universities_model');
+		$this->load->model('organizer_model');
 		$this->load->model('rd_projects_model');
 		$this->load->model('rd_applicants_model');
 

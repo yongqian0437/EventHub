@@ -11,7 +11,7 @@ class Ep_events extends CI_Controller
         $this->load->model('user_model');
         $this->load->model('user_ep_model');
         $this->load->model('events_model');
-        $this->load->model('universities_model');
+        $this->load->model('organizer_model');
 
         // Checks if session is set and if user signed in has a role. If not, deny his/her access.
         if (!$this->session->userdata('user_id') || !$this->session->userdata('user_role')) {

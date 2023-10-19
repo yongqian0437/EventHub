@@ -31,13 +31,13 @@
                         <?php if (!empty($event_data)) {
                             foreach ($event_data as $events) { ?>
                                 <div class="col-12">
-                                    <div class="event-cover-img" style="background-image: url('<?php echo base_url("assets/img/universities/") . $uni_data->organizer_background; ?>');">
+                                    <div class="event-cover-img" style="background-image: url('<?php echo base_url("assets/img/organizer/") . $uni_data->organizer_background; ?>');">
                                         <div class="fallbak">
                                             <div class="row">
                                                 <div class="col-4">
                                                     <div class="pt-5 pl-2 pb-1">
                                                         <div style="width:25vh; height:25vh; border-radius:100%; margin:auto; background-color:white;">
-                                                            <center><img src="<?php echo base_url("assets/img/universities/") . $uni_data->organizer_logo; ?>" alt="organizer_logo" id="logo" class="pt-5"></center>
+                                                            <center><img src="<?php echo base_url("assets/img/organizer/") . $uni_data->organizer_logo; ?>" alt="organizer_logo" id="logo" class="pt-5"></center>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -71,7 +71,7 @@
                                                             <a type="button" class="btn btn-secondary event-ave-buttons" href="<?= base_url('user/login/Auth/login'); ?>">Apply</a>
                                                             <!-- ***If Student is not logged in, 'Apply' button will redirect to Login page -->
                                                         <?php } ?>
-                                                        <a type="button" target="_blank" href="<?php echo base_url() . 'external/Universities/university_detail/' . $events->organizer_id ?>" class="btn btn-secondary event-ave-buttons">View Organizer</a>
+                                                        <a type="button" target="_blank" href="<?php echo base_url() . 'external/Organizer/organizers_detail/' . $events->organizer_id ?>" class="btn btn-secondary event-ave-buttons">View Organizer</a>
                                                         <!-- <a type="button" href="<?= base_url('user/chat/Chat'); ?>" class="btn btn-secondary event-ave-buttons">Enquire</a> -->
                                                     </div>
                                                 </div>

@@ -6,7 +6,7 @@ class Ac_event_applicants extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model(['user_ac_model', 'event_applicants_model', 'universities_model']);
+        $this->load->model(['user_ac_model', 'event_applicants_model', 'organizer_model']);
         date_default_timezone_set('Asia/Kuala_Lumpur');
 
         // Checks if session is set and if user is signed in as Academic Counsellor (authorised access). If not, deny his/her access.
@@ -47,7 +47,7 @@ class Ac_event_applicants extends CI_Controller
         $data['include_js'] = 'ac_event_applicants_list';
 
         $ac_details = $this->user_ac_model->ac_details($this->session->userdata('user_id'));
-        $data['event_data'] = $this->universities_model->uni_details($ac_details['organizer_id']);
+        $data['event_data'] = $this->organizer_model->uni_details($ac_details['organizer_id']);
 
         // $ac_details = $this->user_ac_model->ac_details($this->session->userdata('user_id'));
         // $event_applicants = $this->event_applicants_model->get_applicants_from_event($ac_details['ac_id'], $ac_details['organizer_id']);

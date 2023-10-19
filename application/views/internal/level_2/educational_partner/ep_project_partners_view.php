@@ -60,7 +60,7 @@
                                                 <tr>
                                                     <th>No.</th>
                                                     <th>Partner Name</th>
-                                                    <th>Partner University</th>
+                                                    <th>Partner organizers</th>
                                                     <th>Project Title</th>
                                                     <th>Person in Charge</th>
                                                     <th>Applied Date</th>

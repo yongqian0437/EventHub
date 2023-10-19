@@ -62,7 +62,7 @@ class rd_projects_model extends CI_Model
         $this->db->select('')
             ->from('rd_projects')
             ->join('user_ep', 'user_ep.ep_id = rd_projects.ep_id', 'user_ep.organizer_id = rd_projects.rd_organisation')
-            ->join('universities', 'universities.organizer_id = user_ep.organizer_id')
+            ->join('organizer', 'organizer.organizer_id = user_ep.organizer_id')
             ->where('rd_approval', '1');
         return $this->db->get()->result_array();
     }
@@ -78,7 +78,7 @@ class rd_projects_model extends CI_Model
         $this->db->select('*');
         $this->db->from('rd_projects');
         $this->db->join('user_ep', 'user_ep.ep_id = rd_projects.ep_id');
-        $this->db->join('universities', 'universities.organizer_id = user_ep.organizer_id');
+        $this->db->join('organizer', 'organizer.organizer_id = user_ep.organizer_id');
         $query = $this->db->get()->result();
         return $query;
     }
@@ -88,7 +88,7 @@ class rd_projects_model extends CI_Model
         $this->db->select('*');
         $this->db->from('rd_projects');
         $this->db->join('user_ep', 'user_ep.ep_id = rd_projects.ep_id');
-        $this->db->join('universities', 'universities.organizer_id = user_ep.organizer_id');
+        $this->db->join('organizer', 'organizer.organizer_id = user_ep.organizer_id');
         $this->db->where('rd_projects.rd_approval ', 0);
         $query = $this->db->get()->result();
         return $query;
@@ -99,7 +99,7 @@ class rd_projects_model extends CI_Model
         $this->db->select('*');
         $this->db->from('rd_projects');
         $this->db->join('user_ep', 'user_ep.ep_id = rd_projects.ep_id');
-        $this->db->join('universities', 'universities.organizer_id = user_ep.organizer_id');
+        $this->db->join('organizer', 'organizer.organizer_id = user_ep.organizer_id');
         $this->db->join('users', 'users.user_id = user_ep.user_id');
         $this->db->where('rd_projects.rd_id ', $rd_id);
         $query = $this->db->get()->row();

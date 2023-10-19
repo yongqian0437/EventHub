@@ -8,7 +8,7 @@ class Ea_dashboard extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('user_model');
-		$this->load->model(['user_model', 'event_applicants_model', 'universities_model', 'events_model']);
+		$this->load->model(['user_model', 'event_applicants_model', 'organizer_model', 'events_model']);
 		// Checks if session is set and if user is signed in as Level 2 user (authorised access). If not, deny his/her access.
 		if (!$this->session->userdata('user_id') || !$this->session->userdata('user_role')) {
 			redirect('user/login/Auth/login');

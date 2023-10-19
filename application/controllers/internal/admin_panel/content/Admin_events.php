@@ -9,7 +9,7 @@ class Admin_events extends CI_Controller
     {
         parent::__construct();
         $this->load->model('user_model');
-        $this->load->model('universities_model');
+        $this->load->model('organizer_model');
         $this->load->model('events_model');
         $this->load->model('event_applicants_model');
 
@@ -149,13 +149,13 @@ class Admin_events extends CI_Controller
                     <th olspan="2" style = "background-color: white;" scope="row"></th>        
                 <tr>
                 <tr>
-                    <th colspan="2" style = "background-color: #CCE3DE; font-weight:900; font-size:1.1em;" scope="row"><center>UNIVERSITY DETAILS</center></th>
+                    <th colspan="2" style = "background-color: #CCE3DE; font-weight:900; font-size:1.1em;" scope="row"><center>organizers DETAILS</center></th>
                 </tr>
                 <tr style="text-align: center">
-                    <td colspan="2"><img src="' . base_url("assets/img/universities/") . $event->organizer_logo . '" style="width: 250px; height: 100px; object-fit:contain;"></td>
+                    <td colspan="2"><img src="' . base_url("assets/img/organizer/") . $event->organizer_logo . '" style="width: 250px; height: 100px; object-fit:contain;"></td>
                 </tr> 
                 <tr>
-                    <th scope="row">University Name</th>
+                    <th scope="row">organizers Name</th>
                     <td>' . $event->organizer_name . '</td>
                 </tr>
                 <tr>

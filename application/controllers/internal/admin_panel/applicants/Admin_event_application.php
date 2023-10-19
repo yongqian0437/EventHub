@@ -103,11 +103,11 @@ class Admin_event_application extends CI_Controller
                     <th colspan="2" style = "background-color: #CCE3DE; font-weight: 900; text-align: center; font-size: 1.1em;">event DETAILS</th>
                 </tr>
                 <tr style="text-align:center;">
-                    <td colspan="2"><img src="' . base_url("assets/img/universities/") . $event_applicants[0]->organizer_logo . '" style="width: 250px; height: 100px; object-fit:contain;">
+                    <td colspan="2"><img src="' . base_url("assets/img/organizer/") . $event_applicants[0]->organizer_logo . '" style="width: 250px; height: 100px; object-fit:contain;">
                     </td>  
                 </tr>
                 <tr>
-                    <th scope="row">University</th>
+                    <th scope="row">organizers</th>
                     <td>' . $event_applicants[0]->organizer_name . '</td>
                 </tr>
                 <tr>

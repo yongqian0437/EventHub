@@ -216,7 +216,7 @@ var myPieChart = new Chart(ctx, {
 var myChart = new Chart(ctx1, {
   type: 'pie',
   data: {
-    labels: ["Active Universities", "Pending Universities"],
+    labels: ["Active Organizer", "Pending Organizer"],
     datasets: [{
       backgroundColor: ["#3e95cd", "#8e5ea2"],
       data: [active_uni,pending_uni]
@@ -225,7 +225,7 @@ var myChart = new Chart(ctx1, {
   options: {
     title: {
       display: true,
-      text: 'Universities in EventHub'
+      text: 'Organizer in EventHub'
     }
   }
 }); */

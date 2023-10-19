@@ -101,7 +101,7 @@
                                                         <th>Full Name</th>
                                                         <th>Nationality</th>
                                                         <th>Current Level</th>
-                                                        <th>University</th>
+                                                        <th>organizers</th>
                                                         <th>Submit Date</th>
                                                         <th>Action</th>
                                                     </tr>

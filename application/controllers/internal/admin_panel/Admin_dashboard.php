@@ -8,7 +8,7 @@ class Admin_dashboard extends CI_Controller
         parent::__construct();
         $this->load->model([
             'user_student_model', 'user_ep_model', 'user_ac_model', 'user_ea_model', 'user_e_model',
-            'event_applicants_model', 'user_model', 'universities_model', 'employer_projects_model',
+            'event_applicants_model', 'user_model', 'organizer_model', 'employer_projects_model',
             'rd_projects_model'
         ]);
 
@@ -61,8 +61,8 @@ class Admin_dashboard extends CI_Controller
         $data['total_ep'] = count($this->user_ep_model->approved_ep());
 
         //6 latest uni list
-        $data['latest_uni'] = $this->universities_model->uni_max_5();
-        $data['total_uni'] = count($this->universities_model->select_all_approved_only());
+        $data['latest_uni'] = $this->organizer_model->uni_max_5();
+        $data['total_uni'] = count($this->organizer_model->select_all_approved_only());
 
         //total users
         $Jan = $this->get_monthly_user('2021-01-01', '2021-01-31');
@@ -92,8 +92,8 @@ class Admin_dashboard extends CI_Controller
         $data['total_by_student'] = count($this->event_applicants_model->enrollment_method('Student'));
 
         //active & pending uni
-        $data['active_uni'] = count($this->universities_model->uni_by_approval(1));
-        $data['pending_uni'] = count($this->universities_model->uni_by_approval(0));
+        $data['active_uni'] = count($this->organizer_model->uni_by_approval(1));
+        $data['pending_uni'] = count($this->organizer_model->uni_by_approval(0));
 
         //active & pending emp
         $data['active_emp'] = count($this->employer_projects_model->emp_by_approval(1));

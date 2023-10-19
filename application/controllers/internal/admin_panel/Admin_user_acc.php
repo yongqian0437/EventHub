@@ -9,7 +9,7 @@ class Admin_user_acc extends CI_Controller
         parent::__construct();
         $this->load->model([
             'user_student_model', 'user_ep_model', 'user_ac_model', 'user_ea_model',
-            'user_e_model', 'universities_model', 'company_model', 'events_model'
+            'user_e_model', 'organizer_model', 'company_model', 'events_model'
         ]);
         // date_default_timezone_set('Asia/Kuala_Lumpur');
 
@@ -346,7 +346,7 @@ class Admin_user_acc extends CI_Controller
         if ($user_detail->user_role == "Education Partner") {
             //ep and uni details//
             $ep_detail = $this->user_ep_model->get_ep_detail($this->input->post('user_id'));
-            $uni_detail = $this->universities_model->get_uni_detail($ep_detail->organizer_id);
+            $uni_detail = $this->organizer_model->get_uni_detail($ep_detail->organizer_id);
 
             if ($uni_detail->organizer_approval == 0) {
                 $ep_status = '<button type="button" style = "cursor: default;" class="btn btn-warning">Inactive</button>';
@@ -642,8 +642,8 @@ class Admin_user_acc extends CI_Controller
                         <td>' . $ac_detail->ac_businessemail . '</td>
                     </tr>
                     <tr>
-                        <th scope="row">University</th>
-                        <td>' . $ac_detail->ac_university . '</td>
+                        <th scope="row">organizers</th>
+                        <td>' . $ac_detail->ac_organizers . '</td>
                     </tr>
                     <tr>
                         <th scope="row">Nationality</th>
@@ -676,29 +676,29 @@ class Admin_user_acc extends CI_Controller
         }
         //$ep_detail=$this->user_ep_model->get_full_ep_detail($this->input->post('user_id'));
         $ep_detail = $this->user_ep_model->get_ep_detail($this->input->post('user_id'));
-        $uni_detail = $this->universities_model->get_uni_detail($ep_detail->organizer_id);
+        $uni_detail = $this->organizer_model->get_uni_detail($ep_detail->organizer_id);
 
         $output = '
         <table class="table table-striped" style = "border:0;">
             <tbody>
                 <tr>
-                    <th colspan="2" style = "background-color: #CCE3DE; font-weight: 900; text-align: center; font-size: 1.1em;">UNIVERSITY</th>   
+                    <th colspan="2" style = "background-color: #CCE3DE; font-weight: 900; text-align: center; font-size: 1.1em;">organizers</th>   
                 </tr>
                 <tr>
                     <th scope="row">Applied Date</th>
                     <td>' . $uni_detail->organizer_submitdate . '</td>
                 </tr>
                 <tr style="text-align: center">
-                    <td colspan="2"><img src="' . base_url("assets/img/universities/") . $uni_detail->organizer_logo . '" style="width: 250px; height: 100px; object-fit:contain;">
+                    <td colspan="2"><img src="' . base_url("assets/img/organizer/") . $uni_detail->organizer_logo . '" style="width: 250px; height: 100px; object-fit:contain;">
                     </td>  
                 </tr>
                 <tr style="text-align: center">
-                    <td colspan="2"><img src="' . base_url("assets/img/universities/") . $uni_detail->organizer_background . '" style="width: 250px; height: 100px; object-fit:contain;">
+                    <td colspan="2"><img src="' . base_url("assets/img/organizer/") . $uni_detail->organizer_background . '" style="width: 250px; height: 100px; object-fit:contain;">
                     </td>  
                 </tr>
                 
                 <tr>
-                    <th scope="row">University</th>
+                    <th scope="row">organizers</th>
                     <td>' . $uni_detail->organizer_name . '</td>
                 </tr>
                 <tr>
@@ -722,7 +722,7 @@ class Admin_user_acc extends CI_Controller
                     <td>' . $uni_detail->organizer_email . '</td>
                 </tr>
                 <tr>
-                    <th scope="row">University Address</th>
+                    <th scope="row">organizers Address</th>
                     <td>' . $uni_detail->organizer_address . '</td>
                 </tr>
                 <tr>

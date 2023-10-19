@@ -68,7 +68,7 @@
                                 <div class="card-body">
                                     <div class="badge badge-primary badge-sm">FOR STUDENTS</div>
                                     <div class="card-title">Online consultants everywhere you go</div>
-                                    <p class="card-text">We provide one-to-one consulting and give you the best advice before you enter college / university</p>
+                                    <p class="card-text">We provide one-to-one consulting and give you the best advice before you enter college / organizers</p>
                                 </div>
                             </div>
 
@@ -77,7 +77,7 @@
                                 <div class="card-body">
                                     <div class="badge badge-primary badge-sm">FOR ORGANIZERS</div>
                                     <div class="card-title">Provide partner cooperation opportunities</div>
-                                    <p class="card-text">We partner with the world's leading colleges and universities that offer the best events for a reasonable price</p>
+                                    <p class="card-text">We partner with the world's leading colleges and organizer that offer the best events for a reasonable price</p>
                                 </div>
                             </div>
 
@@ -97,11 +97,11 @@
                             <div class="card card-secondary" style="cursor:pointer; transition:all .5s ease-in-out;">
                                 <img class="card-img-top" src="<?php echo base_url('assets/img/Card-secondary/details1.jpg') ?>" alt="Card image cap">
                                 <div class="card-body">
-                                    <div class="card-title">How to choose the best university for yourself</div>
-                                    <p class="card-text">Understand your goals and ambitions, and choose the university that suits you</p>
+                                    <div class="card-title">How to choose the best organizers for yourself</div>
+                                    <p class="card-text">Understand your goals and ambitions, and choose the organizers that suits you</p>
                                 </div>
                                 <div class="card-footer text-right mr-4">
-                                    <a href="https://www.topuniversities.com/blog/how-choose-university-6-tips" target="_blank" class="btn btn-outline-secondary btn-icon-right">
+                                    <a href="https://www.toporganizer.com/blog/how-choose-organizers-6-tips" target="_blank" class="btn btn-outline-secondary btn-icon-right">
                                         <span>LEARN MORE
                                             <img src="https://static3.avast.com/1/web/i/v2/components/arrow-m-right-orange.png" height="24">
                                         </span>
@@ -125,11 +125,11 @@
                             <div class="card card-secondary" style="cursor:pointer; transition:all .5s ease-in-out;">
                                 <img class="card-img-top" src="<?php echo base_url('assets/img/Card-secondary/details3.jpg') ?>" alt="Card image cap">
                                 <div class="card-body">
-                                    <div class="card-title">Top universities in the world</div>
-                                    <p class="card-text">Top universities are the catalyst for attracting the brightest talents and international partner for academic collaboration</p>
+                                    <div class="card-title">Top organizer in the world</div>
+                                    <p class="card-text">Top organizer are the catalyst for attracting the brightest talents and international partner for academic collaboration</p>
                                 </div>
                                 <div class="card-footer text-right mr-4">
-                                    <a href="https://www.topuniversities.com/university-rankings/world-university-rankings/2021" target="_blank" class="btn btn-outline-secondary btn-icon-right">
+                                    <a href="https://www.toporganizer.com/organizers-rankings/world-organizers-rankings/2021" target="_blank" class="btn btn-outline-secondary btn-icon-right">
                                         <span>LEARN MORE
                                             <img src="https://static3.avast.com/1/web/i/v2/components/arrow-m-right-orange.png" height="24">
                                         </span>
@@ -139,11 +139,11 @@
                             <div class="card card-secondary" style="cursor:pointer; transition:all .5s ease-in-out;">
                                 <img class="card-img-top" src="<?php echo base_url('assets/img/Card-secondary/details4.jpg') ?>" alt="Card image cap">
                                 <div class="card-body">
-                                    <div class="card-title">Top universities graduate employability ranking</div>
+                                    <div class="card-title">Top organizer graduate employability ranking</div>
                                     <p class="card-text">Gain an insight into your chances of getting employed upon graduation</p>
                                 </div>
                                 <div class="card-footer text-right mr-4">
-                                    <a href="https://www.topuniversities.com/university-rankings/employability-rankings/2020" target="_blank" class="btn btn-outline-secondary btn-icon-right">
+                                    <a href="https://www.toporganizer.com/organizers-rankings/employability-rankings/2020" target="_blank" class="btn btn-outline-secondary btn-icon-right">
                                         <span>LEARN MORE
                                             <img src="https://static3.avast.com/1/web/i/v2/components/arrow-m-right-orange.png" height="24">
                                         </span>
@@ -205,7 +205,7 @@
                                 <div class="Aligner-item">
                                     <h1 class="overview">How EventHub can help you</h1>
                                     <p class="overview mt-4" style="animation: left_to_right 2s ease; width: 100%;">At EventHub, our academic counsellors connects ambitions with possibilities and expectations with experience.
-                                        We guide and inspire students to choose the best college / university confidently and provide the most professional advice to students.</p>
+                                        We guide and inspire students to choose the best college / organizers confidently and provide the most professional advice to students.</p>
                                 </div>
                             </div>
                         </div>
@@ -217,7 +217,7 @@
                             <div class="col col-text col-left">
                                 <div class="Aligner-item">
                                     <h1 class="overview">Partners around the world</h1>
-                                    <p class="overview mt-4" style="animation: left_to_right 2s ease; width: 100%;">We have university partners around the world, let us help you find the right one.
+                                    <p class="overview mt-4" style="animation: left_to_right 2s ease; width: 100%;">We have organizers partners around the world, let us help you find the right one.
                                     </p>
                                 </div>
                             </div>

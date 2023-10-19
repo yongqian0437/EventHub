@@ -84,12 +84,12 @@ class user_ac_model extends CI_Model
         return $this->db->get('user_ac')->row();
     }
 
-    function ac_university_country($university_name)
+    function ac_organizers_country($organizers_name)
     {
         $this->db->select('organizer_country')
-            ->from('universities')
-            ->join('user_ac', 'user_ac.ac_university = universities.organizer_name')
-            ->where('user_ac.ac_university', $university_name)
+            ->from('organizer')
+            ->join('user_ac', 'user_ac.ac_organizers = organizer.organizer_name')
+            ->where('user_ac.ac_organizers', $organizers_name)
             ->limit(1);
         $query = $this->db->get();
         $res = $query->row_array();

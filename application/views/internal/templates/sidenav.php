@@ -86,10 +86,10 @@
                     <!-- Divider -->
                     <hr class="sidebar-divider">
 
-                    <!-- Nav Item - University -->
+                    <!-- Nav Item - organizers -->
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url('internal/level_2/educational_partner/ep_university'); ?>">
-                            <i class="fas fa-university"></i>
+                        <a class="nav-link" href="<?php echo base_url('internal/level_2/educational_partner/ep_organizers'); ?>">
+                            <i class="fas fa-organizers"></i>
                             <span>Organizer</span>
                         </a>
                     </li>
@@ -231,7 +231,7 @@
                         </a>
                         <div id="content_collapse" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                             <div class="bg-white py-2 collapse-inner rounded">
-                                <a class="collapse-item" href="<?= base_url('internal/admin_panel/content/Admin_universities'); ?>">Universities</a>
+                                <a class="collapse-item" href="<?= base_url('internal/admin_panel/content/Admin_organizer'); ?>">Organizer</a>
                                 <a class="collapse-item" href="<?= base_url('internal/admin_panel/content/Admin_events'); ?>">Events</a>
                                 <a class="collapse-item" href="<?= base_url('internal/admin_panel/content/Admin_emps'); ?>">Employer Projects (EPs)</a>
                                 <a class="collapse-item" href="<?= base_url('internal/admin_panel/content/Admin_rd_project'); ?>">R&D Projects (R&DPs)</a>

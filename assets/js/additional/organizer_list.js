@@ -1,9 +1,9 @@
 $(document).ready(function () {
-	$("#table_university").DataTable({
+	$("#table_organizers").DataTable({
 		bInfo: false, //remove 'showing entires * out of *
 		ordering: false, //remove order(up down icon) for each attributes
 		ajax: {
-			url: base_url + "external/universities/universities_list",
+			url: base_url + "external/organizer/organizer_list",
 			type: "GET",
 		},
 		columnDefs: [

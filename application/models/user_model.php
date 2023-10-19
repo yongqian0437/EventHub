@@ -136,10 +136,10 @@ class user_model extends CI_Model
 
     function counsellors_list() // join users table + user_ac table to get info from both tables
     {
-        $this->db->select('users.user_id, user_email, user_fname, user_lname, ac_university, organizer_logo, organizer_country') // organizer_logo
+        $this->db->select('users.user_id, user_email, user_fname, user_lname, ac_organizers, organizer_logo, organizer_country') // organizer_logo
             ->from('users')
             ->join('user_ac', 'user_ac.user_id = users.user_id')
-            ->join('universities', 'universities.organizer_name = user_ac.ac_university')
+            ->join('organizer', 'organizer.organizer_name = user_ac.ac_organizers')
             ->where('user_role', 'Academic Counsellor')
             ->where('users.user_approval', '1');
         return $this->db->get()->result_array();

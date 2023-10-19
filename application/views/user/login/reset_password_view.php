@@ -10,7 +10,7 @@
 </script>
 
 <script>
-    //Js to remove alert message after university information is edited
+    //Js to remove alert message after organizers information is edited
     setTimeout(function() {
         $('#alert_message').fadeOut();
     }, 5000); // <-- time in milliseconds

@@ -15,7 +15,7 @@
 </style>
 
 <script>
-    //Js to remove alert message after university information is edited
+    //Js to remove alert message after organizers information is edited
     setTimeout(function() {
         $('#alert_message').fadeOut();
     }, 5000); // <-- time in milliseconds
@@ -53,7 +53,7 @@
                         <div class="col-xl-3">
                             <?php if ($event_data->organizer_approval) { ?>
                                 <div class="d-flex justify-content-end">
-                                    <a type="button" href="<?= base_url('internal/level_2/educational_partner/ep_university/edit_university'); ?>" class="btn btn-primary">Edit<i class="fas fa-edit pl-2"></i></a>
+                                    <a type="button" href="<?= base_url('internal/level_2/educational_partner/ep_organizers/edit_organizers'); ?>" class="btn btn-primary">Edit<i class="fas fa-edit pl-2"></i></a>
                                 </div>
                             <?php } ?>
                         </div>
@@ -71,7 +71,7 @@
                                             <div class="form-row">
                                                 <div class="form-group col-md-6 px-4 pr-5">
                                                     <label for="organizer_name">Organizer Name</label>
-                                                    <input type="text" class="form-control" id="organizer_name" name="organizer_name" placeholder="Enter university name" value="<?= $event_data->organizer_name ?>" readonly>
+                                                    <input type="text" class="form-control" id="organizer_name" name="organizer_name" placeholder="Enter organizers name" value="<?= $event_data->organizer_name ?>" readonly>
                                                 </div>
                                                 <div class="form-group col-md-6 px-4 pl-5">
                                                     <label for="organizer_country">Organizer Country</label>
@@ -135,11 +135,11 @@
 
                                                 <div class="col-xl-6 pl-5">
                                                     <div class="pb-3" style="color:black;">Current Organizer Logo</div>
-                                                    <img style=" height:200px; width: 300px; object-fit: contain;" src="<?= base_url("assets/img/universities/") . $event_data->organizer_logo ?>" alt="logo">
+                                                    <img style=" height:200px; width: 300px; object-fit: contain;" src="<?= base_url("assets/img/organizer/") . $event_data->organizer_logo ?>" alt="logo">
                                                 </div>
                                                 <div class="col-xl-6">
                                                     <div class="pb-3" style="color:black;">Current Organizer Background</div>
-                                                    <img style=" height:200px; width: 300px; object-fit: contain;" src="<?= base_url("assets/img/universities/") . $event_data->organizer_background ?>" alt="background">
+                                                    <img style=" height:200px; width: 300px; object-fit: contain;" src="<?= base_url("assets/img/organizer/") . $event_data->organizer_background ?>" alt="background">
                                                 </div>
 
                                             </div>

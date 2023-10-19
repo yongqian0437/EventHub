@@ -88,7 +88,7 @@
                                     <div class="card-body">
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item list_class">
-                                                <img class="img-fluid img_class" style="height: 17vh; object-fit: contain;" src="<?= base_url("assets/img/universities/{$rd['organizer_logo']}"); ?>" width="300" ; />
+                                                <img class="img-fluid img_class" style="height: 17vh; object-fit: contain;" src="<?= base_url("assets/img/organizer/{$rd['organizer_logo']}"); ?>" width="300" ; />
                                                 <h6><b>Project Title: <?= $rd['rd_title'] ?></b></h6>
                                             </li>
                                             <li class="list-group-item">

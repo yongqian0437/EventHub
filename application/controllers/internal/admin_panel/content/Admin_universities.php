@@ -2,14 +2,14 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Admin_universities extends CI_Controller
+class Admin_organizer extends CI_Controller
 {
 
     public function __construct()
     {
         parent::__construct();
         $this->load->model('user_model');
-        $this->load->model('universities_model');
+        $this->load->model('organizer_model');
         $this->load->model('events_model');
         $this->load->model('rd_projects_model');
 
@@ -47,29 +47,29 @@ class Admin_universities extends CI_Controller
 
     public function index()
     {
-        $data['include_js'] = 'admin_universities_list';
-        $data['title'] = 'Admin | Universities';
+        $data['include_js'] = 'admin_organizer_list';
+        $data['title'] = 'Admin | Organizer';
         $this->load->view('internal/templates/header', $data);
         $this->load->view('internal/templates/sidenav');
         $this->load->view('internal/templates/topbar');
-        $this->load->view('internal/admin_panel/content/admin_universities_list_view');
+        $this->load->view('internal/admin_panel/content/admin_organizer_list_view');
         $this->load->view('internal/templates/footer');
     }
 
-    public function admin_all_universities_list()
+    public function admin_all_organizer_list()
     {
         // Datatables Variables
         $draw = intval($this->input->get("draw"));
         $start = intval($this->input->get("start"));
         $length = intval($this->input->get("length"));
 
-        $uni_data = $this->universities_model->all_uni_by_date();
+        $uni_data = $this->organizer_model->all_uni_by_date();
 
         $data = array();
 
         foreach ($uni_data as $r) {
 
-            $view = '<span><button type="button" onclick="view_admin_university(' . $r->organizer_id . ')" class="btn icon-btn btn-xs btn-info waves-effect waves-light" data-toggle="modal" data-target="#view_admin_uni"><span class="fas fa-eye"></span></button></span>';
+            $view = '<span><button type="button" onclick="view_admin_organizers(' . $r->organizer_id . ')" class="btn icon-btn btn-xs btn-info waves-effect waves-light" data-toggle="modal" data-target="#view_admin_uni"><span class="fas fa-eye"></span></button></span>';
 
             if ($r->organizer_approval == 1) {
                 $approval = '<span><button type="button" style = "cursor: default;" class="btn icon-btn btn-xs btn-success waves-effect waves-light">Approved</button></span>';
@@ -99,20 +99,20 @@ class Admin_universities extends CI_Controller
         exit();
     }
 
-    public function admin_pending_universities_list()
+    public function admin_pending_organizer_list()
     {
         // Datatables Variables
         $draw = intval($this->input->get("draw"));
         $start = intval($this->input->get("start"));
         $length = intval($this->input->get("length"));
 
-        $uni_data = $this->universities_model->all_pending_uni_by_date();
+        $uni_data = $this->organizer_model->all_pending_uni_by_date();
 
         $data = array();
 
         foreach ($uni_data as $r) {
 
-            $view = '<span><button type="button" onclick="view_admin_university(' . $r->organizer_id . ')" class="btn icon-btn btn-xs btn-info waves-effect waves-light" data-toggle="modal" data-target="#view_admin_uni"><span class="fas fa-eye"></span></button></span>';
+            $view = '<span><button type="button" onclick="view_admin_organizers(' . $r->organizer_id . ')" class="btn icon-btn btn-xs btn-info waves-effect waves-light" data-toggle="modal" data-target="#view_admin_uni"><span class="fas fa-eye"></span></button></span>';
 
             if ($r->organizer_approval == 1) {
                 $approval = '<span><button type="button" style = "cursor: default;" class="btn icon-btn btn-xs btn-success waves-effect waves-light">Approved</button></span>';
@@ -145,10 +145,10 @@ class Admin_universities extends CI_Controller
         exit();
     }
 
-    function view_admin_university()
+    function view_admin_organizers()
     {
 
-        $uni_detail = $this->universities_model->get_uni_detail($this->input->post('organizer_id'));
+        $uni_detail = $this->organizer_model->get_uni_detail($this->input->post('organizer_id'));
         $total_event = $this->events_model->get_totalevent_for_uni($this->input->post('organizer_id'));
 
         if ($uni_detail->organizer_approval) {
@@ -162,7 +162,7 @@ class Admin_universities extends CI_Controller
             <tbody>
                 <tr style = "display:none;"><td colspan="2"></td></tr>
                 <tr style="text-align: center">
-                    <td colspan="2"><img src="' . base_url("assets/img/universities/") . $uni_detail->organizer_logo . '" style="width: 250px; height: 100px; object-fit:contain;"></td>
+                    <td colspan="2"><img src="' . base_url("assets/img/organizer/") . $uni_detail->organizer_logo . '" style="width: 250px; height: 100px; object-fit:contain;"></td>
                 </tr> 
                 <tr>
                     <th scope="row">Submitted Date</th>
@@ -173,7 +173,7 @@ class Admin_universities extends CI_Controller
                     <td>' . $approval . '</td>
                 </tr>
                 <tr>
-                    <th scope="row">University Name</th>
+                    <th scope="row">organizers Name</th>
                     <td>' . $uni_detail->organizer_name . '</td>
                 </tr>
                 <tr>
@@ -222,7 +222,7 @@ class Admin_universities extends CI_Controller
                 </tr>
                 <tr style = "background-color:white;">
                     <th scope="row">Background Image</th>
-                    <td><img src="' . base_url("assets/img/universities/") . $uni_detail->organizer_background . '" style="width: 350px; height: 200px; object-fit:contain;"></td>
+                    <td><img src="' . base_url("assets/img/organizer/") . $uni_detail->organizer_background . '" style="width: 350px; height: 200px; object-fit:contain;"></td>
                 </tr>
             </tbody>
         </table>
@@ -234,12 +234,12 @@ class Admin_universities extends CI_Controller
 
     function edit_one_approval()
     {
-        $this->universities_model->edit_one_approval($this->input->post('organizer_id'));
+        $this->organizer_model->edit_one_approval($this->input->post('organizer_id'));
     }
 
     function approve_uni()
     {
         $data = ['organizer_approval' => 1];
-        $this->universities_model->update($data, $this->input->post('organizer_id'));
+        $this->organizer_model->update($data, $this->input->post('organizer_id'));
     }
 }

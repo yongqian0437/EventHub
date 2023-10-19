@@ -5,7 +5,7 @@ $(document).ready(function () {
 		ajax: {
 			url:
 				base_url +
-				"internal/admin_panel/content/Admin_universities/admin_all_universities_list",
+				"internal/admin_panel/content/Admin_organizer/admin_all_organizer_list",
 			type: "GET",
 		},
 		columnDefs: [
@@ -37,7 +37,7 @@ $(document).ready(function () {
 		ajax: {
 			url:
 				base_url +
-				"internal/admin_panel/content/Admin_universities/admin_pending_universities_list",
+				"internal/admin_panel/content/Admin_organizer/admin_pending_organizer_list",
 			type: "GET",
 		},
 		columnDefs: [
@@ -72,15 +72,15 @@ $(document).ready(function () {
 	});
 }); // end of ready function
 
-function view_admin_university(organizer_id) {
+function view_admin_organizers(organizer_id) {
 	$.ajax({
 		url:
 			base_url +
-			"internal/admin_panel/content/Admin_universities/view_admin_university",
+			"internal/admin_panel/content/Admin_organizer/view_admin_organizers",
 		method: "POST",
 		data: { organizer_id: organizer_id },
 		success: function (data) {
-			$("#admin_university_information").html(data);
+			$("#admin_organizers_information").html(data);
 		},
 	});
 }
@@ -99,7 +99,7 @@ function edit_approval(organizer_id) {
 			$.ajax({
 				url:
 					base_url +
-					"internal/admin_panel/content/Admin_universities/edit_one_approval",
+					"internal/admin_panel/content/Admin_organizer/edit_one_approval",
 				method: "POST",
 				data: { organizer_id: organizer_id },
 				success: function (data) {
@@ -135,13 +135,13 @@ function approve_all_uni() {
 					$.ajax({
 						url:
 							base_url +
-							"internal/admin_panel/content/Admin_universities/approve_uni",
+							"internal/admin_panel/content/Admin_organizer/approve_uni",
 						method: "POST",
 						data: { organizer_id: $organizer_id },
 					});
 				});
 
-				Swal.fire("Approved!", "Universities have been approved.", "success");
+				Swal.fire("Approved!", "Organizer have been approved.", "success");
 
 				//reload both datatables
 				var xin_table = $("#table_admin_all_uni").DataTable();

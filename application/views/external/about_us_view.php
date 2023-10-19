@@ -23,7 +23,7 @@
                             <div class="dark-background ">
                                 <h1 class="pb-2">About Us</h1>
                                 <p class="pb-4">
-                                    Welcome to EventHub, your go-to platform for seamless campus event management! Created with the vision of enhancing campus life experiences, EventHub brings together students and organizers to create memorable events that enrich our university community.
+                                    Welcome to EventHub, your go-to platform for seamless campus event management! Created with the vision of enhancing campus life experiences, EventHub brings together students and organizers to create memorable events that enrich our organizers community.
                                 </p>
                             </div>
                         </div>
@@ -73,7 +73,7 @@
                             <div class="col col-text col-left">
                                 <div class="Aligner-item">
                                     <h1 class="overview">Partners around the world</h1>
-                                    <p class="overview mt-4" style="animation: left_to_right 2s ease; width: 100%;">We have university partners around the world, let us help you find the right one.
+                                    <p class="overview mt-4" style="animation: left_to_right 2s ease; width: 100%;">We have organizers partners around the world, let us help you find the right one.
                                     </p>
                                 </div>
                             </div> -->

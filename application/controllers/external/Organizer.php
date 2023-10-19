@@ -2,14 +2,14 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Universities extends CI_Controller
+class Organizer extends CI_Controller
 {
 
 	public function __construct()
 	{
 		parent::__construct();
 		$this->load->model('user_model');
-		$this->load->model('universities_model');
+		$this->load->model('organizer_model');
 		$this->load->model('events_model');
 		$this->load->model('event_applicants_model');
 
@@ -42,17 +42,17 @@ class Universities extends CI_Controller
 
 	public function index()
 	{
-		$data['event_data'] = $this->universities_model->select_all_approved_only();
-		$data['include_js'] = 'universities_list';
+		$data['event_data'] = $this->organizer_model->select_all_approved_only();
+		$data['include_js'] = 'organizer_list';
 		$data['include_js2'] = '<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.24/datatables.min.css"/>';
 		$data['include_js3'] = '<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.24/datatables.min.js"></script>';
-		$data['title'] = 'EventHub | Universities';
+		$data['title'] = 'EventHub | Organizer';
 		$this->load->view('external/templates/header', $data);
-		$this->load->view('external/universities_view', $data);
+		$this->load->view('external/organizer_view', $data);
 		$this->load->view('external/templates/footer');
 	}
 
-	public function universities_list()
+	public function organizer_list()
 	{
 		// Datatables Variables
 		$draw = intval($this->input->get("draw"));
@@ -60,19 +60,19 @@ class Universities extends CI_Controller
 		$length = intval($this->input->get("length"));
 
 
-		$universities = $this->universities_model->select_all_sort_list();
+		$organizer = $this->organizer_model->select_all_sort_list();
 
 		$data = array();
 		$base_url = base_url();
 
-		foreach ($universities as $r) {
+		foreach ($organizer as $r) {
 
-			$logo = base_url('assets/img/universities/') . $r->organizer_logo;
+			$logo = base_url('assets/img/organizer/') . $r->organizer_logo;
 			$total_event = $this->events_model->get_totalevent_for_uni($r->organizer_id);
 
 			$image = '<img style=" height:85px; width: 250px; object-fit: contain;" src="' . $logo . '" alt="logo"><br><br>';
 
-			$uni_link = $base_url . "external/Universities/university_detail/" . $r->organizer_id;
+			$uni_link = $base_url . "external/Organizer/organizers_detail/" . $r->organizer_id;
 
 			$action = '<a style = "border-radius:10px; background-color:#6B9080; color:white; height:auto; width:auto%;" href="' . $uni_link . '" class = "btn btn-icon-split">
 							<span class = "icon text-white-600">
@@ -93,8 +93,8 @@ class Universities extends CI_Controller
 
 		$output = array(
 			"draw" => $draw,
-			"recordsTotal" => count($universities),
-			"recordsFiltered" => count($universities),
+			"recordsTotal" => count($organizer),
+			"recordsFiltered" => count($organizer),
 			"data" => $data
 		);
 
@@ -102,14 +102,14 @@ class Universities extends CI_Controller
 		exit();
 	}
 
-	public function university_detail($organizer_id)
+	public function organizers_detail($organizer_id)
 	{
 
-		$data['title'] = 'EventHub | University';
-		$data['uni_detail'] = $this->universities_model->get_uni_detail($organizer_id);
+		$data['title'] = 'EventHub | organizers';
+		$data['uni_detail'] = $this->organizer_model->get_uni_detail($organizer_id);
 		$data['event_field'] = $this->events_model->event_field_dropdown($organizer_id);
 		$data['total_event'] = $this->events_model->get_totalevent_for_uni($organizer_id);
-		$data['include_js'] = 'university_detail';
+		$data['include_js'] = 'organizers_detail';
 		$this->load->view('external/templates/header', $data);
 		$this->load->view('external/universitiy_detail_view');
 		$this->load->view('external/templates/footer');

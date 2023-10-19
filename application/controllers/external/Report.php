@@ -9,7 +9,7 @@ class Report extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('user_model');
-		$this->load->model('universities_model');
+		$this->load->model('organizer_model');
 		$this->load->model('events_model');
 
 		// Checks if session is set and if user signed in is an internal user. Direct them back to their own dashboard.
@@ -44,7 +44,7 @@ class Report extends CI_Controller
 
 		$data['title'] = 'EventHub | Comparison';
 
-		$data['event_data'] = $this->universities_model->sorted_uni_dropdown();
+		$data['event_data'] = $this->organizer_model->sorted_uni_dropdown();
 		$data['include_js'] = 'compare';
 		$data['include_css'] = 'compare';
 		$this->load->view('external/templates/header', $data);
@@ -62,22 +62,22 @@ class Report extends CI_Controller
 		$event_data1 = $this->events_model->get_event_with_id($this->input->post('event_id1'));
 		$event_data2 = $this->events_model->get_event_with_id($this->input->post('event_id2'));
 		$event_data3 = $this->events_model->get_event_with_id($this->input->post('event_id3'));
-		$uni_data1 = $this->universities_model->get_uni_with_id($this->input->post('organizer_id1'));
-		$uni_data2 = $this->universities_model->get_uni_with_id($this->input->post('organizer_id2'));
-		$uni_data3 = $this->universities_model->get_uni_with_id($this->input->post('organizer_id3'));
+		$uni_data1 = $this->organizer_model->get_uni_with_id($this->input->post('organizer_id1'));
+		$uni_data2 = $this->organizer_model->get_uni_with_id($this->input->post('organizer_id2'));
+		$uni_data3 = $this->organizer_model->get_uni_with_id($this->input->post('organizer_id3'));
 
 		$base_url = base_url();
-		$logo1 = $base_url . "assets/img/universities/" . $uni_data1[0]->organizer_logo;
-		$logo2 = $base_url . "assets/img/universities/" . $uni_data2[0]->organizer_logo;
-		$logo3 = $base_url . "assets/img/universities/" . $uni_data3[0]->organizer_logo;
+		$logo1 = $base_url . "assets/img/organizer/" . $uni_data1[0]->organizer_logo;
+		$logo2 = $base_url . "assets/img/organizer/" . $uni_data2[0]->organizer_logo;
+		$logo3 = $base_url . "assets/img/organizer/" . $uni_data3[0]->organizer_logo;
 
 		$event_link1 = $base_url . "external/Events/view_event/" . $event_data1[0]->event_id;
 		$event_link2 = $base_url . "external/Events/view_event/" . $event_data2[0]->event_id;
 		$event_link3 = $base_url . "external/Events/view_event/" . $event_data3[0]->event_id;
 
-		$uni_link1 = $base_url . "external/Universities/university_detail/" . $uni_data1[0]->organizer_id;
-		$uni_link2 = $base_url . "external/Universities/university_detail/" . $uni_data2[0]->organizer_id;
-		$uni_link3 = $base_url . "external/Universities/university_detail/" . $uni_data3[0]->organizer_id;
+		$uni_link1 = $base_url . "external/Organizer/organizers_detail/" . $uni_data1[0]->organizer_id;
+		$uni_link2 = $base_url . "external/Organizer/organizers_detail/" . $uni_data2[0]->organizer_id;
+		$uni_link3 = $base_url . "external/Organizer/organizers_detail/" . $uni_data3[0]->organizer_id;
 
 		$output =
 			'<tbody>
@@ -88,9 +88,9 @@ class Report extends CI_Controller
                         <img style=" height:85px; width: 250px; object-fit: contain;" src="' . $logo1 . '" alt="logo1"><br><br>
                         <a style = "border-radius:10px; background-color:#6B9080; color:white; height:auto; width:auto; " target="_blank" href="' . $uni_link1 . '" class = "btn btn-icon-split">
                             <span class = "icon text-white-600">
-                                <i class = "fas fa-university p-1"></i>
+                                <i class = "fas fa-organizers p-1"></i>
                             </span>
-                            <span style = "" class = "text">View University</span>
+                            <span style = "" class = "text">View organizers</span>
                         </a>
                     </center>  
                 </td>
@@ -99,9 +99,9 @@ class Report extends CI_Controller
                         <img style=" height:85px; width: 250px;  object-fit: contain;" src="' . $logo2 . '" alt="logo2"><br><br>
                         <a style = "border-radius:10px; background-color:#6B9080; color:white; height:auto; width:auto;" target="_blank" href="' . $uni_link2 . '" class = "btn btn-icon-split">
                             <span class = "icon text-white-600">
-                                <i class = "fas fa-university p-1"></i>
+                                <i class = "fas fa-organizers p-1"></i>
                             </span>
-                            <span style = "" class = "text">View University</span>
+                            <span style = "" class = "text">View organizers</span>
                         </a>                    
                     </center>   
                 </td>
@@ -110,9 +110,9 @@ class Report extends CI_Controller
                         <img style=" height:85px; width: 250px; object-fit: contain;" src="' . $logo3 . '" alt="logo3"><br><br>
                         <a style = "border-radius:10px; background-color:#6B9080; color:white; height:auto; width:auto; " target="_blank" href="' . $uni_link3 . '" class = "btn btn-icon-split">
                             <span class = "icon text-white-600">
-                                <i class = "fas fa-university p-1"></i>
+                                <i class = "fas fa-organizers p-1"></i>
                             </span>
-                            <span style = "" class = "text">View University</span>
+                            <span style = "" class = "text">View organizers</span>
                         </a>                    
                     </center>    
                 </td>
@@ -215,18 +215,18 @@ class Report extends CI_Controller
 	{
 		$event_data1 = $this->events_model->get_event_with_id($this->input->post('event_id1'));
 		$event_data2 = $this->events_model->get_event_with_id($this->input->post('event_id2'));
-		$uni_data1 = $this->universities_model->get_uni_with_id($this->input->post('organizer_id1'));
-		$uni_data2 = $this->universities_model->get_uni_with_id($this->input->post('organizer_id2'));
+		$uni_data1 = $this->organizer_model->get_uni_with_id($this->input->post('organizer_id1'));
+		$uni_data2 = $this->organizer_model->get_uni_with_id($this->input->post('organizer_id2'));
 
 		$base_url = base_url();
-		$logo1 = $base_url . "assets/img/universities/" . $uni_data1[0]->organizer_logo;
-		$logo2 = $base_url . "assets/img/universities/" . $uni_data2[0]->organizer_logo;
+		$logo1 = $base_url . "assets/img/organizer/" . $uni_data1[0]->organizer_logo;
+		$logo2 = $base_url . "assets/img/organizer/" . $uni_data2[0]->organizer_logo;
 
 		$event_link1 = $base_url . "external/Events/view_event/" . $event_data1[0]->event_id;
 		$event_link2 = $base_url . "external/Events/view_event/" . $event_data2[0]->event_id;
 
-		$uni_link1 = $base_url . "external/Universities/university_detail/" . $uni_data1[0]->organizer_id;
-		$uni_link2 = $base_url . "external/Universities/university_detail/" . $uni_data2[0]->organizer_id;
+		$uni_link1 = $base_url . "external/Organizer/organizers_detail/" . $uni_data1[0]->organizer_id;
+		$uni_link2 = $base_url . "external/Organizer/organizers_detail/" . $uni_data2[0]->organizer_id;
 
 		$output =
 			'<tbody>
@@ -237,9 +237,9 @@ class Report extends CI_Controller
                         <img style=" height:85px; width: 250px; object-fit: contain;" src="' . $logo1 . '" alt="logo1"><br><br>
                         <a style = "border-radius:10px; background-color:#6B9080; color:white; height:auto; width:auto; " target="_blank" href="' . $uni_link1 . '" class = "btn btn-icon-split">
                             <span class = "icon text-white-600">
-                                <i class = "fas fa-university p-1"></i>
+                                <i class = "fas fa-organizers p-1"></i>
                             </span>
-                            <span style = "" class = "text">View University</span>
+                            <span style = "" class = "text">View organizers</span>
                         </a>
                     </center>  
                 </td>
@@ -248,9 +248,9 @@ class Report extends CI_Controller
                         <img style=" height:85px; width: 250px;  object-fit: contain;" src="' . $logo2 . '" alt="logo2"><br><br>
                         <a style = "border-radius:10px; background-color:#6B9080; color:white; height:auto; width:auto;" target="_blank" href="' . $uni_link2 . '" class = "btn btn-icon-split">
                             <span class = "icon text-white-600">
-                                <i class = "fas fa-university p-1"></i>
+                                <i class = "fas fa-organizers p-1"></i>
                             </span>
-                            <span style = "" class = "text">View University</span>
+                            <span style = "" class = "text">View organizers</span>
                         </a>                    
                     </center>   
                 </td>

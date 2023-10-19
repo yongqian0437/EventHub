@@ -8,7 +8,7 @@ class Rd_projects extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model(['user_ep_model', 'rd_projects_model', 'rd_applicants_model', 'universities_model']);
+        $this->load->model(['user_ep_model', 'rd_projects_model', 'rd_applicants_model', 'organizer_model']);
         date_default_timezone_set('Asia/Kuala_Lumpur');
 
         // Checks if session is set and if user signed in is a student or an EP. Otherwise, direct them back to their own dashboard.

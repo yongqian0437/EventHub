@@ -1,6 +1,6 @@
 <?php
 
-class universities_model extends CI_Model
+class organizer_model extends CI_Model
 {
 
     public function __construct()
@@ -11,7 +11,7 @@ class universities_model extends CI_Model
 
     function insert($data)
     {
-        $this->db->insert('universities', $data);
+        $this->db->insert('organizer', $data);
         if ($this->db->affected_rows() > 0) {
             return true;
         } else {
@@ -22,7 +22,7 @@ class universities_model extends CI_Model
     function update($data, $id)
     {
         $this->db->where('organizer_id', $id);
-        if ($this->db->update('universities', $data)) {
+        if ($this->db->update('organizer', $data)) {
             return true;
         } else {
             return false;
@@ -32,7 +32,7 @@ class universities_model extends CI_Model
     function delete($id)
     {
         $this->db->where('organizer_id', $id);
-        $this->db->delete('universities');
+        $this->db->delete('organizer');
         if ($this->db->affected_rows() > 0) {
             return true;
         } else {
@@ -42,41 +42,41 @@ class universities_model extends CI_Model
 
     function select_all()
     {
-        return $this->db->get('universities')->result();
+        return $this->db->get('organizer')->result();
     }
 
     function select_condition($condition)
     {
         $this->db->where($condition);
-        return $this->db->get('universities')->result();
+        return $this->db->get('organizer')->result();
     }
 
     public function valid_email($organizer_email)
     {
-        return $this->db->get_where('universities', ['organizer_email' => $organizer_email])->row_array();
+        return $this->db->get_where('organizer', ['organizer_email' => $organizer_email])->row_array();
     }
 
     // public function last_organizer_id()
     // {
-    //  $row = $this->db->select("*")->limit(1)->order_by('organizer_id',"DESC")->get("universities")->row();
+    //  $row = $this->db->select("*")->limit(1)->order_by('organizer_id',"DESC")->get("organizer")->row();
     //  return $row->organizer_id; //it will provide latest or last record id.
     // }
 
     function select_all_approved_only() //new function 
     {
         $this->db->where('organizer_approval', 1);
-        return $this->db->get('universities')->result();
+        return $this->db->get('organizer')->result();
     }
 
     public function uni_details($organizer_id)
     {
-        return $this->db->get_where('universities', ['organizer_id' => $organizer_id])->row_array();
+        return $this->db->get_where('organizer', ['organizer_id' => $organizer_id])->row_array();
     }
 
     function get_uni_with_id($id)  //new function
     {
         $this->db->where('organizer_id', $id);
-        return $this->db->get('universities')->result();
+        return $this->db->get('organizer')->result();
     }
 
     function select_all_sort_list()
@@ -84,7 +84,7 @@ class universities_model extends CI_Model
         $this->db->where('organizer_approval', 1);
         $this->db->order_by('organizer_country', 'ASC');
         $this->db->order_by('organizer_name', 'ASC');
-        return $this->db->get('universities')->result();
+        return $this->db->get('organizer')->result();
     }
 
     public function uni_max_5()
@@ -92,31 +92,31 @@ class universities_model extends CI_Model
         $this->db->where('organizer_approval', 1);
         $this->db->order_by('organizer_submitdate', 'DESC');
         $this->db->limit(5);
-        return $this->db->get('universities')->result_array();
+        return $this->db->get('organizer')->result_array();
     }
 
     function uni_by_approval($condition)
     {
         $this->db->where('organizer_approval', $condition);
-        return $this->db->get('universities')->result();
+        return $this->db->get('organizer')->result();
     }
     public function get_uni_detail($organizer_id)
     {
         $this->db->where('organizer_id', $organizer_id);
-        return $this->db->get('universities')->row();
+        return $this->db->get('organizer')->row();
     }
 
     function fetch_organizer_id($organizer_name)  //new function
     {
         $this->db->where('organizer_name', $organizer_name);
-        $query = $this->db->get('universities');
+        $query = $this->db->get('organizer');
 
         if ($query->num_rows() > 0) {
             foreach ($query->result() as $row) {
                 $output = $row->organizer_id;
             }
         } else {
-            $output = '<option value="" selected disabled>No universities available</option>';
+            $output = '<option value="" selected disabled>No organizer available</option>';
         }
 
         return $output;
@@ -126,28 +126,28 @@ class universities_model extends CI_Model
     {
         $this->db->where('organizer_approval', 1);
         $this->db->order_by('organizer_name', 'ASC');
-        return $this->db->get('universities')->result();
+        return $this->db->get('organizer')->result();
     }
 
-    //select all university order by submitted date
+    //select all organizers order by submitted date
     function all_uni_by_date()
     {
         $this->db->order_by('organizer_submitdate', 'DESC');
-        return $this->db->get('universities')->result();
+        return $this->db->get('organizer')->result();
     }
 
-    //select all university order by submitted date
+    //select all organizers order by submitted date
     function all_pending_uni_by_date()
     {
         $this->db->where('organizer_approval', 0);
         $this->db->order_by('organizer_submitdate', 'DESC');
-        return $this->db->get('universities')->result();
+        return $this->db->get('organizer')->result();
     }
 
     function edit_one_approval($organizer_id)
     {
         $this->db->where('organizer_id ', $organizer_id);
-        $query = $this->db->get('universities')->row();
+        $query = $this->db->get('organizer')->row();
 
         if ($query->organizer_approval == 0) {
             $data = array(
@@ -155,7 +155,7 @@ class universities_model extends CI_Model
             );
 
             $this->db->where('organizer_id ', $organizer_id);
-            $this->db->update('universities', $data);
+            $this->db->update('organizer', $data);
         }
     }
 }

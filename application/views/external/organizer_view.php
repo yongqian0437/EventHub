@@ -15,12 +15,12 @@
     }
 
     /* styling for datatables pagination */
-    #table_university_paginate {
+    #table_organizers_paginate {
         padding-top: 20px;
     }
 
     /* styling for datatables search */
-    #table_university_filter {
+    #table_organizers_filter {
         font-size: 20px;
     }
 
@@ -89,7 +89,7 @@
                                         </div>
                                     </div>
                                     <div class="table-responsive">
-                                        <table id="table_university" class="table ">
+                                        <table id="table_organizers" class="table ">
                                             <thead>
                                                 <tr>
                                                     <th>Organizer</th>

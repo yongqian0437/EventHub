@@ -8,7 +8,7 @@ class Ea_event_application extends CI_Controller
     {
         parent::__construct();
 
-        $this->load->model(['user_model', 'event_applicants_model', 'universities_model', 'events_model']);
+        $this->load->model(['user_model', 'event_applicants_model', 'organizer_model', 'events_model']);
         $this->load->library('form_validation');
         $this->load->helper('form');
 
@@ -65,7 +65,7 @@ class Ea_event_application extends CI_Controller
         $data['title'] = 'EventHub | Add Student Applicant';
         $data['include_js'] = 'ea_event_application_add';
         $data['users'] = $this->user_model->search_email();
-        $data['event_data'] = $this->universities_model->select_all_approved_only();
+        $data['event_data'] = $this->organizer_model->select_all_approved_only();
 
         $this->load->view('internal/templates/header', $data);
         $this->load->view('internal/templates/sidenav', $data);
@@ -160,7 +160,7 @@ class Ea_event_application extends CI_Controller
             $get_organizer_id = $this->events_model->get_organizer_id($ca->event_id); // get event id to get the uni id
 
             foreach ($get_organizer_id as $details) {
-                $get_organizer_name = $this->universities_model->get_uni_detail($details->organizer_id); // get uni id to get the uni name
+                $get_organizer_name = $this->organizer_model->get_uni_detail($details->organizer_id); // get uni id to get the uni name
             }
 
             $edit_link = $base_url . "internal/level_2/education_agent/ea_event_application/edit_event_applicant/" . $ca->e_applicant_id;
@@ -200,7 +200,7 @@ class Ea_event_application extends CI_Controller
         $data['include_js'] = 'ea_event_application_edit';
         $data['edit_event_applicant'] = $this->event_applicants_model->get_cas_with_id($e_applicant_id);
         // $data['edit_event_applicant']=$this->event_applicants_model->get_cas_with_id($data);
-        $data['event_data'] = $this->universities_model->select_all_approved_only();
+        $data['event_data'] = $this->organizer_model->select_all_approved_only();
         $this->load->view('internal/templates/header', $data);
         $this->load->view('internal/templates/sidenav');
         $this->load->view('internal/templates/topbar');
@@ -270,7 +270,7 @@ class Ea_event_application extends CI_Controller
         $get_organizer_id = $this->events_model->get_organizer_id($ca_detail->event_id); // get event id to get the uni id
 
         foreach ($get_organizer_id as $details) {
-            $uni_details = $this->universities_model->get_uni_detail($details->organizer_id); // get uni id to get the uni name
+            $uni_details = $this->organizer_model->get_uni_detail($details->organizer_id); // get uni id to get the uni name
         }
 
         $output = '
@@ -281,11 +281,11 @@ class Ea_event_application extends CI_Controller
                     <td>' . $ca_detail->c_app_submitdate . '</td>
                 </tr>
                 <tr style="text-align: center;">
-                    <td colspan="2"><img src="' . base_url("assets/img/universities/") . $uni_details->organizer_logo . '" style="width: 250px; height: 100px; object-fit:contain;">
+                    <td colspan="2"><img src="' . base_url("assets/img/organizer/") . $uni_details->organizer_logo . '" style="width: 250px; height: 100px; object-fit:contain;">
                     </td>  
                 </tr>
                 <tr>
-                    <th scope="row">University</th>
+                    <th scope="row">organizers</th>
                     <td>' . $uni_details->organizer_name . '</td>
                 </tr>
                 <tr>

@@ -11,7 +11,7 @@ class Auth extends CI_Controller
         $this->load->helper('form');
         $this->load->model([
             'user_student_model', 'user_ep_model', 'user_ac_model', 'user_ea_model',
-            'user_e_model', 'universities_model', 'company_model', 'events_model'
+            'user_e_model', 'organizer_model', 'company_model', 'events_model'
         ]);
     }
 
@@ -195,7 +195,7 @@ class Auth extends CI_Controller
             if ($user_role == "Student") {
                 redirect("user/login/Auth/student_reg");
             } else if ($user_role == "Education Partner") {
-                redirect("user/login/Auth/university");
+                redirect("user/login/Auth/organizers");
             } else if ($user_role == "Academic Counsellor") {
                 redirect("user/login/Auth/ac_reg");
             } else if ($user_role == "Education Agent") {
@@ -233,7 +233,7 @@ class Auth extends CI_Controller
                 if ($this->session->userdata('user_role') == "Education Partner") {
                     $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
                     The file format must be in "png, jpg or jpeg"</div>');
-                    redirect('user/login/Auth/university');
+                    redirect('user/login/Auth/organizers');
                 } else {
                     $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
                     The file format must be in "png, jpg or jpeg"</div>');
@@ -284,19 +284,19 @@ class Auth extends CI_Controller
         }
     }
 
-    public function university()
+    public function organizers()
     {
-        $this->form_validation->set_rules('organizer_name', 'University Name', 'required|trim');
+        $this->form_validation->set_rules('organizer_name', 'organizers Name', 'required|trim');
 
         if ($this->form_validation->run() == false) {
-            $data['title'] = "EventHub | University Registration";
+            $data['title'] = "EventHub | organizers Registration";
             $data['include_css'] = "forms";
             $this->load->view('external/templates/header', $data);
-            $this->load->view('user/registration/university_registration_view');
+            $this->load->view('user/registration/organizers_registration_view');
             $this->load->view('external/templates/footer');
         } else {
-            $organizer_background = $this->upload_img('./assets/img/universities', 'organizer_background');
-            $organizer_logo = $this->upload_img('./assets/img/universities', 'organizer_logo');
+            $organizer_background = $this->upload_img('./assets/img/organizer', 'organizer_background');
+            $organizer_logo = $this->upload_img('./assets/img/organizer', 'organizer_logo');
 
             $data =
                 [
@@ -317,18 +317,18 @@ class Auth extends CI_Controller
                 ];
 
             // insert data into database
-            $this->universities_model->insert($data);
+            $this->organizer_model->insert($data);
 
             $organizer_email = $this->input->post('organizer_email');
-            $uni = $this->universities_model->valid_email($organizer_email);
-            $university =
+            $uni = $this->organizer_model->valid_email($organizer_email);
+            $organizers =
                 [
                     'organizer_id' => $uni['organizer_id'],
                     'organizer_name' => $uni['organizer_name'],
                     'organizer_email' => $uni['organizer_email'],
                 ];
 
-            $this->session->set_userdata($university);
+            $this->session->set_userdata($organizers);
 
             //   $this->session->set_flashdata('message','<div class="alert alert-success" role="alert" id="alert_message">
             //   Check your email to get the approval from the admin</div>'); 
@@ -421,7 +421,7 @@ class Auth extends CI_Controller
 
     public function ac_reg()
     {
-        $data['event_data'] = $this->universities_model->select_all_approved_only(); // get from eddie's branch
+        $data['event_data'] = $this->organizer_model->select_all_approved_only(); // get from eddie's branch
 
 
         $user_id = $this->session->userdata('user_id');
@@ -440,7 +440,7 @@ class Auth extends CI_Controller
             $this->load->view('external/templates/footer');
         } else {
             $ac_document = $this->upload_doc('./assets/uploads/academic_counsellor', 'ac_document');
-            $organizer_id = $this->universities_model->fetch_organizer_id($this->input->post('ac_university'));
+            $organizer_id = $this->organizer_model->fetch_organizer_id($this->input->post('ac_organizers'));
 
             $data =
                 [
@@ -448,7 +448,7 @@ class Auth extends CI_Controller
                     'ac_phonenumber' => htmlspecialchars($this->input->post('ac_phonenumber', true)),
                     'ac_businessemail' => htmlspecialchars($this->input->post('ac_businessemail', true)),
                     'organizer_id' => $organizer_id,
-                    'ac_university' => htmlspecialchars($this->input->post('ac_university', true)),
+                    'ac_organizers' => htmlspecialchars($this->input->post('ac_organizers', true)),
                     'ac_nationality' => htmlspecialchars($this->input->post('ac_nationality', true)),
                     'ac_gender' => htmlspecialchars($this->input->post('ac_gender', true)),
                     'ac_dob' => htmlspecialchars($this->input->post('ac_dob', true)),

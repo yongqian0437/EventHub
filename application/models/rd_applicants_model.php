@@ -91,7 +91,7 @@ class rd_applicants_model extends CI_Model
         $this->db->select('*');
         $this->db->from('user_ep');
         $this->db->where('ep_id ', $ep_id);
-        $this->db->join('universities', 'universities.organizer_id = user_ep.organizer_id');
+        $this->db->join('organizer', 'organizer.organizer_id = user_ep.organizer_id');
         $this->db->join('users', 'users.user_id = user_ep.user_id');
         $query = $this->db->get()->row();
         return $query;

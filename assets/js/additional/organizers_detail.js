@@ -1,7 +1,7 @@
 $(document).ready(function () {
-	//default ajax to get all event for a university
+	//default ajax to get all event for a organizers
 	$.ajax({
-		url: base_url + "external/Universities/fetch_event_list",
+		url: base_url + "external/Organizer/fetch_event_list",
 		method: "POST",
 		data: { event_type: $("#event_field").val(), organizer_id: organizer_id },
 		success: function (data) {
@@ -13,7 +13,7 @@ $(document).ready(function () {
 
 	$("#event_field").change(function () {
 		$.ajax({
-			url: base_url + "external/Universities/fetch_event_list",
+			url: base_url + "external/Organizer/fetch_event_list",
 			method: "POST",
 			data: { event_type: $("#event_field").val(), organizer_id: organizer_id },
 			success: function (data) {

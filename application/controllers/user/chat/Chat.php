@@ -72,7 +72,7 @@ class Chat extends CI_Controller
                         'user_email' => $user['user_email'],
                         'user_fname' => $user['user_fname'],
                         'user_lname' => $user['user_lname'],
-                        'ac_university' => $user['ac_university'],
+                        'ac_organizers' => $user['ac_organizers'],
                         'organizer_logo'   => $user['organizer_logo'],
                         'organizer_country' => $user['organizer_country'],
                     ];
@@ -220,7 +220,7 @@ class Chat extends CI_Controller
             $sender_country = $student_details['student_nationality'];
         } else if ($current_user_data['user_role'] == 'Academic Counsellor') {
             $ac_details = $this->user_ac_model->ac_details($Logged_sender_id);
-            $sender_country = $this->user_ac_model->ac_university_country($ac_details['ac_university']);
+            $sender_country = $this->user_ac_model->ac_organizers_country($ac_details['ac_organizers']);
         } else {
             $e_details =  $this->user_e_model->e_details($Logged_sender_id);
             $e_company_details = $this->company_model->c_details($e_details['c_id']);
@@ -234,7 +234,7 @@ class Chat extends CI_Controller
             $receiver_country = $student_details['student_nationality'];
         } else if ($receiver_user_data->user_role == 'Academic Counsellor') {
             $ac_details = $this->user_ac_model->ac_details($receiver_id);
-            $receiver_country = $this->user_ac_model->ac_university_country($ac_details['ac_university']);
+            $receiver_country = $this->user_ac_model->ac_organizers_country($ac_details['ac_organizers']);
         } else {
             $e_details =  $this->user_e_model->e_details($receiver_id);
             $e_company_details = $this->company_model->c_details($e_details['c_id']);

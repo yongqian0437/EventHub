@@ -2,7 +2,7 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Ep_university extends CI_Controller
+class Ep_organizers extends CI_Controller
 {
 
 	public function __construct()
@@ -11,7 +11,7 @@ class Ep_university extends CI_Controller
 		$this->load->model('user_model');
 		$this->load->model('user_ep_model');
 		$this->load->model('events_model');
-		$this->load->model('universities_model');
+		$this->load->model('organizer_model');
 
 		// Checks if session is set and if user signed in has a role. If not, deny his/her access.
 		if (!$this->session->userdata('user_id') || !$this->session->userdata('user_role')) {
@@ -48,53 +48,53 @@ class Ep_university extends CI_Controller
 	public function index()
 	{
 
-		$data['title'] = 'EventHub | University';
+		$data['title'] = 'EventHub | organizers';
 		$data['event_data'] = $this->user_ep_model->get_uni_from_ep($this->session->userdata('user_id'));
 
 		$this->load->view('internal/templates/header', $data);
 		$this->load->view('internal/templates/sidenav');
 		$this->load->view('internal/templates/topbar');
-		$this->load->view('internal/level_2/educational_partner/ep_university_view');
+		$this->load->view('internal/level_2/educational_partner/ep_organizers_view');
 		$this->load->view('internal/templates/footer');
 	}
 
-	public function edit_university()
+	public function edit_organizers()
 	{
-		$data['title'] = 'EventHub | University';
+		$data['title'] = 'EventHub | organizers';
 		$data['event_data'] = $this->user_ep_model->get_uni_from_ep($this->session->userdata('user_id'));
 
 
 		$this->load->view('internal/templates/header', $data);
 		$this->load->view('internal/templates/sidenav');
 		$this->load->view('internal/templates/topbar');
-		$this->load->view('internal/level_2/educational_partner/ep_university_edit_view');
+		$this->load->view('internal/level_2/educational_partner/ep_organizers_edit_view');
 		$this->load->view('internal/templates/footer');
 	}
 
-	public function after_edit_university($organizer_id)
+	public function after_edit_organizers($organizer_id)
 	{
-		$event_data = $this->universities_model->get_uni_with_id($organizer_id);
+		$event_data = $this->organizer_model->get_uni_with_id($organizer_id);
 
 		if ($_FILES['organizer_background']['name'] != "") {
 
 			unlink($event_data[0]->organizer_background);
 
-			$organizer_background = $this->upload_img('./assets/img/universities', 'organizer_background');
+			$organizer_background = $this->upload_img('./assets/img/organizer', 'organizer_background');
 			$data = [
 				'organizer_background' => $organizer_background['file_name'],
 			];
-			$this->universities_model->update($data, $organizer_id);
+			$this->organizer_model->update($data, $organizer_id);
 		}
 
 		if ($_FILES['organizer_logo']['name'] != "") {
 
 			unlink($event_data[0]->organizer_logo);
 
-			$organizer_logo = $this->upload_img('./assets/img/universities', 'organizer_logo');
+			$organizer_logo = $this->upload_img('./assets/img/organizer', 'organizer_logo');
 			$data = [
 				'organizer_logo' => $organizer_logo['file_name'],
 			];
-			$this->universities_model->update($data, $organizer_id);
+			$this->organizer_model->update($data, $organizer_id);
 		}
 
 		$data =
@@ -110,12 +110,12 @@ class Ep_university extends CI_Controller
 				'uni_employabilityrank' => htmlspecialchars($this->input->post('uni_employabilityrank')),
 				'uni_totalstudents' => htmlspecialchars($this->input->post('uni_totalstudents')),
 			];
-		$this->universities_model->update($data, $organizer_id);
+		$this->organizer_model->update($data, $organizer_id);
 
 		$this->session->set_flashdata('edit_message', '<div id = "alert_message" class="alert alert-success px-4	" role="alert">
-		University Information has been edited</div>');
+		organizers Information has been edited</div>');
 
-		redirect('internal/level_2/educational_partner/ep_university');
+		redirect('internal/level_2/educational_partner/ep_organizers');
 	}
 
 	public function upload_img($path, $file_input_name)
@@ -128,7 +128,7 @@ class Ep_university extends CI_Controller
 				if ($this->session->userdata('user_role') == "Education Partner") {
 					$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
                     The file format must be in "png, jpg or jpeg"</div>');
-					redirect('user/login/Auth/university');
+					redirect('user/login/Auth/organizers');
 				} else {
 					$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
                     The file format must be in "png, jpg or jpeg"</div>');

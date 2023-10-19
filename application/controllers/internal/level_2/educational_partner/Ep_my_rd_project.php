@@ -12,7 +12,7 @@ class Ep_my_rd_project extends CI_Controller
         $this->load->model('user_ep_model');
         $this->load->model('rd_projects_model');
         $this->load->model('rd_applicants_model');
-        $this->load->model('universities_model');
+        $this->load->model('organizer_model');
 
         // Checks if session is set and if user signed in has a role. If not, deny his/her access.
         if (!$this->session->userdata('user_id') || !$this->session->userdata('user_role')) {

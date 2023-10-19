@@ -12,7 +12,7 @@ class Admin_rd_app extends CI_Controller
         $this->load->model('user_ep_model');
         $this->load->model('rd_projects_model');
         $this->load->model('rd_applicants_model');
-        $this->load->model('universities_model');
+        $this->load->model('organizer_model');
 
         // Checks if session is set and if user signed in has a role. If not, deny his/her access.
         if (!$this->session->userdata('user_id') || !$this->session->userdata('user_role')) {
@@ -118,14 +118,14 @@ class Admin_rd_app extends CI_Controller
                     <th colspan="2" style = "background-color: #CCE3DE; font-weight:900; font-size:1.1em;" scope="row"><center>OWNER DETAILS</center></th>
                 </tr>
                 <tr style="text-align: center">
-                    <td colspan="2"><img src="' . base_url("assets/img/universities/") . $ep_owner->organizer_logo . '" style="width: 250px; height: 100px; object-fit:contain;"></td>
+                    <td colspan="2"><img src="' . base_url("assets/img/organizer/") . $ep_owner->organizer_logo . '" style="width: 250px; height: 100px; object-fit:contain;"></td>
                 </tr> 
                 <tr>
-                <th scope="row">University Name</th>
+                <th scope="row">organizers Name</th>
                     <td>' . $ep_owner->organizer_name . '</td>
                 </tr>
                 <tr>
-                    <th scope="row">University Country</th>
+                    <th scope="row">organizers Country</th>
                     <td>' . $ep_owner->organizer_country . '</td>
                 </tr>
                 <tr>
@@ -159,14 +159,14 @@ class Admin_rd_app extends CI_Controller
                     <th colspan="2" style = "background-color: #CCE3DE; font-weight:900; font-size:1.1em;" scope="row"><center>COLLABORATOR DETAILS</center></th>
                 </tr>
                 <tr style="text-align: center">
-                    <td colspan="2"><img src="' . base_url("assets/img/universities/") . $ep_collab->organizer_logo . '" style="width: 250px; height: 100px; object-fit:contain;"></td>
+                    <td colspan="2"><img src="' . base_url("assets/img/organizer/") . $ep_collab->organizer_logo . '" style="width: 250px; height: 100px; object-fit:contain;"></td>
                 </tr> 
                 <tr>
-                <th scope="row">University Name</th>
+                <th scope="row">organizers Name</th>
                     <td>' . $ep_collab->organizer_name . '</td>
                 </tr>
                 <tr>
-                    <th scope="row">University Country</th>
+                    <th scope="row">organizers Country</th>
                     <td>' . $ep_collab->organizer_country . '</td>
                 </tr>
                 <tr>

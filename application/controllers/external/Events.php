@@ -10,7 +10,7 @@ class Events extends CI_Controller
 		header('Cache-Control: no-cache');
 		$this->load->model('user_model');
 		$this->load->model('events_model');
-		$this->load->model('universities_model');
+		$this->load->model('organizer_model');
 		$this->load->model('event_applicants_model');
 		$this->load->model('user_student_model');
 
@@ -75,7 +75,7 @@ class Events extends CI_Controller
 		}
 		$data['title'] = 'EventHub | Event Details';
 		$data['event_data'] = $this->events_model->select_condition($id, 'events');
-		$data['uni_data'] = $this->universities_model->get_uni_detail($data['event_data'][0]->organizer_id);
+		$data['uni_data'] = $this->organizer_model->get_uni_detail($data['event_data'][0]->organizer_id);
 		$data['title'] = 'EventHub | Event Details';
 
 		$this->load->view('external/templates/header', $data);

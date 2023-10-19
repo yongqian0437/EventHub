@@ -90,13 +90,13 @@
                                                     } else if ($user_role == 'Education Partner' or $user_role == 'Academic Counsellor') { ?>
                                                         <div class="col-8 col-md-6 col-lg-6 mb-2">
 
-                                                            <h6>University</h6>
+                                                            <h6>organizers</h6>
                                                             <label>
                                                                 <?php
                                                                 if ($user_role == 'Education Partner') {
                                                                     echo $ep_data['organizer_name'];
                                                                 } else if ($user_role == 'Academic Counsellor') {
-                                                                    echo $ac_data['ac_university'];
+                                                                    echo $ac_data['ac_organizers'];
                                                                 }
                                                                 ?>
                                                             </label>

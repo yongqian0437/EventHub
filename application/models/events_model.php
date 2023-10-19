@@ -49,8 +49,8 @@ class events_model extends CI_Model
     {
         $this->db->select('*')
             ->from('events')
-            ->join('universities', 'universities.organizer_id = events.organizer_id')
-            ->where('universities.organizer_approval', 1);
+            ->join('organizer', 'organizer.organizer_id = events.organizer_id')
+            ->where('organizer.organizer_approval', 1);
         return $this->db->get()->result();
     }
 
@@ -169,8 +169,8 @@ class events_model extends CI_Model
 
         $this->db->select('*')
             ->from('events')
-            ->join('universities', 'universities.organizer_id = events.organizer_id')
-            ->where('universities.organizer_approval', 1);
+            ->join('organizer', 'organizer.organizer_id = events.organizer_id')
+            ->where('organizer.organizer_approval', 1);
 
         $query = $this->db->get()->result();
 
@@ -197,7 +197,7 @@ class events_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('events');
-        $this->db->join('universities', 'universities.organizer_id = events.organizer_id');
+        $this->db->join('organizer', 'organizer.organizer_id = events.organizer_id');
         $this->db->order_by('events.organizer_id');
         $this->db->order_by('events.event_level');
         $query = $this->db->get()->result();
@@ -209,7 +209,7 @@ class events_model extends CI_Model
         $this->db->select('*');
         $this->db->from('events');
         $this->db->where('event_id', $event_id);
-        $this->db->join('universities', 'universities.organizer_id = events.organizer_id');
+        $this->db->join('organizer', 'organizer.organizer_id = events.organizer_id');
         $query = $this->db->get()->row();
         return $query;
     }
@@ -219,8 +219,8 @@ class events_model extends CI_Model
     {
         $this->db->select('count(events.event_id), events.event_type')
             ->from('events')
-            ->join('universities', 'universities.organizer_id = events.organizer_id')
-            ->where('universities.organizer_id', $organizer_id)
+            ->join('organizer', 'organizer.organizer_id = events.organizer_id')
+            ->where('organizer.organizer_id', $organizer_id)
             ->group_by('events.event_type')
             ->order_by('count(events.event_id)', 'desc')
             ->order_by('events.event_type', 'asc');
