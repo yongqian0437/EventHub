@@ -148,10 +148,10 @@ class Admin_organizer extends CI_Controller
     function view_admin_organizers()
     {
 
-        $uni_detail = $this->organizer_model->get_org_detail($this->input->post('organizer_id'));
+        $org_detail = $this->organizer_model->get_org_detail($this->input->post('organizer_id'));
         $total_event = $this->events_model->get_totalevent_for_uni($this->input->post('organizer_id'));
 
-        if ($uni_detail->organizer_approval) {
+        if ($org_detail->organizer_approval) {
             $approval = '<button type="button" style = "cursor: default;" class="btn btn-success">Approved</button>';
         } else {
             $approval = '<button type="button" style = "cursor: default;" class="btn btn-warning">Pending</button>';
@@ -162,11 +162,11 @@ class Admin_organizer extends CI_Controller
             <tbody>
                 <tr style = "display:none;"><td colspan="2"></td></tr>
                 <tr style="text-align: center">
-                    <td colspan="2"><img src="' . base_url("assets/img/organizer/") . $uni_detail->organizer_logo . '" style="width: 250px; height: 100px; object-fit:contain;"></td>
+                    <td colspan="2"><img src="' . base_url("assets/img/organizer/") . $org_detail->organizer_logo . '" style="width: 250px; height: 100px; object-fit:contain;"></td>
                 </tr> 
                 <tr>
                     <th scope="row">Submitted Date</th>
-                    <td>' . $uni_detail->organizer_submitdate . '</td>
+                    <td>' . $org_detail->organizer_submitdate . '</td>
                 </tr>
                 <tr>
                     <th scope="row">Status</th>
@@ -174,35 +174,35 @@ class Admin_organizer extends CI_Controller
                 </tr>
                 <tr>
                     <th scope="row">organizers Name</th>
-                    <td>' . $uni_detail->organizer_name . '</td>
+                    <td>' . $org_detail->organizer_name . '</td>
                 </tr>
                 <tr>
                 <th scope="row">Country</th>
-                    <td>' . $uni_detail->organizer_country . '</td>
+                    <td>' . $org_detail->organizer_country . '</td>
                 </tr>
                 <tr>
                     <th scope="row">Hotline</th>
-                    <td>' . $uni_detail->organizer_hotline . '</td>
+                    <td>' . $org_detail->organizer_hotline . '</td>
                 </tr>
                 <tr>
                     <th scope="row">Email</th>
-                    <td>' . $uni_detail->organizer_email . '</td>
+                    <td>' . $org_detail->organizer_email . '</td>
                 </tr>
                 <tr>
                 <th scope="row">Address</th>
-                    <td>' . $uni_detail->organizer_address . '</td>
+                    <td>' . $org_detail->organizer_address . '</td>
                 </tr>
                 <tr>
                     <th scope="row">QS Ranking</th>
-                    <td>' . $uni_detail->uni_qsrank . '</td>
+                    <td>' . $org_detail->uni_qsrank . '</td>
                 </tr>
                 <tr>
                     <th scope="row">Employability Ranking</th>
-                    <td>' . $uni_detail->uni_employabilityrank . '</td>
+                    <td>' . $org_detail->uni_employabilityrank . '</td>
                 </tr>
                 <tr>
                     <th scope="row">Total Students</th>
-                    <td>' . $uni_detail->uni_totalstudents . '</td>
+                    <td>' . $org_detail->uni_totalstudents . '</td>
                 </tr>
                 <tr>
                     <th scope="row">Total Events</th>
@@ -210,19 +210,19 @@ class Admin_organizer extends CI_Controller
                 </tr>
                 <tr>
                     <th scope="row">Official Website</th>
-                    <td><a href="' . $uni_detail->organizer_website . '" target="_blank">' . $uni_detail->organizer_website . '</a></td>
+                    <td><a href="' . $org_detail->organizer_website . '" target="_blank">' . $org_detail->organizer_website . '</a></td>
                 </tr>
                 <tr>
                     <th scope="row">Shortprofile</th>
-                    <td style = "white-space: pre-wrap; word-break: break-word; text-align: justify;">' . $uni_detail->organizer_shortprofile . '</td>
+                    <td style = "white-space: pre-wrap; word-break: break-word; text-align: justify;">' . $org_detail->organizer_shortprofile . '</td>
                 </tr>
                 <tr>
                     <th scope="row">Fun Fact</th>
-                    <td style = "white-space: pre-wrap; word-break: break-word; text-align: justify;">' . $uni_detail->organizer_fun_fact . '</td>
+                    <td style = "white-space: pre-wrap; word-break: break-word; text-align: justify;">' . $org_detail->organizer_fun_fact . '</td>
                 </tr>
                 <tr style = "background-color:white;">
                     <th scope="row">Background Image</th>
-                    <td><img src="' . base_url("assets/img/organizer/") . $uni_detail->organizer_background . '" style="width: 350px; height: 200px; object-fit:contain;"></td>
+                    <td><img src="' . base_url("assets/img/organizer/") . $org_detail->organizer_background . '" style="width: 350px; height: 200px; object-fit:contain;"></td>
                 </tr>
             </tbody>
         </table>

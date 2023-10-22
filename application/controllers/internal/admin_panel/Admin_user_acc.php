@@ -346,9 +346,9 @@ class Admin_user_acc extends CI_Controller
         if ($user_detail->user_role == "Education Partner") {
             //ep and org details//
             $ep_detail = $this->user_ep_model->get_ep_detail($this->input->post('user_id'));
-            $uni_detail = $this->organizer_model->get_org_detail($ep_detail->organizer_id);
+            $org_detail = $this->organizer_model->get_org_detail($ep_detail->organizer_id);
 
-            if ($uni_detail->organizer_approval == 0) {
+            if ($org_detail->organizer_approval == 0) {
                 $ep_status = '<button type="button" style = "cursor: default;" class="btn btn-warning">Inactive</button>';
             } else {
                 $ep_status = '<button type="button" style = "cursor: default;" class="btn btn-success">Active</button>';
@@ -676,7 +676,7 @@ class Admin_user_acc extends CI_Controller
         }
         //$ep_detail=$this->user_ep_model->get_full_ep_detail($this->input->post('user_id'));
         $ep_detail = $this->user_ep_model->get_ep_detail($this->input->post('user_id'));
-        $uni_detail = $this->organizer_model->get_org_detail($ep_detail->organizer_id);
+        $org_detail = $this->organizer_model->get_org_detail($ep_detail->organizer_id);
 
         $output = '
         <table class="table table-striped" style = "border:0;">
@@ -686,60 +686,60 @@ class Admin_user_acc extends CI_Controller
                 </tr>
                 <tr>
                     <th scope="row">Applied Date</th>
-                    <td>' . $uni_detail->organizer_submitdate . '</td>
+                    <td>' . $org_detail->organizer_submitdate . '</td>
                 </tr>
                 <tr style="text-align: center">
-                    <td colspan="2"><img src="' . base_url("assets/img/organizer/") . $uni_detail->organizer_logo . '" style="width: 250px; height: 100px; object-fit:contain;">
+                    <td colspan="2"><img src="' . base_url("assets/img/organizer/") . $org_detail->organizer_logo . '" style="width: 250px; height: 100px; object-fit:contain;">
                     </td>  
                 </tr>
                 <tr style="text-align: center">
-                    <td colspan="2"><img src="' . base_url("assets/img/organizer/") . $uni_detail->organizer_background . '" style="width: 250px; height: 100px; object-fit:contain;">
+                    <td colspan="2"><img src="' . base_url("assets/img/organizer/") . $org_detail->organizer_background . '" style="width: 250px; height: 100px; object-fit:contain;">
                     </td>  
                 </tr>
                 
                 <tr>
                     <th scope="row">organizers</th>
-                    <td>' . $uni_detail->organizer_name . '</td>
+                    <td>' . $org_detail->organizer_name . '</td>
                 </tr>
                 <tr>
                     <th scope="row">Short Profile</th>
-                    <td>' . $uni_detail->organizer_shortprofile . '</td>
+                    <td>' . $org_detail->organizer_shortprofile . '</td>
                 </tr>
                 <tr>
                     <th scope="row">Fun Fact</th>
-                    <td>' . $uni_detail->organizer_fun_fact . '</td>
+                    <td>' . $org_detail->organizer_fun_fact . '</td>
                 </tr>
                 <tr>
                     <th scope="row">Country</th>
-                    <td>' . $uni_detail->organizer_country . '</td>
+                    <td>' . $org_detail->organizer_country . '</td>
                 </tr>
                 <tr>
                     <th scope="row">Hotline</th>
-                    <td>' . $uni_detail->organizer_hotline . '</td>
+                    <td>' . $org_detail->organizer_hotline . '</td>
                 </tr>
                 <tr>
                     <th scope="row">Email</th>
-                    <td>' . $uni_detail->organizer_email . '</td>
+                    <td>' . $org_detail->organizer_email . '</td>
                 </tr>
                 <tr>
                     <th scope="row">organizers Address</th>
-                    <td>' . $uni_detail->organizer_address . '</td>
+                    <td>' . $org_detail->organizer_address . '</td>
                 </tr>
                 <tr>
                     <th scope="row">Website</th>
-                    <td>' . $uni_detail->organizer_website . '</td>
+                    <td>' . $org_detail->organizer_website . '</td>
                 </tr>
                 <tr>
                     <th scope="row">QS Rank</th>
-                    <td>' . $uni_detail->uni_qsrank . '</td>
+                    <td>' . $org_detail->uni_qsrank . '</td>
                 </tr>
                 <tr>
                     <th scope="row">Employability Rank</th>
-                    <td>' . $uni_detail->uni_employabilityrank . '</td>
+                    <td>' . $org_detail->uni_employabilityrank . '</td>
                 </tr>
                 <tr>
                     <th scope="row">Total Students</th>
-                    <td>' . $uni_detail->uni_totalstudents . '</td>
+                    <td>' . $org_detail->uni_totalstudents . '</td>
                 </tr>
                 
             </tbody>

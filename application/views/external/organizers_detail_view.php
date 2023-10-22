@@ -1,6 +1,6 @@
 <script type="text/javascript">
     var base_url = "<?php echo base_url(); ?>";
-    var organizer_id = "<?php echo $uni_detail->organizer_id; ?>";
+    var organizer_id = "<?php echo $org_detail->organizer_id; ?>";
 </script>
 
 <style>
@@ -202,19 +202,19 @@
                     <!-- Banner with logo-->
                     <div class="row pt-1 px-0">
                         <div class="col-md-12">
-                            <div class="event-cover-img" style="background-image: url('<?php echo base_url("assets/img/organizer/") . $uni_detail->organizer_background; ?>');">
+                            <div class="event-cover-img" style="background-image: url('<?php echo base_url("assets/img/organizer/") . $org_detail->organizer_background; ?>');">
                                 <div id="foreground">
                                     <div class="row pt-5">
                                         <div class="col-md-12">
                                             <center>
                                                 <div style="width:200px; height:200px; border-radius:100%; background-color:white;">
                                                     <div class="pt-2">
-                                                        <img src="<?php echo base_url("assets/img/organizer/") . $uni_detail->organizer_logo; ?>" alt="organizer_logo" id="logo" class="pt-5">
+                                                        <img src="<?php echo base_url("assets/img/organizer/") . $org_detail->organizer_logo; ?>" alt="organizer_logo" id="logo" class="pt-5">
                                                     </div>
                                                 </div>
                                             </center>
                                             <center>
-                                                <div class="pt-1" style="vertical-align:bottom; font-size:1.5em; font-weight:700; color:white;"><?php echo $uni_detail->organizer_name ?></div>
+                                                <div class="pt-1" style="vertical-align:bottom; font-size:1.5em; font-weight:700; color:white;"><?php echo $org_detail->organizer_name ?></div>
                                             </center>
                                         </div>
                                     </div>
@@ -259,42 +259,42 @@
 
                                             <div class="row pl-3 pt-4">
                                                 <div class="col-md-10">
-                                                    <pre class="pl-3" style="white-space: pre-wrap; word-break: break-word; text-align: justify; font-family: 'Nunito';font-size: 1.0em;"><?php echo $uni_detail->organizer_shortprofile ?></pre>
+                                                    <pre class="pl-3" style="white-space: pre-wrap; word-break: break-word; text-align: justify; font-family: 'Nunito';font-size: 1.0em;"><?php echo $org_detail->organizer_shortprofile ?></pre>
                                                 </div>
                                                 <div class="col-md-2  mx-auto" style="text-align:center;">
-                                                    <div style="text-align:center; color:black; font-size:2.4em; font-weight:600;"><?php echo $uni_detail->uni_qsrank ?></div>
-                                                    <div style="text-align:center; color:black; font-size:1.1em;"><?php if ($uni_detail->organizer_name == "INTI International University") {
+                                                    <div style="text-align:center; color:black; font-size:2.4em; font-weight:600;"><?php echo $org_detail->uni_qsrank ?></div>
+                                                    <div style="text-align:center; color:black; font-size:1.1em;"><?php if ($org_detail->organizer_name == "INTI International University") {
                                                                                                                         echo "Malaysia Ranking";
                                                                                                                     } else {
                                                                                                                         echo "Events Ranking";
                                                                                                                     } ?></div>
                                                     <!-- Star condition for world ranking-->
-                                                    <?php if ($uni_detail->organizer_name == "INTI International University") { ?>
+                                                    <?php if ($org_detail->organizer_name == "INTI International University") { ?>
                                                         <i class="fas fa-star" style="color:#f2de33; font-size:1.3em;"></i><i class="fas fa-star" style="color:#f2de33; font-size:1.3em;"></i><i class="fas fa-star" style="color:#f2de33; font-size:1.3em;"></i><i class="fas fa-star" style="color:#f2de33; font-size:1.3em;"></i><i class="fas fa-star" style="color:#f2de33; font-size:1.3em;"></i>
-                                                    <?php } elseif ($uni_detail->uni_qsrank <= 50) { ?>
+                                                    <?php } elseif ($org_detail->uni_qsrank <= 50) { ?>
                                                         <i class="fas fa-star" style="color:#f2de33; font-size:1.3em;"></i><i class="fas fa-star" style="color:#f2de33; font-size:1.3em;"></i><i class="fas fa-star" style="color:#f2de33; font-size:1.3em;"></i><i class="fas fa-star" style="color:#f2de33; font-size:1.3em;"></i><i class="fas fa-star" style="color:#f2de33; font-size:1.3em;"></i>
-                                                    <?php } elseif ($uni_detail->uni_qsrank <= 150) { ?>
+                                                    <?php } elseif ($org_detail->uni_qsrank <= 150) { ?>
                                                         <i class="fas fa-star" style="color:#f2de33; font-size:1.3em;"></i><i class="fas fa-star" style="color:#f2de33; font-size:1.3em;"></i><i class="fas fa-star" style="color:#f2de33; font-size:1.3em;"></i><i class="fas fa-star" style="color:#f2de33; font-size:1.3em;"></i>
-                                                    <?php } elseif ($uni_detail->uni_qsrank <= 500) { ?>
+                                                    <?php } elseif ($org_detail->uni_qsrank <= 500) { ?>
                                                         <i class="fas fa-star" style="color:#f2de33; font-size:1.3em;"></i><i class="fas fa-star" style="color:#f2de33; font-size:1.3em;"></i><i class="fas fa-star" style="color:#f2de33; font-size:1.3em;"></i>
-                                                    <?php } elseif ($uni_detail->uni_qsrank <= 1000) { ?>
+                                                    <?php } elseif ($org_detail->uni_qsrank <= 1000) { ?>
                                                         <i class="fas fa-star" style="color:#f2de33; font-size:1.3em;"></i><i class="fas fa-star" style="color:#f2de33; font-size:1.3em;"></i>
-                                                    <?php } elseif ($uni_detail->uni_qsrank > 1000) { ?>
+                                                    <?php } elseif ($org_detail->uni_qsrank > 1000) { ?>
                                                         <i class="fas fa-star" style="color:#f2de33; font-size:1.3em;"></i>
                                                     <?php } ?>
 
-                                                    <!-- <div class="pt-5" style="text-align:center; color:black; font-size:2.4em; font-weight:600;"><?php echo $uni_detail->uni_employabilityrank ?></div>
+                                                    <!-- <div class="pt-5" style="text-align:center; color:black; font-size:2.4em; font-weight:600;"><?php echo $org_detail->uni_employabilityrank ?></div>
                                                     <div style="text-align:center; color:black; font-size:1.1em;">Employabilty <br> Ranking</div> -->
                                                     <!-- Star condition for employability rank-->
-                                                    <!-- <?php if ($uni_detail->uni_employabilityrank <= 50) { ?>
+                                                    <!-- <?php if ($org_detail->uni_employabilityrank <= 50) { ?>
                                                         <i class="fas fa-star" style="color:#f2de33; font-size:1.3em;"></i><i class="fas fa-star" style="color:#f2de33; font-size:1.3em;"></i><i class="fas fa-star" style="color:#f2de33; font-size:1.3em;"></i><i class="fas fa-star" style="color:#f2de33; font-size:1.3em;"></i><i class="fas fa-star" style="color:#f2de33; font-size:1.3em;"></i>
-                                                    <?php } elseif ($uni_detail->uni_employabilityrank <= 150) { ?>
+                                                    <?php } elseif ($org_detail->uni_employabilityrank <= 150) { ?>
                                                         <i class="fas fa-star" style="color:#f2de33; font-size:1.3em;"></i><i class="fas fa-star" style="color:#f2de33; font-size:1.3em;"></i><i class="fas fa-star" style="color:#f2de33; font-size:1.3em;"></i><i class="fas fa-star" style="color:#f2de33; font-size:1.3em;"></i>
-                                                    <?php } elseif ($uni_detail->uni_employabilityrank <= 500) { ?>
+                                                    <?php } elseif ($org_detail->uni_employabilityrank <= 500) { ?>
                                                         <i class="fas fa-star" style="color:#f2de33; font-size:1.3em;"></i><i class="fas fa-star" style="color:#f2de33; font-size:1.3em;"></i><i class="fas fa-star" style="color:#f2de33; font-size:1.3em;"></i>
-                                                    <?php } elseif ($uni_detail->uni_employabilityrank <= 1000) { ?>
+                                                    <?php } elseif ($org_detail->uni_employabilityrank <= 1000) { ?>
                                                         <i class="fas fa-star" style="color:#f2de33; font-size:1.3em;"></i><i class="fas fa-star" style="color:#f2de33; font-size:1.3em;"></i>
-                                                    <?php } elseif ($uni_detail->uni_employabilityrank > 1000) { ?>
+                                                    <?php } elseif ($org_detail->uni_employabilityrank > 1000) { ?>
                                                         <i class="fas fa-star" style="color:#f2de33; font-size:1.3em;"></i>
                                                     <?php } ?> -->
 
@@ -344,7 +344,7 @@
                                                         <div class="card-body" style="">
                                                             <i class="fas fa-envelope shake"></i>
                                                             <div class="pt-3" style="font-weight:800; color:black; font-size:1.1em;">Email</div>
-                                                            <div class="pt-2" style="color:black;"> <?php echo $uni_detail->organizer_email ?></div>
+                                                            <div class="pt-2" style="color:black;"> <?php echo $org_detail->organizer_email ?></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -353,7 +353,7 @@
                                                         <div class="card-body" style="">
                                                             <i class="fas fa-phone shake2"></i>
                                                             <div class="pt-3" style="font-weight:800; color:black; font-size:1.1em;">Hotline</div>
-                                                            <div class="pt-2" style="color:black;"> <?php echo $uni_detail->organizer_hotline ?></div>
+                                                            <div class="pt-2" style="color:black;"> <?php echo $org_detail->organizer_hotline ?></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -362,7 +362,7 @@
                                                         <div class="card-body" style="">
                                                             <i class="fas fa-map-marked-alt shake3"></i>
                                                             <div class="pt-3" style="font-weight:800; color:black; font-size:1.1em;">Address</div>
-                                                            <div class="pt-2" style="color:black;"> <?php echo $uni_detail->organizer_address ?></div>
+                                                            <div class="pt-2" style="color:black;"> <?php echo $org_detail->organizer_address ?></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -371,7 +371,7 @@
                                                         <div class="card-body" style="">
                                                             <i class="fas fa-globe shake4"></i>
                                                             <div class="pt-3" style="font-weight:800; color:black; font-size:1.1em;">Website</div>
-                                                            <div class="pt-2" style="color:black;"><a href="<?php echo $uni_detail->organizer_website ?>" target="_blank">Link</a></div>
+                                                            <div class="pt-2" style="color:black;"><a href="<?php echo $org_detail->organizer_website ?>" target="_blank">Link</a></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -400,7 +400,7 @@
                                                                     </div>
 
                                                                     <div class="col-md-9" style="border-left:1px solid black; ">
-                                                                        <div class="px-2 pl-3 pb-2" style="color:black; font-size:1.2em; white-space: pre-wrap; word-break: break-word; text-align: justify;"><?php echo $uni_detail->organizer_fun_fact ?></div>
+                                                                        <div class="px-2 pl-3 pb-2" style="color:black; font-size:1.2em; white-space: pre-wrap; word-break: break-word; text-align: justify;"><?php echo $org_detail->organizer_fun_fact ?></div>
                                                                     </div>
                                                                 </div>
 

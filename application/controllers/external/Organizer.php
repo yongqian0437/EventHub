@@ -105,13 +105,13 @@ class Organizer extends CI_Controller
 	public function organizers_detail($organizer_id)
 	{
 
-		$data['title'] = 'EventHub | organizers';
-		$data['uni_detail'] = $this->organizer_model->get_org_detail($organizer_id);
+		$data['title'] = 'EventHub | Organizers';
+		$data['org_detail'] = $this->organizer_model->get_org_detail($organizer_id);
 		$data['event_field'] = $this->events_model->event_field_dropdown($organizer_id);
 		$data['total_event'] = $this->events_model->get_totalevent_for_uni($organizer_id);
 		$data['include_js'] = 'organizers_detail';
 		$this->load->view('external/templates/header', $data);
-		$this->load->view('external/universitiy_detail_view');
+		$this->load->view('external/organizers_detail_view');
 		$this->load->view('external/templates/footer');
 	}
 
