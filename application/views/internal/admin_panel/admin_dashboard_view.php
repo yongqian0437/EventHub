@@ -63,11 +63,11 @@
                                             <th>Organizer</th>
                                             <th class="text-center">Events</th>
                                         </tr>
-                                        <?php foreach ($latest_uni as $uni) {
-                                            $total_event = $this->events_model->get_totalevent_for_uni($uni['organizer_id']);
+                                        <?php foreach ($latest_uni as $org) {
+                                            $total_event = $this->events_model->get_totalevent_for_uni($org['organizer_id']);
                                         ?>
                                             <tr>
-                                                <td><?= $uni['organizer_name'] ?></td>
+                                                <td><?= $org['organizer_name'] ?></td>
                                                 <td class="text-center">
                                                     <?= $total_event ?>
                                                 </td>

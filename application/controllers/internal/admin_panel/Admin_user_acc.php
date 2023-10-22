@@ -344,9 +344,9 @@ class Admin_user_acc extends CI_Controller
         $ac_detail = $this->user_ac_model->get_ac_detail($this->input->post('user_id'));
 
         if ($user_detail->user_role == "Education Partner") {
-            //ep and uni details//
+            //ep and org details//
             $ep_detail = $this->user_ep_model->get_ep_detail($this->input->post('user_id'));
-            $uni_detail = $this->organizer_model->get_uni_detail($ep_detail->organizer_id);
+            $uni_detail = $this->organizer_model->get_org_detail($ep_detail->organizer_id);
 
             if ($uni_detail->organizer_approval == 0) {
                 $ep_status = '<button type="button" style = "cursor: default;" class="btn btn-warning">Inactive</button>';
@@ -676,7 +676,7 @@ class Admin_user_acc extends CI_Controller
         }
         //$ep_detail=$this->user_ep_model->get_full_ep_detail($this->input->post('user_id'));
         $ep_detail = $this->user_ep_model->get_ep_detail($this->input->post('user_id'));
-        $uni_detail = $this->organizer_model->get_uni_detail($ep_detail->organizer_id);
+        $uni_detail = $this->organizer_model->get_org_detail($ep_detail->organizer_id);
 
         $output = '
         <table class="table table-striped" style = "border:0;">

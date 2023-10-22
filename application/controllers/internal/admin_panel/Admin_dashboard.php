@@ -60,7 +60,7 @@ class Admin_dashboard extends CI_Controller
         $data['total_ac'] = count($this->user_ac_model->approved_ac());
         $data['total_ep'] = count($this->user_ep_model->approved_ep());
 
-        //6 latest uni list
+        //6 latest org list
         $data['latest_uni'] = $this->organizer_model->uni_max_5();
         $data['total_uni'] = count($this->organizer_model->select_all_approved_only());
 
@@ -84,16 +84,16 @@ class Admin_dashboard extends CI_Controller
                 $Jul,
             ];
 
-        //applicants by uni
+        //applicants by org
         $data['total_applicants'] = $this->event_applicants_model->applicants_per_uni();
 
         //enrollment method
         $data['total_by_ea'] = count($this->event_applicants_model->enrollment_method('Education Agent'));
         $data['total_by_student'] = count($this->event_applicants_model->enrollment_method('Student'));
 
-        //active & pending uni
-        $data['active_uni'] = count($this->organizer_model->uni_by_approval(1));
-        $data['pending_uni'] = count($this->organizer_model->uni_by_approval(0));
+        //active & pending org
+        $data['active_uni'] = count($this->organizer_model->org_by_approval(1));
+        $data['pending_uni'] = count($this->organizer_model->org_by_approval(0));
 
         //active & pending emp
         $data['active_emp'] = count($this->employer_projects_model->emp_by_approval(1));

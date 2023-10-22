@@ -68,12 +68,12 @@ class organizer_model extends CI_Model
         return $this->db->get('organizer')->result();
     }
 
-    public function uni_details($organizer_id)
+    public function org_details($organizer_id)
     {
         return $this->db->get_where('organizer', ['organizer_id' => $organizer_id])->row_array();
     }
 
-    function get_uni_with_id($id)  //new function
+    function get_org_with_id($id)  //new function
     {
         $this->db->where('organizer_id', $id);
         return $this->db->get('organizer')->result();
@@ -95,12 +95,12 @@ class organizer_model extends CI_Model
         return $this->db->get('organizer')->result_array();
     }
 
-    function uni_by_approval($condition)
+    function org_by_approval($condition)
     {
         $this->db->where('organizer_approval', $condition);
         return $this->db->get('organizer')->result();
     }
-    public function get_uni_detail($organizer_id)
+    public function get_org_detail($organizer_id)
     {
         $this->db->where('organizer_id', $organizer_id);
         return $this->db->get('organizer')->row();

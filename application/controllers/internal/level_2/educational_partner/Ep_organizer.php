@@ -2,7 +2,7 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Ep_organizers extends CI_Controller
+class Ep_organizer extends CI_Controller
 {
 
 	public function __construct()
@@ -54,7 +54,7 @@ class Ep_organizers extends CI_Controller
 		$this->load->view('internal/templates/header', $data);
 		$this->load->view('internal/templates/sidenav');
 		$this->load->view('internal/templates/topbar');
-		$this->load->view('internal/level_2/educational_partner/ep_organizers_view');
+		$this->load->view('internal/level_2/educational_partner/ep_organizer_view');
 		$this->load->view('internal/templates/footer');
 	}
 
@@ -67,13 +67,13 @@ class Ep_organizers extends CI_Controller
 		$this->load->view('internal/templates/header', $data);
 		$this->load->view('internal/templates/sidenav');
 		$this->load->view('internal/templates/topbar');
-		$this->load->view('internal/level_2/educational_partner/ep_organizers_edit_view');
+		$this->load->view('internal/level_2/educational_partner/ep_organizer_edit_view');
 		$this->load->view('internal/templates/footer');
 	}
 
 	public function after_edit_organizers($organizer_id)
 	{
-		$event_data = $this->organizer_model->get_uni_with_id($organizer_id);
+		$event_data = $this->organizer_model->get_org_with_id($organizer_id);
 
 		if ($_FILES['organizer_background']['name'] != "") {
 
@@ -115,7 +115,7 @@ class Ep_organizers extends CI_Controller
 		$this->session->set_flashdata('edit_message', '<div id = "alert_message" class="alert alert-success px-4	" role="alert">
 		organizers Information has been edited</div>');
 
-		redirect('internal/level_2/educational_partner/ep_organizers');
+		redirect('internal/level_2/educational_partner/ep_organizer');
 	}
 
 	public function upload_img($path, $file_input_name)

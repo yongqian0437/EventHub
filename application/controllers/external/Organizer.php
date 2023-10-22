@@ -106,7 +106,7 @@ class Organizer extends CI_Controller
 	{
 
 		$data['title'] = 'EventHub | organizers';
-		$data['uni_detail'] = $this->organizer_model->get_uni_detail($organizer_id);
+		$data['uni_detail'] = $this->organizer_model->get_org_detail($organizer_id);
 		$data['event_field'] = $this->events_model->event_field_dropdown($organizer_id);
 		$data['total_event'] = $this->events_model->get_totalevent_for_uni($organizer_id);
 		$data['include_js'] = 'organizers_detail';

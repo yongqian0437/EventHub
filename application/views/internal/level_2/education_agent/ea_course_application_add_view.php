@@ -395,7 +395,7 @@
                                                 </div>
                                             </div>
 
-                                            <!-- UNI INPUT -->
+                                            <!-- org INPUT -->
                                             <div class="form-row pt-12 px-3">
                                                 <div class="form-group col-md-12 px-2">
                                                     <label for="organizers1"></label>

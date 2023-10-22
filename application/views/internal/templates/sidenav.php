@@ -88,7 +88,7 @@
 
                     <!-- Nav Item - organizers -->
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url('internal/level_2/educational_partner/ep_organizers'); ?>">
+                        <a class="nav-link" href="<?php echo base_url('internal/level_2/educational_partner/ep_organizer'); ?>">
                             <i class="fas fa-organizers"></i>
                             <span>Organizer</span>
                         </a>

@@ -111,7 +111,7 @@ class event_applicants_model extends CI_Model
             ->from('event_applicants') // event applicants table
             ->join('events', 'events.event_id = event_applicants.event_id') // events table
             ->join('users', 'users.user_id = event_applicants.e_applicant_method') // users table
-            ->join('organizer', 'organizer.organizer_id = events.organizer_id'); // uni table
+            ->join('organizer', 'organizer.organizer_id = events.organizer_id'); // org table
         return $this->db->get()->result(); // return array of object format 
     }
 

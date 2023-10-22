@@ -71,14 +71,14 @@
                                     <a href="<?php echo base_url('internal/level_2/educational_partner/ep_dashboard'); ?>"><i class="fas fa-tachometer-alt"></i> Home</a>
                                 </li>
                                 <li class="breadcrumb-item">
-                                    <a href="<?php echo base_url('internal/level_2/educational_partner/ep_organizers'); ?>"> Organizer</a>
+                                    <a href="<?php echo base_url('internal/level_2/educational_partner/ep_organizer'); ?>"> Organizer</a>
                                 </li>
                                 <li class="breadcrumb-item active">Edit Organizer</li>
                             </ol>
                         </div>
                         <div class="col-xl-3">
                             <div class="d-flex justify-content-end">
-                                <a type="button" href="<?= base_url('internal/level_2/educational_partner/ep_organizers'); ?>" class="btn btn-primary">Back<i class="fas fa-undo pl-1"></i></a>
+                                <a type="button" href="<?= base_url('internal/level_2/educational_partner/ep_organizer'); ?>" class="btn btn-primary">Back<i class="fas fa-undo pl-1"></i></a>
                             </div>
                         </div>
                     </div>
@@ -88,7 +88,7 @@
                             <!-- Card-->
                             <div class="card ">
                                 <div class="card-body">
-                                    <form method="post" action=" <?= base_url('internal/level_2/educational_partner/ep_organizers/after_edit_organizers/' . $event_data->organizer_id); ?>" enctype="multipart/form-data">
+                                    <form method="post" action=" <?= base_url('internal/level_2/educational_partner/ep_organizer/after_edit_organizers/' . $event_data->organizer_id); ?>" enctype="multipart/form-data">
                                         <?= form_open_multipart('') ?>
                                         <div class="form-row">
                                             <div class="form-group col-md-6 px-4 pr-5">

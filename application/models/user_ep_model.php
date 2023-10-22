@@ -99,7 +99,7 @@ class user_ep_model extends CI_Model
         $this->db->select('')
             ->from('users') // users table
             ->join('user_ep', 'user_ep.user_id = users.user_id') // ep table
-            ->join('organizer', 'organizer.organizer_id = user_ep.organizer_id'); // uni table
+            ->join('organizer', 'organizer.organizer_id = user_ep.organizer_id'); // org table
         return $this->db->get()->row(); // return object array
     }
 

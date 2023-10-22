@@ -62,9 +62,9 @@ class Report extends CI_Controller
 		$event_data1 = $this->events_model->get_event_with_id($this->input->post('event_id1'));
 		$event_data2 = $this->events_model->get_event_with_id($this->input->post('event_id2'));
 		$event_data3 = $this->events_model->get_event_with_id($this->input->post('event_id3'));
-		$uni_data1 = $this->organizer_model->get_uni_with_id($this->input->post('organizer_id1'));
-		$uni_data2 = $this->organizer_model->get_uni_with_id($this->input->post('organizer_id2'));
-		$uni_data3 = $this->organizer_model->get_uni_with_id($this->input->post('organizer_id3'));
+		$uni_data1 = $this->organizer_model->get_org_with_id($this->input->post('organizer_id1'));
+		$uni_data2 = $this->organizer_model->get_org_with_id($this->input->post('organizer_id2'));
+		$uni_data3 = $this->organizer_model->get_org_with_id($this->input->post('organizer_id3'));
 
 		$base_url = base_url();
 		$logo1 = $base_url . "assets/img/organizer/" . $uni_data1[0]->organizer_logo;
@@ -215,8 +215,8 @@ class Report extends CI_Controller
 	{
 		$event_data1 = $this->events_model->get_event_with_id($this->input->post('event_id1'));
 		$event_data2 = $this->events_model->get_event_with_id($this->input->post('event_id2'));
-		$uni_data1 = $this->organizer_model->get_uni_with_id($this->input->post('organizer_id1'));
-		$uni_data2 = $this->organizer_model->get_uni_with_id($this->input->post('organizer_id2'));
+		$uni_data1 = $this->organizer_model->get_org_with_id($this->input->post('organizer_id1'));
+		$uni_data2 = $this->organizer_model->get_org_with_id($this->input->post('organizer_id2'));
 
 		$base_url = base_url();
 		$logo1 = $base_url . "assets/img/organizer/" . $uni_data1[0]->organizer_logo;

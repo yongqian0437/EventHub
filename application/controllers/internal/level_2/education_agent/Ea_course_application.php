@@ -157,10 +157,10 @@ class Ea_event_application extends CI_Controller
         $base_url = base_url();
 
         foreach ($event_applicants as $ca) {
-            $get_organizer_id = $this->events_model->get_organizer_id($ca->event_id); // get event id to get the uni id
+            $get_organizer_id = $this->events_model->get_organizer_id($ca->event_id); // get event id to get the org id
 
             foreach ($get_organizer_id as $details) {
-                $get_organizer_name = $this->organizer_model->get_uni_detail($details->organizer_id); // get uni id to get the uni name
+                $get_organizer_name = $this->organizer_model->get_org_detail($details->organizer_id); // get org id to get the org name
             }
 
             $edit_link = $base_url . "internal/level_2/education_agent/ea_event_application/edit_event_applicant/" . $ca->e_applicant_id;
@@ -267,10 +267,10 @@ class Ea_event_application extends CI_Controller
         $ca_detail = $this->event_applicants_model->get_cas_id($this->input->post('e_applicant_id'));
         //$event_applicants=$this->event_applicants_model->get_user_id($this->session->userdata('user_id'));
 
-        $get_organizer_id = $this->events_model->get_organizer_id($ca_detail->event_id); // get event id to get the uni id
+        $get_organizer_id = $this->events_model->get_organizer_id($ca_detail->event_id); // get event id to get the org id
 
         foreach ($get_organizer_id as $details) {
-            $uni_details = $this->organizer_model->get_uni_detail($details->organizer_id); // get uni id to get the uni name
+            $org_details = $this->organizer_model->get_org_detail($details->organizer_id); // get org id to get the org name
         }
 
         $output = '
@@ -281,12 +281,12 @@ class Ea_event_application extends CI_Controller
                     <td>' . $ca_detail->c_app_submitdate . '</td>
                 </tr>
                 <tr style="text-align: center;">
-                    <td colspan="2"><img src="' . base_url("assets/img/organizer/") . $uni_details->organizer_logo . '" style="width: 250px; height: 100px; object-fit:contain;">
+                    <td colspan="2"><img src="' . base_url("assets/img/organizer/") . $org_details->organizer_logo . '" style="width: 250px; height: 100px; object-fit:contain;">
                     </td>  
                 </tr>
                 <tr>
                     <th scope="row">organizers</th>
-                    <td>' . $uni_details->organizer_name . '</td>
+                    <td>' . $org_details->organizer_name . '</td>
                 </tr>
                 <tr>
                     <th scope="row">event</th>

@@ -53,7 +53,7 @@
                         <div class="col-xl-3">
                             <?php if ($event_data->organizer_approval) { ?>
                                 <div class="d-flex justify-content-end">
-                                    <a type="button" href="<?= base_url('internal/level_2/educational_partner/ep_organizers/edit_organizers'); ?>" class="btn btn-primary">Edit<i class="fas fa-edit pl-2"></i></a>
+                                    <a type="button" href="<?= base_url('internal/level_2/educational_partner/ep_organizer/edit_organizers'); ?>" class="btn btn-primary">Edit<i class="fas fa-edit pl-2"></i></a>
                                 </div>
                             <?php } ?>
                         </div>
@@ -64,7 +64,7 @@
                             <!-- Card-->
                             <div class="card ">
                                 <div class="card-body">
-                                    <!-- Check for uni approval -->
+                                    <!-- Check for org approval -->
                                     <?php if ($event_data->organizer_approval) { ?>
                                         <?= $this->session->flashdata('edit_message') ?>
                                         <form action="">

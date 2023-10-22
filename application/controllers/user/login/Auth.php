@@ -320,12 +320,12 @@ class Auth extends CI_Controller
             $this->organizer_model->insert($data);
 
             $organizer_email = $this->input->post('organizer_email');
-            $uni = $this->organizer_model->valid_email($organizer_email);
+            $org = $this->organizer_model->valid_email($organizer_email);
             $organizers =
                 [
-                    'organizer_id' => $uni['organizer_id'],
-                    'organizer_name' => $uni['organizer_name'],
-                    'organizer_email' => $uni['organizer_email'],
+                    'organizer_id' => $org['organizer_id'],
+                    'organizer_name' => $org['organizer_name'],
+                    'organizer_email' => $org['organizer_email'],
                 ];
 
             $this->session->set_userdata($organizers);

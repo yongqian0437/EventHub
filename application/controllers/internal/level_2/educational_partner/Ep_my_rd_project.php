@@ -68,7 +68,7 @@ class Ep_my_rd_project extends CI_Controller
         $start = intval($this->input->get("start"));
         $length = intval($this->input->get("length"));
 
-        //get uni detail for one ep user with user_id
+        //get org detail for one ep user with user_id
         $event_data = $this->user_ep_model->get_uni_from_ep($this->session->userdata('user_id'));
         //get ep details with user id
         $ep_data = $this->user_ep_model->get_ep_detail_with_user_id($this->session->userdata('user_id'));

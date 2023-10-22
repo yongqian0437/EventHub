@@ -148,7 +148,7 @@ class Admin_organizer extends CI_Controller
     function view_admin_organizers()
     {
 
-        $uni_detail = $this->organizer_model->get_uni_detail($this->input->post('organizer_id'));
+        $uni_detail = $this->organizer_model->get_org_detail($this->input->post('organizer_id'));
         $total_event = $this->events_model->get_totalevent_for_uni($this->input->post('organizer_id'));
 
         if ($uni_detail->organizer_approval) {
