@@ -82,7 +82,7 @@
                                 <div class="card-body">
                                     <div class="pb-3" style="display: flex; flex-direction: row; justify-content: space-between; color:white;">
                                         <?php $uni_count = count($event_data) ?>
-                                        <div style="background-color:#1dd3b0; border-radius:10px; width:auto; height:auto;">
+                                        <div style="background-color:#7D7C7C; border-radius:10px; width:auto; height:auto;">
                                             <div class="px-3 pt-2 ">
                                                 <h4 style=" font-weight:700;"><span style="color:white"><?php echo $uni_count ?></span><span style="color:white; "> ORGANIZERS</span></h4>
                                             </div>

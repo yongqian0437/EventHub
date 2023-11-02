@@ -200,10 +200,10 @@
                             <div class="bg-white py-2 collapse-inner rounded">
                                 <a class="collapse-item" href="<?= base_url('internal/admin_panel/Admin_user_acc'); ?>">All Users</a>
                                 <a class="collapse-item" href="<?= base_url('internal/admin_panel/Users_information/students_info'); ?>">Students</a>
-                                <a class="collapse-item" href="<?= base_url('internal/admin_panel/Users_information/ac_info'); ?>">Academic Counsellors</a>
-                                <a class="collapse-item" href="<?= base_url('internal/admin_panel/Users_information/ea_info'); ?>">Education Agents</a>
-                                <a class="collapse-item" href="<?= base_url('internal/admin_panel/Users_information/ep_info'); ?>">Education Partners</a>
-                                <a class="collapse-item" href="<?= base_url('internal/admin_panel/Users_information/employer_info'); ?>">Employers</a>
+                                <!-- <a class="collapse-item" href="<?= base_url('internal/admin_panel/Users_information/ac_info'); ?>">Academic Counsellors</a>
+                                <a class="collapse-item" href="<?= base_url('internal/admin_panel/Users_information/ea_info'); ?>">Education Agents</a> -->
+                                <a class="collapse-item" href="<?= base_url('internal/admin_panel/Users_information/ep_info'); ?>">Organizers</a>
+
                             </div>
                         </div>
                     </li>
@@ -233,8 +233,9 @@
                             <div class="bg-white py-2 collapse-inner rounded">
                                 <a class="collapse-item" href="<?= base_url('internal/admin_panel/content/Admin_organizer'); ?>">Organizer</a>
                                 <a class="collapse-item" href="<?= base_url('internal/admin_panel/content/Admin_events'); ?>">Events</a>
-                                <a class="collapse-item" href="<?= base_url('internal/admin_panel/content/Admin_emps'); ?>">Employer Projects (EPs)</a>
-                                <a class="collapse-item" href="<?= base_url('internal/admin_panel/content/Admin_rd_project'); ?>">R&D Projects (R&DPs)</a>
+                                <!-- <a class="collapse-item" href="<?= base_url('internal/admin_panel/content/Admin_emps'); ?>">Employer Projects (EPs)</a>
+                                <a class="collapse-item" href="<?= base_url('internal/admin_panel/content/Admin_rd_project'); ?>">R&D Projects (R&DPs)</a> -->
+                                <a class="collapse-item" href="<?= base_url(''); ?>">Student's Report</a>
                             </div>
                         </div>
                     </li>

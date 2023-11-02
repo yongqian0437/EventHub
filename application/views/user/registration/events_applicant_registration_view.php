@@ -97,7 +97,7 @@
 												<div class="form-check">
 													<label class="form-check-label">
 														<input type="checkbox" class="form-check-input" required>
-														Please accept our <a href="https://newinti.edu.my/legal/privacy/">terms and conditions</a>
+														Please accept our <a href="https://www.uow.edu.my/personal-data-protection-notice">terms and conditions</a>
 													</label>
 												</div>
 												<!-- Submit button -->

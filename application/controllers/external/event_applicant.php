@@ -43,7 +43,7 @@ class event_applicant extends CI_Controller
 
         // if($this->session->has_userdata('user_id')){
 
-        $data['title'] = 'EventHub | event Applicant Page';
+        $data['title'] = 'EventHub | Event Applicant Page';
         $this->load->view('external/templates/header', $data);
         $this->load->view('user/registration/events_applicant_registration_view');
         $this->load->view('external/templates/footer');

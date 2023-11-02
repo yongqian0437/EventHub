@@ -364,7 +364,7 @@
 
 										<!-- Terms & Condition -->
 										<div class="T&C ml-4 mt-2 pt-3">
-											<label><input type="checkbox" required> Please accept our <a href="https://newinti.edu.my/legal/privacy/" target="_blank">terms and conditions</a>
+											<label><input type="checkbox" required> Please accept our <a href="https://www.uow.edu.my/personal-data-protection-notice" target="_blank">terms and conditions</a>
 											</label>
 										</div>
 										<!-- Submit button -->

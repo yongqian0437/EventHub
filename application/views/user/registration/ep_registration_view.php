@@ -362,8 +362,8 @@
 												<label>Document</label>
 											</div>
 											<div class="col-md-12 px-2">
-												<p style="font-size: 14px">You are required to download the following Education Partner Agreement template and fill in the required information. Once done, proceed to upload it.</p>
-												<a href="<?= base_url('/assets/uploads/education_partner/Education_Partner_Agreement_Template_SAMPLE.pdf') ?>" download>Education Partner Agreement Template 2021</a>
+												<p style="font-size: 14px">You are required to download the following Organizer Agreement template and fill in the required information. Once done, proceed to upload it.</p>
+												<a href="<?= base_url('/assets/uploads/education_partner/Education_Partner_Agreement_Template_SAMPLE.pdf') ?>" download>Organizer Agreement Template 2023</a>
 											</div>
 										</div>
 										<!-- Upload Document -->
@@ -371,12 +371,12 @@
 											<div class="form-group col-md-12 px-2">
 												<input type="file" accept=".pdf" class="custom-file-input" id="form-group" name="ep_document" required>
 												<label class="custom-file-label" for="customFile">Upload document</label>
-												<div style="color:red; font-size:0.9em;">*Required document: COMPLETED Education Partner Agreement in .PDF file format</div>
+												<div style="color:red; font-size:0.9em;">*Required document: COMPLETED Organizer Agreement in .PDF file format</div>
 											</div>
 										</div>
 										<!-- Terms & Condition -->
 										<div class="T&C ml-4 mt-2 pt-3">
-											<label><input type="checkbox" required> Please accept our <a href="https://newinti.edu.my/legal/privacy/">terms and conditions</a>
+											<label><input type="checkbox" required> Please accept our <a href="https://www.uow.edu.my/personal-data-protection-notice">terms and conditions</a>
 											</label>
 										</div>
 										<!-- Submit button -->

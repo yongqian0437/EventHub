@@ -40,51 +40,8 @@
                                         ?>
                                     </select>
                                 </div>
-                                <!-- <div class="form-group mr-2"><br>
-                                    <label for="event_level">Event Type</label><br>
-                                    <select name="event_levelid" id="filter_2" class="form-control form-select form-select-lg btn-sm">
-                                        <option value="" selected disabled>Filter level</option>
-                                        <option value="Foundation">Foundation</option>
-                                        <option value="Certificate">Certificate</option>
-                                        <option value="Diploma">Diploma</option>
-                                        <option value="Bachelor Degree">Bachelor Degree</option>
-                                        <option value="Masters">Masters</option>
-                                        <option value="Doctorate">Doctorate</option>
-                                        <option value="Advanced Diploma">Advanced Diploma</option>
-                                        <option value="Graduate Certificate and Graduate Diploma">Graduate Certificate and Graduate Diploma</option>
-                                        <option value="Postgraduate Certificate and Postgraduate Diploma">Postgraduate Certificate and Postgraduate Diploma</option>
-                                        <option value="Others">Others</option>
-                                    </select>
-                                </div> -->
-                                <!-- <div class="form-group mr-2"><br>
-                                    <label for="event_intake">event intake</label><br>
-                                    <select name="event_intakeid" id="filter_3" class="form-control form-select form-select-lg btn-sm">
-                                        <option value="" selected disabled>Filter intake</option>
-                                        <option value="January">January</option>
-                                        <option value="February">February</option>
-                                        <option value="March">March</option>
-                                        <option value="April">April</option>
-                                        <option value="May">May</option>
-                                        <option value="June">June</option>
-                                        <option value="July">July</option>
-                                        <option value="August">August</option>
-                                        <option value="September">September</option>
-                                        <option value="October">October</option>
-                                        <option value="November">November</option>
-                                        <option value="December">December</option>
-                                    </select>
-                                </div> -->
-                                <!-- <div class="form-group mr-2"><br>
-                                    <label for="organizer_country">Event venue</label><br>
-                                    <select name="event_countryid" id="filter_4" class="form-control form-select form-select-lg btn-sm">
-                                        <option value="" selected disabled>Filter location</option>
-                                        <?php
-                                        foreach ($dropdown_country as $dropdown_data) {
-                                            echo '<option value="' . $dropdown_data->event_country . '">' . $dropdown_data->event_country . '</option>';
-                                        }
-                                        ?>
-                                    </select>
-                                </div> -->
+
+
 
                                 <div class="form-group mr-3"><br>
                                     <label for="event_fee">Event Fee</label><br>
@@ -102,7 +59,7 @@
 
                         <?php if (!empty($event_data)) {
                             foreach ($event_data as $events) { ?>
-                                <div class="card-body shadow mb-4">
+                                <div class="card-body shadow mb-4" style="border-radius: 30px;">
                                     <div class="row">
                                         <div class="col-9 ">
 

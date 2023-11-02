@@ -10,16 +10,17 @@ class Chatbot extends CI_Controller
     parent::__construct();
     $this->load->model('user_model');
     $this->load->model('chatbot_model');
+    $this->load->helper('gpt');
 
     // If user is not login bring them back to login page
-    if (!$this->session->has_userdata('has_login')) {
-      redirect('user/auth/login');
+    if (!$this->session->userdata('user_id') || !$this->session->userdata('user_role')) {
+      redirect('user/login/Auth/login');
     }
   }
 
   public function index()
   {
-    $data['title'] = 'Dementia App | Chatbot';
+    $data['title'] = 'EventHub | Chatbot';
     $data['include_js'] = 'chatbot';
 
     //First check if there is any conversation
@@ -42,9 +43,9 @@ class Chatbot extends CI_Controller
       $data['new_chat'] = "yes";
     }
 
-    $this->load->view('templates/header', $data);
+    $this->load->view('external/templates/header', $data);
     $this->load->view('chatbot_view.php');
-    $this->load->view('templates/footer');
+    $this->load->view('external/templates/footer');
   }
 
   public function generate_response()

@@ -55,7 +55,7 @@
 </style>
 
 <!-- Top Navigation -->
-<?php if ($user_role == 'Student') {
+<?php if ($this->session->userdata('user_role') == 'Student') {
   $this->load->view('external/templates/topnav');
 } ?>
 
