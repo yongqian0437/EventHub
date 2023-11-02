@@ -67,7 +67,7 @@ class event_applicant extends CI_Controller
         }
     }
 
-    public function submit_event_applicant_form()
+    public function submit_events_applicant_form()
     {
     }
 }

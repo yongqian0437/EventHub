@@ -124,7 +124,7 @@ class Events extends CI_Controller
 		}
 	}
 
-	public function submit_event_applicant_form($event_id)
+	public function submit_events_applicant_form($event_id)
 	{
 
 		$user_id = $this->session->userdata('user_id');
@@ -160,7 +160,7 @@ class Events extends CI_Controller
 			if (!$this->upload->do_upload($file_input_name)) {
 				$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
                 The file format is not correct</div>');
-				redirect('external/Events/submit_event_applicant_form/' . $event_id);
+				redirect('external/Events/submit_events_applicant_form/' . $event_id);
 			} else {
 				$doc_data = ($this->upload->data());
 				echo $doc_data;
