@@ -76,12 +76,14 @@
 												<input type="text" name="e_applicant_identification" class="form-control border-bottom" id="e_applicant_identification" style="border: 0;" placeholder="Enter Student ID" required>
 											</div>
 										</div>
+
 										<!-- Applicant Address -->
-										<div class="form-row pt-3 px-3">
+										<!-- <div class="form-row pt-3 px-3">
 											<div class="form-group col-md-12 px-2">
 												<input type="text" name="e_applicant_address" class="form-control border-bottom" id="e_applicant_address" style="border: 0;" placeholder="Enter Current Address" required>
 											</div>
-										</div>
+										</div> -->
+
 										<!-- Upload Document -->
 										<div class="form-row pt-4 px-4">
 											<div class="form-group col-md-12 px-2">

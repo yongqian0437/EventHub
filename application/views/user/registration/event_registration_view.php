@@ -61,7 +61,7 @@
                             <div class="card h-100" id='card2' ">
                                 <div class=" card-body">
                                 <center>
-                                    <div class="pt-5 px-5" style="font-size:23px; letter-spacing: 8px; color:#787878; font-weight:700;">event INFORMATIONFORM</div>
+                                    <div class="pt-5 px-5" style="font-size:23px; letter-spacing: 8px; color:#787878; font-weight:700;">Event INFORMATION FORM</div>
                                 </center>
 
                                 <!-- Form -->
