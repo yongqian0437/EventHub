@@ -67,11 +67,7 @@
         </li>
 
         <li class="nav-item px-2">
-            <a class="nav-link" href="<?= base_url('user/chat/Chat'); ?>">Chat Bot</a>
-        </li>
-
-        <li class="nav-item px-2">
-            <a class="nav-link" href="<?= base_url('chatbot'); ?>">ChatBot 2</a>
+            <a class="nav-link" href="<?= base_url('chatbot'); ?>">ChatBot</a>
         </li>
 
         <li class="nav-item px-2">

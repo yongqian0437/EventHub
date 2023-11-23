@@ -79,7 +79,7 @@
                         <h1 class="h3 mb-0 text-gray-800 pt-4 font-weight-bold">Report</h1>
                     </div>
 
-                    <div class="py-2 px-4" style="text-align: justify; font-weight:500;">Finding the right college and programme is a complicated process, but EventHub is here to help! A great way to research what's best for you and start to build your list is to compare your options side-by-side. Find the college that's the best fit for you by using our comparison tool. Students can quickly compare several programmes and organizer they’re interested in – and then click through to a organizers profile page for more details. Application submission may also be done right after.
+                    <div class="py-2 px-4" style="text-align: justify; font-weight:500;">The Campus Event Management System's Report Page allows students to seamlessly submit PDF reports for their campus events. This user-friendly interface simplifies the reporting process, enabling students to upload and share comprehensive event summaries effortlessly. The system streamlines communication between students and event organizers, facilitating efficient documentation and analysis of campus activities. Through this feature, the platform promotes transparency, accountability, and effective management of diverse events within the campus community.
                     </div>
 
                     <div class="px-4 pb-4">
@@ -90,206 +90,55 @@
 
                     <!-- Content Row -->
 
-                    <!-- TOP TITLES -->
-                    <div class="row justify-content-md-center">
 
-                        <div class="col-xl-2 col-md-6 mb-4 ">
-                            <div style='visibility: hidden;' class="card  h-100 py-2">
-                            </div>
-                        </div>
-
-                        <div class="col-xl-3 col-md-6 mb-4" id='selection1'>
-                            <div style='background-color:#CCE3DE' class="card h-75">
-                                <div class="card-body">
-                                    <h4 style='color:black' class="card-title"><b>SELECTION 1</b></h4>
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-3 col-md-6 mb-4" id='selection2'>
-                            <div style='background-color:#CCE3DE' class="card h-75">
-                                <div class="card-body">
-                                    <h4 style='color:black' class="card-title"><b>SELECTION 2</b></h4>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-3 col-md-6 mb-4" id='selection3'>
-                            <div style='background-color:#CCE3DE' class="card h-75">
-                                <div class="card-body">
-                                    <a class="btn pb-5" id="cancel" onclick="removeThirdSelection()"><i class="fas fa-times" style="color:black; font-size:1.4em;"></i></a>
-                                    <h4 style='color:black' class="card-title"><b>SELECTION 3</b></h4>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-1 col-md-6 mb-4" id='selectionbtn'>
-                            <div style='border:0;' class="card h-75">
-
-                            </div>
-                        </div>
-
-                    </div>
 
                     <!-- 3 FORM -->
                     <form>
                         <div class="row justify-content-md-center">
 
                             <div class="col-xl-2 col-md-6 mb-4">
-                                <div class="card border-5 h-100" id='card0' style="border-color:#CCE3DE ; border-width: 5px;">
+                                <div class="card border-5 h-100" id='card0' style="border-color:#61677A ; border-width: 5px;">
                                     <div class="card-body">
-                                        <p style='font-size: 15px; color:black;'>STEP 1 : <br><br> SELECT A UNIVERISTY AND A LEVEL</p>
+                                        <p style='font-size: 20px; color:grey;'><br><br> Submit Report </p>
                                         <i style='color:#474645;' class="fas fa-arrow-right fa-3x"></i><br><br><br>
-                                        <p style='font-size: 15px; color:black;'>STEP 2 : <br><br> SELECT A event</p>
-                                        <i style='color:#474645;' class="fas fa-arrow-right fa-3x"></i>
+
                                     </div>
                                 </div>
                             </div>
+
                             <!-- FIRST events INPUTS -->
                             <div class="col-xl-3 col-md-6 mb-4">
-                                <div class="card h-100 py-2" id='card1' style="border-color:#CCE3DE ; border-width: 5px;">
+                                <div class="card h-100 py-2" id='card1' style="border-color:#61677A ; border-width: 5px;"> <br><br>
                                     <div class="card-body">
                                         <!-- UNIVERSITIY INPUT -->
-                                        <div class="form-group"><br>
-                                            <label for="organizers1">organizers</label><br>
-                                            <select name="organizers1_id" id="organizers_1" class="form-control form-select form-select-md">
-                                                <option value="" selected disabled>Please select a organizers</option>
-                                                <?php
-                                                foreach ($event_data as $u) {
-                                                    echo '<option value="' . $u->organizer_id . '">' . $u->organizer_name . '</option>';
-                                                }
-                                                ?>
-                                            </select>
+                                        <div class="form-group col-md-12 px-4 pt-2">
+                                            <input type="file" class="custom-file-input" id="customFile" name="e_applicant_document" accept="application/pdf" required>
+                                            <label class="custom-file-label" for="customFile">Upload Report</label>
+                                            <p style="font-size: 14px; color:red;">*Required in .PDF file format</p>
                                         </div>
+
                                         <!-- LEVEL INPUT -->
-                                        <div class="form-group"><br>
-                                            <label for="level1">LEVEL</label><br>
-                                            <select name="level1_id" id="level_1" class="form-control form-select form-select-lg">
-                                                <option value="" selected disabled>Please select a level</option>
-                                                <option value="Foundation">Foundation</option>
-                                                <option value="Certificate">Certificate</option>
-                                                <option value="Diploma">Diploma</option>
-                                                <option value="Bachelor Degree">Bachelor Degree</option>
-                                                <option value="Masters">Masters</option>
-                                                <option value="Doctorate">Doctorate</option>
-                                                <option value="Advanced Diploma">Advanced Diploma</option>
-                                                <option value="Graduate Certificate and Graduate Diploma">Graduate Certificate and Graduate Diploma</option>
-                                                <option value="Postgraduate Certificate and Postgraduate Diploma">Postgraduate Certificate and Postgraduate Diploma</option>
-                                                <option value="Others">Others</option>
-                                            </select>
-                                        </div>
-                                        <!-- event INPUT -->
-                                        <div class="form-group" id="event_class_1"><br>
-                                            <label for="event1">event</label><br>
-                                            <select name="event1_id" id="event_1" class="form-control form-select form-select-md">
-                                                <option value="" selected disabled>Please select a event</option>
-                                            </select>
-                                        </div>
+
+
 
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- SECOND events INPUTS -->
-                            <div class="col-xl-3 col-md-6 mb-4">
-                                <div class="card h-100 py-2" id='card2' style="border-color:#CCE3DE ; border-width: 5px;">
-                                    <div class="card-body">
-                                        <!-- UNIVERSITIY INPUT -->
-                                        <div class="form-group"><br>
-                                            <label for="organizers2">organizers</label><br>
-                                            <select name="organizers2_id" id="organizers_2" class="form-control form-select form-select-md">
-                                                <option value="" selected disabled>Please select a organizers</option>
-                                                <?php
-                                                foreach ($event_data as $u) {
-                                                    echo '<option value="' . $u->organizer_id . '">' . $u->organizer_name . '</option>';
-                                                }
-                                                ?>
-                                            </select>
-                                        </div>
-                                        <!-- LEVEL INPUT -->
-                                        <div class="form-group"><br>
-                                            <label for="level2">LEVEL</label><br>
-                                            <select name="level2_id" id="level_2" class="form-control form-select form-select-lg">
-                                                <option value="" selected disabled>Please select a level</option>
-                                                <option value="Foundation">Foundation</option>
-                                                <option value="Certificate">Certificate</option>
-                                                <option value="Diploma">Diploma</option>
-                                                <option value="Bachelor Degree">Bachelor Degree</option>
-                                                <option value="Masters">Masters</option>
-                                                <option value="Doctorate">Doctorate</option>
-                                                <option value="Advanced Diploma">Advanced Diploma</option>
-                                                <option value="Graduate Certificate and Graduate Diploma">Graduate Certificate and Graduate Diploma</option>
-                                                <option value="Postgraduate Certificate and Postgraduate Diploma">Postgraduate Certificate and Postgraduate Diploma</option>
-                                                <option value="Others">Others</option>
-                                            </select>
-                                        </div>
-                                        <!-- event INPUT -->
-                                        <div class="form-group" id="event_class_2"><br>
-                                            <label for="event1">event</label><br>
-                                            <select name="event2_id" id="event_2" class="form-control form-select form-select-md">
-                                                <option value="" selected disabled>Please select a event</option>
-                                            </select>
-                                        </div>
 
-                                    </div>
-                                </div>
-                            </div>
 
                             <!-- THIRD events INPUTS -->
-                            <div class="col-xl-3 col-md-6 mb-4" id="third_selection">
-                                <div class="card h-100 py-2" id='card3' style="border-color:#CCE3DE ; border-width: 5px;">
-                                    <div class="card-body">
-                                        <!-- UNIVERSITIY INPUT -->
-                                        <div class="form-group"><br>
-                                            <label for="organizers3">organizers</label><br>
-                                            <select name="organizers3_id" id="organizers_3" class="form-control form-select form-select-md">
-                                                <option value="" selected disabled>Please select a organizers</option>
-                                                <?php
-                                                foreach ($event_data as $u) {
-                                                    echo '<option value="' . $u->organizer_id . '">' . $u->organizer_name . '</option>';
-                                                }
-                                                ?>
-                                            </select>
-                                        </div>
-                                        <!-- LEVEL INPUT -->
-                                        <div class="form-group"><br>
-                                            <label for="level3">LEVEL</label><br>
-                                            <select name="level3_id" id="level_3" class="form-control form-select form-select-lg">
-                                                <option value="" selected disabled>Please select a level</option>
-                                                <option value="Foundation">Foundation</option>
-                                                <option value="Certificate">Certificate</option>
-                                                <option value="Diploma">Diploma</option>
-                                                <option value="Bachelor Degree">Bachelor Degree</option>
-                                                <option value="Masters">Masters</option>
-                                                <option value="Doctorate">Doctorate</option>
-                                                <option value="Advanced Diploma">Advanced Diploma</option>
-                                                <option value="Graduate Certificate and Graduate Diploma">Graduate Certificate and Graduate Diploma</option>
-                                                <option value="Postgraduate Certificate and Postgraduate Diploma">Postgraduate Certificate and Postgraduate Diploma</option>
-                                                <option value="Others">Others</option>
-                                            </select>
-                                        </div>
-                                        <!-- event INPUT -->
-                                        <div class="form-group" id="event_class_3"><br>
-                                            <label for="event3">event</label><br>
-                                            <select name="event3_id" id="event_3" class="form-control form-select form-select-md">
-                                                <option value="" selected disabled>Please select a event</option>
-                                            </select>
-                                        </div>
 
-                                    </div>
-                                </div>
-                            </div>
                             <!-- END OF THIRD SELECTION-->
 
                             <!-- add third selection button -->
-                            <div class="col-xl-1 col-md-6 mb-4" id="forth_selection">
+                            <!-- <div class="col-xl-1 col-md-6 mb-4" id="forth_selection">
                                 <div class="card h-100 py-2 pt-5" id='card3' style="border:0; ">
                                     <div class="card-body pt-5">
                                         <a class="btn pt-5" onclick="addThirdSelection()" id="add_selection_btn"><i id="add_icon" class="fas fa-plus-circle" style="color:#1dd3b0; font-size:4.4em; "></i></a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
 
                         </div>
                         <!-- END OF ROW -->
@@ -312,7 +161,7 @@
                                 <span class='icon text-white-600'>
                                     <i class='fas fa-arrow-down fa-2x p-1'></i>
                                 </span>
-                                <span style='font-size:25px;' class="text p-3">PROCEED</span>
+                                <span style='font-size:25px;' class="text p-3">SUBMIT</span>
                             </a>
                         </div>
 

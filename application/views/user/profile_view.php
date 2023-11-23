@@ -148,10 +148,10 @@
                                             <div class="card-body shadow">
                                                 <div class="row pl-3 pt-4" style="vertical-align:middle;">
                                                     <div class="col-8 col-md-4 col-lg-4 mb-4">
-                                                        <h6><b>organizers</b></h6>
+                                                        <h6><b>Organizers</b></h6>
                                                     </div>
                                                     <div class="col-8 col-md-4 col-lg-4 mb-4">
-                                                        <h6><b>event Name</b></h6>
+                                                        <h6><b>Event Name</b></h6>
                                                     </div>
                                                     <div class="col-8 col-md-3 col-lg-3 mb-4">
                                                         <h6><b>Applied Date</b></h6>
@@ -171,7 +171,7 @@
                                                             </div>
                                                             <div class="col-8 col-md-3 col-lg-3 mb-2">
                                                                 <hr>
-                                                                <label><?= $event_data['c_app_submitdate'] ?></label>
+                                                                <label><?= $event_data['e_app_submitdate'] ?></label>
                                                             </div>
                                                             <div class="col-8 col-md-1 col-lg-1 mb-2">
                                                                 <hr>

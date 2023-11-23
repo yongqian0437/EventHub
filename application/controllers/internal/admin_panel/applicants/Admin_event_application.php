@@ -43,7 +43,7 @@ class Admin_event_application extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'Admin | event Applications';
+        $data['title'] = 'Admin | Event Applications';
         $data['include_js'] = 'admin_event_application_list';
         $data['event_applicants'] = $event_applicants = $this->event_applicants_model->full_event_app_details();
 
@@ -66,16 +66,16 @@ class Admin_event_application extends CI_Controller
         $data = array();
         $base_url = base_url();
 
-        foreach ($event_applicants as $ca) {
-            $view = '<span><button type="button" onclick="view_admin_event_applicant(' . $ca->e_applicant_id . ')" class="btn icon-btn btn-xs btn-info waves-effect waves-light" data-toggle="modal" data-target="#view_admin_event_application"><span class="fas fa-eye"></span></button></span>';
+        foreach ($event_applicants as $ea) {
+            $view = '<span><button type="button" onclick="view_admin_event_applicant(' . $ea->e_applicant_id . ')" class="btn icon-btn btn-xs btn-info waves-effect waves-light" data-toggle="modal" data-target="#view_admin_event_application"><span class="fas fa-eye"></span></button></span>';
 
             $data[] = array(
                 '',
-                $ca->e_applicant_fname . " " . $ca->e_applicant_lname,
-                $ca->e_applicant_nationality,
-                $ca->event_name,
-                $ca->user_role,
-                $ca->c_app_submitdate,
+                $ea->e_applicant_fname . " " . $ea->e_applicant_lname,
+                $ea->e_applicant_nationality,
+                $ea->event_name,
+                $ea->user_role,
+                $ea->c_app_submitdate,
                 $view,
             );
         }
@@ -93,7 +93,7 @@ class Admin_event_application extends CI_Controller
 
     function view_admin_event_applicant()
     {
-        $ca_detail = $this->event_applicants_model->get_cas_id($this->input->post('e_applicant_id'));
+        $ca_detail = $this->event_applicants_model->get_eas_id($this->input->post('e_applicant_id'));
         $event_applicants = $this->event_applicants_model->full_event_app_details();
 
         $output = '

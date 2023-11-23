@@ -36,8 +36,8 @@
                             <div class="carousel-item">
                                 <img class="d-block h-20 w-100" style="margin-left:auto;  margin-right:auto; " src="<?php echo base_url('assets/img/Carousel/employment.png') ?>" alt="Second slide">
                                 <div class="carousel-caption d-none d-md-block" style="left:0%; top:0%; height:100%; width:100%;">
-                                    <h1 class="ml-5 mt-5 pt-5" style="font-weight:600; font-size:3.5rem;">Your Best Online Education Consultant</h1>
-                                    <h1 class="ml-5 mt-5" style="font-weight:400; font-size:1.75rem;">Gain access to multiple education consultants and industry employer </h1>
+                                    <h1 class="ml-5 mt-5 pt-5" style="font-weight:600; font-size:3.5rem;">Partner with Organizers around the world</h1>
+                                    <h1 class="ml-5 mt-5" style="font-weight:400; font-size:1.75rem;">Gain access to multiple organizers </h1>
                                     <h1 class="ml-5 " style="font-weight:400; font-size:1.75rem;">partners with years of experience right at your fingertips</h1>
                                 </div>
                             </div>
@@ -45,8 +45,8 @@
                                 <img class="d-block h-20 w-100" style="margin-left:auto;  margin-right:auto; " src="<?php echo base_url('assets/img/Carousel/grad.png') ?>" alt="Second slide">
                                 <div class="carousel-caption d-none d-md-block" style="left:0%; top:0%; height:100%; width:100%;">
                                     <h1 class="ml-5 mt-5 pt-5" style="font-weight:600; font-size:3.5rem;">Start your journey with us</h1>
-                                    <h1 class="ml-5 mt-5" style="font-weight:400; font-size:1.75rem;"><i>Welcoming opportunEventHub, meet with any of our professionals to help you</i></h1>
-                                    <h1 class="ml-5 " style="font-weight:400; font-size:1.75rem;"><i>make the right choice for your future</i></h1>
+                                    <h1 class="ml-5 mt-5" style="font-weight:400; font-size:1.75rem;"><i>Welcoming students, REGISTER and APPLY </i></h1>
+                                    <h1 class="ml-5 " style="font-weight:400; font-size:1.75rem;"><i>any events you like!</i></h1>
                                 </div>
                             </div>
                         </div>
