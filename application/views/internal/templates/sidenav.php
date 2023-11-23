@@ -209,7 +209,7 @@
                     </li>
 
                     <!-- Nav Item - Student Applications Collapse Menu -->
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#applications_collapse" aria-expanded="true" aria-controls="applications_collapse">
                             <i class="fas fa-file-alt"></i>
                             <span>Applications</span>
@@ -221,7 +221,7 @@
                                 <a class="collapse-item" href="<?= base_url('internal/admin_panel/applicants/Admin_rd_app'); ?>">R&D Projects (R&DPs)</a>
                             </div>
                         </div>
-                    </li>
+                    </li> -->
 
                     <!-- Nav Item - Content Collapse Menu -->
                     <li class="nav-item">

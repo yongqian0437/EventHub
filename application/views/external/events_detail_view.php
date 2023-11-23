@@ -79,7 +79,7 @@
                                             <div class="card shadow mb-4">
                                                 <!-- Card Header - Accordion -->
                                                 <a href="#collapseCard1" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
-                                                    <h6 class="m-0 font-weight-bold card-h-title">Description</h6>
+                                                    <h6 class="m-0 font-weight-bold card-h-title">Info</h6>
                                                 </a>
                                                 <!-- Card Content - Collapse -->
                                                 <div class="collapse show" id="collapseCard1">
@@ -89,8 +89,8 @@
                                                         <br>
                                                         <br>
 
-                                                        <h6><b>About</b></h6>
-                                                        <div style="white-space: pre-wrap; word-break: break-word; text-align: justify;"> <?php echo $events->event_shortprofile ?></div>
+                                                        <h6><b>Date and Time</b></h6>
+                                                        <div style="white-space: pre-wrap; word-break: break-word; text-align: justify;"><?php echo $events->event_shortprofile ?></div>
 
                                                         <br>
                                                         <h6><b>Event Venue</b></h6>
@@ -101,7 +101,7 @@
                                             <div class="card shadow mb-4">
                                                 <!-- Card Header - Accordion -->
                                                 <a href="#collapseCard2" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
-                                                    <h6 class="m-0 font-weight-bold card-h-title">Programme Structure</h6>
+                                                    <h6 class="m-0 font-weight-bold card-h-title">Description</h6>
                                                 </a>
                                                 <!-- Card Content - Collapse -->
                                                 <div class="collapse show" id="collapseCard2">

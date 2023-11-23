@@ -75,7 +75,7 @@ class Admin_event_application extends CI_Controller
                 $ea->e_applicant_nationality,
                 $ea->event_name,
                 $ea->user_role,
-                $ea->c_app_submitdate,
+                $ea->e_app_submitdate,
                 $view,
             );
         }

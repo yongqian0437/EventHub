@@ -77,7 +77,6 @@
                                             <!-- <div class="form-group col-md-6 px-4 pr-5">
                                                 <label for="event_level">Level</label>
                                                 <select name="event_level" id="event_level" class="form-control form-select form-select" required>
-                                                    <option value="<?= $event_data->event_level ?>" selected><?= $event_data->event_level ?></option>
                                                     <option value="Foundation">Foundation</option>
                                                     <option value="Certificate">Certificate</option>
                                                     <option value="Diploma">Diploma</option>
@@ -111,7 +110,7 @@
                                             <div class="form-group col-md-6 px-4 pr-5">
                                                 <label for="event_intake">Contact Information</label>
                                                 <textarea type="number" class="form-control" rows="3" id="event_intake" name="event_intake" placeholder="Enter intake (eg: February, June, July)" required><?= $event_data->event_intake ?></textarea>
-                                                <div style="color:red; font-size:0.9em;">*Can enter more than 1 </div>
+                                                <!-- <div style="color:red; font-size:0.9em;">*Can enter more than 1 </div> -->
                                             </div>
                                             <div class="form-group col-md-6 px-4 pl-5">
                                                 <label for="event_careeropportunities">Event Venue</label>
@@ -120,8 +119,8 @@
                                             </div>
                                         </div>
 
-                                        <div class="form-row pt-4">
-                                            <!-- <div class="form-group col-md-4 px-4 ">
+                                        <!-- <div class="form-row pt-4">
+                                            <div class="form-group col-md-4 px-4 ">
                                                 <label for="event_fee">Fee (RM)</label>
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="basic-addon1">RM</span>
@@ -134,13 +133,13 @@
                                                     <span class="input-group-text" id="basic-addon2">$</span>
                                                     <input type="number" class="form-control" id="event_usd_fee" name="event_usd_fee" step="0.01" placeholder="Enter international fee" value="<?= $event_data->event_usd_fee ?>" required>
                                                 </div>
-                                            </div> -->
+                                            </div>
 
-                                        </div>
+                                        </div> -->
 
                                         <div class="form-row pt-4">
                                             <div class="form-group col-md-12 px-4">
-                                                <label for="event_shortprofile">Event Pictures</label>
+                                                <label for="event_shortprofile">Date and Time</label>
                                                 <textarea type="text" class="form-control" rows="8" id="event_shortprofile" name="event_shortprofile" placeholder="Enter shortprofile" required><?= $event_data->event_shortprofile ?></textarea>
                                             </div>
                                         </div>
@@ -155,7 +154,7 @@
                                         <div class="form-row pt-4">
                                             <div class="form-group col-md-12 px-4">
                                                 <label for="event_requirements">Requirements</label>
-                                                <textarea type="text" class="form-control" rows="8" id="event_requirements" name="event_requirements" placeholder="Example:&#10;SPM: At least 5 credits&#10;A-Level: " required><?= $event_data->event_requirements ?></textarea>
+                                                <textarea type="text" class="form-control" rows="8" id="event_requirements" name="event_requirements" placeholder="Example:No slippers, No shorts" required><?= $event_data->event_requirements ?></textarea>
                                             </div>
                                         </div>
 

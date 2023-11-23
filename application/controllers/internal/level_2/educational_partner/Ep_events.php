@@ -196,17 +196,14 @@ class Ep_events extends CI_Controller
         <table class="table table-striped" style = "border:0;">
             <tbody>
                 <tr>
-                    <th scope="row">event Name</th>
+                    <th scope="row">Event Name</th>
                     <td>' . $event_detail[0]->event_name . '</td>
                 </tr>
                 <tr>
-                    <th scope="row">event Area</th>
+                    <th scope="row">Event Type</th>
                     <td>' . $event_detail[0]->event_type . '</td>
                 </tr>
-                <tr>
-                    <th scope="row">level</th>
-                    <td>' . $event_detail[0]->event_level . '</td>
-                </tr>
+                 
                 <tr>
                     <th scope="row">Duration</th>
                     <td>' . $event_detail[0]->event_duration . '</td>
@@ -217,11 +214,11 @@ class Ep_events extends CI_Controller
                 </tr>
                 
                 <tr>
-                    <th scope="row">Intake</th>
+                    <th scope="row">Contact</th>
                     <td>' . $event_detail[0]->event_intake . '</td>
                 </tr>
                 <tr>
-                    <th scope="row">Career Opportunities</th>
+                    <th scope="row">Venue</th>
                     <td>' . $event_detail[0]->event_careeropportunities    . '</td>
                 </tr>
                 <tr>
@@ -229,7 +226,7 @@ class Ep_events extends CI_Controller
                     <td style = "white-space: pre-wrap; word-break: break-word; text-align: justify;">' . $event_detail[0]->event_shortprofile . '</td>
                 </tr>
                 <tr>
-                    <th scope="row">Structure</th>
+                    <th scope="row">Description</th>
                     <td style = "white-space: pre-wrap; word-break: break-word; text-align: justify;">' . $event_detail[0]->event_structure . '</td>
                 </tr>
                 <tr>

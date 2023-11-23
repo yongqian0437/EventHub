@@ -311,7 +311,7 @@
                                         <div class="card-body" style="">
                                             <!-- UNIVERSITIY INPUT -->
                                             <div class="form-row pt-2">
-                                                <label for="event_field" class="col-sm-2 text-right col-form-label" style="color:black;">event Field: </label>
+                                                <label for="event_field" class="col-sm-2 text-right col-form-label" style="color:black;">Event Type: </label>
                                                 <div class="col-sm-3">
                                                     <select name="event_field" id="event_field" class="form-control form-select form-select-sm">
                                                         <option value="all" selected>All</option>

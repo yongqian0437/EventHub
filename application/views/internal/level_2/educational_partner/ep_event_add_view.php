@@ -68,94 +68,99 @@
                                                     <option value="Career Fairs and Networking Events">Career Fairs and Networking Events</option>
                                                     <option value="Community Service and Volunteer Events">Community Service and Volunteer Events</option>
 
-
                                                 </select>
                                             </div>
                                         </div>
 
+                                        <div class="form-row pt-4">
+                                            <div class="form-group col-md-6 px-4 pr-5 ">
+                                                <label for="event_fee">Malaysian based Fee (RM)</label>
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon1">RM</span>
+                                                    <input type="number" class="form-control" id="event_fee" name="event_fee" step="0.01" placeholder="Enter malaysian base fee" required>
+                                                </div>
+                                            </div>
 
-
-
-                                        <div class="form-group col-md-6 px-4 pl-5">
-                                            <label for="event_duration">Duration (Hours)</label>
-                                            <div class="input-group-prepend">
-                                                <input type="number" class="form-control" step="0.01" id="event_duration" name="event_duration" placeholder="Enter duration (eg: 1, 2.5)" required>
-                                                <span class="input-group-text" id="basic-addon1">hours</span>
+                                            <div class="form-group col-md-6 px-4 pl-5">
+                                                <label for="event_duration">Duration (Hours)</label>
+                                                <div class="input-group-prepend">
+                                                    <input type="number" class="form-control" step="0.01" id="event_duration" name="event_duration" placeholder="Enter duration (eg: 1, 2.5)" required>
+                                                    <span class="input-group-text" id="basic-addon1">hours</span>
+                                                </div>
                                             </div>
                                         </div>
-                                </div>
 
 
-                                <div class="form-row pt-4">
-                                    <div class="form-group col-md-6 px-4 pr-5">
-                                        <label for="event_intake">Contact Information</label>
-                                        <textarea type="text" class="form-control" rows="3" id="event_intake" name="event_intake" placeholder="Enter contact information (eg: 012-*******)" required></textarea>
-                                        <div style="color:red; font-size:0.9em;">*Can enter more than 1 </div>
-                                    </div>
-                                    <div class="form-group col-md-6 px-4 pl-5">
-                                        <label for="event_careeropportunities">Event Venue</label>
-                                        <textarea type="text" class="form-control" rows="3" id="event_careeropportunities" name="event_careeropportunities" placeholder="Enter Event Venue (eg: Campus Hall 1)" required></textarea>
-                                        <!-- <div style="color:red; font-size:0.9em;">*Example : Campus Hall 1</div> -->
-                                    </div>
-                                </div>
-
-                                <div class="form-row pt-4">
-                                    <div class="form-group col-md-6 px-4 pr-5 ">
-                                        <label for="event_fee">Malaysian based Fee (RM)</label>
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" id="basic-addon1">RM</span>
-                                            <input type="number" class="form-control" id="event_fee" name="event_fee" step="0.01" placeholder="Enter malaysian base fee" required>
+                                        <div class="form-row pt-4">
+                                            <div class="form-group col-md-6 px-4 pr-5">
+                                                <label for="event_intake">Contact Information</label>
+                                                <textarea type="text" class="form-control" rows="3" id="event_intake" name="event_intake" placeholder="Enter contact information (eg: 012-*******)" required></textarea>
+                                                <!-- <div style="color:red; font-size:0.9em;">*Can enter more than 1 </div> -->
+                                            </div>
+                                            <div class="form-group col-md-6 px-4 pl-5">
+                                                <label for="event_careeropportunities">Event Venue</label>
+                                                <textarea type="text" class="form-control" rows="3" id="event_careeropportunities" name="event_careeropportunities" placeholder="Enter Event Venue (eg: Campus Hall 1)" required></textarea>
+                                                <!-- <div style="color:red; font-size:0.9em;">*Example : Campus Hall 1</div> -->
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div class="form-group col-md-4 px-2 ">
-                                        <label for="event_usd_fee">International Fee (USD)</label>
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" id="basic-addon2">$</span>
-                                            <input type="number" class="form-control" id="event_usd_fee" name="event_usd_fee" step="0.01" placeholder="Enter international fee" required>
+                                        <!-- <div class="form-row pt-4">
+                                            <div class="form-group col-md-6 px-4 pr-5 ">
+                                                <label for="event_fee">Malaysian based Fee (RM)</label>
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon1">RM</span>
+                                                    <input type="number" class="form-control" id="event_fee" name="event_fee" step="0.01" placeholder="Enter malaysian base fee" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group col-md-4 px-2 ">
+                                                <label for="event_usd_fee">International Fee (USD)</label>
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon2">$</span>
+                                                    <input type="number" class="form-control" id="event_usd_fee" name="event_usd_fee" step="0.01" placeholder="Enter international fee" required>
+                                                </div>
+                                            </div>
+
+                                        </div> -->
+
+                                        <div class="form-row pt-4">
+                                            <div class="form-group col-md-12 px-4">
+                                                <label for="event_shortprofile">Date and Time</label>
+                                                <textarea type="text" class="form-control" rows="8" id="event_shortprofile" name="event_shortprofile" placeholder="Date and Time" required></textarea>
+                                            </div>
                                         </div>
-                                    </div>
+
+                                        <div class="form-row pt-4">
+                                            <div class="form-group col-md-12 px-4">
+                                                <label for="event_structure">Description</label>
+                                                <textarea type="text" class="form-control" rows="8" id="event_structure" name="event_structure" placeholder="Description" required></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row pt-4">
+                                            <div class="form-group col-md-12 px-4">
+                                                <label for="event_requirements">Requirements</label>
+                                                <textarea type="text" class="form-control" rows="8" id="event_requirements" name="event_requirements" placeholder="Example:No slippers, No shorts" required></textarea>
+                                            </div>
+                                        </div>
+
+                                        <!-- Edit button -->
+                                        <div class="pr-4">
+                                            <button type="submit" class="btn btn-primary " style="float:right;">Submit<i class="fas fa-check pl-2"></i></button>
+                                        </div>
+
+                                    </form>
 
                                 </div>
-
-                                <div class="form-row pt-4">
-                                    <div class="form-group col-md-12 px-4">
-                                        <label for="event_shortprofile">Event Pictures</label>
-                                        <textarea type="text" class="form-control" rows="8" id="event_shortprofile" name="event_shortprofile" placeholder="Insert Picture" required></textarea>
-                                    </div>
-                                </div>
-
-                                <div class="form-row pt-4">
-                                    <div class="form-group col-md-12 px-4">
-                                        <label for="event_structure">Description</label>
-                                        <textarea type="text" class="form-control" rows="8" id="event_structure" name="event_structure" placeholder="Description" required></textarea>
-                                    </div>
-                                </div>
-
-                                <div class="form-row pt-4">
-                                    <div class="form-group col-md-12 px-4">
-                                        <label for="event_requirements">Requirements</label>
-                                        <textarea type="text" class="form-control" rows="8" id="event_requirements" name="event_requirements" placeholder="Example:&#10;SPM: At least 5 credits&#10;A-Level: " required></textarea>
-                                    </div>
-                                </div>
-
-                                <!-- Edit button -->
-                                <div class="pr-4">
-                                    <button type="submit" class="btn btn-primary " style="float:right;">Submit<i class="fas fa-check pl-2"></i></button>
-                                </div>
-
-                                </form>
-
                             </div>
-                        </div>
-                        <!-- /. Card -->
+                            <!-- /. Card -->
 
+                        </div>
                     </div>
+                    <!-- /. Content Row -->
+
                 </div>
-                <!-- /. Content Row -->
+                <!-- /.container-fluid -->
 
             </div>
-            <!-- /.container-fluid -->
-
-        </div>
-        <!-- End of Main Content -->
+            <!-- End of Main Content -->

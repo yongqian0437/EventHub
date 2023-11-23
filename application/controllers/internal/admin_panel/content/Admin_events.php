@@ -105,17 +105,17 @@ class Admin_events extends CI_Controller
                     <th colspan="2" style = "background-color: #CCE3DE; font-weight:900; font-size:1.1em;" scope="row"><center>event DETAILS</center></th>
                 </tr>
                 <tr>
-                    <th scope="row">event Name</th>
+                    <th scope="row">Event Name</th>
                     <td>' . $event->event_name . '</td>
                 </tr>
                 <tr>
-                    <th scope="row">event Area</th>
+                    <th scope="row">Event Type</th>
                     <td>' . $event->event_type . '</td>
                 </tr>
-                <tr>
-                    <th scope="row">level</th>
-                    <td>' . $event->event_level . '</td>
-                </tr>
+                // <tr>
+                //     <th scope="row">level</th>
+                //     <td>' . $event->event_level . '</td>
+                // </tr>
                 <tr>
                     <th scope="row">Duration</th>
                     <td>' . $event->event_duration . '</td>
@@ -126,15 +126,15 @@ class Admin_events extends CI_Controller
                 </tr>
              
                 <tr>
-                    <th scope="row">Intake</th>
+                    <th scope="row">Contact</th>
                     <td>' . $event->event_intake . '</td>
                 </tr>
                 <tr>
-                    <th scope="row">Career Opportunities</th>
+                    <th scope="row">Venue</th>
                     <td>' . $event->event_careeropportunities    . '</td>
                 </tr>
                 <tr>
-                    <th scope="row">Structure</th>
+                    <th scope="row">Description</th>
                     <td style = "white-space: pre-wrap; word-break: break-word; text-align: justify;">' . $event->event_structure . '</td>
                 </tr>
                 <tr>
