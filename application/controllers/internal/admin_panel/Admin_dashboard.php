@@ -55,6 +55,9 @@ class Admin_dashboard extends CI_Controller
 
         //total user based on role
         $data['total_student'] = count($this->user_student_model->select_all());
+        $data['total_e'] = count($this->user_e_model->approved_employers());
+        $data['total_ea'] = count($this->user_ea_model->approved_ea());
+        $data['total_ac'] = count($this->user_ac_model->approved_ac());
         $data['total_ep'] = count($this->user_ep_model->approved_ep());
 
         //6 latest org list
@@ -92,7 +95,13 @@ class Admin_dashboard extends CI_Controller
         $data['active_uni'] = count($this->organizer_model->org_by_approval(1));
         $data['pending_uni'] = count($this->organizer_model->org_by_approval(0));
 
+        //active & pending emp
+        $data['active_emp'] = count($this->employer_projects_model->emp_by_approval(1));
+        $data['pending_emp'] = count($this->employer_projects_model->emp_by_approval(0));
 
+        //active & pending rd
+        $data['active_rd'] = count($this->rd_projects_model->rd_by_approval(1));
+        $data['pending_rd'] = count($this->rd_projects_model->rd_by_approval(0));
 
         $this->load->view('internal/admin_panel/admin_dashboard_view', $data);
         $this->load->view('internal/templates/footer');

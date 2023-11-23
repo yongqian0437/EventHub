@@ -23,7 +23,19 @@ class Auth extends CI_Controller
             if ($this->session->userdata('user_role') == "Admin") {
                 redirect('internal/admin_panel/Admin_dashboard');
             }
-            // check user role is Organzier/Partner
+            // check user role is  EA
+            else if ($this->session->userdata('user_role') == "Education Agent") {
+                redirect('internal/level_2/education_agent/Ea_dashboard');
+            }
+            // check user role is AC
+            else if ($this->session->userdata('user_role') == "Academic Counsellor") {
+                redirect('internal/level_2/academic_counsellor/Ac_dashboard');
+            }
+            // check user role is E
+            else if ($this->session->userdata('user_role') == "Employer") {
+                redirect('internal/level_2/employer/Employer_dashboard');
+            }
+            // check user role is EP
             else if ($this->session->userdata('user_role') == "Education Partner") {
                 redirect('internal/level_2/educational_partner/Ep_dashboard');
             }
@@ -74,7 +86,19 @@ class Auth extends CI_Controller
                     if ($users['user_role'] == "Admin") {
                         redirect('internal/admin_panel/Admin_dashboard');
                     }
-                    // check user role is Organizer
+                    // check user role is  EA
+                    else if ($users['user_role'] == "Education Agent") {
+                        redirect('internal/level_2/education_agent/Ea_dashboard');
+                    }
+                    // check user role is AC
+                    else if ($users['user_role'] == "Academic Counsellor") {
+                        redirect('internal/level_2/academic_counsellor/Ac_dashboard');
+                    }
+                    // check user role is E
+                    else if ($users['user_role'] == "Employer") {
+                        redirect('internal/level_2/employer/Employer_dashboard');
+                    }
+                    // check user role is  EP
                     else if ($users['user_role'] == "Education Partner") {
                         redirect('internal/level_2/educational_partner/Ep_dashboard');
                     }
@@ -133,6 +157,7 @@ class Auth extends CI_Controller
                         'user_fname' => htmlspecialchars($this->input->post('user_fname', true)),
                         'user_lname' => htmlspecialchars($this->input->post('user_lname', true)),
                         'user_email' => htmlspecialchars($this->input->post('user_email', true)),
+                        // 'user_password'=>htmlspecialchars($this->input->post('user_password',true)),
                         'user_password' => password_hash($this->input->post('user_password'), PASSWORD_DEFAULT),
                         'user_role' => htmlspecialchars($this->input->post('user_role', true)),
                         'user_approval' => 1,
@@ -143,6 +168,7 @@ class Auth extends CI_Controller
                         'user_fname' => htmlspecialchars($this->input->post('user_fname', true)),
                         'user_lname' => htmlspecialchars($this->input->post('user_lname', true)),
                         'user_email' => htmlspecialchars($this->input->post('user_email', true)),
+                        //'user_password'=>htmlspecialchars($this->input->post('user_password',true)),
                         'user_password' => password_hash($this->input->post('user_password'), PASSWORD_DEFAULT),
                         'user_role' => htmlspecialchars($this->input->post('user_role', true)),
                         'user_approval' => 0,
