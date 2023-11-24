@@ -57,7 +57,7 @@
                                                     <th>Organizer</th>
                                                     <th>Event Name</th>
                                                     <th>Event Type</th>
-                                                    <th>Level</th>
+                                                    <th>Duration (h)</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>

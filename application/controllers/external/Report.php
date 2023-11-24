@@ -42,7 +42,7 @@ class Report extends CI_Controller
 	public function index()
 	{
 
-		$data['title'] = 'EventHub | Comparison';
+		$data['title'] = 'EventHub | Report';
 
 		$data['event_data'] = $this->organizer_model->sorted_uni_dropdown();
 		$data['include_js'] = 'compare';

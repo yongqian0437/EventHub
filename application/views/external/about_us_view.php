@@ -186,7 +186,7 @@
                                                         <p class="card-text">Have any inquiries? Chat with our ChatBot to know more information here.</p>
                                                     </div>
                                                     <div class="card-footer">
-                                                        <a href="<?= base_url('user/chat/Chat'); ?>" target="_blank" class="btn btn-outline-secondary btn-icon-right" style="background-color:">
+                                                        <a href="<?= base_url('chatbot'); ?>" target="_blank" class="btn btn-outline-secondary btn-icon-right" style="background-color:">
                                                             <span style=" color:black">CLICK ME
                                                             </span>
                                                         </a>

@@ -198,11 +198,11 @@
                         </a>
                         <div id="accounts_collapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                             <div class="bg-white py-2 collapse-inner rounded">
-                                <a class="collapse-item" href="<?= base_url('internal/admin_panel/Admin_user_acc'); ?>">All Users</a>
+                                <!-- <a class="collapse-item" href="<?= base_url('internal/admin_panel/Admin_user_acc'); ?>">All Users</a> -->
                                 <a class="collapse-item" href="<?= base_url('internal/admin_panel/Users_information/students_info'); ?>">Students</a>
                                 <!-- <a class="collapse-item" href="<?= base_url('internal/admin_panel/Users_information/ac_info'); ?>">Academic Counsellors</a>
                                 <a class="collapse-item" href="<?= base_url('internal/admin_panel/Users_information/ea_info'); ?>">Education Agents</a> -->
-                                <a class="collapse-item" href="<?= base_url('internal/admin_panel/Users_information/ep_info'); ?>">Organizers</a>
+                                <a class="collapse-item" href="<?= base_url('internal/admin_panel/content/Admin_organizer'); ?>">Organizer</a>
 
                             </div>
                         </div>
@@ -216,7 +216,7 @@
                         </a>
                         <div id="applications_collapse" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                             <div class="bg-white py-2 collapse-inner rounded">
-                                <a class="collapse-item" href="<?= base_url('internal/admin_panel/applicants/Admin_event_application'); ?>">Events</a>
+                               
                                 <a class="collapse-item" href="<?= base_url('internal/admin_panel/applicants/Admin_emp_applicants'); ?>">Employer Projects (EPs)</a>
                                 <a class="collapse-item" href="<?= base_url('internal/admin_panel/applicants/Admin_rd_app'); ?>">R&D Projects (R&DPs)</a>
                             </div>
@@ -231,11 +231,13 @@
                         </a>
                         <div id="content_collapse" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                             <div class="bg-white py-2 collapse-inner rounded">
-                                <a class="collapse-item" href="<?= base_url('internal/admin_panel/content/Admin_organizer'); ?>">Organizer</a>
+                                <a class="collapse-item" href="<?= base_url('internal/admin_panel/Users_information/ep_info'); ?>">Organizers</a>
+
                                 <a class="collapse-item" href="<?= base_url('internal/admin_panel/content/Admin_events'); ?>">Events</a>
+                                <a class="collapse-item" href="<?= base_url('internal/admin_panel/applicants/Admin_event_application'); ?>">Event's Applicant</a>
                                 <!-- <a class="collapse-item" href="<?= base_url('internal/admin_panel/content/Admin_emps'); ?>">Employer Projects (EPs)</a>
                                 <a class="collapse-item" href="<?= base_url('internal/admin_panel/content/Admin_rd_project'); ?>">R&D Projects (R&DPs)</a> -->
-                                <a class="collapse-item" href="<?= base_url(''); ?>">Student's Report</a>
+                                <!-- <a class="collapse-item" href="<?= base_url('internal/admin_panel/content/report'); ?>">Student's Report</a> -->
                             </div>
                         </div>
                     </li>

@@ -67,7 +67,7 @@ class Admin_event_application extends CI_Controller
         $base_url = base_url();
 
         foreach ($event_applicants as $ea) {
-            $view = '<span><button type="button" onclick="view_admin_event_applicant(' . $ea->e_applicant_id . ')" class="btn icon-btn btn-xs btn-info waves-effect waves-light" data-toggle="modal" data-target="#view_admin_event_application"><span class="fas fa-eye"></span></button></span>';
+            $view = "<span><a class='btn btn-info' href='" . base_url('assets/uploads/event_applicants/' . $ea->e_applicant_document) . "' role='button' target='_blank'><span class='fas fa-eye'></span></a></span>";
 
             $data[] = array(
                 '',

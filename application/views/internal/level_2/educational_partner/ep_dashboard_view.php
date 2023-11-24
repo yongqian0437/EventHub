@@ -49,7 +49,7 @@
                         </div>
 
                         <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
+                        <!-- <div class="col-xl-3 col-md-6 mb-4">
                             <a href="<?php echo base_url('internal/level_2/educational_partner/Ep_my_rd_project'); ?>" style="text-decoration:none">
                                 <div class="card border-left-success shadow h-100 py-2">
                                     <div class="card-body">
@@ -66,7 +66,7 @@
                                     </div>
                                 </div>
                             </a>
-                        </div>
+                        </div> -->
 
                         <!-- Earnings (Monthly) Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
@@ -96,7 +96,7 @@
                         </div>
 
                         <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
+                        <!-- <div class="col-xl-3 col-md-6 mb-4">
                             <a href="<?= base_url('internal/level_2/educational_partner/ep_rd_applicants'); ?>" style="text-decoration:none">
                                 <div class="card border-left-danger shadow h-100 py-2">
                                     <div class="card-body">
@@ -113,10 +113,10 @@
                                     </div>
                                 </div>
                             </a>
-                        </div>
+                        </div> -->
 
                         <!-- Pending Requests Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
+                        <!-- <div class="col-xl-3 col-md-6 mb-4">
                             <a href="<?= base_url('internal/level_2/educational_partner/ep_rd_applicants/project_partners_page'); ?>" style="text-decoration:none">
                                 <div class="card border-left-info shadow h-100 py-2">
                                     <div class="card-body">
@@ -133,7 +133,7 @@
                                     </div>
                                 </div>
                             </a>
-                        </div>
+                        </div> -->
 
                     </div>
 

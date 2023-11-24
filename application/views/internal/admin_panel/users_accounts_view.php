@@ -177,7 +177,7 @@
                         <div class="modal-dialog modal-lg" role="document">
                             <div class="modal-content">
                                 <div class="modal-header" style="background-color:#6B9080;">
-                                    <h5 class="modal-title" id="view_nextLabel" style="color:white;">org Information</h5>
+                                    <h5 class="modal-title" id="view_nextLabel" style="color:white;">Org Information</h5>
                                     <button style="color:white;" type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>

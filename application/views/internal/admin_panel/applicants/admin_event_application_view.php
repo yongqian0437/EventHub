@@ -60,7 +60,7 @@
                                                     <th>Event Title</th>
                                                     <th>Applied By</th>
                                                     <th>Applied Date</th>
-                                                    <th>Action</th>
+                                                    <th>pdf.doc</th>
                                                 </tr>
                                             </thead>
                                         </table>

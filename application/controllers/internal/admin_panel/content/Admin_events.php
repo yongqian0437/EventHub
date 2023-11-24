@@ -76,7 +76,7 @@ class Admin_events extends CI_Controller
                 $r->organizer_name,
                 $r->event_name,
                 $r->event_type,
-                $r->event_level,
+                $r->event_duration,
                 $view,
             );
         }
@@ -91,6 +91,7 @@ class Admin_events extends CI_Controller
         echo json_encode($output);
         exit();
     }
+
 
     function view_admin_event()
     {
@@ -112,12 +113,8 @@ class Admin_events extends CI_Controller
                     <th scope="row">Event Type</th>
                     <td>' . $event->event_type . '</td>
                 </tr>
-                // <tr>
-                //     <th scope="row">level</th>
-                //     <td>' . $event->event_level . '</td>
-                // </tr>
                 <tr>
-                    <th scope="row">Duration</th>
+                    <th scope="row">Duration (hr)</th>
                     <td>' . $event->event_duration . '</td>
                 </tr>
                 <tr>

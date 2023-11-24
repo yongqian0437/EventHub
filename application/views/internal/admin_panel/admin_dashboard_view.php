@@ -99,7 +99,7 @@
                         <div class="col-12">
                             <div class="card h-100 shadow">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Top 4 Organizers by Event Applicants</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Top 4 organizations with the most applications</h6>
                                 </div>
                                 <div class="card-body">
                                     <div class="chart-bar">
@@ -111,39 +111,7 @@
                         </div>
                     </div>
 
-                    <div class="row justify-content-center">
 
-                        <div class="col-4 w-100">
-                            <div class="card shadow">
-                                <!-- Card Header - Dropdown -->
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Employer Projects</h6>
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="">
-                                        <canvas id="pie-chartcanvas-2"></canvas>
-                                    </div>
-                                    <hr>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4 w-100">
-                            <div class="card shadow">
-                                <!-- Card Header - Dropdown -->
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">R&D Projects</h6>
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="">
-                                        <canvas id="pie-chartcanvas-3"></canvas>
-                                    </div>
-                                    <hr>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
                 </div>
                 <!-- /.container-fluid -->

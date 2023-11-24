@@ -74,21 +74,6 @@
                                         </div>
 
                                         <div class="form-row pt-4">
-                                            <!-- <div class="form-group col-md-6 px-4 pr-5">
-                                                <label for="event_level">Level</label>
-                                                <select name="event_level" id="event_level" class="form-control form-select form-select" required>
-                                                    <option value="Foundation">Foundation</option>
-                                                    <option value="Certificate">Certificate</option>
-                                                    <option value="Diploma">Diploma</option>
-                                                    <option value="Bachelor Degree">Bachelor Degree</option>
-                                                    <option value="Masters">Masters</option>
-                                                    <option value="Doctorate">Doctorate</option>
-                                                    <option value="Advanced Diploma">Advanced Diploma</option>
-                                                    <option value="Graduate Certificate and Graduate Diploma">Graduate Certificate and Graduate Diploma</option>
-                                                    <option value="Postgraduate Certificate and Postgraduate Diploma">Postgraduate Certificate and Postgraduate Diploma</option>
-                                                    <option value="Others">Others</option>
-                                                </select>
-                                            </div> -->
                                             <div class="form-group col-md-6 px-4 pr-5 ">
                                                 <label for="event_fee">Malaysian based Fee (RM)</label>
                                                 <div class="input-group-prepend">

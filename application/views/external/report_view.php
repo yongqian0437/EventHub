@@ -112,12 +112,12 @@
                                     <div class="card-body">
                                         <!-- UNIVERSITIY INPUT -->
                                         <div class="form-group col-md-12 px-4 pt-2">
-                                            <input type="file" class="custom-file-input" id="customFile" name="e_applicant_document" accept="application/pdf" required>
+                                            <input type="file" class="custom-file-input" id="customFile" name="e_applicant_document" accept="reprot/pdf" required>
                                             <label class="custom-file-label" for="customFile">Upload Report</label>
                                             <p style="font-size: 14px; color:red;">*Required in .PDF file format</p>
                                         </div>
 
-                                        <!-- LEVEL INPUT -->
+
 
 
 
@@ -157,12 +157,9 @@
                         </div>
 
                         <div class="col-xl-3 col-md-6 mb-4">
-                            <a style='border-radius:20px;' onclick="generateTable()" id='proceed_btn' class='btn btn-success btn-lg btn-icon-split'>
-                                <span class='icon text-white-600'>
-                                    <i class='fas fa-arrow-down fa-2x p-1'></i>
-                                </span>
-                                <span style='font-size:25px;' class="text p-3">SUBMIT</span>
-                            </a>
+                            <div class="pt-4 pr-3">
+                                <button type="submit" class="btn btn-success" style="float:right; width:auto">Submit <i class="fas fa-check"></i></button>
+                            </div>
                         </div>
 
                         <div class="col-xl-3 col-md-6 mb-4">
@@ -188,3 +185,11 @@
 
             </div>
             <!-- End of Main Content -->
+
+            <script>
+                // File appear on select
+                $(".custom-file-input").on("change", function() {
+                    var fileName = $(this).val().split("\\").pop();
+                    $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+                });
+            </script>
