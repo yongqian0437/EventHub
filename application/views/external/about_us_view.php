@@ -182,7 +182,7 @@
                                                 <div class="card card-secondary h-100" style="cursor:pointer; transition:all .5s ease-in-out; width:20rem;">
                                                     <img class="card-img-top" src="<?php echo base_url('assets/img/about_us/chat_icon.jpg') ?>" alt="Card image cap">
                                                     <div class="card-body">
-                                                        <div class="card-title">Chat with Bot</div>
+                                                        <div class="card-title">Chat with AI</div>
                                                         <p class="card-text">Have any inquiries? Chat with our ChatBot to know more information here.</p>
                                                     </div>
                                                     <div class="card-footer">
