@@ -86,10 +86,10 @@
                                                     <th>No.</th>
                                                     <th>Event Name</th>
                                                     <th>Event Type</th>
-                                                    <th>Contact Information</th>
+                                                    <th>Contact</th>
                                                     <th>Duration</th>
                                                     <th>Fee</th>
-                                                    <!-- <th>Event Venue</th> -->
+                                                    <th>Action</th>
                                                 </tr>
                                             </thead>
                                         </table>
@@ -107,7 +107,7 @@
                     <div class="modal fade" id="view_event" tabindex="-1" role="dialog" aria-labelledby="view_eventLabel" aria-hidden="true">
                         <div class="modal-dialog modal-xl" role="document">
                             <div class="modal-content">
-                                <div class="modal-header" style="background-color:#6B9080;">
+                                <div class="modal-header" style="background-color:#61677A;">
                                     <h5 class="modal-title" id="view_eventLabel" style="color:white;">Event Information</h5>
                                     <button style="color:white;" type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>

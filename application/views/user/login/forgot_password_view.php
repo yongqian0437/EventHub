@@ -12,11 +12,26 @@
         $('#alert_message').fadeOut();
     }, 5000); // <-- time in milliseconds
 </script>
+<style>
+    .submit {
+        border: none;
+        outline: none;
+        height: 45px;
+        background: #ececec;
+        border-radius: 5px;
+        transition: 0.4s;
+    }
+
+    .submit:hover {
+        background: rgba(37, 95, 156, 0.937);
+        color: #fff;
+    }
+</style>
 
 <!-- Top Navigation -->
 <?php $this->load->view('external/templates/topnav'); ?>
 
-<body id="page-top" style='background-color:#f9f6f1;'>
+<body id="page-top" style='background-color:#FFFF;'>
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -31,10 +46,10 @@
                 <div class="container-fluid ">
 
                     <!-- Cards for registration -->
-                    <div class="row justify-content-md-center pt-5 pb-5" style='background-color:#f9f6f1;'>
+                    <div class="row justify-content-md-center pt-5 pb-5" style='background-color:#FFFF;'>
 
                         <!-- Steps -->
-                        <div class="col-xl-3">
+                        <!-- <div class="col-xl-3">
                             <div class="card h-100 " id='card1'>
                                 <div class="card-body" style="background-color:#DAE7E0">
 
@@ -61,47 +76,57 @@
 
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                         <!-- Form -->
                         <div class="col-xl-6 ">
-                            <div class="card h-100" id='card2' ">
+                            <div class="card h-100" id='card2'>
                                 <div class=" card-body">
-                                <center>
-                                    <div class="pt-5 px-5" style="font-size:23px; letter-spacing: 8px; color:#787878; font-weight:700;">FORGOT YOUR PASSWORD?</div>
-                                </center>
-                                <?= $this->session->flashdata('message') ?>
-                                <!-- Input fields (Form) -->
-                                <form class="user" method="post" action=" <?= base_url('user/login/Auth/resetlink'); ?>">
-                                    <!-- Email-->
-                                    <div class="form-row pt-5 px-3">
-                                        <div class="form-group col-md-12 px-2">
-                                            <input type="email" name="user_email" class="form-control border-bottom" id="email" style="border: 0;" placeholder="Enter your email address" value="<?= set_value('user_email'); ?>">
-                                            <?= form_error('user_email', '<small class="text-danger pl-3">', '</small>'); ?>
+                                    <center>
+                                        <div class="pt-5 px-5" style="font-size:23px; letter-spacing: 8px; color:#000000; font-weight:700;">FORGOT YOUR PASSWORD?</div>
+                                    </center>
+                                    <?= $this->session->flashdata('message') ?>
+                                    <!-- Input fields (Form) -->
+                                    <form class="user" method="post" action=" <?= base_url('user/login/Auth/resetlink'); ?>">
+                                        <!-- Email-->
+                                        <div class="form-row pt-5 px-3">
+                                            <div class="form-group col-md-12 px-2">
+                                                <input type="email" name="user_email" class="form-control border-bottom" id="email" style="border: 0;" placeholder="Enter your email address" value="<?= set_value('user_email'); ?>">
+                                                <?= form_error('user_email', '<small class="text-danger pl-3">', '</small>'); ?>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <!-- Submit button -->
-                                    <div class="pt-1 pr-4">
-                                        <button type="submit" class="btn btn-success" style="float:right; width:auto">Reset Password<i class="fas fa-check"></i></button>
-                                    </div>
-                                </form>
-                                <!-- End of Input fields (Form) -->
-                                <br><br>
-                                <center>
-                                    <div class="pt-5">
-                                        <a style="text-align:center;" href="<?= base_url("user/login/Auth/login"); ?>">Back to Login</a>
-                                    </div>
-                                </center>
+                                        <!-- Submit button -->
+                                        <!-- <div class="pt-1 pr-4">
+                                            <button type="submit" class="btn btn-success" style="float:right; width:auto">Reset Password<i class="fas fa-check"></i></button>
+                                        </div> -->
 
+                                        <!-- Submit button -->
+                                        <div class="pt-1 pr-4">
+                                            <button type="submit" class="submit" style="float:right;">Reset Password <i class="fas fa-check"></i></button>
+                                        </div>
+                                        <br>
+                                        <br>
+                                    </form>
+                                    <!-- End of Input fields (Form) -->
+                                    <br><br>
+                                    <center>
+                                        <div class="pt-6">
+                                            <a style="text-align:center;" href="<?= base_url("user/login/Auth/login"); ?>">Back to Login</a>
+                                        </div>
+                                    </center>
+
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- END OF ROW -->
-                <!-- END OF FORM -->
+                    <!-- END OF ROW -->
+                    <!-- END OF FORM -->
 
+                </div>
+                <!-- /.container-fluid -->
             </div>
-            <!-- /.container-fluid -->
+            <!-- End of Main Content -->
+
         </div>
-        <!-- End of Main Content -->
+    </div>

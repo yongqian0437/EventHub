@@ -8,6 +8,22 @@
 <script type="text/javascript">
     var base_url = "<?php echo base_url(); ?>";
 </script>
+
+<style>
+    .submit {
+        border: none;
+        outline: none;
+        height: 45px;
+        background: #ececec;
+        border-radius: 5px;
+        transition: 0.4s;
+    }
+
+    .submit:hover {
+        background: rgba(37, 95, 156, 0.937);
+        color: #fff;
+    }
+</style>
 <link href="<?php echo base_url() ?>assets/css/forms.css" rel="stylesheet">
 
 
@@ -61,7 +77,7 @@
                             <div class="card h-100" id='card2' ">
                                 <div class=" card-body">
                                 <center>
-                                    <div class="pt-5 px-5" style="font-size:23px; letter-spacing: 8px; color:#787878; font-weight:700;">event INFORMATIONFORM</div>
+                                    <div class="pt-5 px-5" style="font-size:23px; letter-spacing: 8px; color:#000000; font-weight:700;">Event INFORMATION FORM</div>
                                 </center>
 
                                 <!-- Form -->
@@ -133,8 +149,8 @@
                                         </div>
 
                                         <!-- Term and Conditions & Register Button -->
-                                        <div class="col">
-                                            <button type="submit" class="btn btn-success mt-4" style="float:right; width:auto;">Continue <i class="fas fa-check"></i></button>
+                                        <div class="pt-1 pr-4">
+                                            <button type="submit" class="submit" style="float:right;">Continue<i class="fas fa-check"></i></button>
                                         </div>
                                     </div>
                                 </form>

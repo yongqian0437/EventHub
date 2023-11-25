@@ -3,8 +3,26 @@
     var base_url = "<?php echo base_url(); ?>";
 </script>
 
+<style>
+    .submit {
+        border: none;
+        outline: none;
+        height: 45px;
+        background: #ececec;
+        border-radius: 5px;
+        transition: 0.4s;
+    }
+
+    .submit:hover {
+        background: rgba(37, 95, 156, 0.937);
+        color: #fff;
+    }
+</style>
+
 <!-- Top Navigation -->
 <?php $this->load->view('external/templates/topnav'); ?>
+
+
 
 <body id="page-top" style='background-color:#f9f6f1;'>
 
@@ -58,7 +76,7 @@
                             <div class="card h-100" id='card2' ">
                                 <div class=" card-body">
                                 <center>
-                                    <div class="pt-5 px-5" style="font-size:23px; letter-spacing: 8px; color:#787878; font-weight:700;">ROLE REGISTRATION PAGE</div>
+                                    <div class="pt-5 px-5" style="font-size:23px; letter-spacing: 8px; color:#000000; font-weight:700;">ROLE REGISTRATION PAGE</div>
                                 </center>
                                 <!-- Input fields (Form) -->
                                 <form class="user" method="post" action="<?= base_url('user/login/Auth/registration'); ?>">
@@ -105,9 +123,13 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <!-- Submit button -->
-                                    <div class="pt-4 pr-4">
+
+                                    <!-- <div class="pt-4 pr-4">
                                         <button type="submit" class="btn btn-success" style="float:right; width:auto;">Continue <i class="fas fa-check"></i></button>
+                                    </div> -->
+                                    <!-- Submit button -->
+                                    <div class="pt-1 pr-4">
+                                        <button type="submit" class="submit" style="float:right;">Continue <i class="fas fa-check"></i></button>
                                     </div>
                                 </form>
                                 <br><br>

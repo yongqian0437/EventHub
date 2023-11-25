@@ -139,7 +139,7 @@ class Admin_events extends CI_Controller
                     <td style = "white-space: pre-wrap; word-break: break-word; text-align: justify;">' . $event->event_shortprofile . '</td>
                 </tr>
                 <tr>
-                    <th scope="row">Requirements</th>
+                    <th scope="row">Activities</th>
                     <td style = "white-space: pre-wrap; word-break: break-word; text-align: justify;">' . $event->event_requirements . '</td>
                 </tr>
                 <tr>

@@ -54,7 +54,6 @@
                                     <th>Interest</th>
                                     <th>Current Level</th>
                                     <th>Register Date</th>
-                                    <th>Report</th>
                                 </tr>
                             </thead>
 

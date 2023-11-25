@@ -143,7 +143,7 @@
                     <div class="modal fade" id="view_admin_uni" tabindex="-1" role="dialog" aria-labelledby="view_admin_uniLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg" role="document">
                             <div class="modal-content">
-                                <div class="modal-header" style="background-color:#6B9080;">
+                                <div class="modal-header" style="background-color:#61677A;">
                                     <h5 class="modal-title" id="view_admin_uniLabel" style="color:white;">organizers Information</h5>
                                     <button style="color:white;" type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>

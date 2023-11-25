@@ -139,8 +139,8 @@
 
                                         <div class="form-row pt-4">
                                             <div class="form-group col-md-12 px-4">
-                                                <label for="event_requirements">Requirements</label>
-                                                <textarea type="text" class="form-control" rows="8" id="event_requirements" name="event_requirements" placeholder="Example:No slippers, No shorts" required></textarea>
+                                                <label for="event_requirements">Activities</label>
+                                                <textarea type="text" class="form-control" rows="8" id="event_requirements" name="event_requirements" placeholder="Activities" required></textarea>
                                             </div>
                                         </div>
 

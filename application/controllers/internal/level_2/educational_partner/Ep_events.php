@@ -87,7 +87,7 @@ class Ep_events extends CI_Controller
                 '',
                 $r->event_name,
                 $r->event_type,
-                $r->event_level,
+                $r->event_intake,
                 $r->event_duration,
                 "RM " . number_format($r->event_fee),
                 $function,
@@ -219,7 +219,7 @@ class Ep_events extends CI_Controller
                 </tr>
                 <tr>
                     <th scope="row">Venue</th>
-                    <td>' . $event_detail[0]->event_careeropportunities    . '</td>
+                    <td>' . $event_detail[0]->event_careeropportunities  . '</td>
                 </tr>
                 <tr>
                     <th scope="row">Shortprofile</th>
@@ -230,7 +230,7 @@ class Ep_events extends CI_Controller
                     <td style = "white-space: pre-wrap; word-break: break-word; text-align: justify;">' . $event_detail[0]->event_structure . '</td>
                 </tr>
                 <tr>
-                    <th scope="row">Requirements</th>
+                    <th scope="row">Activities</th>
                     <td style = "white-space: pre-wrap; word-break: break-word; text-align: justify;">' . $event_detail[0]->event_requirements . '</td>
                 </tr>
             </tbody>

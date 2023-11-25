@@ -9,6 +9,22 @@
 	var base_url = "<?php echo base_url(); ?>";
 </script>
 
+<style>
+	.submit {
+		border: none;
+		outline: none;
+		height: 45px;
+		background: #ececec;
+		border-radius: 5px;
+		transition: 0.4s;
+	}
+
+	.submit:hover {
+		background: rgba(37, 95, 156, 0.937);
+		color: #fff;
+	}
+</style>
+
 <!-- Top Navigation -->
 <?php $this->load->view('external/templates/topnav'); ?>
 
@@ -64,7 +80,7 @@
 							<div class="card h-100" id='card2'>
 								<div class=" card-body">
 									<center>
-										<div class="pt-5 px-5" style="font-size:23px; letter-spacing: 8px; color:#787878; font-weight:700;">ORGANIZER REGISTRATION PAGE</div>
+										<div class="pt-5 px-5" style="font-size:23px; letter-spacing: 8px; color:#000000; font-weight:700;">ORGANIZER REGISTRATION PAGE</div>
 									</center>
 									<!-- Input fields (Form) -->
 									<form method="post" action="<?= base_url('user/login/Auth/ep_reg'); ?>" enctype="multipart/form-data">
@@ -380,8 +396,8 @@
 											</label>
 										</div>
 										<!-- Submit button -->
-										<div class="pt-4 pr-3">
-											<button type="submit" class="btn btn-success" style="float:right; width:auto">Register <i class="fas fa-check"></i></button>
+										<div class="pt-1 pr-4">
+											<button type="submit" class="submit" style="float:right;">Register <i class="fas fa-check"></i></button>
 										</div>
 									</form>
 									<!-- End of Input fields (Form) -->

@@ -107,8 +107,8 @@
                           <i class="fas fa-lightbulb pr-2" style="color:#ffcd0a; font-size: 2.0rem;"></i>
                           <div class="pb-2" style="font-weight:bold; font-size: 1.2rem;">Examples</div>
                           <button type="button" onclick="enter_prompt('What is event?')" class="btn btn-outline-dark mb-2">What is event?</button><br>
-                          <button type="button" onclick="enter_prompt('What are the types of events?')" class="btn btn-outline-dark mb-2">What are the types of events?</button><br>
-                          <button type="button" onclick="enter_prompt('What are the stages of Alzheimer’s disease?')" class="btn btn-outline-dark">What are the stages of Alzheimer’s disease?</button>
+                          <button type="button" onclick="enter_prompt('What are the types of events?')" class="btn btn-outline-dark mb-2">How can I find information about campus events?</button><br>
+                          <button type="button" onclick="enter_prompt('What are the stages of Alzheimer’s disease?')" class="btn btn-outline-dark">Can I register and apply for events online?</button>
                         </div>
                         <div class="col-md-4 text-center">
                           <i class="fas fa-bolt pr-2" style="color:#007AFF; font-size: 2.0rem;"></i>

@@ -56,8 +56,23 @@ class Chatbot extends CI_Controller
     //con_id can be 0 which means its new
     $con_id = $this->input->post('con_id');
 
-    //Set up conversation history
-    $conversation = array();
+    $sentence = "";
+
+    $event_list = $this->events_model->get_event_with_event_type();
+
+    foreach ($event_list as $event_row) {
+      $sentence .= 'Event Name: ' . $event_row->event_name . ', Event Content: {' . $event_row->event_type . '}\n ';
+    }
+
+    // Set up conversation history
+
+    $conversation = array(
+      array('role' => 'system', 'content' => 'You uses "\n" when there is a line break.
+      You are a event analyst that is able to answer question according to the information content that was extracted from user questions.
+      The following are information contents, each question labelled with the questions name and the content for the question is wrap inside a "{}". \n
+      The questions are as followed:\n
+      ' . $sentence)
+    );
 
     //query data from database, use for each loop to put into readable sentence
 

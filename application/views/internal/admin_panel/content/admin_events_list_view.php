@@ -76,7 +76,7 @@
                     <div class="modal fade" id="view_my_rd_project" tabindex="-1" role="dialog" aria-labelledby="view_my_rd_projectLabel" aria-hidden="true">
                         <div class="modal-dialog modal-xl" role="document">
                             <div class="modal-content">
-                                <div class="modal-header" style="background-color:#6B9080;">
+                                <div class="modal-header" style="background-color:#61677A;">
                                     <h5 class="modal-title" id="view_my_rd_projectLabel" style="color:white;">Event Information</h5>
                                     <button style="color:white;" type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>

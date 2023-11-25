@@ -2,7 +2,7 @@
 <footer class="sticky-footer">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
-            <span>Copyright &copy; EventHub - Campus Event Management System</span>
+            <span>Copyright & copy; EventHub - Campus Event Management System</span>
         </div>
     </div>
 </footer>

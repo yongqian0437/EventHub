@@ -70,9 +70,9 @@
             <a class="nav-link" href="<?= base_url('chatbot'); ?>">ChatBot</a>
         </li>
 
-        <li class="nav-item px-2">
+        <!-- <li class="nav-item px-2">
             <a class="nav-link" href="<?php echo base_url('external/Report'); ?>">Report</a>
-        </li>
+        </li> -->
 
         <li class="nav-item px-2">
             <a class="nav-link" href="<?= base_url('external/homepage/about_us'); ?>">About Us</a>
