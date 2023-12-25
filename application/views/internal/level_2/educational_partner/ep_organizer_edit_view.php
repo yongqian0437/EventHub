@@ -98,7 +98,7 @@
                                             <div class="form-group col-md-6 px-4 pl-5">
                                                 <label for="organizer_country"> Country</label>
                                                 <select name="organizer_country" id="organizer_country" class="form-control form-select" required>
-                                                    <option value="<?= $organizers_data->organizer_country ?>" selected><?= $organizers_data->organizer_country ?></option>
+                                                    <option value="<?= $event_data->organizer_country ?>" selected><?= $event_data->organizer_country ?></option>
                                                     <option value="Afghanistan">Afghanistan</option>
                                                     <option value="Åland Islands">Åland Islands</option>
                                                     <option value="Albania">Albania</option>

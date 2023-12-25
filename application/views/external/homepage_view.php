@@ -67,8 +67,8 @@
                                 <img class="card-img-top" src="https://static3.avast.com/10001215/web/i/index2/for-home.jpg" alt="Card image cap">
                                 <div class="card-body">
                                     <div class="badge badge-primary badge-sm">FOR STUDENTS</div>
-                                    <div class="card-title">Online consultants everywhere you go</div>
-                                    <p class="card-text">We provide one-to-one consulting and give you the best advice before you enter college / organizers</p>
+                                    <div class="card-title">Your College Journey, Simplified</div>
+                                    <p class="card-text">Thinking about joining an event? Our management system offer flexible system. From navigating registration to optimizing your event participation, we're here to ensure you have the best possible experience.</p>
                                 </div>
                             </div>
 
@@ -76,8 +76,8 @@
                                 <img class="card-img-top" src="<?php echo base_url('assets/img/Card-primary/partner.png') ?>" alt="Card image cap">
                                 <div class="card-body">
                                     <div class="badge badge-primary badge-sm">FOR ORGANIZERS</div>
-                                    <div class="card-title">Provide partner cooperation opportunities</div>
-                                    <p class="card-text">We partner with the world's leading colleges and organizer that offer the best events for a reasonable price</p>
+                                    <div class="card-title">Elevate Your Events with Us</div>
+                                    <p class="card-text">Event organizers, let's collaborate! Partner with us for seamless cooperation. We connect students with top colleges and organizers to create exceptional events at reasonable prices. Together, we can make events not just informative but also enriching and unforgettable.</p>
                                 </div>
                             </div>
 
@@ -85,8 +85,8 @@
                                 <img class="card-img-top" src="https://static3.avast.com/10001215/web/i/index2/for-partners.jpg" alt="Card image cap">
                                 <div class="card-body">
                                     <div class="badge badge-primary badge-sm">FOR CAMPUS</div>
-                                    <div class="card-title">Expand across the world</div>
-                                    <p class="card-text pb-3">Example</p>
+                                    <div class="card-title">Boost Your Event Success</div>
+                                    <p class="card-text pb-3">Enhance your campus events with our services. Seamlessly integrated, our one-to-one consultations provide invaluable insights for successful event planning. Let's elevate the overall campus event experience and make your gatherings truly remarkable.</p>
                                 </div>
                             </div>
                         </div>

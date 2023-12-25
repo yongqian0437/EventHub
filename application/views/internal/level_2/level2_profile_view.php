@@ -90,7 +90,7 @@
                                                     } else if ($user_role == 'Education Partner' or $user_role == 'Academic Counsellor') { ?>
                                                         <div class="col-8 col-md-6 col-lg-6 mb-2">
 
-                                                            <h6>organizers</h6>
+                                                            <h6>Organizers</h6>
                                                             <label>
                                                                 <?php
                                                                 if ($user_role == 'Education Partner') {

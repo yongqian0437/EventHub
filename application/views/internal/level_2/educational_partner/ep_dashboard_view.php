@@ -143,7 +143,7 @@
                             <!-- Bar Chart -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Events by Top 5 Fields </h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Events Type </h6>
                                 </div>
                                 <div class="card-body">
                                     <div class="chart-bar">
@@ -165,6 +165,7 @@
                 var counter2 = <?= $num_rd_projects ?>;
                 var counter3 = <?= $num_rd_applicants ?>;
                 var counter4 = <?= $num_partners ?>;
+
 
                 // Bar Chart
                 var ctx = document.getElementById("event_field_barChart");
